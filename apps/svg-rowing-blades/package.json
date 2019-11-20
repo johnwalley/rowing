@@ -2,7 +2,7 @@
   "name": "svg-rowing-blades",
   "private": true,
   "description": "Download images of rowing blades",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "John Walley <john@walley.org.uk>",
   "dependencies": {
     "gatsby": "^2.13.39",
@@ -17,11 +17,11 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "react-rowing-blades": "^1.5.2",
+    "react-rowing-blades": "^1.5.4",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "1.19.1"
   },
   "keywords": [
     "svg"
@@ -33,7 +33,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "generate-svg-files": "node ./scripts/generate-svg-files"
   },
   "repository": {
     "type": "git",

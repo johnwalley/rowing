@@ -9,6 +9,7 @@ var clubs = [
   ...ReactRowingBlades.clubs.cambridge,
   ...ReactRowingBlades.clubs.oxford,
   ...ReactRowingBlades.clubs.uk,
+  ...ReactRowingBlades.clubs.international,
 ]
 
 clubs.forEach(club => {
