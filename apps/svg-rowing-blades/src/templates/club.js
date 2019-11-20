@@ -27,13 +27,15 @@ const allClubs = [...clubs.cambridge, ...clubs.oxford, ...clubs.uk].sort(
   }
 )
 
+// TODO: Download as PNG
+// TODO: Use plugin to get at files
 export default ({ data }) => {
-  console.log(data.file)
   return (
     <Layout>
       <h1>{allNames[data.file.name]}</h1>
-      <button>Download svg</button>
-      <button>Download png</button>
+      <a href={`/${data.file.name}.svg`} download={`${data.file.name}.svg`}>
+        <button>Download svg</button>
+      </a>
 
       <Blade club={data.file.name} size={400} />
     </Layout>

@@ -11,24 +11,28 @@ const allShortNames = {
   ...shortNames.cambridge,
   ...shortNames.oxford,
   ...shortNames.uk,
+  ...shortNames.international,
 }
 
-const allClubs = [...clubs.cambridge, ...clubs.oxford, ...clubs.uk].sort(
-  (a, b) => {
-    const nameA = a.toLowerCase()
-    const nameB = b.toLowerCase()
+const allClubs = [
+  ...clubs.cambridge,
+  ...clubs.oxford,
+  ...clubs.uk,
+  ...clubs.international,
+].sort((a, b) => {
+  const nameA = a.toLowerCase()
+  const nameB = b.toLowerCase()
 
-    if (nameA < nameB) {
-      return -1
-    }
-
-    if (nameA > nameB) {
-      return 1
-    }
-
-    return 0
+  if (nameA < nameB) {
+    return -1
   }
-)
+
+  if (nameA > nameB) {
+    return 1
+  }
+
+  return 0
+})
 
 const BladesContainer = styled.div`
   display: flex;
@@ -46,7 +50,7 @@ const Label = styled.p`
   font-size: 12px;
 `
 
-const SearchCoontainer = styled.div`
+const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,7 +67,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <SearchCoontainer>
+      <SearchContainer>
         <input
           type="text"
           className="input"
@@ -73,8 +77,7 @@ const IndexPage = () => {
             setSearchValue(event.target.value)
           }}
         />
-        <p>Download all blades</p>
-      </SearchCoontainer>
+      </SearchContainer>
 
       <BladesContainer>
         {filteredClubs.map(club => (
