@@ -15,7 +15,7 @@
     "gatsby-transformer-sharp": "^2.3.9",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "react-rowing-blades": "^1.6.1",
     "styled-components": "^5.1.0"
