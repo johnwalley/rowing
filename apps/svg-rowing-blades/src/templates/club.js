@@ -1,4 +1,4 @@
-import Blade, { clubs, names } from "react-rowing-blades";
+import Blade, { names } from "react-rowing-blades";
 
 import Layout from "../components/layout";
 import React from "react";
