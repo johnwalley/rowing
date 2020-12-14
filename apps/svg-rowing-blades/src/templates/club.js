@@ -1,31 +1,14 @@
+import Blade, { clubs, names } from "react-rowing-blades";
+
+import Layout from "../components/layout";
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
-
-import Blade, { clubs, names } from "react-rowing-blades";
 
 const allNames = {
   ...names.cambridge,
   ...names.oxford,
-  ...names.uk
+  ...names.uk,
 };
-
-const allClubs = [...clubs.cambridge, ...clubs.oxford, ...clubs.uk].sort(
-  (a, b) => {
-    const nameA = a.toLowerCase();
-    const nameB = b.toLowerCase();
-
-    if (nameA < nameB) {
-      return -1;
-    }
-
-    if (nameA > nameB) {
-      return 1;
-    }
-
-    return 0;
-  }
-);
 
 // TODO: Download as PNG
 // TODO: Use plugin to get at files

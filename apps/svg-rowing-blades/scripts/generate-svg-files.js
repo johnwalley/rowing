@@ -17,7 +17,7 @@ clubs.forEach(club => {
     React.createElement(Blade, { size: 500, club: club }, null)
   )
 
-  fs.writeFile("blades/" + club + ".svg", output, err => {
+  fs.writeFile("src/images/club/" + club + ".svg", output, err => {
     // throws an error, you could also catch it here
     if (err) throw err
 
