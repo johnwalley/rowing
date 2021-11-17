@@ -3,7 +3,7 @@ var ReactDOMServer = require("react-dom/server");
 var fs = require("fs");
 var ReactRowingBlades = require("react-rowing-blades");
 
-var Blade = ReactRowingBlades.default;
+var Blade = ReactRowingBlades.Blade;
 
 var clubs = [
   ...ReactRowingBlades.clubs.cambridge,
