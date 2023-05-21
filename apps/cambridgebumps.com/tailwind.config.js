@@ -24,7 +24,7 @@ module.exports = {
         "4xl": "2rem",
       },
       colors: {
-        cambridge: "#85B09A",
+        primary: "#85B09A",
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
