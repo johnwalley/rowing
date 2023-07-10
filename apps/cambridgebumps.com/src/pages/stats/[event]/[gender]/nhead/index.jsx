@@ -27,25 +27,53 @@ export default function Statistics({ data }) {
           <div className="flex flex-col items-center align-middle">
             <h1>Number of headships</h1>
             <div>
-              Number of times finished Head of the River (NHd) in {longNames[event]}, and
-              year of last Headship
+              Number of times finished Head of the River (NHd) in{" "}
+              {longNames[event]}, and year of last Headship
             </div>
-            <table>
+            <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>NHd</th>
-                  <th>Year</th>
-                  <th>Crews</th>
+                  <th
+                    scope="col"
+                    className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                  >
+                    #
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  >
+                    NHd
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  >
+                    Year
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  >
+                    Crews
+                  </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-gray-200">
                 {data.map((d, i) => (
                   <tr key={i}>
-                    <td>{i + 1}</td>
-                    <td>{d.count}</td>
-                    <td>{d.year}</td>
-                    <td>{d.crew}</td>
+                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-500 sm:pl-0">
+                      {i + 1}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm">
+                      {d.count}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm">
+                      {d.year}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm">
+                      {d.crew}
+                    </td>
                   </tr>
                 ))}
               </tbody>
