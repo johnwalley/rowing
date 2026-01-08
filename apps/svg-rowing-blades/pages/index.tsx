@@ -17,26 +17,17 @@ const allClubs = [
   ...clubs.oxford,
   ...clubs.uk,
   ...clubs.international,
-].sort((a, b) => {
-  const nameA = a.toLowerCase();
-  const nameB = b.toLowerCase();
-
-  if (nameA < nameB) {
-    return -1;
-  }
-
-  if (nameA > nameB) {
-    return 1;
-  }
-
-  return 0;
-});
+].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
 const IndexPage = () => {
   const [searchValue, setSearchValue] = React.useState("");
 
-  const filteredClubs = allClubs.filter((club) =>
-    allShortNames[club].toLowerCase().includes(searchValue.toLowerCase())
+  const filteredClubs = React.useMemo(
+    () =>
+      allClubs.filter((club) =>
+        allShortNames[club].toLowerCase().includes(searchValue.toLowerCase())
+      ),
+    [searchValue]
   );
 
   return (
@@ -55,7 +46,7 @@ const IndexPage = () => {
             </label>
             <input
               id="blade-search"
-              name="email"
+              name="search"
               type="search"
               className="w-full mb-4 sm:mb-0 sm:mr-4 px-5 py-3 placeholder-gray-500 focus:ring-pink-500 focus:border-pink-500 sm:max-w-xs border-gray-300 rounded-md"
               placeholder="Search..."
