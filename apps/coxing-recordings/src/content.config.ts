@@ -10,7 +10,7 @@ const recordingsCollection = defineCollection({
     year: z.string(),
     description: z.string(),
     cox: z.string(),
-    imageSrc: z.string(),
+    videoId: z.string().regex(/^[\w-]{11}$/),
   }),
 });
 
