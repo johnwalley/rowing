@@ -1,5 +1,6 @@
 {
   "framework": "astro",
+  "buildCommand": "pnpm --filter cambridgebumps.com... run build",
   "headers": [
     {
       "source": "/data/results/(.*)",
