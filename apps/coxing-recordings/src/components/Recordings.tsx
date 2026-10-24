@@ -72,7 +72,11 @@ export default function Recordings({
       <p className="block text-3xl font-extrabold tracking-tight text-pink-600 sm:text-4xl">
         Get inspired
       </p>
-      <form className="mt-4 mb-6 sm:flex" role="search" aria-label="Search coxswain recordings">
+      <form
+        className="mt-4 mb-6 sm:flex"
+        role="search"
+        aria-label="Search coxswain recordings"
+      >
         <label htmlFor="recording-search" className="sr-only">
           Search
         </label>

@@ -1,5 +1,6 @@
 dist/
 node_modules/
+.astro/
 .gitignore
 .prettierignore
 .prettierrc

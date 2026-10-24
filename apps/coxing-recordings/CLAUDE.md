@@ -1,12 +1,12 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
 A website showcasing coxswain recordings from rowing competitions. Built with Astro, React, and Tailwind CSS. Live at www.coxing.co.uk.
 
 ## Commands
+
+Run these from this folder, or from the repo root with `pnpm --filter coxing-recordings <script>`.
 
 ```bash
 pnpm dev          # Start dev server at localhost:4321
@@ -37,7 +37,3 @@ Create a JSON file in `src/content/recordings/` following the schema:
   "imageSrc": "https://www.youtube.com/embed/VIDEO_ID"
 }
 ```
-
-## Commit Convention
-
-Uses Conventional Commits: `feat:`, `fix:`, `chore:`, `docs:`, `build:`

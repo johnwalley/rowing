@@ -1,7 +1,12 @@
 {
   "name": "coxing-recordings",
+  "private": true,
   "type": "module",
   "version": "0.1.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.13.1+sha512.b2fc7683b8a6525414e7d13e1ba28caaddde96bf66ec540bfaeb7e702b81f3e0be4d1f295edf7f9fe0396740a8dce4509c582ddf79891f4543fea32d37645f25",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -14,11 +19,11 @@
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/vite": "^4.1.18",
-    "@types/react": "^19.2.8",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "astro": "^5.16.8",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
