@@ -60,12 +60,12 @@
     "@types/d3-shape": "^3.1.7",
     "@types/lodash": "^4.17.21",
     "@types/react": "catalog:",
-    "@types/react-dom": "^19.2.7",
+    "@types/react-dom": "catalog:",
     "@vitejs/plugin-react-swc": "^4.2.2",
     "jsdom": "^30.1.3",
     "prettier": "^3.7.4",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "standard-version": "9.5.0",
     "storybook": "^10.1.10",
     "typescript": "^5.9.3",
@@ -80,7 +80,7 @@
     "d3-scale": "^3.0.0",
     "d3-shape": "^2.0.0",
     "lodash": "^4.17.21",
-    "react-rowing-blades": "^2.4.2"
+    "react-rowing-blades": "workspace:^"
   },
   "peerDependencies": {
     "@react-pdf/renderer": "^4.3.0",

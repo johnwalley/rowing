@@ -48,6 +48,9 @@ export default defineConfig({
   integrations: [react(), mdx()],
   vite: {
     plugins: [tailwindcss()],
+    // The workspace catalog already gives every package one React; this
+    // keeps a second copy out of the bundle if that ever slips.
+    resolve: { dedupe: ["react", "react-dom"] },
     define: {
       "import.meta.env.PUBLIC_TITLE": JSON.stringify(TITLE),
       "import.meta.env.PUBLIC_BASE_URL": JSON.stringify(BASE_URL),

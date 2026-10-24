@@ -15,5 +15,3 @@ allowBuilds:
 
 minimumReleaseAgeExclude:
   - prettier-plugin-tailwindcss@0.8.1
-  # The site still installs the chart from npm until Phase 3 links it.
-  - react-bumps-chart@1.14.0

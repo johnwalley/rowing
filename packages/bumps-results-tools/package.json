@@ -1,19 +1,20 @@
 {
   "name": "bumps-results-tools",
+  "private": true,
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
     "arquero": "^8",
     "chalk": "^5.6.2",
-    "react": "^19.2.6",
-    "react-bumps-chart": "^1.12.3",
-    "react-dom": "^19.2.6",
+    "react": "catalog:",
+    "react-bumps-chart": "workspace:^",
+    "react-dom": "catalog:",
     "zod": "^4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^24.19.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "@typescript/native-preview": "^7.0.0-dev.20260517.1",
     "@vitejs/plugin-react": "^6",
     "prettier": "^3.8.3",
