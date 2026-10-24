@@ -1,4 +1,4 @@
 {
-  "framework": "nextjs",
+  "framework": "astro",
   "buildCommand": "pnpm --filter svg-rowing-blades... run build"
 }

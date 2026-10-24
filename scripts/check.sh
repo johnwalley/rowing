@@ -27,8 +27,8 @@ step "Formatting"
 pnpm format:check
 
 # In dependency order: blades, chart, tools, then the sites and the results
-# editor. The libraries' builds run tsc, the tools' and the editor's run tsgo
-# and the SVG blades site's runs next build, so this also typechecks them.
+# editor. The libraries' builds run tsc and the tools' and the editor's run
+# tsgo, so this also typechecks them.
 step "Build"
 pnpm -r build
 
@@ -48,6 +48,8 @@ step "The bumps site's typecheck"
 pnpm --filter cambridgebumps.com typecheck
 step "The coxing site's typecheck"
 pnpm --filter coxing-recordings typecheck
+step "The SVG blades site's typecheck"
+pnpm --filter svg-rowing-blades typecheck
 
 # Compares the folder before and after regenerating it, rather than against
 # git, so uncommitted TG edits with their regenerated AD files pass locally.

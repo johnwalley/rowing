@@ -1,16 +1,16 @@
 # CLAUDE.md
 
-A Next.js 16 (pages router) + React 19 + Tailwind 3 site for finding and downloading each club's blade as an SVG. Live at https://svg-rowing-blades.mulberryhousesoftware.com/.
+An Astro + Tailwind 4 site for finding and downloading each club's blade as an SVG. Live at https://svg-rowing-blades.mulberryhousesoftware.com/.
 
 ## Commands
 
 Run these from this folder, or from the repo root with `pnpm --filter svg-rowing-blades <script>`.
 
 ```bash
-pnpm dev          # Generate the SVGs, then start the dev server at localhost:3000
-pnpm build        # Generate the SVGs, then type-check and build to ./.next/ (CI runs this)
-pnpm start        # Serve the production build
-pnpm typecheck    # Type-check only (next typegen writes next-env.d.ts first)
+pnpm dev          # Start dev server at localhost:4321
+pnpm build        # Build to ./dist/ (CI runs this)
+pnpm preview      # Preview the production build
+pnpm typecheck    # Type-check (astro check: .astro and .ts; CI runs this)
 pnpm format       # Format code with Prettier
 pnpm format:check # Check formatting
 ```
@@ -19,8 +19,11 @@ The blades come from `react-rowing-blades`' `dist/`, so build it first (`pnpm --
 
 ## How it works
 
-- `pages/index.tsx` lists every club in `clubs` from `react-rowing-blades`, with a search over their short names.
-- `pages/club/[club].tsx` shows one blade and its full name, with a Download button that links to `/images/<club>.svg`.
-- `scripts/generate-svg-files.mjs` renders each blade at 500px into `public/images/`. `dev` and `build` run it first. The folder is gitignored, so the downloads always match the workspace's blades: don't commit SVGs.
+Every page is rendered at build time. `@astrojs/react` renders the `Blade` components to static SVG, and no page hydrates one, so the site ships no React.
 
-A blade added to `react-rowing-blades` shows up here with no change to this app.
+- `src/lib/clubs.ts`: every club in `react-rowing-blades`, with its full and short names.
+- `src/pages/index.astro`: the grid of every blade. Its inline script does the search, hiding the cards whose short name doesn't match.
+- `src/pages/club/[club].astro`: one page per club, with a Download button that links to `/images/<club>.svg`.
+- `src/pages/images/[club].svg.ts`: an endpoint that renders each blade at 500px into `dist/images/`.
+
+A blade added to `react-rowing-blades` gets a card, a page and an SVG with no change to this app.
