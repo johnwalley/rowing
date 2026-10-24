@@ -2,28 +2,21 @@
   "name": "bumps-results-tools",
   "private": true,
   "exports": {
+    "./bumps": "./src/bumps.ts",
     "./club-history": "./src/club-history.ts",
     "./clubs": "./src/clubs.ts",
     "./results": "./src/results.ts",
     "./stats": "./src/stats.ts",
+    "./tg-files": "./src/tg-files.ts",
     "./types": "./src/types.ts"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.0",
-    "react": "catalog:",
-    "react-bumps-chart": "workspace:^",
-    "react-dom": "catalog:",
     "zod": "^4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^24.19.2",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
     "@typescript/native-preview": "^7.0.0-dev.20260517.1",
-    "@vitejs/plugin-react": "^6",
     "prettier": "^3.8.3",
-    "tailwindcss": "^4.3.0",
     "tsx": "^4.23.15",
     "vite": "^8",
     "vitest": "^5.0.5"
@@ -41,10 +34,8 @@
     }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "pnpm run typecheck && vite build",
+    "build": "pnpm run typecheck",
     "typecheck": "tsgo --noEmit && tsgo --noEmit -p tsconfig.scripts.json",
-    "preview": "vite preview",
     "test": "vitest run",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

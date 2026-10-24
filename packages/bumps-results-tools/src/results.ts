@@ -2,7 +2,7 @@ import { processResults, readEvent } from "./bumps";
 import type { ProcessedEvent } from "./types";
 
 // Every TG file in results/tg_format/, bundled at build time. This needs Vite
-// (the bumps site, the viewer, Vitest); scripts run with tsx read the files
+// (the bumps site, the results editor, Vitest); scripts run with tsx read the files
 // with `readFile` instead.
 const files = import.meta.glob<string>("../results/tg_format/*.txt", {
   query: "?raw",

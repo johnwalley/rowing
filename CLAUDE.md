@@ -1,21 +1,23 @@
 # CLAUDE.md
 
-A pnpm workspace for rowing: two published React libraries for bumps charts, the bumps results data pipeline, the bumps site behind cambridgebumps.com and oxfordbumps.com, and the coxing site behind coxing.co.uk.
+A pnpm workspace for rowing: two published React libraries for bumps charts, the bumps results data pipeline and a local editor for it, the bumps site behind cambridgebumps.com and oxfordbumps.com, and the coxing site behind coxing.co.uk.
 
 | Package | What it is | |
 |---|---|---|
 | `packages/react-rowing-blades` | SVG blades for each club | published to npm |
 | `packages/react-bumps-chart` | The bumps chart (SVG and PDF); uses blades | published to npm |
-| `packages/bumps-results-tools` | TG-format results, the code that processes them and works out the statistics, and a viewer app | private |
+| `packages/bumps-results-tools` | TG-format results, and the code that processes them and works out the statistics | private |
 | `apps/cambridgebumps.com` | The bumps site (Astro); one codebase, two Vercel projects (Cambridge and Oxford) | private |
+| `apps/results-editor` | A local Vite app for editing TG files beside a live chart. Not deployed | private |
 | `apps/coxing-recordings` | The coxing site (Astro): a searchable list of coxswain recordings. Uses none of the other packages | private |
 
-Read the `CLAUDE.md` in the package you're changing: the chart, the tools and both sites each have one.
+Read the `CLAUDE.md` in the package you're changing: the chart, the tools, the editor and both sites each have one.
 
 ## How the packages connect
 
 - The chart depends on blades, and the bumps site on both, through `workspace:^`. Their `exports` point at `dist/`, so the site sees a library change only after that library is rebuilt. `pnpm -r build` builds everything in dependency order. To work on the chart and the site together, run `pnpm --filter react-bumps-chart exec vite build --watch` beside the site's `dev` script.
 - The bumps site builds its results data from the tools' TG files. It imports `bumps-results-tools/results` (every TG file, parsed and processed), `/stats`, `/club-history` and `/clubs` (the one list of clubs, used by the statistics and the club pages alike), which point at the tools' TypeScript source, so the tools need no build. A results fix is one PR to the TG files, and its preview shows the change on the site. On every push to `main` that changes `packages/bumps-results-tools/**`, the Sync downstream workflow opens a PR in `johnwalley/bumps-results` with the TG and AD files.
+- The results editor depends on the tools and the chart the same way: the tools through their source (`/bumps`, `/tg-files`, `/types`), the chart through its `dist/`.
 - Each package keeps its own Prettier, TypeScript and Vite config.
 
 ## Workspace rules
