@@ -1,6 +1,6 @@
-import { MeasureText, fontSize } from '@/utils/layout-chart';
+import { MeasureText, fontSize } from '../../utils/layout-chart';
 import { Font } from '@react-pdf/renderer';
-import { estimateTextWidth } from '@/utils/measure-text';
+import { estimateTextWidth } from '../../utils/measure-text';
 
 /** Measures text in Helvetica, react-pdf's default font. */
 export const measurePdfText: MeasureText = (text) => {

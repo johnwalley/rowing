@@ -15,9 +15,9 @@ Read the `CLAUDE.md` in the package you're changing: the chart, the tools, the e
 
 ## How the packages connect
 
-- The chart depends on blades, and the bumps site on both, through `workspace:^`. Their `exports` point at `dist/`, so the site sees a library change only after that library is rebuilt. `pnpm -r build` builds everything in dependency order. To work on the chart and the site together, run `pnpm --filter react-bumps-chart exec vite build --watch` beside the site's `dev` script.
+- The chart depends on blades, and the bumps site on both, through `workspace:^`. Each library's `exports` lists a `rowing-source` condition first, pointing at `src/`. The chart, the site and the editor turn it on (Vite's `resolve.conditions`, TypeScript's `customConditions`), so inside the workspace they compile the libraries' source: nothing needs building first, and a library change hot-reloads in the site's `dev` script. npm users never set the condition, so they get `dist/`. Because consumers compile it with their own config, library source follows the rules in the chart's `CLAUDE.md` (Imports in `src/`).
 - The bumps site builds its results data from the tools' TG files. It imports `bumps-results-tools/results` (every TG file, parsed and processed), `/stats`, `/club-history` and `/clubs` (the one list of clubs, used by the statistics and the club pages alike), which point at the tools' TypeScript source, so the tools need no build. A results fix is one PR to the TG files, and its preview shows the change on the site. On every push to `main` that changes `packages/bumps-results-tools/**`, the Sync downstream workflow opens a PR in `johnwalley/bumps-results` with the TG and AD files.
-- The results editor depends on the tools and the chart the same way: the tools through their source (`/bumps`, `/tg-files`, `/types`), the chart through its `dist/`.
+- The results editor depends on the tools and the chart the same way, through their source: the tools' `/bumps`, `/tg-files` and `/types`, and the chart through `rowing-source`.
 - Each package keeps its own Prettier, TypeScript and Vite config.
 
 ## Workspace rules
@@ -34,4 +34,4 @@ On `main`, `.github/workflows/release.yml` keeps a "Version Packages" PR open. M
 
 ## Deploying the sites
 
-The two bumps Vercel projects build `apps/cambridgebumps.com` with the build command in its `vercel.json`, which builds blades and the chart first (not the tools, whose source the site imports directly). The coxing project builds `apps/coxing-recordings` with Vercel's Astro defaults. A merge to `main` deploys all three; a PR gets a preview of each.
+The two bumps Vercel projects build `apps/cambridgebumps.com` with the build command in its `vercel.json`, the site's own `build` script: the site compiles the libraries' and the tools' source, so nothing else is built first. The coxing project builds `apps/coxing-recordings` with Vercel's Astro defaults. A merge to `main` deploys all three; a PR gets a preview of each.

@@ -14,7 +14,7 @@ pnpm format       # Format code with Prettier
 pnpm format:check # Check formatting
 ```
 
-The chart comes from `react-bumps-chart`'s `dist/`, so build it first (`pnpm -r build`, or `pnpm --filter react-bumps-chart exec vite build --watch` while changing the chart).
+The chart and its blades come from their `src/`, through the `rowing-source` export condition (see the root `CLAUDE.md`), so they need no build and a change to either hot-reloads here.
 
 ## How it works
 

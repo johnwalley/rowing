@@ -1,5 +1,5 @@
 import { Event } from '../types';
-import { range } from 'lodash';
+import range from 'lodash/range.js';
 
 export function calculateDivisions(
   event: Event,

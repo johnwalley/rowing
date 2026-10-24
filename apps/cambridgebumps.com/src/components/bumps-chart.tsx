@@ -4,7 +4,6 @@ import { useMemo } from "react";
 import { measureChartText } from "@/lib/measure-text";
 
 import classes from "./bumps-chart.module.css";
-import "react-bumps-chart/dist/index.css";
 
 type BumpsChartProps = {
   data: Event;

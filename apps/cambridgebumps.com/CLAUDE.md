@@ -103,8 +103,8 @@ Everything else (statistics tables, blades, photos, prose) is rendered at build 
 
 ### Configuration Files
 
-- `astro.config.mjs` — integrations, Vercel adapter, redirects, site URL, env injection
-- `vercel.json` — framework preset, the build command (`pnpm --filter cambridgebumps.com... --filter '!bumps-results-tools' run build`, which builds blades and the chart first; the tools need no build, since the site imports their source), and response headers the adapter doesn't emit (the `/data/results` cache policy). Vercel merges these into the adapter's routes; don't add `redirects` here
+- `astro.config.mjs` — integrations, Vercel adapter, redirects, site URL, env injection, and the `workspaceSource` plugin, which adds the `rowing-source` condition to every Vite environment (Astro's `prerender` one included) so blades and the chart come from their `src/`
+- `vercel.json` — framework preset, the build command (`pnpm run build`; blades, the chart and the tools need no build, since the site compiles their source), and response headers the adapter doesn't emit (the `/data/results` cache policy). Vercel merges these into the adapter's routes; don't add `redirects` here
 - `src/config/site.ts` - Site metadata (name, description, social links) read from `import.meta.env`
 - `src/config/docs.ts` - Navigation structure defining main nav and sidebar items
 

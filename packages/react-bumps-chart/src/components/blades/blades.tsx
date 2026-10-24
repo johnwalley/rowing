@@ -1,3 +1,4 @@
+import type { ComponentProps } from 'react';
 import { Blade } from 'react-rowing-blades';
 import classes from './blades.module.css';
 
@@ -19,7 +20,10 @@ export const Blades = ({ flip = false, crews, scale, x }: Blades.Props) => {
             key={index}
             transform={`translate(0 ${(index + 0.1) * scale}) scale(${flip ? -1 : 1} 1)`}
           >
-            <Blade club={crew} size={1.8 * scale} />
+            <Blade
+              club={crew as ComponentProps<typeof Blade>['club']}
+              size={1.8 * scale}
+            />
           </g>
         ) : null
       )}

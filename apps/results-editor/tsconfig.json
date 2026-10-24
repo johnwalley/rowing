@@ -6,6 +6,7 @@
     "strict": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "customConditions": ["rowing-source"],
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"

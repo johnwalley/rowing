@@ -39,8 +39,6 @@ jobs:
         env:
           CI: true
       - run: pnpm --filter react-bumps-chart check-exports
-      # The site's types for the libraries come from their dist/, so these run
-      # after the build.
       - run: pnpm --filter cambridgebumps.com lint
       - run: pnpm --filter cambridgebumps.com typecheck
 

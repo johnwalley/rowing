@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
+    "customConditions": ["rowing-source"],
     "allowJs": true,
     "resolveJsonModule": true,
     "allowArbitraryExtensions": true,

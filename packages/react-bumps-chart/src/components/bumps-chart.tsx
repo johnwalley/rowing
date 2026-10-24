@@ -9,8 +9,8 @@ import { Numbers } from './numbers/numbers';
 import { Stripes } from './stripes/stripes';
 import classNames from 'classnames';
 import classes from './bumps-chart.module.css';
-import { MeasureText, layoutChart, scale } from '@/utils/layout-chart';
-import { useMeasureText } from '@/utils/measure-text';
+import { MeasureText, layoutChart, scale } from '../utils/layout-chart';
+import { useMeasureText } from '../utils/measure-text';
 import { useMemo, useRef } from 'react';
 
 namespace BumpsChart {

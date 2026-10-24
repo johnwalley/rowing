@@ -7,9 +7,9 @@ import { Join } from './join';
 import { Label } from './label';
 import { Numbers } from './numbers';
 import { Stripes } from './stripes';
-import { layoutChartMultiYear } from '@/utils/layout-chart-multi-year';
+import { layoutChartMultiYear } from '../../utils/layout-chart-multi-year';
 import { measurePdfText } from './measure-text';
-import { scale } from '@/utils/layout-chart';
+import { scale } from '../../utils/layout-chart';
 
 const styles = StyleSheet.create({
   page: {},

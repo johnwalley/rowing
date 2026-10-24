@@ -1,5 +1,3 @@
-import "react-bumps-chart/dist/index.css";
-
 import {
   processResults,
   readEvent,
