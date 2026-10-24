@@ -17,7 +17,7 @@ const { club, section } = Astro.props;
 
 // A few early races cut off from the rest by a long gap (City's predecessor in
 // the 1868 Town Bumps, eighty years before the next) would leave most of the
-// chart empty, so it starts after the gap; the table still lists them.
+// chart empty, so it starts after the gap; the grid below still lists them.
 const LONG_GAP = 25;
 const raceYears = section.races.map((race) => yearOf(race.year));
 let start = 0;
@@ -167,7 +167,7 @@ const top = (position: number) => `${(y(position) / depth) * 100}%`;
         viewBox={`0 0 ${span} ${depth}`}
         preserveAspectRatio="none"
         role="img"
-        aria-label={`Finishing positions of ${club.short}'s crews, ${first} to ${last}. The table below lists every result.`}
+        aria-label={`Finishing positions of ${club.short}'s crews, ${first} to ${last}. The grid below gives the 1st boat's result each year.`}
       >
         {bands.map((band) => (
           <rect
@@ -248,7 +248,7 @@ const top = (position: number) => `${(y(position) / depth) * 100}%`;
   <figcaption class="mt-1 text-xs text-muted-foreground">
     Finishing position each year; shading marks the divisions.
     {leftOff &&
-      ` The ${leftOff.from === leftOff.to ? leftOff.from : `${leftOff.from}–${leftOff.to}`} results are in the table below.`}
+      ` The ${leftOff.from === leftOff.to ? leftOff.from : `${leftOff.from}–${leftOff.to}`} results are in the grid below.`}
   </figcaption>
 </figure>
 
