@@ -1,0 +1,12 @@
+---
+import { licenseUrls, type Credit } from "@/config/photos";
+
+interface Props {
+  credit: Credit;
+}
+
+const { credit } = Astro.props;
+---
+
+<a href={credit.source}>{credit.author}</a>,{" "}
+<a href={licenseUrls[credit.license]}>{credit.license}</a>
