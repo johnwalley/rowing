@@ -13,7 +13,7 @@ Run each dev server in the background and read its ready line for the URL: when 
 | The Oxford site: Torpids, Eights | `pnpm --filter cambridgebumps.com dev:oxford` | http://localhost:4321 |
 | The results editor | `pnpm --filter results-editor dev` | http://localhost:5173 |
 | The coxing site | `pnpm --filter coxing-recordings dev` | http://localhost:4321 |
-| The SVG blades site | `pnpm --filter svg-rowing-blades dev` | http://localhost:3000 |
+| The SVG blades site | `pnpm --filter svg-rowing-blades dev` | http://localhost:4321 |
 | The chart in Storybook | `pnpm --filter react-bumps-chart storybook` | http://localhost:6006 |
 | The blades in Storybook | `pnpm --filter react-rowing-blades storybook` | http://localhost:6006 |
 
