@@ -107,7 +107,7 @@ Everything else (statistics tables, blades, photos, prose) is rendered at build 
 ### Configuration Files
 
 - `astro.config.mjs` — integrations, Vercel adapter, redirects, site URL, env injection
-- `vercel.json` — framework preset and response headers the adapter doesn't emit (the `/data/results` cache policy). Vercel merges these into the adapter's routes; don't add `redirects` here
+- `vercel.json` — framework preset, the build command (`pnpm --filter cambridgebumps.com... run build`, which builds the workspace libraries the site depends on first), and response headers the adapter doesn't emit (the `/data/results` cache policy). Vercel merges these into the adapter's routes; don't add `redirects` here
 - `src/config/site.ts` - Site metadata (name, description, social links) read from `import.meta.env`
 - `src/config/docs.ts` - Navigation structure defining main nav and sidebar items
 
