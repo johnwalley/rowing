@@ -1,0 +1,20 @@
+Murray Edwards College Boat Club (Cambridge, murray-edwards)
+current: true
+
+lents women: 1976 to 2026, 50 races
+  lines: Murray Edwards 1, Murray Edwards 2, Murray Edwards 3
+  headships: 1980, 1978, 1976
+  blades: 8, spoons: 20
+  highest: 1, New Hall I 1980, New Hall I 1978, New Hall I 1976
+  rises: New Hall II 2000 +5, Murray Edwards I 2013 +4, Murray Edwards II 2013 +4
+  falls: Murray Edwards I 2019 -6, New Hall I 2008 -6, New Hall I 1998 -6
+  latest: Murray Edwards I 22 → 20, Murray Edwards II 57 → 59
+
+mays women: 1974 to 2026, 51 races
+  lines: Murray Edwards 1, Murray Edwards 2, Murray Edwards 3, Murray Edwards 4, Murray Edwards 5
+  headships: 1984, 1981, 1977
+  blades: 14, spoons: 25
+  highest: 1, New Hall I 1984, New Hall I 1981, New Hall I 1977
+  rises: New Hall II 1976 +5, Murray Edwards I 2026 +4, Murray Edwards II 2025 +4
+  falls: New Hall II 1993 -10, Murray Edwards II 2026 -6, New Hall II 2008 -6
+  latest: Murray Edwards I 28 → 24, Murray Edwards II 42 → 48, Murray Edwards III 71 → 73

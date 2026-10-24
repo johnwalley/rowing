@@ -1,0 +1,20 @@
+Leckhampton (Cambridge, leckhampton)
+current: false
+
+town men: 1971 to 1995, 23 races
+  lines: Leckhampton 1, Leckhampton 2
+  headships: none
+  blades: 2, spoons: 6
+  highest: 11, Leckhampton 1 1979, Leckhampton 1 1974
+  rises: Leckhampton 1 1992 +4, Leckhampton 1 1981 +4, Leckhampton 1 1995 +3
+  falls: Leckhampton 1 1984 -6, Leckhampton 1 1987 -5, Leckhampton 2 1985 -5
+  latest: didn't race
+
+town women: 1986 to 1993, 6 races
+  lines: Leckhampton 1, Leckhampton 2
+  headships: none
+  blades: 1, spoons: 1
+  highest: 3, Leckhampton 1 1993
+  rises: Leckhampton 2 1993 +5, Leckhampton 2 1992 +5, Leckhampton 1 1993 +4
+  falls: Leckhampton 1 1989 -4, Leckhampton 1 1986 -2, Leckhampton 1 1988 -1
+  latest: didn't race

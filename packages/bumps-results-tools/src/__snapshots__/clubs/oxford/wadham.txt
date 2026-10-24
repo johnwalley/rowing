@@ -1,0 +1,38 @@
+Wadham College Boat Club (Oxford, wadham)
+current: true
+
+torpids men: 1840 to 2026, 162 races
+  lines: Wadham 1, Wadham 2, Wadham 3, Wadham 4
+  headships: 1849, 1840
+  blades: 18, spoons: 17
+  highest: 1, Wadham I 1849, Wadham I 1840
+  rises: Wadham II 2023 +7, Wadham II 1969 +7, Wadham IV 2013 +6
+  falls: Wadham II 1985 -11, Wadham III 1988 -9, Wadham II 1978 -9
+  latest: Wadham I 12 → withdrew, Wadham II 34 → withdrew, Wadham III 69 → withdrew
+
+torpids women: 1978 to 2026, 40 races
+  lines: Wadham 1, Wadham 2, Wadham 3
+  headships: 2019, 2015, 1979
+  blades: 11, spoons: 2
+  highest: 1, Wadham I 2019, Wadham I 2015, Wadham I 1979
+  rises: Wadham I 1978 +6, Wadham I 2011 +5, Wadham II 2009 +5
+  falls: Wadham II 1992 -8, Wadham II 2016 -7, Wadham II 2022 -6
+  latest: Wadham I 5 → withdrew, Wadham II 46 → withdrew, Wadham III 65 → withdrew
+
+eights men: 1837 to 2026, 174 races
+  lines: Wadham 1, Wadham 2, Wadham 3, Wadham 4, Wadham 5
+  headships: 1856, 1850
+  blades: 28, spoons: 31
+  highest: 1, Wadham I 1856, Wadham I 1850
+  rises: Wadham III 1947 +8, Wadham II 1972 +7, Wadham IV 1969 +7
+  falls: Wadham I 1903 -7, Wadham III 2007 -6, Wadham III 1995 -6
+  latest: Wadham I 13 → 14, Wadham II 42 → 40
+
+eights women: 1976 to 2026, 49 races
+  lines: Wadham 1, Wadham 2, Wadham 3, Wadham 4
+  headships: 2017, 2016, 2015, 2014, 1978, 1976
+  blades: 13, spoons: 11
+  highest: 1, Wadham I 2017, Wadham I 2016, Wadham I 2015, Wadham I 2014, Wadham I 1978, Wadham I 1976
+  rises: Wadham III 2025 +4, Wadham III 2016 +4, Wadham II 2013 +4
+  falls: Wadham II 1982 -6, Wadham II 2023 -4, Wadham II 2016 -4
+  latest: Wadham I 2 → 4, Wadham II 38 → 35, Wadham III 68 → 68, Wadham IV 80 → 82

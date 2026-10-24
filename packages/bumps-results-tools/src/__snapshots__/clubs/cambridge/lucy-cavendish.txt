@@ -1,0 +1,38 @@
+Lucy Cavendish College Boat Club (Cambridge, lucy-cavendish)
+current: true
+
+lents men: 2022 to 2026, 5 races
+  lines: Lucy Cavendish 1, Lucy Cavendish 2
+  headships: none
+  blades: 1, spoons: 0
+  highest: 41, Lucy Cavendish I 2024
+  rises: Lucy Cavendish I 2024 +4, Lucy Cavendish I 2023 +2
+  falls: Lucy Cavendish II 2026 -2, Lucy Cavendish I 2025 -1, Lucy Cavendish I 2022 -1
+  latest: Lucy Cavendish I 42 → 42, Lucy Cavendish II 54 → 56
+
+lents women: 1981 to 2026, 27 races
+  lines: Lucy Cavendish 1, Hughes/Lucy 1, Hughes/Lucy 2, Hughes/Lucy 3, Lucy Cavendish 2
+  headships: none
+  blades: 5, spoons: 3
+  highest: 15, Hughes/Lucy I 2017
+  rises: Hughes/Lucy I 2016 +5, Lucy Cavendish I 2026 +4, Lucy Cavendish II 2025 +4
+  falls: Lucy Cavendish I 2000 -8, Lucy Cavendish I 1981 -5, Lucy Cavendish I 2019 -4
+  latest: Lucy Cavendish I 26 → 22, Lucy Cavendish II 46 → 47
+
+mays men: 2022 to 2026, 5 races
+  lines: Lucy Cavendish 1, Lucy Cavendish 2, Lucy Cavendish 3
+  headships: none
+  blades: 6, spoons: 1
+  highest: 43, Lucy Cavendish I 2026
+  rises: Lucy Cavendish I 2023 +6, Lucy Cavendish I 2024 +5, Lucy Cavendish II 2024 +5
+  falls: Lucy Cavendish II 2025 -4
+  latest: Lucy Cavendish I 47 → 43, Lucy Cavendish II 69 → 69, Lucy Cavendish III 82 → 78
+
+mays women: 1981 to 2026, 19 races
+  lines: Lucy Cavendish 1, Hughes/Lucy 1, Hughes/Lucy 2, Hughes/Lucy 3, Lucy Cavendish 2
+  headships: none
+  blades: 6, spoons: 2
+  highest: 22, Lucy Cavendish I 2022
+  rises: Hughes/Lucy II 2017 +6, Lucy Cavendish I 2022 +4, Lucy Cavendish II 2019 +4
+  falls: Lucy Cavendish I 1981 -5, Hughes/Lucy II 2013 -4, Lucy Cavendish I 1982 -4
+  latest: Lucy Cavendish I 24 → 27, Lucy Cavendish II 48 → 49

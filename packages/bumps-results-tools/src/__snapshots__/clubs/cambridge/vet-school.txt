@@ -1,0 +1,38 @@
+Veterinary School Boat Club (Cambridge, vet-school)
+current: true
+
+lents men: 1987 to 1995, 9 races
+  lines: Vet School 1
+  headships: none
+  blades: 3, spoons: 1
+  highest: 42, Vet School I 1993
+  rises: Vet School I 1991 +5, Vet School I 1990 +4, Vet School I 1988 +4
+  falls: Vet School I 1995 -4, Vet School I 1994 -3
+  latest: didn't race
+
+lents women: 1997 to 2002, 5 races
+  lines: Vet School 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 32, Vet School I 2002
+  rises: Vet School I 1997 +5, Vet School I 2002 +3, Vet School I 1999 +3
+  falls: none
+  latest: didn't race
+
+mays men: 1986 to 1998, 3 races
+  lines: Vet School 1
+  headships: none
+  blades: 0, spoons: 1
+  highest: 78, Vet School I 1994
+  rises: Vet School I 1998 +3, Vet School I 1994 +2
+  falls: Vet School I 1986 -4
+  latest: didn't race
+
+mays women: 1986 to 2024, 17 races
+  lines: Vet School 1
+  headships: none
+  blades: 1, spoons: 5
+  highest: 4, Vet School I 1990
+  rises: Vet School I 1987 +4, Vet School I 2008 +3, Vet School I 2006 +3
+  falls: Vet School I 2004 -6, Vet School I 2005 -4, Vet School I 1994 -4
+  latest: didn't race

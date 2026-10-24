@@ -1,0 +1,38 @@
+Queens' College Boat Club (Cambridge, queens)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: Queens' 1, Queens' 2, Queens' 3, Queens' and Corpus Christi 1, Queens' 4, Queens' 5
+  headships: 1968
+  blades: 34, spoons: 51
+  highest: 1, Queens' I 1968
+  rises: Queens' IV 1966 +7, Queens' I 2010 +6, Queens' IV 1973 +6
+  falls: Queens' IV 1996 -8, Queens' III 1989 -7, Queens' III 2014 -6
+  latest: Queens' I 13 → 14, Queens' II 38 → 36
+
+lents women: 1981 to 2026, 45 races
+  lines: Queens' 1, Queens' 2, Queens' 3
+  headships: none
+  blades: 5, spoons: 9
+  highest: 2, Queens' I 1995
+  rises: Queens' II 2019 +8, Queens' II 2003 +7, Queens' I 2011 +4
+  falls: Queens' I 2016 -6, Queens' II 2011 -6, Queens' II 2018 -5
+  latest: Queens' I 16 → 18, Queens' II 38 → 41
+
+mays men: 1831 April May to 2026, 237 races
+  lines: Queens' 1, Queens' 2, Queens' 3, Queens' 4, Queens' 5, Queens' 6, Queens' 7, Queens' 8, Queens' 9, Queens' 10
+  headships: 1968, 1963, 1962
+  blades: 52, spoons: 79
+  highest: 1, Queens' I 1968, Queens' I 1963, Queens' I 1962
+  rises: Queens' IV 1985 +10, Queens' I 1859 May +9, Queens' VI 1963 +8
+  falls: Queens' IV 1989 -8, Queens' I 1856 April -8, Queens' VI 1985 -6
+  latest: Queens' I 12 → 9, Queens' II 39 → 36, Queens' III 77 → 74
+
+mays women: 1981 to 2026, 44 races
+  lines: Queens' 1, Queens' 2, Queens' 3, Queens' 4, Queens' 5
+  headships: none
+  blades: 18, spoons: 15
+  highest: 4, Queens' I 1992
+  rises: Queens' II 2014 +5, Queens' II 1988 +5, Queens' II 1987 +5
+  falls: Queens' III 2009 -7, Queens' II 1993 -6, Queens' II 2026 -4
+  latest: Queens' I 12 → 15, Queens' II 40 → 44, Queens' III 52 → 56

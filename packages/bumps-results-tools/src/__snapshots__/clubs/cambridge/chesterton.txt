@@ -1,0 +1,20 @@
+Chesterton Rowing Club (Cambridge, chesterton)
+current: true
+
+town men: 1950 to 2026, 56 races
+  lines: Chesterton 1, Chesterton 2, Chesterton 3, Chesterton 4
+  headships: none
+  blades: 8, spoons: 10
+  highest: 3, Pye 1 1956, Pye 1 1955, Pye 1 1954
+  rises: Pye 1 1984 +6, Simoco 2 2004 +5, Simoco 2 2003 +5
+  falls: Chesterton 3 2009 -6, Simoco 2 2007 -6, Simoco 2 2001 -5
+  latest: Chesterton 1 10 → 8, Chesterton 2 30 → 27, Chesterton 3 47 → 49, Chesterton 4 53 → 57
+
+town women: 1983 to 2026, 37 races
+  lines: Chesterton 1, Chesterton 2, Chesterton 3, Chesterton 4
+  headships: none
+  blades: 5, spoons: 5
+  highest: 4, Pye 1 1992
+  rises: Pye 1 1990 +5, Pye 2 1990 +5, Chesterton 2 2025 +4
+  falls: Chesterton 3 2017 -4, Chesterton 2 2009 -4, Simoco 1 2007 -4
+  latest: Chesterton 1 12 → 13, Chesterton 2 28 → 28, Chesterton 3 38 → 38

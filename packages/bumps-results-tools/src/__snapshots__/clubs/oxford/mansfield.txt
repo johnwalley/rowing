@@ -1,0 +1,38 @@
+Mansfield College Boat Club (Oxford, mansfield)
+current: true
+
+torpids men: 1965 to 2026, 50 races
+  lines: Mansfield 1, Mansfield 2, Mansfield 3
+  headships: none
+  blades: 7, spoons: 1
+  highest: 15, Mansfield I 2017
+  rises: Mansfield I 1979 +7, Mansfield I 2015 +6, Mansfield II 2015 +5
+  falls: Mansfield I 2008 -6, Mansfield I 1992 -6, Mansfield I 2022 -5
+  latest: Mansfield I 28 → withdrew, Mansfield II 65 → withdrew
+
+torpids women: 1982 to 2026, 34 races
+  lines: Mansfield 1, Mansfield 2, Mansfield 3
+  headships: none
+  blades: 7, spoons: 3
+  highest: 17, Mansfield I 2011
+  rises: Mansfield I 1996 +5, Mansfield I 2023 +4, Mansfield II 2019 +4
+  falls: Mansfield II 2023 -12, Mansfield I 1991 -11, Mansfield I 2013 -7
+  latest: Mansfield I 22 → withdrew, Mansfield II 56 → withdrew
+
+eights men: 1965 to 2026, 60 races
+  lines: Mansfield 1, Mansfield 2, Mansfield 3
+  headships: none
+  blades: 10, spoons: 12
+  highest: 16, Mansfield I 2016
+  rises: Mansfield II 2015 +6, Mansfield II 2016 +5, Mansfield I 2003 +5
+  falls: Mansfield II 1976 -6, Mansfield I 2023 -4, Mansfield II 2019 -4
+  latest: Mansfield I 27 → 28, Mansfield II 63 → 59
+
+eights women: 1983 to 2026, 42 races
+  lines: Mansfield 1, Mansfield 2
+  headships: none
+  blades: 7, spoons: 4
+  highest: 16, Mansfield I 2017
+  rises: Mansfield I 2000 +5, Mansfield I 2016 +4, Mansfield II 2015 +4
+  falls: Mansfield II 2026 -5, Mansfield II 2025 -4, Mansfield I 2022 -4
+  latest: Mansfield I 23 → 25, Mansfield II 64 → 69

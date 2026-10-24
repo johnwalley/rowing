@@ -1,0 +1,38 @@
+Anglia Ruskin University Boat Club (Cambridge, anglia-ruskin)
+current: true
+
+lents men: 1988 to 2026, 31 races
+  lines: Anglia Ruskin 1, Anglia Ruskin 2, Anglia Ruskin 3
+  headships: none
+  blades: 6, spoons: 4
+  highest: 23, CCAT I 2004
+  rises: CCAT II 1996 +9, CCAT I 1990 +7, CCAT I 1993 +6
+  falls: Anglia Ruskin I 2014 -4, CCAT I 2007 -4, CCAT I 2006 -4
+  latest: Anglia Ruskin I 49 → 46
+
+lents women: 1984 to 2026, 34 races
+  lines: Anglia Ruskin 1, Anglia Ruskin 2, Anglia Ruskin 3
+  headships: none
+  blades: 5, spoons: 5
+  highest: 14, CCAT I 1998
+  rises: CCAT I 1995 +6, CCAT I 2007 +4, CCAT I 1998 +4
+  falls: CCAT I 1987 -7, Anglia Ruskin I 2025 -4, Anglia Ruskin I 2017 -4
+  latest: Anglia Ruskin I 48 → 51
+
+mays men: 1988 to 2026, 32 races
+  lines: Anglia Ruskin 1, Anglia Ruskin 2, Anglia Ruskin 3
+  headships: none
+  blades: 10, spoons: 2
+  highest: 24, CCAT I 2008, CCAT I 2005
+  rises: Anglia Ruskin II 2009 +7, CCAT II 1996 +6, CCAT I 1992 +6
+  falls: Anglia Ruskin I 2012 -4, Anglia Ruskin III 2009 -4, CCAT II 2002 -4
+  latest: Anglia Ruskin I 68 → 65
+
+mays women: 1983 to 2019, 34 races
+  lines: Anglia Ruskin 1, Anglia Ruskin 2, Anglia Ruskin 3
+  headships: none
+  blades: 6, spoons: 8
+  highest: 17, CCAT I 2002
+  rises: CCAT I 1983 +8, CCAT II 2003 +5, CCAT II 1995 +5
+  falls: Anglia Ruskin I 2016 -4, Anglia Ruskin I 2012 -4, Anglia Ruskin I 2011 -4
+  latest: didn't race

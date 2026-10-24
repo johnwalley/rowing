@@ -1,0 +1,11 @@
+Scouts (Cambridge, scouts)
+current: false
+
+town men: 1950 to 1979, 30 races
+  lines: Scouts 1, Scouts 2, Scouts 3, Scouts 4
+  headships: none
+  blades: 4, spoons: 12
+  highest: 2, Scouts 1 1973
+  rises: Scouts 3 1961 +5, Scouts 3 1978 +4, Scouts 1 1972 +4
+  falls: Scouts 1 1979 -4, Scouts 2 1977 -4, Scouts 1 1976 -4
+  latest: didn't race

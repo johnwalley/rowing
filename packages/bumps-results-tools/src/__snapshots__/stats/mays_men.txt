@@ -1,0 +1,133 @@
+headships
+1st and 3rd     55  2010
+Jesus           35  1972
+LMBC            31  2025
+Caius           21  2023
+Trinity Hall    20  1995
+Pembroke        10  1986
+Downing         6   1997
+Clare           5   1949
+Fitzwilliam     3   1971
+Queens'         3   1968
+Peterhouse      2   2026
+Emmanuel        1   2001
+Corpus Christi  1   1836
+Christ's        1   1833
+
+crewsEntered
+1st and 3rd                 1777
+LMBC                        1244
+Jesus                       878
+Trinity Hall                788
+Caius                       787
+Emmanuel                    764
+Christ's                    686
+Clare                       671
+Pembroke                    665
+Queens'                     641
+St Catharine's              630
+Magdalene                   572
+Corpus Christi              550
+Sidney Sussex               503
+Downing                     502
+Peterhouse                  454
+King's                      451
+Selwyn                      448
+Fitzwilliam                 375
+Churchill                   293
+Girton                      137
+Robinson                    116
+Darwin                      109
+Wolfson                     93
+St Edmund's                 74
+Homerton                    65
+Hughes Hall                 62
+Anglia Ruskin               59
+Clare Hall                  30
+Lady Somerset               28
+Addenbrooke's               25
+Cavendish                   23
+CUWBC                       12
+University                  11
+Lucy Cavendish              9
+Theological Colleges        8
+St. Batholemew's            7
+Rob Nines                   6
+Royal Air Force             6
+Ayerst Hall                 5
+London Hospital             4
+London School of Economics  4
+Vet School                  3
+Ancient Mariner             2
+Magdalene and Christ's      1
+Westcott House              1
+
+headDays
+1st and 3rd     418
+LMBC            187
+Jesus           170
+Caius           91
+Trinity Hall    89
+Pembroke        37
+Downing         28
+Peterhouse      17
+Queens'         17
+Clare           15
+Fitzwilliam     12
+Corpus Christi  3
+Emmanuel        3
+Christ's        1
+
+headLong
+1st and 3rd     67  1845 - 1851
+Jesus           67  1875 - 1886
+Trinity Hall    33  1890 - 1898
+LMBC            28  1854 - 1857
+Caius           22  2002 - 2007
+Pembroke        16  1931 - 1934
+Fitzwilliam     12  1969 - 1971
+Clare           11  1941 - 1944
+Peterhouse      10  1842
+Downing         9   1990 - 1992
+Queens'         5   1962 - 1963
+Corpus Christi  3   1836 - 1837
+Emmanuel        3   2001
+Christ's        1   1833
+
+bladesAwarded
+1st and 3rd           142
+LMBC                  113
+Jesus                 86
+Trinity Hall          73
+Caius                 71
+Pembroke              70
+Emmanuel              61
+Christ's              55
+St Catharine's        55
+Magdalene             53
+Queens'               52
+Clare                 50
+Sidney Sussex         50
+King's                49
+Fitzwilliam           49
+Churchill             47
+Corpus Christi        46
+Downing               44
+Peterhouse            43
+Selwyn                41
+Robinson              26
+Girton                19
+Hughes Hall           17
+Darwin                15
+Wolfson               15
+Homerton              15
+St Edmund's           13
+Anglia Ruskin         10
+Addenbrooke's         6
+Clare Hall            6
+Lucy Cavendish        6
+Lady Somerset         1
+St. Batholemew's      1
+Rob Nines             1
+University            1
+Theological Colleges  1

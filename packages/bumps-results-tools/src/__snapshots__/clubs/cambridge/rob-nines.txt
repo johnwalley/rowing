@@ -1,0 +1,11 @@
+Rob Nines (Cambridge, rob-nines)
+current: false
+
+mays men: 1941 to 1946, 6 races
+  lines: Rob Nines 1
+  headships: none
+  blades: 1, spoons: 0
+  highest: 22, Rob Nines I 1944
+  rises: Rob Nines I 1944 +3, Rob Nines I 1941 +2, Rob Nines I 1943 +1
+  falls: Rob Nines I 1945 -2, Rob Nines I 1942 -1
+  latest: didn't race

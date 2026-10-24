@@ -1,0 +1,11 @@
+Police (Cambridge, police)
+current: false
+
+town men: 1969 to 1982, 5 races
+  lines: Police 1
+  headships: none
+  blades: 1, spoons: 1
+  highest: 18, Police 1 1969
+  rises: Police 1 1969 +4, Police 1 1981 +1
+  falls: Police 1 1982 -6, Police 1 1971 -3, Police 1 1970 -3
+  latest: didn't race

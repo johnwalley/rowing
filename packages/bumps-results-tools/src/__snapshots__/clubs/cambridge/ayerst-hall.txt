@@ -1,0 +1,20 @@
+Ayerst Hall Boat Club (Cambridge, ayerst-hall)
+current: false
+
+lents men: 1889 to 1890, 2 races
+  lines: Ayerst Hall 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 30, Ayerst Hall I 1889
+  rises: none
+  falls: Ayerst Hall I 1890 -1
+  latest: didn't race
+
+mays men: 1888 to 1893, 5 races
+  lines: Ayerst Hall 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 26, Ayerst Hall I 1893, Ayerst Hall I 1888
+  rises: Ayerst Hall I 1893 +3, Ayerst Hall I 1888 +3, Ayerst Hall I 1892 +1
+  falls: Ayerst Hall I 1889 -2, Ayerst Hall I 1890 -1
+  latest: didn't race

@@ -1,0 +1,20 @@
+City of Cambridge Rowing Club (Cambridge, city)
+current: true
+
+town men: 1868 to 2026, 72 races
+  lines: City 1, City 3, City 2, City 4, City 5, Rob Roy/City 1, Rob Roy/City 2, Rob Roy/City 3, Rob Roy/City 4, Rob Roy/City 5, Rob Roy/City 6, Rob Roy/City 7, City 6, City 7, City 8, City 9, City/Netherhall 1, City 10, City 11, City 12, City 13, City 14, City 15, City 16, City 17
+  headships: 2026, 2025, 2024, 2023, 1982, 1981, 1980, 1975, 1964, 1961, 1960, 1959, 1958, 1957, 1956, 1955, 1954, 1953, 1952, 1951, 1868
+  blades: 69, spoons: 36
+  highest: 1, City 1 2026, City 1 2025, City 1 2024, City 1 2023, City 1 1982, City 1 1981, City 1 1980, City 1 1975, City 1 1964, City 1 1961, City 1 1960, City 1 1959, City 1 1958, City 1 1957, City 1 1956, City 1 1955, City 1 1954, City 1 1953, City 1 1952, City 1 1951, Cambridge Town Rowing Club 1 1868
+  rises: City 5 1994 +10, City 5 2009 +7, City 8 2024 +6
+  falls: City 5 1976 -13, City 7 1984 -8, City 4 1952 -7
+  latest: City 1 1 → 1, City 2 4 → 3, City 3 6 → 4, City 4 14 → 14, City 5 17 → 13, City 6 19 → 17, City 7 20 → 22, City 8 22 → 25, City 9 29 → 32, City 10 32 → 30, City 11 39 → 37, City 12 41 → 41, City 13 49 → 50, City 14 51 → 51, City 15 55 → 59, City 16 57 → 58
+
+town women: 1983 to 2026, 43 races
+  lines: City 1, City 2, City/CCAT 1, City 4, City 3, City 5, City 6, City 7, City 8, City 9, City 10, City 11, City 12, City 13
+  headships: 2026, 2025, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 1997, 1996, 1989, 1988, 1986, 1985, 1983
+  blades: 36, spoons: 22
+  highest: 1, City 1 2026, City 1 2025, City 1 2016, City 1 2015, City 1 2014, City 1 2013, City 1 2012, City 1 2011, City 1 2010, City 1 2009, City 1 2008, City 1 1997, City 1 1996, City 1 1989, City 1 1988, City 1 1986, City 1 1985, City 1 1983
+  rises: City 4 2026 +6, City 7 2026 +6, City 7 2012 +6
+  falls: City 6 2019 -5, City 8 2021 -4, City 7 2019 -4
+  latest: City 1 1 → 1, City 2 3 → 4, City 3 8 → 6, City 4 9 → 3, City 5 13 → 11, City 6 18 → 15, City 7 27 → 21, City 8 34 → 31, City 9 35 → 35, City 10 41 → 40, City 11 45 → 41, City 12 47 → 45, City 13 49 → 51

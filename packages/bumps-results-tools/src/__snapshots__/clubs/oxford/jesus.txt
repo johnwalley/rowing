@@ -1,0 +1,38 @@
+Jesus College Boat Club (Oxford, jesus)
+current: true
+
+torpids men: 1850 to 2026, 131 races
+  lines: Jesus 1, Jesus 2, Jesus 3, Jesus 4
+  headships: none
+  blades: 17, spoons: 7
+  highest: 6, Jesus I 1974
+  rises: Jesus I 2017 +7, Jesus I 1969 +7, Jesus III 1996 +6
+  falls: Jesus I 1986 -14, Jesus II 1991 -10, Jesus II 1984 -10
+  latest: Jesus I 11 → withdrew, Jesus II 43 → withdrew
+
+torpids women: 1978 to 2026, 42 races
+  lines: Jesus 1, Jesus 2, Jesus 3
+  headships: 1983, 1982, 1981, 1980
+  blades: 12, spoons: 2
+  highest: 1, Jesus I 1983, Jesus I 1982, Jesus I 1981, Jesus I 1980
+  rises: Jesus II 2012 +6, Jesus I 2017 +5, Jesus I 2013 +5
+  falls: Jesus I 1989 -11, Jesus II 1991 -9, Jesus II 1981 -9
+  latest: Jesus I 11 → withdrew
+
+eights men: 1815 to 2026, 165 races
+  lines: Jesus 1, Jesus 2, Jesus 3, Jesus 4, Jesus 5
+  headships: none
+  blades: 24, spoons: 38
+  highest: 2, Jesus I 1822, Jesus I 1815
+  rises: Jesus IV 2005 +10, Jesus III 2004 +7, Jesus IV 1970 +7
+  falls: Jesus IV 1955 -8, Jesus III 1951 -8, Jesus II 2026 -6
+  latest: Jesus I 14 → 16, Jesus II 58 → 64
+
+eights women: 1976 to 2026, 49 races
+  lines: Jesus 1, Jesus 2, Jesus 3
+  headships: none
+  blades: 10, spoons: 15
+  highest: 3, Jesus I 1982
+  rises: Jesus II 1992 +7, Jesus III 2025 +6, Jesus III 2013 +5
+  falls: Jesus II 2025 -8, Jesus II 1981 -5, Jesus I 2017 -4
+  latest: Jesus I 15 → 14, Jesus II 58 → 54

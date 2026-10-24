@@ -1,0 +1,20 @@
+Max Entropy (Cambridge, max-entropy)
+current: false
+
+town men: 1989 to 2008, 20 races
+  lines: Max Entropy 1, Max Entropy 2
+  headships: none
+  blades: 1, spoons: 4
+  highest: 12, Max Entropy 1 1999
+  rises: Maximum Entropy 1 1991 +4, Max Entropy 2 1998 +3, Maximum Entropy 2 1997 +3
+  falls: Max Entropy 1 2008 -4, Max Entropy 1 2001 -4, Max Entropy 2 2000 -4
+  latest: didn't race
+
+town women: 1992 to 2010, 6 races
+  lines: Max Entropy 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 14, Max Entropy 1 2007, Max Entropy 1 2006
+  rises: Max Entropy 1 2005 +6, Max Entropy 1 2007 +1, Max Entropy 1 2006 +1
+  falls: Maximum Entropy 1 1995 -5, Maximum Entropy 1 1992 -2, Max Entropy 1 2010 -1
+  latest: didn't race

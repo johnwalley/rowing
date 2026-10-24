@@ -1,0 +1,20 @@
+Mott MacDonald (Cambridge, mott-macdonald)
+current: false
+
+town men: 1976 to 1998, 22 races
+  lines: Mott MacDonald 1, Mott MacDonald 2, Mott MacDonald 3
+  headships: none
+  blades: 1, spoons: 7
+  highest: 6, MacDonalds 1 1978
+  rises: MacDonalds 1 1976 +7, Mott MacDonald 1 1997 +3, Macdonalds 2 1983 +3
+  falls: Macdonalds 1 1987 -6, Mott MacDonald 1 1992 -4, Mott Madcondald 1 1991 -4
+  latest: didn't race
+
+town women: 1983 to 1997, 10 races
+  lines: Mott MacDonald 1, Mott MacDonald 2
+  headships: none
+  blades: 0, spoons: 1
+  highest: 8, Macdonalds 1 1984
+  rises: Mott MacDonald 1 1991 +3, Macdonalds 1 1990 +3, Mott MacDonald 1 1996 +1
+  falls: Mott MacDonald 1 1992 -4, Macdonalds 1 1988 -3, Macdonalds 2 1983 -3
+  latest: didn't race

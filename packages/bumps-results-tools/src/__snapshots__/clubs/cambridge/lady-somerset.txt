@@ -1,0 +1,11 @@
+Lady Somerset Boat Club (Cambridge, lady-somerset)
+current: false
+
+mays men: 1845 February to 1862 February, 13 races
+  lines: Lady Somerset 1, Lady Somerset 2, Lady Somerset 3
+  headships: none
+  blades: 1, spoons: 2
+  highest: 14, Lady Somerset I 1861 February, Lady Somerset I 1860 May
+  rises: Lady Somerset I 1860 May +7, Lady Somerset II 1857 May +6, Lady Somerset II 1860 May +4
+  falls: Lady Somerset II 1860 February March -5, Lady Somerset II 1859 May -5, Lady Somerset I 1859 May -3
+  latest: didn't race

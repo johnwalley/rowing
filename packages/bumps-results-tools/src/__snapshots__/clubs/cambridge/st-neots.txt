@@ -1,0 +1,20 @@
+St Neots Rowing Club (Cambridge, st-neots)
+current: true
+
+town men: 1986 to 2026, 29 races
+  lines: St Neots 1, St Neots 2, St Neots 3, St Neots 4
+  headships: none
+  blades: 5, spoons: 2
+  highest: 2, St Neots 1 2017
+  rises: St Neots 1 2024 +5, St Neots 2 2016 +5, St Neots 3 2024 +4
+  falls: St Neots 1 2021 -4, St Neots 2 2019 -4, St Neots 2 2025 -3
+  latest: St Neots 1 13 → 11, St Neots 2 35 → 36
+
+town women: 2010 to 2026, 14 races
+  lines: St Neots 1, St Neots 2, St Neots 3
+  headships: none
+  blades: 1, spoons: 2
+  highest: 6, St Neots 1 2018, St Neots 1 2017, St Neots 1 2011
+  rises: St Neots 2 2011 +4, St Neots 1 2024 +3, St Neots 2 2014 +3
+  falls: St Neots 2 2021 -4, St Neots 1 2013 -4, St Neots 1 2023 -3
+  latest: St Neots 1 11 → 9, St Neots 2 39 → 37

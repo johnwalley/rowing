@@ -1,0 +1,38 @@
+Hughes Hall Boat Club (Cambridge, hughes-hall)
+current: true
+
+lents men: 1987 to 2026, 34 races
+  lines: Hughes Hall 1, Hughes Hall 2
+  headships: none
+  blades: 4, spoons: 3
+  highest: 23, Hughes Hall I 2020
+  rises: Hughes Hall I 2011 +8, Hughes Hall I 2013 +7, Hughes Hall I 1997 +7
+  falls: Hughes Hall I 2026 -4, Hughes Hall I 2015 -4, Hughes Hall I 1999 -4
+  latest: Hughes Hall I 25 → 29
+
+lents women: 1993 to 2026, 23 races
+  lines: Hughes Hall 1, Hughes/Lucy 1, Hughes/Lucy 2, Hughes Hall 2, Hughes/Lucy 3
+  headships: none
+  blades: 5, spoons: 2
+  highest: 15, Hughes/Lucy I 2017
+  rises: Hughes/Lucy I 2016 +5, Hughes Hall II 2025 +4, Hughes Hall I 2019 +4
+  falls: Hughes Hall II 2026 -4, Hughes Hall I 1993 -4, Hughes Hall I 2020 -3
+  latest: Hughes Hall I 31 → 29, Hughes Hall II 49 → 53
+
+mays men: 1979 to 2026, 42 races
+  lines: Hughes Hall 1, Hughes Hall 2, Hughes Hall 3
+  headships: none
+  blades: 17, spoons: 8
+  highest: 14, Hughes Hall I 2024, Hughes Hall I 2022
+  rises: Hughes Hall II 2009 +10, Hughes Hall I 2004 +9, Hughes Hall I 1993 +6
+  falls: Hughes Hall I 1991 -8, Hughes Hall I 1985 -5, Hughes Hall I 1984 -5
+  latest: Hughes Hall I 17 → 21, Hughes Hall II 59 → 61
+
+mays women: 1979 to 2026, 37 races
+  lines: Hughes Hall 1, Hughes/Lucy 1, Hughes/Lucy 2, Hughes Hall 2, Hughes/Lucy 3, Hughes Hall 3
+  headships: none
+  blades: 9, spoons: 8
+  highest: 23, Hughes Hall I 2026, Hughes Hall I 1979
+  rises: Hughes Hall I 2025 +6, Hughes/Lucy II 2017 +6, Hughes Hall II 2025 +5
+  falls: Hughes Hall III 2026 -9, Hughes Hall I 1984 -8, Hughes Hall I 1987 -6
+  latest: Hughes Hall I 26 → 23, Hughes Hall II 65 → 66, Hughes Hall III 72 → 81

@@ -1,0 +1,38 @@
+St Hugh's College Boat Club (Oxford, st-hughs)
+current: true
+
+torpids men: 1989 to 2026, 29 races
+  lines: St Hugh's 1, St Hugh's 2, St Hugh's 3, St Hugh's 4
+  headships: none
+  blades: 6, spoons: 3
+  highest: 16, St Hugh's I 2025
+  rises: St Hugh's II 2011 +8, St Hugh's I 2016 +5, St Hugh's I 2006 +5
+  falls: St Hugh's II 2017 -14, St Hugh's II 2018 -10, St Hugh's I 2015 -9
+  latest: St Hugh's I 16 → withdrew, St Hugh's II 52 → withdrew, St Hugh's III 71 → withdrew
+
+torpids women: 1979 to 2026, 40 races
+  lines: St Hugh's 1, St Hugh's 2, St Hugh's 3, St Hugh's 4, St Hugh's 5, St Hugh's 6
+  headships: 1985
+  blades: 12, spoons: 8
+  highest: 1, St Hugh's I 1985
+  rises: St Hugh's I 2016 +6, St Hugh's II 1987 +5, St Hugh's IV 1987 +5
+  falls: St Hugh's II 1989 -16, St Hugh's I 1993 -14, St Hugh's I 1992 -10
+  latest: St Hugh's I 23 → withdrew, St Hugh's II 44 → withdrew
+
+eights men: 1974 to 2026, 39 races
+  lines: St Hugh's 1, St Hugh's 2, St Hugh's 3, St Hugh's 4
+  headships: none
+  blades: 10, spoons: 4
+  highest: 17, St Hugh's I 2024, St Hugh's I 2019
+  rises: St Hugh's I 1990 +9, St Hugh's I 1989 +6, St Hugh's I 2016 +5
+  falls: St Hugh's II 2015 -8, St Hugh's III 2024 -4, St Hugh's II 2018 -4
+  latest: St Hugh's I 18 → 19
+
+eights women: 1976 to 2026, 49 races
+  lines: St Hugh's 1, St Hugh's 2, St Hugh's 3, St Hugh's 4, St Hugh's 5
+  headships: 1984, 1983, 1982, 1979
+  blades: 13, spoons: 17
+  highest: 1, St Hugh's I 1984, St Hugh's I 1983, St Hugh's I 1982, St Hugh's I 1979
+  rises: St Hugh's II 2018 +6, St Hugh's I 2014 +5, St Hugh's II 2014 +4
+  falls: St Hugh's II 1989 -6, St Hugh's III 1989 -5, St Hugh's III 2016 -4
+  latest: St Hugh's I 33 → 30, St Hugh's II 54 → 57

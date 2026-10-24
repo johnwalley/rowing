@@ -1,0 +1,38 @@
+Sidney Sussex Boat Club (Cambridge, sidney-sussex)
+current: true
+
+lents men: 1887 to 2026, 132 races
+  lines: Sidney Sussex 1, Sidney Sussex 2, Sidney Sussex 3, Sidney Sussex 4
+  headships: none
+  blades: 31, spoons: 41
+  highest: 6, Sidney Sussex I 1913
+  rises: Sidney Sussex I 1995 +7, Sidney Sussex III 1971 +6, Sidney Sussex III 1939 +6
+  falls: Sidney Sussex III 1972 -8, Sidney Sussex II 1986 -6, Sidney Sussex II 1985 -6
+  latest: Sidney Sussex I 28 → 30, Sidney Sussex II 46 → 43, Sidney Sussex III 55 → 55
+
+lents women: 1978 to 2026, 48 races
+  lines: Sidney Sussex 1, Sidney Sussex 2, Sidney Sussex 3
+  headships: none
+  blades: 7, spoons: 11
+  highest: 8, Sidney Sussex I 1989
+  rises: Sidney Sussex I 1989 +6, Sidney Sussex II 2020 +5, Sidney Sussex I 2022 +4
+  falls: Sidney Sussex II 1997 -6, Sidney Sussex II 1996 -6, Sidney Sussex I 2016 -4
+  latest: Sidney Sussex I 14 → 15
+
+mays men: 1837 April May to 2026, 219 races
+  lines: Sidney Sussex 1, Sidney Sussex 2, Sidney Sussex 3, Sidney Sussex 4, Sidney Sussex 5, Sidney Sussex 6
+  headships: none
+  blades: 50, spoons: 59
+  highest: 3, Sidney Sussex I 1848 May
+  rises: Sidney Sussex II 1948 +8, Sidney Sussex III 1993 +7, Sidney Sussex I 1846 March +7
+  falls: Sidney Sussex I 2023 -8, Sidney Sussex IV 2012 -8, Sidney Sussex II 1987 -8
+  latest: Sidney Sussex I 33 → 32, Sidney Sussex II 57 → 53, Sidney Sussex III 74 → 71
+
+mays women: 1977 to 2026, 48 races
+  lines: Sidney Sussex 1, Sidney Sussex 2, Sidney Sussex 3
+  headships: none
+  blades: 12, spoons: 12
+  highest: 9, Sidney Sussex I 1993
+  rises: Sidney Sussex III 2009 +11, Sidney Sussex II 1992 +7, Sidney Sussex I 2024 +4
+  falls: Sidney Sussex II 2017 -7, Sidney Sussex II 1998 -6, Sidney Sussex II 1984 -6
+  latest: Sidney Sussex I 19 → 16, Sidney Sussex II 46 → 43

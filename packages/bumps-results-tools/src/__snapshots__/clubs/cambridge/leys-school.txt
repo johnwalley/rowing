@@ -1,0 +1,11 @@
+The Leys School (Cambridge, leys-school)
+current: false
+
+town men: 1962 to 2005, 9 races
+  lines: Leys School 1, Leys School 2, Leys School 3, Leys School 4, Leys School 5, Leys School 6
+  headships: none
+  blades: 7, spoons: 1
+  highest: 2, Leys School 1 1969, Leys School 1 1968
+  rises: Leys School 1 1963 +7, Leys School 2 1963 +6, Leys School 1 1962 +6
+  falls: Leys School 4 1967 -4, Leys School 2 1967 -2, Leys School 5 1966 -2
+  latest: didn't race

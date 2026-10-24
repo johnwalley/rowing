@@ -1,0 +1,11 @@
+Peregrines (Cambridge, peregrines)
+current: true
+
+town women: 2025 to 2026, 2 races
+  lines: Peregrines 1, Peregrines 2
+  headships: none
+  blades: 1, spoons: 0
+  highest: 19, Peregrines 1 2026
+  rises: Peregrines 1 2026 +6, Peregrines 1 2025 +3, Peregrines 2 2026 +2
+  falls: none
+  latest: Peregrines 1 25 → 19, Peregrines 2 51 → 49

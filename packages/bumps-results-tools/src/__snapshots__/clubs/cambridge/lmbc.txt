@@ -1,0 +1,38 @@
+Lady Margaret Boat Club (Cambridge, lmbc)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: LMBC 1, LMBC 2, LMBC 3, LMBC 4, LMBC 5, LMBC 6, LMBC 7, LMBC 8
+  headships: 2025, 2024, 2023, 2022, 2020, 2018, 2017, 1990, 1981, 1980, 1979, 1978, 1977, 1976, 1975, 1966, 1965, 1954, 1950, 1949, 1943, 1920, 1903, 1897, 1889
+  blades: 70, spoons: 53
+  highest: 1, LMBC I 2025, LMBC I 2024, LMBC I 2023, LMBC I 2022, LMBC I 2020, LMBC I 2018, LMBC I 2017, LMBC I 1990, LMBC I 1981, LMBC I 1980, LMBC I 1979, LMBC I 1978, LMBC I 1977, LMBC I 1976, LMBC I 1975, LMBC I 1966, LMBC I 1965, LMBC I 1954, LMBC I 1950, LMBC I 1949, LMBC I 1943, LMBC I 1920, LMBC I 1903, LMBC I 1897, LMBC I 1889
+  rises: LMBC V 1983 +6, LMBC II 1973 +6, LMBC VI 1958 +6
+  falls: LMBC VI 1962 -9, LMBC III 2011 -6, LMBC II 1999 -6
+  latest: LMBC I 1 → 2, LMBC II 19 → 21, LMBC III 47 → 49
+
+lents women: 1983 to 2026, 43 races
+  lines: LMBC 1, LMBC 2, LMBC 3
+  headships: 1993, 1992
+  blades: 9, spoons: 5
+  highest: 1, LMBC I 1993, LMBC I 1992
+  rises: LMBC I 2019 +4, LMBC II 2008 +4, LMBC II 2005 +4
+  falls: LMBC II 2019 -4, LMBC II 2015 -4, LMBC II 2004 -4
+  latest: LMBC I 2 → 5, LMBC II 34 → 35
+
+mays men: 1827 February March to 2026, 252 races
+  lines: LMBC 1, LMBC 2, St. John's Corsair 1, St. John's 'Tally-Ho' 1, 2nd St. John's 1, 3rd St. John's 1, LMBC 3, LMBC 4, St. John's Argo 1, 2nd St. John's 2, LMBC 5, LMBC 6, St. John's 1, LMBC 7, LMBC 8, LMBC 9, LMBC 10, LMBC 11, LMBC 12, LMBC 13, LMBC 14, LMBC 15
+  headships: 2025, 2024, 2018, 2017, 2016, 1989, 1988, 1983, 1981, 1980, 1979, 1975, 1974, 1961, 1960, 1959, 1954, 1953, 1952, 1951, 1950, 1926, 1872 May, 1857 May, 1856 April, 1855, 1854 May, 1838 May, 1837 April May, 1829 May, 1828 April May November
+  blades: 113, spoons: 87
+  highest: 1, LMBC I 2025, LMBC I 2024, LMBC I 2018, LMBC I 2017, LMBC I 2016, LMBC I 1989, LMBC I 1988, LMBC I 1983, LMBC I 1981, LMBC I 1980, LMBC I 1979, LMBC I 1975, LMBC I 1974, LMBC I 1961, LMBC I 1960, LMBC I 1959, LMBC I 1954, LMBC I 1953, LMBC I 1952, LMBC I 1951, LMBC I 1950, LMBC I 1926, LMBC I 1873 March, LMBC I 1872 May, LMBC I 1858 March, LMBC I 1857 March, LMBC I 1857 May, LMBC I 1856 February, LMBC I 1856 April, LMBC I 1855, LMBC I 1854 May, LMBC I 1851 March, LMBC I 1838 March, LMBC I 1838 May, LMBC I 1837 February March, LMBC I 1837 April May, LMBC I 1831 February March, LMBC I 1830 February March, LMBC I 1829 February March April, LMBC I 1829 May, LMBC I 1828 April May November
+  rises: St. John's Argo I 1842 April May +9, LMBC VII 2002 +8, LMBC II 1858 May +7
+  falls: LMBC V 1948 -8, LMBC III 1851 March -8, LMBC IV 2018 -7
+  latest: LMBC I 1 → 3, LMBC II 13 → 17, LMBC III 51 → 54, LMBC IV 71 → 75
+
+mays women: 1983 to 2026, 42 races
+  lines: LMBC 1, LMBC 2, LMBC 3, LMBC 4, LMBC 5, LMBC 6
+  headships: 1992, 1991
+  blades: 19, spoons: 11
+  highest: 1, LMBC I 1992, LMBC I 1991
+  rises: LMBC I 1984 +6, LMBC I 2017 +4, LMBC III 2012 +4
+  falls: LMBC III 2018 -4, LMBC I 2012 -4, LMBC II 2011 -4
+  latest: LMBC I 6 → 6, LMBC II 37 → 39, LMBC III 59 → 62

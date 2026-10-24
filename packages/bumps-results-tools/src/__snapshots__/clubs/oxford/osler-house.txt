@@ -1,0 +1,38 @@
+Osler House Boat Club (Oxford, osler-house)
+current: true
+
+torpids men: 1969 to 2023, 34 races
+  lines: Osler House 1, Osler House 2, Osler House 3, Osler-Green 1, Osler-Green 2
+  headships: none
+  blades: 12, spoons: 1
+  highest: 16, Osler House I 1980, Osler House I 1979
+  rises: Osler House I 1970 +10, Osler House I 1969 +8, Osler-Green II 1996 +7
+  falls: Osler House II 1983 -18, Osler-Green I 2003 -12, Osler House I 1988 -11
+  latest: didn't race
+
+torpids women: 1980 to 2023, 30 races
+  lines: Osler House 1, Osler House 2, Osler House 3, Osler-Green 1, Osler-Green 2
+  headships: 1999, 1998, 1997, 1996, 1995, 1989, 1988, 1986, 1984
+  blades: 18, spoons: 2
+  highest: 1, Osler-Green I 1999, Osler-Green I 1998, Osler-Green I 1997, Osler-Green I 1996, Osler House I 1995, Osler House I 1989, Osler House I 1988, Osler House I 1986, Osler House I 1984
+  rises: Osler House II 1988 +6, Osler House I 2022 +5, Osler House I 2021 +5
+  falls: Osler-Green I 2008 -7, Osler House I 2012 -5, Osler House I 2011 -5
+  latest: didn't race
+
+eights men: 1968 to 2024, 51 races
+  lines: Osler House 1, Osler House 2, Osler House 3, Osler House 4, Osler-Green 1, Osler-Green 2, Osler-Green 3
+  headships: none
+  blades: 18, spoons: 7
+  highest: 16, Osler House I 1983
+  rises: Osler House I 1972 +7, Osler House I 1968 +6, Osler House I 2015 +5
+  falls: Osler-Green I 2008 -6, Osler-Green I 2002 -5, Osler House I 2022 -4
+  latest: didn't race
+
+eights women: 1979 to 2023, 39 races
+  lines: Osler House 1, Osler House 2, Osler House 3, Osler-Green 1, Osler-Green 2, Osler-Green 3
+  headships: 1999, 1998, 1997, 1996, 1995, 1994, 1989, 1988, 1985
+  blades: 19, spoons: 8
+  highest: 1, Osler-Green I 1999, Osler-Green I 1998, Osler-Green I 1997, Osler-Green I 1996, Osler House I 1995, Osler House I 1994, Osler House I 1989, Osler House I 1988, Osler House I 1985
+  rises: Osler House II 1995 +6, Osler House II 1986 +6, Osler House I 1980 +5
+  falls: Osler-Green II 2005 -10, Osler House I 2016 -4, Osler House I 2013 -4
+  latest: didn't race

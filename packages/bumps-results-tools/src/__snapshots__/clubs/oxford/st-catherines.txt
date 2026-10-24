@@ -1,0 +1,38 @@
+St Catherine's College Boat Club (Oxford, st-catherines)
+current: true
+
+torpids men: 1876 to 2026, 127 races
+  lines: St Catherine's 1, St Catherine's 2, St Catherine's 3, St Catherine's 4
+  headships: none
+  blades: 12, spoons: 14
+  highest: 3, St Catherine's I 2022, St Catherine's I 2021
+  rises: St Catherine's II 1971 +9, St Catherine's II 1968 +7, St Catherine's II 2011 +6
+  falls: St Catherine's I 1975 -11, St Catherine's I 2025 -10, St Catherine's II 2023 -9
+  latest: St Catherine's I 19 → withdrew, St Catherine's II 41 → withdrew
+
+torpids women: 1978 to 2026, 42 races
+  lines: St Catherine's 1, St Catherine's 2, St Catherine's 3
+  headships: 2009, 2008, 2001
+  blades: 7, spoons: 6
+  highest: 1, St Catherine's I 2009, St Catherine's I 2008, St Catherine's I 2001
+  rises: St Catherine's I 2013 +5, St Catherine's III 2009 +5, St Catherine's I 2006 +5
+  falls: St Catherine's I 2017 -10, St Catherine's I 2015 -10, St Catherine's I 2023 -9
+  latest: St Catherine's I 28 → withdrew, St Catherine's II 58 → withdrew
+
+eights men: 1876 to 2026, 137 races
+  lines: St Catherine's 1, St Catherine's 2, St Catherine's 3, St Catherine's 4, St Catherine's 5, St Catherine's 6
+  headships: none
+  blades: 26, spoons: 39
+  highest: 5, St Catherine's I 2006
+  rises: St Catherine's III 2018 +8, St Catherine's III 1950 +8, St Catherine's III 1988 +7
+  falls: St Catherine's III 1953 -6, St Catherine's I 1937 -6, St Catherine's II 1937 -6
+  latest: St Catherine's I 20 → 22, St Catherine's II 52 → 52, St Catherine's III 83 → 84
+
+eights women: 1976 to 2026, 49 races
+  lines: St Catherine's 1, St Catherine's 2, St Catherine's 3, St Catherine's 4
+  headships: none
+  blades: 9, spoons: 19
+  highest: 2, St Catherine's I 2001, St Catherine's I 1996
+  rises: St Catherine's II 2018 +6, St Catherine's II 2019 +5, St Catherine's I 2022 +4
+  falls: St Catherine's II 2012 -8, St Catherine's II 2005 -6, St Catherine's II 1992 -6
+  latest: St Catherine's I 26 → 23, St Catherine's II 63 → 63

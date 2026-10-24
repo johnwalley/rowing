@@ -1,0 +1,38 @@
+Robinson College Boat Club (Cambridge, robinson)
+current: true
+
+lents men: 1981 to 2026, 45 races
+  lines: Robinson 1, Robinson 2, Robinson 3
+  headships: none
+  blades: 9, spoons: 9
+  highest: 5, Robinson I 2019
+  rises: Robinson II 1995 +8, Robinson II 1990 +8, Robinson II 2017 +6
+  falls: Robinson II 2011 -8, Robinson III 1996 -5, Robinson I 2025 -4
+  latest: Robinson I 15 → 13, Robinson II 53 → 54
+
+lents women: 1982 to 2026, 44 races
+  lines: Robinson 1, Robinson 2
+  headships: none
+  blades: 6, spoons: 5
+  highest: 14, Robinson I 1992
+  rises: Robinson I 2016 +6, Robinson I 1992 +5, Robinson I 2003 +4
+  falls: Robinson I 2013 -6, Robinson I 2024 -4, Robinson I 1997 -4
+  latest: Robinson I 33 → 32
+
+mays men: 1981 to 2026, 44 races
+  lines: Robinson 1, Robinson 2, Robinson 3, Robinson 4, Robinson 5
+  headships: none
+  blades: 26, spoons: 15
+  highest: 4, Robinson I 2003
+  rises: Robinson III 2000 +7, Robinson II 1989 +7, Robinson II 1986 +7
+  falls: Robinson II 2007 -5, Robinson II 2024 -4, Robinson II 2023 -4
+  latest: Robinson I 16 → 19, Robinson II 48 → 51, Robinson III 81 → 84
+
+mays women: 1981 to 2026, 44 races
+  lines: Robinson 1, Robinson 2, Robinson 3
+  headships: none
+  blades: 8, spoons: 15
+  highest: 13, Robinson I 2000
+  rises: Robinson II 1992 +8, Robinson II 1985 +6, Robinson I 1981 +5
+  falls: Robinson II 1993 -10, Robinson I 1983 -7, Robinson I 1982 -5
+  latest: Robinson I 31 → 29

@@ -1,0 +1,38 @@
+St John's College Boat Club (Oxford, st-johns)
+current: true
+
+torpids men: 1840 to 2026, 155 races
+  lines: St John's 1, St John's 2, St John's 3, St John's 4, St John's 5
+  headships: 1967, 1961, 1946
+  blades: 29, spoons: 24
+  highest: 1, St John's I 1967, St John's I 1961, St John's I 1946
+  rises: St John's II 1978 +13, St John's II 1937 +9, St John's II 1955 +8
+  falls: St John's III 2016 -10, St John's II 1976 -10, St John's II 1987 -9
+  latest: St John's I 26 → withdrew, St John's II 62 → withdrew
+
+torpids women: 1981 to 2026, 37 races
+  lines: St John's 1, St John's 2, St John's 3
+  headships: none
+  blades: 11, spoons: 4
+  highest: 3, St John's I 2015
+  rises: St John's I 2012 +6, St John's I 1996 +6, St John's II 2012 +5
+  falls: St John's II 2003 -16, St John's I 2022 -9, St John's I 2019 -9
+  latest: St John's I 29 → withdrew, St John's II 52 → withdrew
+
+eights men: 1830 to 2026, 174 races
+  lines: St John's 1, St John's 2, St John's 3, St John's 4, St John's 5, St John's 6
+  headships: none
+  blades: 27, spoons: 40
+  highest: 2, St John's I 1870
+  rises: St John's I 1845 +8, St John's III 1973 +7, St John's II 1957 +7
+  falls: St John's V 1991 -6, St John's III 1982 -6, St John's II 1952 -6
+  latest: St John's I 23 → 25, St John's II 68 → 65
+
+eights women: 1981 to 2026, 44 races
+  lines: St John's 1, St John's 2, St John's 3, St John's 4
+  headships: 2013
+  blades: 11, spoons: 11
+  highest: 1, St John's I 2013
+  rises: St John's II 2005 +11, St John's III 2004 +6, St John's I 1986 +6
+  falls: St John's II 1992 -6, St John's I 2026 -4, St John's I 2019 -4
+  latest: St John's I 13 → 17, St John's II 48 → 51, St John's III 72 → 67

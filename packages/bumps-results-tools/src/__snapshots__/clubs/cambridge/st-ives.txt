@@ -1,0 +1,20 @@
+St Ives Rowing Club (Cambridge, st-ives)
+current: false
+
+town men: 1979 to 2014, 23 races
+  lines: St Ives 1, St Ives 2, St Ives 3
+  headships: none
+  blades: 6, spoons: 2
+  highest: 4, St Ives 1 1981
+  rises: St Ives 2 2004 +6, St Ives 1 1993 +6, St Ives 1 1987 +5
+  falls: St Ives 1 2009 -4, St Ives 1 2007 -4, St Ives 1 2010 -3
+  latest: didn't race
+
+town women: 2002 to 2007, 6 races
+  lines: St Ives 1, St Ives/Ely 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 15, St Ives 1 2003
+  rises: St Ives/Ely 1 2007 +1, St Ives 1 2003 +1, St Ives 1 2002 +1
+  falls: St Ives 1 2006 -2, St Ives 1 2004 -2, St Ives 1 2005 -1
+  latest: didn't race

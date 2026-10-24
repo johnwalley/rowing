@@ -1,0 +1,11 @@
+Beehives (Cambridge, beehives)
+current: false
+
+town men: 1950 to 1965, 15 races
+  lines: Beehives 1, Beehives 2
+  headships: none
+  blades: 0, spoons: 2
+  highest: 7, Beehives 1 1951, Beehives 1 1950
+  rises: Beehives 1 1955 +3, Beehives 1 1964 +2, Beehives 1 1950 +2
+  falls: Beehives 1 1963 -4, Beehives 1 1954 -4, Beehives 2 1953 -4
+  latest: didn't race

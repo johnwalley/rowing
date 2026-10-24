@@ -1,0 +1,20 @@
+Isle of Ely Rowing Club (Cambridge, isle-of-ely)
+current: true
+
+town men: 2004 to 2026, 17 races
+  lines: Isle of Ely 1, Isle of Ely 2
+  headships: none
+  blades: 2, spoons: 2
+  highest: 27, Isle of Ely 1 2005
+  rises: Isle of Ely 2 2026 +4, Isle of Ely 1 2004 +4, Isle of Ely 1 2023 +3
+  falls: Isle of Ely 1 2009 -4, Isle of Ely 1 2006 -4, Isle of Ely 1 2026 -3
+  latest: Isle of Ely 1 36 → 39, Isle of Ely 2 60 → 56
+
+town women: 2005 to 2026, 18 races
+  lines: Isle of Ely 1, St Ives/Ely 1, Isle of Ely 2
+  headships: none
+  blades: 1, spoons: 2
+  highest: 13, Isle of Ely 1 2025, Isle of Ely 1 2019
+  rises: Isle of Ely 1 2018 +4, Isle of Ely 1 2017 +4, Isle of Ely 1 2024 +3
+  falls: Isle of Ely 2 2024 -4, Isle of Ely 1 2012 -4, Isle of Ely 1 2011 -4
+  latest: Isle of Ely 1 14 → 14

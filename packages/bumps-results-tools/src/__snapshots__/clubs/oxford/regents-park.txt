@@ -1,0 +1,38 @@
+Regent's Park College Boat Club (Oxford, regents-park)
+current: true
+
+torpids men: 1978 to 2026, 38 races
+  lines: Regent's Park 1, Regent's Park 2
+  headships: none
+  blades: 3, spoons: 3
+  highest: 39, Regent's Park I 1979
+  rises: Regent's Park I 1978 +10, Regent's Park I 2006 +5, Regent's Park I 2019 +4
+  falls: Regent's Park I 2015 -8, Regent's Park I 1996 -6, Regent's Park I 1989 -6
+  latest: Regent's Park I 46 → withdrew
+
+torpids women: 1991 to 2023, 15 races
+  lines: Regent's Park 1
+  headships: none
+  blades: 3, spoons: 1
+  highest: 36, Regent's Park I 1997
+  rises: Regent's Park I 2016 +5, Regent's Park I 2015 +5, Regent's Park I 2013 +4
+  falls: Regent's Park I 2023 -11, Regent's Park I 2006 -5, Regent's Park I 2022 -3
+  latest: didn't race
+
+eights men: 1970 to 2026, 51 races
+  lines: Regent's Park 1
+  headships: none
+  blades: 5, spoons: 4
+  highest: 46, Regent's Park I 2023
+  rises: Regent's Park I 1975 +6, Regent's Park I 2000 +5, Regent's Park I 2006 +4
+  falls: Regent's Park I 2004 -6, Regent's Park I 2026 -4, Regent's Park I 2024 -4
+  latest: Regent's Park I 54 → 58
+
+eights women: 1985 to 2026, 34 races
+  lines: Regent's Park 1
+  headships: none
+  blades: 5, spoons: 1
+  highest: 41, Regent's Park I 1997
+  rises: Regent's Park I 2015 +5, Regent's Park I 1994 +5, Regent's Park I 2019 +4
+  falls: Regent's Park I 2017 -4, Regent's Park I 2026 -3, Regent's Park I 2025 -3
+  latest: Regent's Park I 56 → 59

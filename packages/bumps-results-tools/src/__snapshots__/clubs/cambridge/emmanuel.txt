@@ -1,0 +1,38 @@
+Emmanuel Boat Club (Cambridge, emmanuel)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: Emmanuel 1, Emmanuel 2, Emmanuel 3, Emmanuel 4, Emmanuel 5, Emmanuel 6
+  headships: 2001, 1930
+  blades: 41, spoons: 48
+  highest: 1, Emmanuel I 2001, Emmanuel I 1930
+  rises: Emmanuel IV 1985 +8, Emmanuel III 1929 +7, Emmanuel III 2010 +6
+  falls: Emmanuel IV 1986 -6, Emmanuel IV 1984 -6, Emmanuel III 1977 -6
+  latest: Emmanuel I 7 → 5, Emmanuel II 30 → 32, Emmanuel III 52 → 48
+
+lents women: 1980 to 2026, 46 races
+  lines: Emmanuel 1, Emmanuel 2, Emmanuel 3, Emmanuel 4
+  headships: 2009, 2002, 2000, 1998, 1997, 1995, 1994, 1991, 1990, 1989, 1988
+  blades: 16, spoons: 5
+  highest: 1, Emmanuel I 2009, Emmanuel I 2002, Emmanuel I 2000, Emmanuel I 1998, Emmanuel I 1997, Emmanuel I 1995, Emmanuel I 1994, Emmanuel I 1991, Emmanuel I 1990, Emmanuel I 1989, Emmanuel I 1988
+  rises: Emmanuel III 2026 +4, Emmanuel III 2020 +4, Emmanuel II 2008 +4
+  falls: Emmanuel II 1990 -6, Emmanuel II 2026 -4, Emmanuel III 2024 -4
+  latest: Emmanuel I 8 → 10, Emmanuel II 29 → 33, Emmanuel III 44 → 40, Emmanuel IV 60 → 63
+
+mays men: 1831 February March to 2026, 237 races
+  lines: Emmanuel 1, Emmanuel 2, Emmanuel 3, Emmanuel 4, Emmanuel 5, Emmanuel 6, Emmanuel 7, Emmanuel 8, Emmanuel 9
+  headships: 2001
+  blades: 61, spoons: 77
+  highest: 1, Emmanuel I 2001
+  rises: Emmanuel VI 1985 +8, Emmanuel II 2018 +7, Emmanuel VI 1969 +7
+  falls: Emmanuel V 1968 -7, Emmanuel II 1860 May -7, Emmanuel IV 1995 -6
+  latest: Emmanuel I 4 → 4, Emmanuel II 25 → 27, Emmanuel III 41 → 38, Emmanuel IV 61 → 58
+
+mays women: 1980 to 2026, 45 races
+  lines: Emmanuel 1, Emmanuel 2, Emmanuel 3, Emmanuel 4, Emmanuel 5
+  headships: 2004, 1999, 1996, 1995
+  blades: 23, spoons: 8
+  highest: 1, Emmanuel I 2004, Emmanuel I 1999, Emmanuel I 1996, Emmanuel I 1995
+  rises: Emmanuel II 1994 +7, Emmanuel III 2007 +6, Emmanuel IV 2006 +6
+  falls: Emmanuel III 1996 -6, Emmanuel I 1983 -6, Emmanuel IV 2018 -5
+  latest: Emmanuel I 4 → 8, Emmanuel II 32 → 36, Emmanuel III 47 → 50, Emmanuel IV 81 → 82

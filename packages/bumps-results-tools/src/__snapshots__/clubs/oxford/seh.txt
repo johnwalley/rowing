@@ -1,0 +1,38 @@
+St Edmund Hall Boat Club (Oxford, seh)
+current: true
+
+torpids men: 1901 to 2026, 100 races
+  lines: S.E.H. 1, S.E.H. 2, S.E.H. 3, S.E.H. 4
+  headships: 1966, 1965, 1964, 1962, 1960, 1939
+  blades: 29, spoons: 12
+  highest: 1, S.E.H. I 1966, S.E.H. I 1965, S.E.H. I 1964, S.E.H. I 1962, S.E.H. I 1960, S.E.H. I 1939
+  rises: S.E.H. III 1980 +8, S.E.H. II 2009 +7, S.E.H. II 2013 +6
+  falls: S.E.H. II 1997 -11, S.E.H. II 2008 -10, S.E.H. III 2022 -9
+  latest: S.E.H. I 21 → withdrew, S.E.H. II 40 → withdrew
+
+torpids women: 1980 to 2026, 38 races
+  lines: S.E.H. 1, S.E.H. 2, S.E.H. 3
+  headships: none
+  blades: 8, spoons: 3
+  highest: 2, S.E.H. I 2011
+  rises: S.E.H. I 2021 +6, S.E.H. II 2021 +6, S.E.H. II 2023 +5
+  falls: S.E.H. II 2009 -15, S.E.H. II 1987 -14, S.E.H. I 2019 -11
+  latest: S.E.H. I 19 → withdrew, S.E.H. II 45 → withdrew
+
+eights men: 1861 to 2026, 142 races
+  lines: S.E.H. 1, S.E.H. 2, S.E.H. 3, S.E.H. 4, S.E.H. 5, S.E.H. 6, S.E.H. 7, S.E.H. 8, S.E.H. 9
+  headships: 1965, 1964, 1961, 1960, 1959
+  blades: 32, spoons: 35
+  highest: 1, S.E.H. I 1965, S.E.H. I 1964, S.E.H. I 1961, S.E.H. I 1960, S.E.H. I 1959
+  rises: S.E.H. III 2025 +11, S.E.H. II 1965 +7, S.E.H. I 1934 +7
+  falls: S.E.H. IV 1969 -8, S.E.H. II 2026 -7, S.E.H. IV 1998 -6
+  latest: S.E.H. I 12 → 9, S.E.H. II 46 → 53, S.E.H. III 60 → 60
+
+eights women: 1981 to 2026, 44 races
+  lines: S.E.H. 1, S.E.H. 2, S.E.H. 3
+  headships: 2009, 2008, 2007, 2006
+  blades: 16, spoons: 5
+  highest: 1, S.E.H. I 2009, S.E.H. I 2008, S.E.H. I 2007, S.E.H. I 2006
+  rises: S.E.H. II 2018 +6, S.E.H. I 2004 +6, S.E.H. II 1996 +5
+  falls: S.E.H. II 2013 -6, S.E.H. I 2025 -4, S.E.H. I 2016 -4
+  latest: S.E.H. I 9 → 7, S.E.H. II 50 → 46, S.E.H. III 75 → 74

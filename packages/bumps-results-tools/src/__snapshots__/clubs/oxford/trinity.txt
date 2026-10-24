@@ -1,0 +1,38 @@
+Trinity College Boat Club (Oxford, trinity)
+current: true
+
+torpids men: 1838 to 2026, 159 races
+  lines: Trinity 1, Trinity 2, Trinity 3, Trinity 4
+  headships: 1880, 1876
+  blades: 20, spoons: 13
+  highest: 1, Trinity I 1880, Trinity I 1876
+  rises: Trinity II 1948 +8, Trinity II 1999 +7, Trinity II 1996 +7
+  falls: Trinity III 2023 -17, Trinity I 2023 -11, Trinity II 1979 -10
+  latest: Trinity I 23 → withdrew, Trinity II 38 → withdrew
+
+torpids women: 1981 to 2026, 39 races
+  lines: Trinity 1, Trinity 2, Trinity 3
+  headships: none
+  blades: 10, spoons: 2
+  highest: 6, Trinity I 1998
+  rises: Trinity II 2017 +6, Trinity I 2013 +6, Trinity III 2009 +6
+  falls: Trinity I 1999 -11, Trinity I 2001 -10, Trinity II 2013 -8
+  latest: Trinity I 15 → withdrew, Trinity II 69 → withdrew
+
+eights men: 1828 to 2026, 178 races
+  lines: Trinity 1, Trinity 2, Trinity 3, Trinity 4, Trinity 5
+  headships: 1949, 1948, 1947, 1946, 1939, 1938, 1864, 1863, 1862, 1861
+  blades: 31, spoons: 33
+  highest: 1, Trinity I 1949, Trinity I 1948, Trinity I 1947, Trinity I 1946, Trinity I 1939, Trinity I 1938, Trinity I 1864, Trinity I 1863, Trinity I 1862, Trinity I 1861
+  rises: Trinity III 1973 +7, Trinity II 1948 +7, Trinity II 1997 +6
+  falls: Trinity I 1873 -8, Trinity III 1976 -7, Trinity III 1968 -6
+  latest: Trinity I 9 → 12
+
+eights women: 1981 to 2026, 44 races
+  lines: Trinity 1, Trinity 2, Trinity 3
+  headships: none
+  blades: 5, spoons: 7
+  highest: 18, Trinity I 2023, Trinity I 2017
+  rises: Trinity I 1991 +6, Trinity I 2023 +4, Trinity II 2019 +4
+  falls: Trinity I 2024 -6, Trinity I 2026 -4, Trinity I 2025 -4
+  latest: Trinity I 28 → 32

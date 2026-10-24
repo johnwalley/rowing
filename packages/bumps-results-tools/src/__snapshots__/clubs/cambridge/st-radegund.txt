@@ -1,0 +1,20 @@
+St Radegund Boat Club (Cambridge, st-radegund)
+current: true
+
+town men: 1998 to 2026, 26 races
+  lines: St Radegund 1, St Radegund 2, St Radegund 3
+  headships: none
+  blades: 8, spoons: 6
+  highest: 16, St Radegund 1 2025
+  rises: St Radegund 2 2004 +6, St Radegund 2 2006 +5, St Radegund 1 2023 +4
+  falls: St Radegund 1 2016 -6, St Radegund 2 2017 -4, St Radegund 2 2010 -4
+  latest: St Radegund 1 16 → 19, St Radegund 2 46 → 46
+
+town women: 2002 to 2026, 21 races
+  lines: St Radegund 1, St Radegund 2, St Radegund 3
+  headships: none
+  blades: 1, spoons: 6
+  highest: 15, St Radegund 1 2013
+  rises: St Radegund 3 2025 +5, St Radegund 1 2013 +5, St Radegund 1 2026 +3
+  falls: St Radegund 2 2012 -6, St Radegund 2 2026 -4, St Radegund 1 2018 -4
+  latest: St Radegund 1 32 → 29, St Radegund 2 42 → 46
