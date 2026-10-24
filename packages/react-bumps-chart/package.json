@@ -77,7 +77,7 @@
     "d3-array": "^2.0.0",
     "d3-delaunay": "^6.0.4",
     "d3-scale": "^3.0.0",
-    "d3-shape": "^2.0.0",
+    "d3-shape": "^3.2.0",
     "lodash": "^4.17.21",
     "react-rowing-blades": "workspace:^"
   },
