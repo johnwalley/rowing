@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.14.1
+
+### Patch Changes
+
+- 771b9be: Point `repository` at johnwalley/rowing, where the package now lives alongside the other rowing packages.
+- Updated dependencies [771b9be]
+  - react-rowing-blades@2.5.1
+
 ## [1.14.0](https://github.com/johnwalley/react-bumps-chart/compare/v1.13.1...v1.14.0) (2026-10-18)
 
 

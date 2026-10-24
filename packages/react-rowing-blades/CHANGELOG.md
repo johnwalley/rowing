@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.5.1
+
+### Patch Changes
+
+- 771b9be: Point `repository` at johnwalley/rowing, where the package now lives alongside the other rowing packages.
+
 ## [2.5.0](https://github.com/johnwalley/react-rowing-blades/compare/v2.4.2...v2.5.0) (2026-01-15)
 
 
