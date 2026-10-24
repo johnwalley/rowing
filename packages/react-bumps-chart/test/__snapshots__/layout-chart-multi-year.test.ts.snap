@@ -1,0 +1,56 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`layoutChartMultiYear > mays1845_1846 1`] = `
+{
+  "divisions": [
+    125.98400000000001,
+    221.984,
+    365.98400000000004,
+    461.98400000000004,
+  ],
+  "endCrews": 578.984,
+  "endNumbers": 687.8768000000001,
+  "height": 786.4,
+  "joins": [
+    189.984,
+    333.98400000000004,
+    429.98400000000004,
+  ],
+  "labels": [
+    "1845 @ 92,-17.8",
+    "February @ 32,-5",
+    "April May @ 152,-5",
+    "1846 @ 332,-17.8",
+    "March @ 272,-5",
+    "May @ 392,-5",
+  ],
+  "startCrews": 120.98400000000001,
+  "startNumbers": 5,
+  "width": 692.8768000000001,
+}
+`;
+
+exports[`layoutChartMultiYear > mays2022_2024 1`] = `
+{
+  "divisions": [
+    129.568,
+    225.568,
+    321.568,
+  ],
+  "endCrews": 390.568,
+  "endNumbers": 516.536,
+  "height": 1370.4,
+  "joins": [
+    193.568,
+    289.568,
+  ],
+  "labels": [
+    "2022 @ 32,-5",
+    "2023 @ 128,-5",
+    "2024 @ 224,-5",
+  ],
+  "startCrews": 124.56800000000001,
+  "startNumbers": 5,
+  "width": 521.536,
+}
+`;

@@ -1,0 +1,7 @@
+.line {
+  stroke: hsl(var(--react-bumps-chart-foreground));
+}
+
+.text {
+  fill: hsl(var(--react-bumps-chart-foreground));
+}

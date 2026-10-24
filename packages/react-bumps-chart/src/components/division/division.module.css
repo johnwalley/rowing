@@ -1,0 +1,25 @@
+.border {
+  stroke: hsl(var(--react-bumps-chart-muted-foreground));
+}
+
+.line {
+  stroke: hsl(var(--react-bumps-chart-foreground));
+}
+
+.skipped {
+  stroke: hsl(var(--react-bumps-chart-muted-foreground));
+}
+
+.withdrawn {
+  fill: hsl(var(--react-bumps-chart-foreground));
+}
+
+.highlight {
+  stroke: hsl(var(--react-bumps-chart-highlight));
+  stroke-width: 2;
+}
+
+.blades {
+  stroke: hsl(var(--react-bumps-chart-blades));
+  stroke-width: 2;
+}

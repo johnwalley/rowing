@@ -1,0 +1,325 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`layoutChart > eights1838_men 1`] = `
+{
+  "pdf": {
+    "division": 137.0384,
+    "endBlades": undefined,
+    "endCrews": 236.0384,
+    "endNumbers": 335.0768,
+    "height": 182,
+    "startBlades": undefined,
+    "startCrews": 134.0384,
+    "startNumbers": 35,
+    "width": 341.0768,
+  },
+  "svg": {
+    "division": 169.0384,
+    "endBlades": 355.8432,
+    "endCrews": 268.0384,
+    "endNumbers": 399.0768,
+    "height": 182,
+    "startBlades": 78.2336,
+    "startCrews": 166.0384,
+    "startNumbers": 35,
+    "width": 405.0768,
+  },
+}
+`;
+
+exports[`layoutChart > mays1845_1_men 1`] = `
+{
+  "pdf": {
+    "division": 146.984,
+    "endBlades": undefined,
+    "endCrews": 213.984,
+    "endNumbers": 322.968,
+    "height": 678,
+    "startBlades": undefined,
+    "startCrews": 143.984,
+    "startNumbers": 35,
+    "width": 328.968,
+  },
+  "svg": {
+    "division": 178.984,
+    "endBlades": 343.73440000000005,
+    "endCrews": 245.984,
+    "endNumbers": 386.968,
+    "height": 678,
+    "startBlades": 78.2336,
+    "startCrews": 175.984,
+    "startNumbers": 35,
+    "width": 392.968,
+  },
+}
+`;
+
+exports[`layoutChart > mays1845_2_men 1`] = `
+{
+  "pdf": {
+    "division": 146.984,
+    "endBlades": undefined,
+    "endCrews": 261.98400000000004,
+    "endNumbers": 370.968,
+    "height": 678,
+    "startBlades": undefined,
+    "startCrews": 143.984,
+    "startNumbers": 35,
+    "width": 376.968,
+  },
+  "svg": {
+    "division": 178.984,
+    "endBlades": 391.73440000000005,
+    "endCrews": 293.98400000000004,
+    "endNumbers": 434.9680000000001,
+    "height": 678,
+    "startBlades": 78.2336,
+    "startCrews": 175.984,
+    "startNumbers": 35,
+    "width": 440.9680000000001,
+  },
+}
+`;
+
+exports[`layoutChart > mays1846_1_men 1`] = `
+{
+  "pdf": {
+    "division": 146.984,
+    "endBlades": undefined,
+    "endCrews": 213.984,
+    "endNumbers": 322.968,
+    "height": 630,
+    "startBlades": undefined,
+    "startCrews": 143.984,
+    "startNumbers": 35,
+    "width": 328.968,
+  },
+  "svg": {
+    "division": 178.984,
+    "endBlades": 343.73440000000005,
+    "endCrews": 245.984,
+    "endNumbers": 386.968,
+    "height": 630,
+    "startBlades": 78.2336,
+    "startCrews": 175.984,
+    "startNumbers": 35,
+    "width": 392.968,
+  },
+}
+`;
+
+exports[`layoutChart > mays1846_2_men 1`] = `
+{
+  "pdf": {
+    "division": 139.89280000000002,
+    "endBlades": undefined,
+    "endCrews": 254.89280000000002,
+    "endNumbers": 356.78560000000004,
+    "height": 422,
+    "startBlades": undefined,
+    "startCrews": 136.89280000000002,
+    "startNumbers": 35,
+    "width": 362.78560000000004,
+  },
+  "svg": {
+    "division": 171.89280000000002,
+    "endBlades": 377.552,
+    "endCrews": 286.8928,
+    "endNumbers": 420.78560000000004,
+    "height": 422,
+    "startBlades": 78.2336,
+    "startCrews": 168.89280000000002,
+    "startNumbers": 35,
+    "width": 426.78560000000004,
+  },
+}
+`;
+
+exports[`layoutChart > mays2022_men 1`] = `
+{
+  "pdf": {
+    "division": 150.568,
+    "endBlades": undefined,
+    "endCrews": 217.568,
+    "endNumbers": 330.136,
+    "height": 1286,
+    "startBlades": undefined,
+    "startCrews": 147.568,
+    "startNumbers": 35,
+    "width": 336.136,
+  },
+  "svg": {
+    "division": 182.568,
+    "endBlades": 350.9024,
+    "endCrews": 249.568,
+    "endNumbers": 394.136,
+    "height": 1286,
+    "startBlades": 78.2336,
+    "startCrews": 179.568,
+    "startNumbers": 35,
+    "width": 400.136,
+  },
+}
+`;
+
+exports[`layoutChart > mays2023_men 1`] = `
+{
+  "pdf": {
+    "division": 150.568,
+    "endBlades": undefined,
+    "endCrews": 217.568,
+    "endNumbers": 330.136,
+    "height": 1238,
+    "startBlades": undefined,
+    "startCrews": 147.568,
+    "startNumbers": 35,
+    "width": 336.136,
+  },
+  "svg": {
+    "division": 182.568,
+    "endBlades": 350.9024,
+    "endCrews": 249.568,
+    "endNumbers": 394.136,
+    "height": 1238,
+    "startBlades": 78.2336,
+    "startCrews": 179.568,
+    "startNumbers": 35,
+    "width": 400.136,
+  },
+}
+`;
+
+exports[`layoutChart > mays2023_men_incomplete 1`] = `
+{
+  "pdf": {
+    "division": 150.568,
+    "endBlades": undefined,
+    "endCrews": 217.568,
+    "endNumbers": 330.136,
+    "height": 1238,
+    "startBlades": undefined,
+    "startCrews": 147.568,
+    "startNumbers": 35,
+    "width": 336.136,
+  },
+  "svg": {
+    "division": 182.568,
+    "endBlades": 350.9024,
+    "endCrews": 249.568,
+    "endNumbers": 394.136,
+    "height": 1238,
+    "startBlades": 78.2336,
+    "startCrews": 179.568,
+    "startNumbers": 35,
+    "width": 400.136,
+  },
+}
+`;
+
+exports[`layoutChart > mays2024_men 1`] = `
+{
+  "pdf": {
+    "division": 156.96800000000002,
+    "endBlades": undefined,
+    "endCrews": 223.96800000000002,
+    "endNumbers": 342.93600000000004,
+    "height": 1238,
+    "startBlades": undefined,
+    "startCrews": 153.96800000000002,
+    "startNumbers": 35,
+    "width": 348.93600000000004,
+  },
+  "svg": {
+    "division": 188.96800000000002,
+    "endBlades": 363.7024,
+    "endCrews": 255.96800000000002,
+    "endNumbers": 406.93600000000004,
+    "height": 1238,
+    "startBlades": 78.2336,
+    "startCrews": 185.96800000000002,
+    "startNumbers": 35,
+    "width": 412.93600000000004,
+  },
+}
+`;
+
+exports[`layoutChart > torpids1858_men 1`] = `
+{
+  "pdf": {
+    "division": 136.30880000000002,
+    "endBlades": undefined,
+    "endCrews": 235.30880000000002,
+    "endNumbers": 333.61760000000004,
+    "height": 214,
+    "startBlades": undefined,
+    "startCrews": 133.30880000000002,
+    "startNumbers": 35,
+    "width": 339.61760000000004,
+  },
+  "svg": {
+    "division": 168.30880000000002,
+    "endBlades": 354.384,
+    "endCrews": 267.3088,
+    "endNumbers": 397.61760000000004,
+    "height": 214,
+    "startBlades": 78.2336,
+    "startCrews": 165.30880000000002,
+    "startNumbers": 35,
+    "width": 403.61760000000004,
+  },
+}
+`;
+
+exports[`layoutChart > torpids1975_men 1`] = `
+{
+  "pdf": {
+    "division": 145.89600000000002,
+    "endBlades": undefined,
+    "endCrews": 212.89600000000002,
+    "endNumbers": 320.79200000000003,
+    "height": 918,
+    "startBlades": undefined,
+    "startCrews": 142.89600000000002,
+    "startNumbers": 35,
+    "width": 326.79200000000003,
+  },
+  "svg": {
+    "division": 177.89600000000002,
+    "endBlades": 341.5584,
+    "endCrews": 244.89600000000002,
+    "endNumbers": 384.79200000000003,
+    "height": 918,
+    "startBlades": 78.2336,
+    "startCrews": 174.89600000000002,
+    "startNumbers": 35,
+    "width": 390.79200000000003,
+  },
+}
+`;
+
+exports[`layoutChart > town2024_women 1`] = `
+{
+  "pdf": {
+    "division": 140.6224,
+    "endBlades": undefined,
+    "endCrews": 207.6224,
+    "endNumbers": 310.2448,
+    "height": 774,
+    "startBlades": undefined,
+    "startCrews": 137.6224,
+    "startNumbers": 35,
+    "width": 316.2448,
+  },
+  "svg": {
+    "division": 172.6224,
+    "endBlades": undefined,
+    "endCrews": 239.6224,
+    "endNumbers": 374.2448,
+    "height": 774,
+    "startBlades": 78.2336,
+    "startCrews": 169.6224,
+    "startNumbers": 35,
+    "width": 380.2448,
+  },
+}
+`;
