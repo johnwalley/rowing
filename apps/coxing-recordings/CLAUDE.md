@@ -18,7 +18,7 @@ pnpm format:check # Check formatting
 
 ## Architecture
 
-**Content Collections**: Recordings are stored as JSON files in `src/content/recordings/`. `src/content.config.ts` loads them with a `glob` loader and validates them with a Zod schema with fields: id, name, year, description, cox, imageSrc (YouTube embed URL).
+**Content Collections**: Recordings are stored as JSON files in `src/content/recordings/`. `src/content.config.ts` loads them with a `glob` loader and validates them with a Zod schema with fields: id, name, year, description, cox, videoId (the 11-character YouTube video ID, from which `Recordings.tsx` builds the embed URL).
 
 **Page Flow**: `src/pages/index.astro` fetches all recordings via `getCollection('recordings')` and passes them to the `Recordings.tsx` React component with `client:load` hydration.
 
@@ -34,6 +34,6 @@ Create a JSON file in `src/content/recordings/` following the schema:
   "year": "2024",
   "description": "Event details",
   "cox": "Coxswain Name",
-  "imageSrc": "https://www.youtube.com/embed/VIDEO_ID"
+  "videoId": "BOxYoHi0ugA"
 }
 ```

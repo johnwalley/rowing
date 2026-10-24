@@ -6,8 +6,11 @@ interface Recording {
   year: string;
   description: string;
   cox: string;
-  imageSrc: string;
+  videoId: string;
 }
+
+const embedUrl = (videoId: string) =>
+  `https://www.youtube.com/embed/${videoId}`;
 
 /**
  * Recordings component that displays a searchable grid of coxing recordings.
@@ -48,7 +51,7 @@ export default function Recordings({
         "@type": "VideoObject",
         name: `${recording.name} - Coxswain Recording`,
         description: recording.description,
-        embedUrl: recording.imageSrc,
+        embedUrl: embedUrl(recording.videoId),
         uploadDate: `${recording.year}-01-01`,
         creator: {
           "@type": "Person",
@@ -107,7 +110,7 @@ export default function Recordings({
               <iframe
                 width="100%"
                 height="100%"
-                src={recording.imageSrc}
+                src={embedUrl(recording.videoId)}
                 title={`${recording.name} - Coxswain Recording`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
