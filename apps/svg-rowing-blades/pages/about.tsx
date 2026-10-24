@@ -1,6 +1,10 @@
 import Layout from "../components/Layout";
-import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/outline";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const faqs = [
   {
@@ -27,7 +31,7 @@ const AboutPage = () => (
                 {({ open }) => (
                   <>
                     <dt className="text-lg">
-                      <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
+                      <DisclosureButton className="text-left w-full flex justify-between items-start text-gray-400">
                         <span className="font-medium text-gray-900">
                           {faq.question}
                         </span>
@@ -35,16 +39,16 @@ const AboutPage = () => (
                           <ChevronDownIcon
                             className={classNames(
                               open ? "-rotate-180" : "rotate-0",
-                              "h-6 w-6 transform"
+                              "h-6 w-6 transform",
                             )}
                             aria-hidden="true"
                           />
                         </span>
-                      </Disclosure.Button>
+                      </DisclosureButton>
                     </dt>
-                    <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                    <DisclosurePanel as="dd" className="mt-2 pr-12">
                       <p className="text-base text-gray-500">{faq.answer}</p>
-                    </Disclosure.Panel>
+                    </DisclosurePanel>
                   </>
                 )}
               </Disclosure>

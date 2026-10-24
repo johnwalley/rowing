@@ -4,6 +4,7 @@ node_modules/
 # build output
 dist/
 .astro/
+.next/
 storybook-static/
 styleguide/
 *.tsbuildinfo
@@ -41,6 +42,10 @@ yarn-error.log*
 /packages/react-bumps-chart/lib
 /packages/react-bumps-chart/esm
 /packages/react-bumps-chart/umd
+
+# svg-rowing-blades: the blades from scripts/generate-svg-files.mjs, and Next's types
+/apps/svg-rowing-blades/public/images
+/apps/svg-rowing-blades/next-env.d.ts
 
 # bumps-results-tools
 /packages/bumps-results-tools/.vscode

@@ -1,7 +1,7 @@
 import { Blade, names } from "react-rowing-blades";
 
 import { useRouter } from "next/router";
-import React from "react";
+import { type ComponentProps } from "react";
 import Layout from "../../components/Layout";
 
 const allNames = {
@@ -13,21 +13,21 @@ const allNames = {
 
 const Club = () => {
   const router = useRouter();
-  const { club } = router.query;
+  const club = router.query.club as ComponentProps<typeof Blade>["club"];
 
   return (
-    <Layout title={`SVG Rowing Blades | ${allNames[club as string]}`}>
+    <Layout title={`SVG Rowing Blades | ${allNames[club]}`}>
       <div className="flex flex-col items-center">
         <div className="sm:flex">
           <div className="mb-4 flex-shrink-0 sm:mb-0 sm:mr-4">
             <Blade
-              club={club as string}
+              club={club}
               size={100}
               className="h-32 w-32 border border-gray-300 bg-white text-gray-300"
             />
           </div>
           <div>
-            <h4 className="text-lg font-bold">{allNames[club as string]}</h4>
+            <h4 className="text-lg font-bold">{allNames[club]}</h4>
             <p className="mt-1">{club}</p>
           </div>
         </div>
