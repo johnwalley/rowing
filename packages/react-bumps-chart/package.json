@@ -32,9 +32,8 @@
   "scripts": {
     "build": "tsc && NODE_ENV=production vite build",
     "check-exports": "attw --pack . --profile esm-only",
-    "prepublishOnly": "npm test && npm run build && npm run check-exports",
+    "prepublishOnly": "pnpm test && pnpm run build && pnpm run check-exports",
     "test": "vitest run",
-    "release": "standard-version",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -43,7 +42,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnwalley/react-bumps-chart.git"
+    "url": "git+https://github.com/johnwalley/rowing.git",
+    "directory": "packages/react-bumps-chart"
   },
   "author": "John Walley",
   "license": "MIT",
@@ -66,7 +66,6 @@
     "prettier": "^3.7.4",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "standard-version": "9.5.0",
     "storybook": "^10.1.10",
     "typescript": "^5.9.3",
     "vite": "^7.3.0",

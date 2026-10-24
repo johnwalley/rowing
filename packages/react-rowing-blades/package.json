@@ -13,7 +13,6 @@
   "sideEffects": false,
   "scripts": {
     "build": "vite build",
-    "release": "standard-version",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -22,7 +21,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnwalley/react-rowing-blades.git"
+    "url": "git+https://github.com/johnwalley/rowing.git",
+    "directory": "packages/react-rowing-blades"
   },
   "author": "John Walley",
   "license": "MIT",
@@ -32,7 +32,6 @@
     "@types/react": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "standard-version": "9.5.0",
     "storybook": "^10.1.10",
     "typescript": "5.9.3",
     "vite": "^7.3.0",
