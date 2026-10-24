@@ -18,7 +18,7 @@ pnpm format:check # Check formatting
 
 ## Architecture
 
-**Content Collections**: Recordings are stored as JSON files in `src/content/recordings/`. The schema is defined in `src/content/config.ts` using Zod validation with fields: id, name, year, description, cox, imageSrc (YouTube embed URL).
+**Content Collections**: Recordings are stored as JSON files in `src/content/recordings/`. `src/content.config.ts` loads them with a `glob` loader and validates them with a Zod schema with fields: id, name, year, description, cox, imageSrc (YouTube embed URL).
 
 **Page Flow**: `src/pages/index.astro` fetches all recordings via `getCollection('recordings')` and passes them to the `Recordings.tsx` React component with `client:load` hydration.
 

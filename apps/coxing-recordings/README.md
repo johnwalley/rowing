@@ -35,4 +35,4 @@ pnpm --filter coxing-recordings dev     # dev server at localhost:4321
 pnpm --filter coxing-recordings build   # production build to ./dist/
 ```
 
-To add a recording, add a JSON file to `src/content/recordings/`; `src/content/config.ts` has the schema.
+To add a recording, add a JSON file to `src/content/recordings/`; `src/content.config.ts` has the schema.
