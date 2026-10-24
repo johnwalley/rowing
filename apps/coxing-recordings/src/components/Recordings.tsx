@@ -124,6 +124,7 @@ export default function Recordings({
         className="mt-4 mb-6 sm:flex"
         role="search"
         aria-label="Search coxswain recordings"
+        onSubmit={(event) => event.preventDefault()}
       >
         <label htmlFor="recording-search" className="sr-only">
           Search
@@ -169,6 +170,9 @@ export default function Recordings({
           </div>
         ))}
       </div>
+      {filteredRecordings.length === 0 && (
+        <p className="text-gray-500">No recordings match “{searchValue}”</p>
+      )}
     </>
   );
 }
