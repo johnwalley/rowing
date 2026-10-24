@@ -1,27 +1,28 @@
 # CLAUDE.md
 
-A pnpm workspace for rowing bumps: two published React libraries, the results data pipeline, and the site behind cambridgebumps.com and oxfordbumps.com.
+A pnpm workspace for rowing: two published React libraries for bumps charts, the bumps results data pipeline, the bumps site behind cambridgebumps.com and oxfordbumps.com, and the coxing site behind coxing.co.uk.
 
 | Package | What it is | |
 |---|---|---|
 | `packages/react-rowing-blades` | SVG blades for each club | published to npm |
 | `packages/react-bumps-chart` | The bumps chart (SVG and PDF); uses blades | published to npm |
 | `packages/bumps-results-tools` | TG-format results, the scripts that turn them into JSON, and a viewer app | private |
-| `apps/cambridgebumps.com` | The Astro site; one codebase, two Vercel projects (Cambridge and Oxford) | private |
+| `apps/cambridgebumps.com` | The bumps site (Astro); one codebase, two Vercel projects (Cambridge and Oxford) | private |
+| `apps/coxing-recordings` | The coxing site (Astro): a searchable list of coxswain recordings. Uses none of the other packages | private |
 
-Read the `CLAUDE.md` in the package you're changing: the chart, the tools and the site each have one.
+Read the `CLAUDE.md` in the package you're changing: the chart, the tools and both sites each have one.
 
 ## How the packages connect
 
-- The chart depends on blades, and the site on both, through `workspace:^`. Their `exports` point at `dist/`, so the site sees a library change only after that library is rebuilt. `pnpm -r build` builds everything in dependency order. To work on the chart and the site together, run `pnpm --filter react-bumps-chart exec vite build --watch` beside the site's `dev` script.
-- The site doesn't import `bumps-results-tools`. Its results data comes from the tools as files: on every push to `main` that changes `packages/bumps-results-tools/**`, the Sync downstream workflow regenerates the JSON and opens a PR here that updates `apps/cambridgebumps.com/src/data/`, plus a PR in `johnwalley/bumps-results` with the TG and AD files. Fix results in the tools' TG files; the site's data JSON is generated.
+- The chart depends on blades, and the bumps site on both, through `workspace:^`. Their `exports` point at `dist/`, so the site sees a library change only after that library is rebuilt. `pnpm -r build` builds everything in dependency order. To work on the chart and the site together, run `pnpm --filter react-bumps-chart exec vite build --watch` beside the site's `dev` script.
+- The bumps site doesn't import `bumps-results-tools`. Its results data comes from the tools as files: on every push to `main` that changes `packages/bumps-results-tools/**`, the Sync downstream workflow regenerates the JSON and opens a PR here that updates `apps/cambridgebumps.com/src/data/`, plus a PR in `johnwalley/bumps-results` with the TG and AD files. Fix results in the tools' TG files; the site's data JSON is generated.
 - Each package keeps its own Prettier, TypeScript and Vite config.
 
 ## Workspace rules
 
-- **pnpm 11**, pinned by `packageManager` in the root `package.json` and again in the site's. Vercel builds from the site's folder and reads the pin there. CI checks the two match, so change both together.
+- **pnpm 11**, pinned by `packageManager` in the root `package.json` and again in each app's. Vercel builds from the app's folder and reads the pin there. CI checks they all match, so change them together.
 - **React comes from the catalog** in `pnpm-workspace.yaml`, so every package gets one copy. In the libraries `catalog:` belongs in `devDependencies`; their `peerDependencies` stay ranges (`^18.0.0 || ^19.0.0`), because `pnpm publish` would write the catalog's exact version into the published package.
-- **Every change goes through a PR.** A ruleset on `main` requires CI's `check` job, which runs formatting, the build, the tests, the chart's `check-exports`, the site's lint and typecheck, and the tools' AD-format check.
+- **Every change goes through a PR.** A ruleset on `main` requires CI's `check` job, which runs formatting, the build, the tests, the chart's `check-exports`, the bumps site's lint and typecheck, and the tools' AD-format check.
 
 ## Releasing the libraries
 
@@ -29,6 +30,6 @@ Releases use Changesets. A PR that changes `react-rowing-blades` or `react-bumps
 
 On `main`, `.github/workflows/release.yml` keeps a "Version Packages" PR open. Merging it publishes the new versions to npm through trusted publishing (no token), creates `<package>@<version>` tags and GitHub releases. npm can take a minute to serve a new version after the job succeeds. Publish only through that workflow: it runs `changeset publish`, which calls `pnpm publish`, which replaces `workspace:^` with a real version range.
 
-## Deploying the site
+## Deploying the sites
 
-Both Vercel projects build `apps/cambridgebumps.com` with the build command in its `vercel.json`, which builds blades and the chart first. A merge to `main` deploys both sites; a PR gets a preview of each.
+The two bumps Vercel projects build `apps/cambridgebumps.com` with the build command in its `vercel.json`, which builds blades and the chart first. The coxing project builds `apps/coxing-recordings` with Vercel's Astro defaults. A merge to `main` deploys all three; a PR gets a preview of each.

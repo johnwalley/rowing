@@ -21,14 +21,18 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      # Vercel builds from apps/cambridgebumps.com, and Corepack there may read
-      # that package.json's packageManager instead of the root's.
-      - name: Check the site pins the same pnpm as the root
-        run: test "$(jq -r .packageManager package.json)" = "$(jq -r .packageManager apps/cambridgebumps.com/package.json)"
+      # Vercel builds from each app's folder, and Corepack there may read that
+      # package.json's packageManager instead of the root's.
+      - name: Check the apps pin the same pnpm as the root
+        run: |
+          for app in apps/*/package.json; do
+            test "$(jq -r .packageManager package.json)" = "$(jq -r .packageManager "$app")" || { echo "$app pins a different pnpm"; exit 1; }
+          done
 
       - run: pnpm format:check
-      # In dependency order: blades, chart, tools, site. The chart's build runs
-      # tsc and the tools' build runs tsgo, so this also typechecks them.
+      # In dependency order: blades, chart, tools, then the two sites. The
+      # chart's build runs tsc and the tools' build runs tsgo, so this also
+      # typechecks them.
       - run: pnpm -r build
 
       - run: pnpm test
