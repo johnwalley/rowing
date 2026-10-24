@@ -2,8 +2,10 @@
   "name": "bumps-results-tools",
   "private": true,
   "exports": {
+    "./clubs": "./src/clubs.ts",
     "./results": "./src/results.ts",
-    "./stats": "./src/stats.ts"
+    "./stats": "./src/stats.ts",
+    "./types": "./src/types.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
