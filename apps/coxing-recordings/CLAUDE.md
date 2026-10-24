@@ -22,7 +22,7 @@ pnpm format:check # Check formatting
 
 **Page Flow**: `src/pages/index.astro` fetches all recordings via `getCollection('recordings')` and passes them to the `Recordings.tsx` React component with `client:load` hydration.
 
-**Recordings Component**: The main interactive component at `src/components/Recordings.tsx` implements search filtering. It renders all recordings but uses CSS to hide non-matching ones (rather than removing from DOM) to prevent YouTube embeds from reloading on filter changes.
+**Recordings Component**: The main interactive component at `src/components/Recordings.tsx` implements search filtering. It renders all recordings but uses CSS to hide non-matching ones (rather than removing from DOM), so a playing video doesn't reload when the search changes. Each card shows the video's thumbnail from `i.ytimg.com` and swaps in the YouTube player (`youtube-nocookie.com`, autoplaying) only when the thumbnail is clicked, so the page loads no YouTube player until a video is played.
 
 ## Adding New Recordings
 

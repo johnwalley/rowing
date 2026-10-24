@@ -13,8 +13,53 @@ const embedUrl = (videoId: string) =>
   `https://www.youtube.com/embed/${videoId}`;
 
 /**
+ * Shows the video's thumbnail, and loads the YouTube player only once it is clicked.
+ */
+function Video({ recording }: { recording: Recording }) {
+  const [playing, setPlaying] = useState(false);
+
+  if (playing) {
+    return (
+      <iframe
+        className="w-full h-full border-0"
+        src={`https://www.youtube-nocookie.com/embed/${recording.videoId}?autoplay=1&rel=0`}
+        title={`${recording.name} - Coxswain Recording`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      className="group relative w-full h-full cursor-pointer"
+      aria-label={`Play ${recording.name}`}
+      onClick={() => setPlaying(true)}
+    >
+      <img
+        className="absolute inset-0 w-full h-full object-cover"
+        src={`https://i.ytimg.com/vi/${recording.videoId}/hqdefault.jpg`}
+        alt={recording.name}
+        loading="lazy"
+      />
+      <span className="absolute inset-0 flex items-center justify-center">
+        <svg
+          className="w-16 h-16 text-gray-900/70 group-hover:text-pink-600 group-focus-visible:text-pink-600"
+          viewBox="0 0 64 64"
+          aria-hidden="true"
+        >
+          <circle cx="32" cy="32" r="32" fill="currentColor" />
+          <path d="M26 20v24l18-12z" fill="white" />
+        </svg>
+      </span>
+    </button>
+  );
+}
+
+/**
  * Recordings component that displays a searchable grid of coxing recordings.
- * Renders all recordings but hides non-matching ones to prevent YouTube embed reloading.
+ * Renders all recordings but hides non-matching ones, so a playing video doesn't reload.
  */
 export default function Recordings({
   recordings,
@@ -104,19 +149,10 @@ export default function Recordings({
         {recordings.map((recording) => (
           <div
             key={recording.id}
-            className={`group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden ${filteredIds.has(recording.id) ? "" : "hidden"}`}
+            className={`relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden ${filteredIds.has(recording.id) ? "" : "hidden"}`}
           >
-            <div className="aspect-video bg-gray-200 group-hover:opacity-75">
-              <iframe
-                width="100%"
-                height="100%"
-                src={embedUrl(recording.videoId)}
-                title={`${recording.name} - Coxswain Recording`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
+            <div className="aspect-video bg-gray-200">
+              <Video recording={recording} />
             </div>
             <div className="flex-1 p-4 space-y-2 flex flex-col">
               <h3 className="text-sm font-medium text-gray-900">
