@@ -1,0 +1,38 @@
+Lady Margaret Hall Boat Club (Oxford, lmh)
+current: true
+
+torpids men: 1980 to 2026, 41 races
+  lines: L.M.H. 1, L.M.H. 2, L.M.H. 3, L.M.H. 4
+  headships: none
+  blades: 10, spoons: 3
+  highest: 7, L.M.H. I 2005
+  rises: L.M.H. I 1988 +7, L.M.H. I 1991 +6, L.M.H. I 1984 +6
+  falls: L.M.H. III 1997 -10, L.M.H. I 2013 -8, L.M.H. II 2012 -6
+  latest: L.M.H. I 13 → withdrew
+
+torpids women: 1978 to 2026, 41 races
+  lines: L.M.H. 1, L.M.H. 2, L.M.H. 3, L.M.H. 4
+  headships: none
+  blades: 7, spoons: 3
+  highest: 2, L.M.H. I 1983
+  rises: L.M.H. II 1991 +8, L.M.H. I 2012 +7, L.M.H. II 2021 +5
+  falls: L.M.H. III 1980 -16, L.M.H. I 2016 -10, L.M.H. I 2006 -9
+  latest: L.M.H. I 18 → withdrew
+
+eights men: 1980 to 2026, 45 races
+  lines: L.M.H. 1, L.M.H. 2, L.M.H. 3, L.M.H. 4, L.M.H. 5
+  headships: none
+  blades: 12, spoons: 5
+  highest: 11, L.M.H. I 2023
+  rises: L.M.H. I 1982 +6, L.M.H. II 2016 +5, L.M.H. I 1990 +5
+  falls: L.M.H. III 2019 -5, L.M.H. III 2016 -5, L.M.H. II 2022 -4
+  latest: L.M.H. I 16 → 18, L.M.H. II 81 → 81
+
+eights women: 1976 to 2026, 49 races
+  lines: L.M.H. 1, L.M.H. 2, L.M.H. 3, L.M.H. 4
+  headships: 1977
+  blades: 8, spoons: 14
+  highest: 1, L.M.H. I 1977
+  rises: L.M.H. I 2016 +5, L.M.H. I 1996 +5, L.M.H. I 2022 +4
+  falls: L.M.H. III 2011 -8, L.M.H. I 2003 -6, L.M.H. I 2002 -6
+  latest: L.M.H. I 22 → 21, L.M.H. II 65 → 62, L.M.H. III 79 → 80

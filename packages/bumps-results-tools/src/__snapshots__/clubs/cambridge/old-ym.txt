@@ -1,0 +1,11 @@
+Old YM (Cambridge, old-ym)
+current: false
+
+town men: 1950 to 1957, 8 races
+  lines: Old YM 1, Old YM 2, Old YM 3
+  headships: none
+  blades: 0, spoons: 1
+  highest: 11, Old YM 1 1955, Old YM 1 1954, Old YM 1 1953, Old YM 1 1952
+  rises: Old YM 2 1952 +3, Old YM 1 1950 +3, Old YM 1 1951 +2
+  falls: Old YM 2 1954 -4, Old YM 1 1956 -3, Old YM 2 1950 -3
+  latest: didn't race

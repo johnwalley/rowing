@@ -1,0 +1,38 @@
+St Anne's College Boat Club (Oxford, st-annes)
+current: true
+
+torpids men: 1981 to 2026, 39 races
+  lines: St Anne's 1, St Anne's 2, St Anne's 3, St Anne's 4
+  headships: none
+  blades: 11, spoons: 4
+  highest: 12, St Anne's I 2012
+  rises: St Anne's II 2011 +6, St Anne's II 1988 +6, St Anne's I 2001 +5
+  falls: St Anne's II 2013 -11, St Anne's I 2022 -10, St Anne's I 1993 -7
+  latest: St Anne's I 47 → withdrew, St Anne's II 68 → withdrew
+
+torpids women: 1978 to 2026, 42 races
+  lines: St Anne's 1, St Anne's 2, St Anne's 3
+  headships: none
+  blades: 3, spoons: 2
+  highest: 6, St Anne's I 1982, St Anne's I 1978
+  rises: St Anne's I 2005 +5, St Anne's II 1991 +5, St Anne's II 2017 +4
+  falls: St Anne's II 2015 -22, St Anne's I 2025 -13, St Anne's I 1996 -11
+  latest: St Anne's I 33 → withdrew
+
+eights men: 1981 to 2026, 44 races
+  lines: St Anne's 1, St Anne's 2, St Anne's 3, St Anne's 4
+  headships: none
+  blades: 9, spoons: 12
+  highest: 17, St Anne's I 2013, St Anne's I 2007
+  rises: St Anne's I 1988 +6, St Anne's II 1995 +5, St Anne's I 2026 +4
+  falls: St Anne's I 2023 -4, St Anne's I 2022 -4, St Anne's I 2015 -4
+  latest: St Anne's I 35 → 31, St Anne's II 78 → 75, St Anne's III 84 → 85
+
+eights women: 1977 to 2026, 48 races
+  lines: St Anne's 1, St Anne's 2, St Anne's 3, St Anne's/St Hilda's 1
+  headships: none
+  blades: 2, spoons: 4
+  highest: 4, St Anne's I 1986
+  rises: St Anne's I 2007 +5, St Anne's II 2006 +4, St Anne's I 1994 +4
+  falls: St Anne's II 2001 -5, St Anne's I 2025 -4, St Anne's I 2001 -4
+  latest: St Anne's I 19 → 16, St Anne's II 67 → 65, St Anne's III 82 → 85

@@ -1,0 +1,38 @@
+St Benet's Hall Boat Club (Oxford, st-benets)
+current: false
+
+torpids men: 1978 to 2022, 29 races
+  lines: St Benet's Hall 1
+  headships: none
+  blades: 6, spoons: 1
+  highest: 39, St Benet's Hall I 2021
+  rises: St Benet's Hall I 2021 +9, St Benet's Hall I 2019 +7, St Benet's Hall I 2006 +6
+  falls: St Benet's Hall I 2009 -13, St Benet's Hall I 2013 -11, St Benet's Hall I 2017 -5
+  latest: didn't race
+
+torpids women: 2019 to 2021, 2 races
+  lines: St Benet's Hall 1
+  headships: none
+  blades: 0, spoons: 1
+  highest: 61, St Benet's Hall I 2021, St Benet's Hall I 2019
+  rises: none
+  falls: St Benet's Hall I 2021 -9, St Benet's Hall I 2019 -2
+  latest: didn't race
+
+eights men: 1977 to 2022, 35 races
+  lines: St Benet's Hall 1, St Benet's Hall 2
+  headships: none
+  blades: 6, spoons: 3
+  highest: 44, St Benet's Hall I 2005
+  rises: St Benet's Hall I 2005 +7, St Benet's Hall I 1999 +6, St Benet's Hall I 2017 +4
+  falls: St Benet's Hall I 2013 -6, St Benet's Hall I 2006 -5, St Benet's Hall I 2010 -4
+  latest: didn't race
+
+eights women: 2018 to 2022, 3 races
+  lines: St Benet's Hall 1
+  headships: none
+  blades: 1, spoons: 0
+  highest: 60, St Benet's Hall I 2022
+  rises: St Benet's Hall I 2022 +7, St Benet's Hall I 2019 +3
+  falls: St Benet's Hall I 2018 -5
+  latest: didn't race

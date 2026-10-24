@@ -1,0 +1,38 @@
+Peterhouse Boat Club (Cambridge, peterhouse)
+current: true
+
+lents men: 1887 to 2026, 132 races
+  lines: Peterhouse 1, Peterhouse 2, Peterhouse 3, Peterhouse 4
+  headships: 1956
+  blades: 34, spoons: 43
+  highest: 1, Peterhouse I 1956
+  rises: Peterhouse I 2010 +5, Peterhouse II 1995 +5, Peterhouse I 1980 +5
+  falls: Peterhouse II 2002 -7, Peterhouse II 1974 -6, Peterhouse III 1964 -6
+  latest: Peterhouse I 11 → 15, Peterhouse II 41 → 40
+
+lents women: 1987 to 2026, 38 races
+  lines: Peterhouse 1, Peterhouse 2
+  headships: none
+  blades: 5, spoons: 1
+  highest: 14, Peterhouse I 2015, Peterhouse I 2014
+  rises: Peterhouse I 2023 +4, Peterhouse II 2011 +4, Peterhouse I 2009 +4
+  falls: Peterhouse I 2017 -4, Peterhouse I 1992 -4, Peterhouse I 2008 -3
+  latest: Peterhouse I 18 → 17, Peterhouse II 58 → 57
+
+mays men: 1828 April May November to 2026, 233 races
+  lines: Peterhouse 1, Peterhouse 2, Peterhouse 3, Peterhouse 4, Peterhouse 5
+  headships: 2026, 1842 April May
+  blades: 43, spoons: 59
+  highest: 1, Peterhouse I 2026, Peterhouse I 1842 February March, Peterhouse I 1842 April May
+  rises: Peterhouse II 1843 May +12, Peterhouse I 2025 +8, Peterhouse III 1977 +8
+  falls: Peterhouse III 1994 -8, Peterhouse III 1966 -8, Peterhouse II 1844 May -7
+  latest: Peterhouse I 2 → 1, Peterhouse II 34 → 33, Peterhouse III 67 → 66, Peterhouse IV 76 → 72, Peterhouse V 79 → 83
+
+mays women: 1986 to 2026, 39 races
+  lines: Peterhouse 1, Peterhouse 2, Peterhouse 3, Peterhouse 4
+  headships: none
+  blades: 12, spoons: 8
+  highest: 11, Peterhouse I 2017
+  rises: Peterhouse III 2026 +9, Peterhouse I 1986 +7, Peterhouse II 2022 +5
+  falls: Peterhouse II 2005 -6, Peterhouse I 1993 -6, Peterhouse III 2023 -4
+  latest: Peterhouse I 17 → 14, Peterhouse II 61 → 59, Peterhouse III 77 → 68, Peterhouse IV 79 → 76

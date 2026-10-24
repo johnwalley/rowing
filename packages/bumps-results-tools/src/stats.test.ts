@@ -33,10 +33,48 @@ test.each(["eights", "lents", "mays", "torpids", "town"] as EventKey[])(
       );
 
       for (const rows of Object.values(rankings)) {
-        for (const { club } of rows as { club: string }[]) {
+        for (const { club } of rows) {
           expect(clubOf(event, club)?.short ?? club).toBe(club);
         }
       }
     }
   },
 );
+
+/** Each table as aligned text, one club per line. */
+function summarise(rankings: ReturnType<typeof getRankings>): string {
+  return Object.entries(rankings)
+    .map(([table, rows]) => {
+      const cells = rows.map((row) => Object.values(row).map(String));
+      const widths = cells[0]?.map((_, i) =>
+        Math.max(...cells.map((row) => row[i].length)),
+      );
+      const lines = cells.map((row) =>
+        row
+          .map((cell, i) => cell.padEnd(widths![i]))
+          .join("  ")
+          .trimEnd(),
+      );
+      return [table, ...lines].join("\n");
+    })
+    .join("\n\n")
+    .concat("\n");
+}
+
+test.each(
+  ["eights", "lents", "mays", "torpids", "town"].flatMap((event) =>
+    ["men", "women"].map((gender) => [event, gender]),
+  ),
+)("%s %s statistics tables", async (event, gender) => {
+  const rankings = getRankings(
+    events.filter(
+      (race) =>
+        race.short.toLowerCase() === event &&
+        race.gender.toLowerCase() === gender,
+    ),
+  );
+
+  await expect(summarise(rankings)).toMatchFileSnapshot(
+    `./__snapshots__/stats/${event}_${gender}.txt`,
+  );
+});

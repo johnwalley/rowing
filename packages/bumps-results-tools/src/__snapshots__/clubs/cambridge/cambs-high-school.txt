@@ -1,0 +1,11 @@
+Cambridgeshire High School (Cambridge, cambs-high-school)
+current: false
+
+town men: 1961 to 1974, 14 races
+  lines: Cambs High School 1, Cambs High School 2, Cambs High School 3
+  headships: none
+  blades: 0, spoons: 3
+  highest: 7, Cambs High School 1 1967
+  rises: Cambs High School 1 1967 +3, Cambs High School 2 1966 +3, Cambs High School 1 1961 +3
+  falls: Cambs High School 1 1969 -4, Cambs High School 1 1968 -4, Cambs High School 1 1963 -4
+  latest: didn't race

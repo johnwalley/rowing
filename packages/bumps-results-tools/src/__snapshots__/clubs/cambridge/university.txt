@@ -1,0 +1,11 @@
+University (Cambridge, university)
+current: false
+
+mays men: 1968 to 1976, 9 races
+  lines: University 1, University 2
+  headships: none
+  blades: 1, spoons: 0
+  highest: 56, University I 1976, University I 1972
+  rises: University I 1969 +6, University I 1976 +3, University I 1972 +3
+  falls: University I 1973 -3, University I 1975 -1
+  latest: didn't race

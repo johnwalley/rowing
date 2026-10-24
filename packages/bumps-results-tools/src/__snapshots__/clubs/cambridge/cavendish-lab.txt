@@ -1,0 +1,11 @@
+Cavendish Laboratory (Cambridge, cavendish-lab)
+current: false
+
+town men: 1978 to 1993, 8 races
+  lines: Cavendish Lab 1, Cavendish Lab 2
+  headships: none
+  blades: 1, spoons: 1
+  highest: 23, Cavendish Lab 1 1993, Cavendish Lab 1 1992
+  rises: Cavendish Lab 1 1992 +4, Cavendish Lab 1 1978 +3, Cavendish Lab 1 1993 +2
+  falls: Cavendish Lab 1 1980 -5, Cavendish Lab 2 1992 -4, Cavendish Lab 1 1991 -1
+  latest: didn't race

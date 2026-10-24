@@ -1,0 +1,38 @@
+Reuben College Boat Club (Oxford, reuben)
+current: true
+
+torpids men: 2025 to 2026, 2 races
+  lines: Reuben 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 48, Reuben I 2025
+  rises: none
+  falls: none
+  latest: Reuben I 48 → withdrew
+
+torpids women: 2025 to 2026, 2 races
+  lines: Reuben 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 67, Reuben I 2025
+  rises: none
+  falls: none
+  latest: Reuben I 67 → withdrew
+
+eights men: 2024 to 2026, 3 races
+  lines: Reuben 1
+  headships: none
+  blades: 1, spoons: 0
+  highest: 44, Reuben I 2025
+  rises: Reuben I 2025 +7, Reuben I 2024 +3
+  falls: Reuben I 2026 -1
+  latest: Reuben I 44 → 45
+
+eights women: 2024 to 2026, 3 races
+  lines: Reuben 1, Reuben 2
+  headships: none
+  blades: 1, spoons: 0
+  highest: 44, Reuben I 2026
+  rises: Reuben I 2025 +9, Reuben I 2024 +5, Reuben I 2026 +2
+  falls: Reuben II 2025 -1
+  latest: Reuben I 46 → 44

@@ -1,0 +1,130 @@
+headships
+Magdalen        5  2016
+Osler House     5  1995
+Somerville      5  1994
+Osler-Green     4  1999
+Jesus           4  1983
+Wadham          3  2019
+Oriel           3  2018
+St Catherine's  3  2009
+Wolfson         2  2022
+Merton          2  2004
+Pembroke        1  2025
+University      1  2023
+New College     1  2005
+St Hugh's       1  1985
+Hertford        1  1978
+
+crewsEntered
+Wolfson          85
+L.M.H.           81
+St Hugh's        81
+Somerville       77
+Hertford         77
+Wadham           76
+Pembroke         75
+New College      73
+St Hilda's       72
+St Catherine's   70
+University       70
+Lincoln          69
+Christ Church    67
+Balliol          66
+Jesus            65
+St John's        65
+Brasenose        64
+Worcester        64
+St Anne's        63
+Magdalen         61
+Oriel            59
+Exeter           58
+S.E.H.           57
+Trinity          57
+Linacre          55
+Queen's          54
+Merton           54
+Keble            53
+St Peter's       52
+Mansfield        49
+Corpus Christi   44
+Osler House      34
+St Antony's      28
+Green Templeton  23
+Regent's Park    15
+Osler-Green      12
+St Benet's Hall  2
+Reuben           1
+
+headDays
+Magdalen        18
+Jesus           17
+St Catherine's  16
+Osler House     16
+Somerville      15
+Osler-Green     15
+Wadham          12
+Oriel           12
+Merton          6
+Wolfson         5
+Pembroke        5
+New College     4
+University      4
+L.M.H.          3
+Hertford        3
+St Hugh's       3
+
+headLong
+Jesus           16  1980 - 1983
+Osler-Green     15  1996 - 1999
+Magdalen        14  2010 - 2013
+Somerville      13  1991 - 1994
+St Catherine's  8   2008 - 2010
+Osler House     7   1988 - 1989
+Merton          6   2003 - 2004
+Oriel           6   2006 - 2008
+Wolfson         5   2021 - 2022
+Wadham          4   1979
+Pembroke        4   2025
+New College     4   2005
+University      4   2023
+St Hugh's       3   1985 - 1986
+L.M.H.          2   1978
+Hertford        2   2021
+
+bladesAwarded
+University       18
+Somerville       15
+Wolfson          15
+Magdalen         15
+Balliol          14
+Osler House      13
+Jesus            12
+Hertford         12
+St Hugh's        12
+Lincoln          12
+Oriel            12
+Wadham           11
+St John's        11
+St Hilda's       10
+Keble            10
+Trinity          10
+Exeter           9
+Worcester        9
+Pembroke         9
+Christ Church    9
+Merton           9
+Green Templeton  9
+Linacre          8
+S.E.H.           8
+New College      8
+L.M.H.           7
+St Catherine's   7
+Mansfield        7
+Corpus Christi   5
+Osler-Green      5
+Brasenose        4
+Queen's          4
+St Antony's      4
+St Anne's        3
+Regent's Park    3
+St Peter's       2

@@ -10,9 +10,9 @@ import {
   getClubHistory,
   getSectionRecords,
   latestYear,
+  type ClubCrew,
   type ClubRace,
   type ClubSection,
-  type CrewResult,
   type CrewYear,
 } from "@/lib/club-history";
 import { getCode, getGenderLabel, set, yearOf } from "@/lib/utils";
@@ -53,20 +53,20 @@ const formatGain = (gain: number | null) =>
         ? `−${-gain}`
         : "0";
 
-const notes = (crew: CrewResult) =>
+const notes = (crew: ClubCrew) =>
   [
     crew.head && "Head",
     crew.blades && "Blades",
     crew.spoons && "Spoons",
   ].filter(Boolean) as string[];
 
-const describe = (crew: CrewResult) =>
+const describe = (crew: ClubCrew) =>
   (crew.finish === null
     ? `started ${ordinal(crew.start).toLowerCase()}, withdrew`
     : `${ordinal(crew.start)} → ${ordinal(crew.finish)} (${formatGain(crew.gain)})`) +
   (notes(crew).length > 0 ? ` · ${notes(crew).join(", ")}` : "");
 
-const chartHref = (section: ClubSection, year: string, crew: CrewResult) =>
+const chartHref = (section: ClubSection, year: string, crew: ClubCrew) =>
   `/charts/${section.event}/${section.gender}/${yearOf(year)}?club=${encodeURIComponent(crew.club)}`;
 
 // The year-by-year grid: a row for each decade, newest first, and a cell for

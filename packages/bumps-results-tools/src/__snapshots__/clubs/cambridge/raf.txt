@@ -1,0 +1,20 @@
+Royal Air Force (Cambridge, raf)
+current: false
+
+lents men: 1940 to 1944, 3 races
+  lines: Royal Air Force 1, Royal Air Force 2
+  headships: none
+  blades: 0, spoons: 1
+  highest: 27, Royal Air Force I 1944
+  rises: Royal Air Force I 1944 +2
+  falls: Royal Air Force I 1943 -3, Royal Air Force I 1940 -2, Royal Air Force II 1943 -1
+  latest: didn't race
+
+mays men: 1941 to 1943, 3 races
+  lines: Royal Air Force 1, Royal Air Force 2, Royal Air Force 3
+  headships: none
+  blades: 0, spoons: 1
+  highest: 32, Royal Air Force I 1941
+  rises: Royal Air Force I 1943 +2, Royal Air Force III 1941 +1
+  falls: Royal Air Force I 1942 -3, Royal Air Force II 1942 -1, Royal Air Force I 1941 -1
+  latest: didn't race

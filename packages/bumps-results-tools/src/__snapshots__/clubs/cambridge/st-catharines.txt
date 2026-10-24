@@ -1,0 +1,38 @@
+St Catharine's College Boat Club (Cambridge, st-catharines)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: St Catharine's 1, St Catharine's 2, St Catharine's 3, St Catharine's 4, St Catharine's 5
+  headships: 1919
+  blades: 32, spoons: 38
+  highest: 6, St Catharine's I 1968, St Catharine's I 1934, St Catharine's I 1933
+  rises: St Catharine's II 2014 +6, St Catharine's III 1975 +6, St Catharine's III 1965 +6
+  falls: St Catharine's I 2006 -6, St Catharine's III 1997 -6, St Catharine's II 1982 -6
+  latest: St Catharine's I 9 → 11, St Catharine's II 44 → 44
+
+lents women: 1980 to 2026, 46 races
+  lines: St Catharine's 1, St Catharine's 2, St Catharine's 3
+  headships: none
+  blades: 10, spoons: 9
+  highest: 6, St Catharine's I 1997
+  rises: St Catharine's II 2004 +6, St Catharine's II 2018 +5, St Catharine's II 1998 +5
+  falls: St Catharine's II 2025 -6, St Catharine's I 1987 -6, St Catharine's II 1982 -6
+  latest: St Catharine's I 11 → 7, St Catharine's II 51 → 52
+
+mays men: 1831 February March to 2026, 233 races
+  lines: St Catharine's 1, St Catharine's 2, St Catharine's 3, St Catharine's 4, St Catharine's 5, St Catharine's 6, St Catharine's 7, St Catharine's 8, St Catharine's 9, St Catharine's 10
+  headships: none
+  blades: 55, spoons: 81
+  highest: 2, St Catharine's I 2006, St Catharine's I 2004
+  rises: St Catharine's VI 1977 +9, St Catharine's II 1844 May +8, St Catharine's III 2024 +6
+  falls: St Catharine's VI 1979 -7, St Catharine's III 1985 -6, St Catharine's V 1982 -6
+  latest: St Catharine's I 7 → 10, St Catharine's II 36 → 35
+
+mays women: 1980 to 2026, 45 races
+  lines: St Catharine's 1, St Catharine's 2, St Catharine's 3, St Catharine's 4
+  headships: none
+  blades: 7, spoons: 15
+  highest: 3, St Catharine's I 1989
+  rises: St Catharine's III 2017 +6, St Catharine's II 2026 +5, St Catharine's II 1987 +5
+  falls: St Catharine's II 2008 -7, St Catharine's II 2006 -5, St Catharine's I 2003 -5
+  latest: St Catharine's I 8 → 7, St Catharine's II 45 → 40

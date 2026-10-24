@@ -1,0 +1,38 @@
+King's College Boat Club (Cambridge, kings)
+current: true
+
+lents men: 1887 to 2026, 132 races
+  lines: King's 1, King's 2, King's 3, King's 4
+  headships: none
+  blades: 29, spoons: 45
+  highest: 4, King's I 1897
+  rises: King's II 1936 +7, King's I 1991 +6, King's II 1984 +6
+  falls: King's II 1996 -6, King's III 1962 -6, King's II 1933 -6
+  latest: King's I 16 → 17
+
+lents women: 1976 to 2026, 49 races
+  lines: King's 1, King's 2, King's 3
+  headships: none
+  blades: 3, spoons: 6
+  highest: 5, QMABC I 1978
+  rises: King's I 2008 +7, King's I 1997 +4, QMABC I 1989 +4
+  falls: King's II 2019 -5, King's I 2026 -4, King's I 2014 -4
+  latest: King's I 23 → 27, King's II 63 → 61
+
+mays men: 1838 March to 2026, 207 races
+  lines: King's 1, King's 2, King's 3, King's 4, King's 5, King's 6
+  headships: none
+  blades: 49, spoons: 54
+  highest: 4, King's I 2023
+  rises: King's I 1838 May +10, King's IV 1952 +9, King's I 1853 April May +8
+  falls: King's III 1977 -8, King's IV 1969 -6, King's IV 1963 -6
+  latest: King's I 9 → 6, King's II 55 → 50, King's III 75 → 79, King's IV 85 → 82
+
+mays women: 1975 to 2026, 50 races
+  lines: King's 1, King's 2, King's 3, King's 4
+  headships: none
+  blades: 5, spoons: 10
+  highest: 3, QMABC I 1977
+  rises: QMABC II 1983 +5, QMABC II 1976 +5, King's I 2023 +4
+  falls: QMABC II 1985 -8, King's II 2025 -6, QMABC II 1984 -6
+  latest: King's I 18 → 21, King's II 67 → 69, King's III 83 → 83

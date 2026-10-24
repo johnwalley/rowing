@@ -1,0 +1,11 @@
+Metallurgy (Cambridge, metallurgy)
+current: false
+
+town men: 1983 to 1990, 7 races
+  lines: Metallurgy 1
+  headships: none
+  blades: 0, spoons: 1
+  highest: 23, Metallurgy 1 1984
+  rises: Metallurgy 1 1984 +5, Metallurgy 1 1983 +3
+  falls: Metallurgy 1 1987 -4, Metallurgy 1 1990 -2, Metallurgy 1 1989 -2
+  latest: didn't race

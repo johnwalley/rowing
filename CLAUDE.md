@@ -15,7 +15,7 @@ Read the `CLAUDE.md` in the package you're changing: the chart, the tools and bo
 ## How the packages connect
 
 - The chart depends on blades, and the bumps site on both, through `workspace:^`. Their `exports` point at `dist/`, so the site sees a library change only after that library is rebuilt. `pnpm -r build` builds everything in dependency order. To work on the chart and the site together, run `pnpm --filter react-bumps-chart exec vite build --watch` beside the site's `dev` script.
-- The bumps site builds its results data from the tools' TG files. It imports `bumps-results-tools/results` (every TG file, parsed and processed), `/stats` and `/clubs` (the one list of clubs, used by the statistics and the club pages alike), which point at the tools' TypeScript source, so the tools need no build. A results fix is one PR to the TG files, and its preview shows the change on the site. On every push to `main` that changes `packages/bumps-results-tools/**`, the Sync downstream workflow opens a PR in `johnwalley/bumps-results` with the TG and AD files.
+- The bumps site builds its results data from the tools' TG files. It imports `bumps-results-tools/results` (every TG file, parsed and processed), `/stats`, `/club-history` and `/clubs` (the one list of clubs, used by the statistics and the club pages alike), which point at the tools' TypeScript source, so the tools need no build. A results fix is one PR to the TG files, and its preview shows the change on the site. On every push to `main` that changes `packages/bumps-results-tools/**`, the Sync downstream workflow opens a PR in `johnwalley/bumps-results` with the TG and AD files.
 - Each package keeps its own Prettier, TypeScript and Vite config.
 
 ## Workspace rules

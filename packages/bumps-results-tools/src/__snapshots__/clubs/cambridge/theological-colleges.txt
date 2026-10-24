@@ -1,0 +1,20 @@
+Theological Colleges (Cambridge, theological-colleges)
+current: false
+
+lents men: 1982 to 1993, 8 races
+  lines: Theological Colleges 1
+  headships: none
+  blades: 1, spoons: 4
+  highest: 66, Theological Colleges I 1991
+  rises: Theological Colleges I 1991 +4
+  falls: Theological Colleges I 1993 -4, Theological Colleges I 1992 -4, Theological Colleges I 1985 -4
+  latest: didn't race
+
+mays men: 1982 to 1989, 8 races
+  lines: Theological Colleges 1
+  headships: none
+  blades: 1, spoons: 3
+  highest: 92, Theological Colleges I 1989
+  rises: Theological Colleges I 1983 +4, Theological Colleges I 1988 +3, Theological Colleges I 1989 +1
+  falls: Theological Colleges I 1987 -4, Theological Colleges I 1986 -4, Theological Colleges I 1982 -4
+  latest: didn't race

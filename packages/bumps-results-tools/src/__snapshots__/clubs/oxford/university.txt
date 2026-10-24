@@ -1,0 +1,38 @@
+University College Boat Club (Oxford, university)
+current: true
+
+torpids men: 1842 to 2026, 161 races
+  lines: University 1, University 2, University 3, University 4, University 5
+  headships: 1926, 1906, 1905, 1873, 1872, 1871, 1870, 1869, 1843
+  blades: 32, spoons: 16
+  highest: 1, University I 1926, University I 1906, University I 1905, University I 1873, University I 1872, University I 1871, University I 1870, University I 1869, University I 1843
+  rises: University III 1996 +8, University II 1951 +7, University I 1914 +7
+  falls: University I 1999 -11, University II 1936 -10, University II 1999 -9
+  latest: University I 4 → withdrew, University II 37 → withdrew, University III 57 → withdrew
+
+torpids women: 1981 to 2026, 39 races
+  lines: University 1, University 2, University 3
+  headships: 2023
+  blades: 18, spoons: 1
+  highest: 1, University I 2023
+  rises: University II 2019 +7, University I 2006 +7, University I 2021 +6
+  falls: University I 2004 -14, University II 2017 -7, University I 2001 -6
+  latest: University I 3 → withdrew, University II 34 → withdrew, University III 64 → withdrew
+
+eights men: 1827 to 2026, 177 races
+  lines: University 1, University 2, University 3, University 4, University 5, University 6, University 7, University 8
+  headships: 1991, 1990, 1914, 1902, 1878, 1877, 1875, 1874, 1871, 1870, 1869, 1843, 1841
+  blades: 45, spoons: 39
+  highest: 1, University I 1991, University I 1990, University I 1914, University I 1902, University I 1878, University I 1877, University I 1875, University I 1874, University I 1871, University I 1870, University I 1869, University I 1843, University I 1841
+  rises: University IV 1986 +8, University III 1949 +7, University V 1949 +7
+  falls: University I 1861 -7, University I 1853 -7, University I 1844 -7
+  latest: University I 5 → 5, University II 28 → 29, University III 57 → 51, University IV 70 → 74, University V 82 → 79
+
+eights women: 1980 to 2026, 45 races
+  lines: University 1, University 2, University 3, University 4, University 5
+  headships: 2026, 2022
+  blades: 16, spoons: 10
+  highest: 1, University I 2026, University I 2022
+  rises: University III 2026 +8, University II 2014 +5, University I 2010 +5
+  falls: University III 2015 -8, University II 1997 -6, University II 1986 -5
+  latest: University I 3 → 1, University II 31 → 28, University III 66 → 58, University IV 74 → 70

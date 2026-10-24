@@ -1,0 +1,20 @@
+Coopers & Lybrand (Cambridge, coopers-and-lybrand)
+current: false
+
+town men: 1991 to 1992, 2 races
+  lines: Coopers & Lybrand 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 44, Coopers & Lybrand 1 1992, Coopers & Lybrand 1 1991
+  rises: none
+  falls: Coopers & Lybrand 1 1992 -2, Coopers & Lybrand 1 1991 -2
+  latest: didn't race
+
+town women: 1985 to 1992, 8 races
+  lines: Coopers & Lybrand 1
+  headships: none
+  blades: 1, spoons: 0
+  highest: 12, Coopers & Lybrand 1 1990
+  rises: Coopers & Lybrand 1 1988 +4, Coopers & Lybrand 1 1990 +1, Coopers & Lybrand 1 1989 +1
+  falls: Coopers & Lybrand 1 1991 -3, Coopers & Lybrand 1 1985 -3, Coopers & Lybrand 1 1986 -2
+  latest: didn't race

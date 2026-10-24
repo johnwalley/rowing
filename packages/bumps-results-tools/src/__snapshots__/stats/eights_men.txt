@@ -1,0 +1,142 @@
+headships
+Oriel           37  2026
+Christ Church   33  2017
+Brasenose       22  1931
+Magdalen        20  2007
+New College     16  1986
+University      13  1991
+Balliol         10  2008
+Trinity         10  1949
+Keble           8   2018
+Exeter          7   1884
+S.E.H.          5   1965
+Pembroke        4   2013
+Queen's         3   1957
+Corpus Christi  2   1885
+Wadham          2   1856
+Wolfson         1   2025
+Merton          1   1951
+Hertford        1   1881
+
+crewsEntered
+Oriel              510
+Christ Church      493
+University         470
+Balliol            455
+Keble              430
+Pembroke           429
+St John's          413
+S.E.H.             410
+Worcester          404
+Magdalen           404
+Exeter             400
+Brasenose          389
+New College        389
+Lincoln            388
+Queen's            378
+Wadham             375
+Jesus              370
+Trinity            360
+Merton             349
+Hertford           335
+St Catherine's     330
+Corpus Christi     281
+St Peter's         269
+Wolfson            154
+Mansfield          114
+L.M.H.             107
+Linacre            101
+St Anne's          100
+Osler House        84
+St Hugh's          77
+Somerville         55
+St Antony's        54
+Regent's Park      51
+St Hilda's         38
+Green Templeton    38
+St Benet's Hall    36
+Osler-Green        16
+Manchester         3
+Reuben             3
+New Inn Hall       1
+Merton & Corpus    1
+Corpus & Magdalen  1
+
+headDays
+Christ Church   162
+Oriel           160
+Brasenose       145
+Magdalen        110
+New College     102
+University      81
+Trinity         70
+Balliol         68
+Exeter          39
+Keble           25
+Pembroke        22
+S.E.H.          19
+Corpus Christi  15
+Wadham          14
+Queen's         9
+Merton          7
+Hertford        4
+Wolfson         1
+
+headLong
+Trinity         34  1861 - 1865
+Brasenose       30  1852 - 1855
+Oriel           28  1978 - 1984
+University      25  1869 - 1872
+New College     25  1896 - 1900
+Magdalen        23  1892 - 1895
+Christ Church   22  1924 - 1927
+Balliol         18  1859 - 1861
+Exeter          17  1857 - 1859
+Keble           13  1967 - 1970
+S.E.H.          9   1959 - 1961
+Corpus Christi  8   1868 - 1869
+Wadham          8   1850
+Pembroke        7   1872 - 1873
+Queen's         5   1957 - 1958
+Merton          4   1951 - 1952
+Hertford        4   1881 - 1882
+Wolfson         1   2025
+
+bladesAwarded
+Oriel            74
+Christ Church    55
+University       45
+New College      42
+Magdalen         41
+Pembroke         39
+Brasenose        36
+Keble            36
+Exeter           34
+Balliol          34
+S.E.H.           32
+Trinity          31
+Queen's          30
+St Peter's       30
+Wadham           28
+St John's        27
+St Catherine's   26
+Jesus            24
+Worcester        23
+Merton           23
+Hertford         23
+Wolfson          23
+Corpus Christi   20
+Lincoln          20
+Osler House      18
+Linacre          15
+L.M.H.           12
+Mansfield        10
+St Hugh's        10
+St Anne's        9
+Green Templeton  9
+St Antony's      7
+St Benet's Hall  6
+Somerville       6
+Regent's Park    5
+St Hilda's       4
+Reuben           1

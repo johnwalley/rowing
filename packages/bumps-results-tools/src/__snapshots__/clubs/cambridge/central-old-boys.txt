@@ -1,0 +1,11 @@
+Central Old Boys (Cambridge, central-old-boys)
+current: false
+
+town men: 1954 to 1960, 7 races
+  lines: Central Old Boys 1, Central Old Boys 2
+  headships: none
+  blades: 3, spoons: 1
+  highest: 12, Central Old Boys 1 1959, Central Old Boys 1 1958, Central Old Boys 1 1957
+  rises: Central Old Boys 1 1956 +5, Central Old Boys 1 1955 +4, Central Old Boys 1 1954 +4
+  falls: Central Old Boys 2 1959 -4, Central Old Boys 1 1960 -2
+  latest: didn't race

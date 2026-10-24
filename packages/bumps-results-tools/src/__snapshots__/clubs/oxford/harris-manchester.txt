@@ -1,0 +1,29 @@
+Harris Manchester College Boat Club (Oxford, harris-manchester)
+current: false
+
+torpids men: 1994 to 1995, 2 races
+  lines: Manchester 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 83, Manchester I 1995, Manchester I 1994
+  rises: none
+  falls: none
+  latest: didn't race
+
+eights men: 1971 to 1978, 3 races
+  lines: Manchester 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 106, Manchester I 1978
+  rises: none
+  falls: Manchester I 1971 -3, Manchester I 1978 -2, Manchester I 1973 -2
+  latest: didn't race
+
+eights women: 1993 to 1993, 1 races
+  lines: Manchester 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 59, Manchester I 1993
+  rises: none
+  falls: Manchester I 1993 -1
+  latest: didn't race

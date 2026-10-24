@@ -1,0 +1,20 @@
+St Bartholomew's Hospital Boat Club (Cambridge, st-bartholomews)
+current: false
+
+lents men: 1940 to 1946, 6 races
+  lines: St. Batholemew's 1, St. Batholemew's 2, St. Batholemew's 3
+  headships: none
+  blades: 0, spoons: 1
+  highest: 25, St. Batholemew's I 1944
+  rises: St. Batholemew's I 1944 +2, St. Batholemew's I 1940 +2, St. Batholemew's II 1945 +1
+  falls: St. Batholemew's II 1946 -4, St. Batholemew's I 1943 -2, St. Batholemew's I 1946 -1
+  latest: didn't race
+
+mays men: 1941 to 1945, 5 races
+  lines: St. Batholemew's 1, St. Batholemew's 2
+  headships: none
+  blades: 1, spoons: 1
+  highest: 28, St. Batholemew's I 1941
+  rises: St. Batholemew's II 1943 +3, St. Batholemew's II 1945 +1
+  falls: St. Batholemew's I 1943 -3, St. Batholemew's I 1942 -1
+  latest: didn't race

@@ -1,0 +1,38 @@
+Trinity Hall Boat Club (Cambridge, trinity-hall)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: Trinity Hall 1, Trinity Hall 2, Trinity Hall 3, Trinity Hall 4, Trinity Hall 5, Trinity Hall 6
+  headships: 1993, 1992, 1991, 1983, 1982, 1948, 1890
+  blades: 36, spoons: 48
+  highest: 1, Trinity Hall I 1993, Trinity Hall I 1992, Trinity Hall I 1991, Trinity Hall I 1983, Trinity Hall I 1982, Trinity Hall I 1948, Trinity Hall I 1890
+  rises: Trinity Hall II 2005 +7, Trinity Hall III 1948 +6, Trinity Hall V 1938 +6
+  falls: Trinity Hall III 1995 -14, Trinity Hall II 1968 -6, Trinity Hall III 1912 -6
+  latest: Trinity Hall I 10 → 8, Trinity Hall II 40 → 38, Trinity Hall III 56 → 53
+
+lents women: 1978 to 2026, 48 races
+  lines: Trinity Hall 1, Trinity Hall 2, Trinity Hall 3
+  headships: 1999, 1996
+  blades: 8, spoons: 9
+  highest: 1, Trinity Hall I 1999, Trinity Hall I 1996
+  rises: Trinity Hall II 1996 +9, Trinity Hall II 2024 +4, Trinity Hall III 2022 +4
+  falls: Trinity Hall I 1987 -6, Trinity Hall II 1998 -5, Trinity Hall II 2017 -4
+  latest: Trinity Hall I 4 → 2, Trinity Hall II 36 → 37
+
+mays men: 1828 April May November to 2026, 236 races
+  lines: Trinity Hall 1, Trinity Hall 2, Trinity Hall 3, Trinity Hall 4, Trinity Hall 5, Trinity Hall 6, Trinity Hall 7
+  headships: 1995, 1994, 1993, 1992, 1946, 1908, 1907, 1897, 1896, 1895, 1894, 1893, 1892, 1891, 1890, 1888, 1887, 1886 June, 1864 May, 1862 May
+  blades: 73, spoons: 78
+  highest: 1, Trinity Hall I 1995, Trinity Hall I 1994, Trinity Hall I 1993, Trinity Hall I 1992, Trinity Hall I 1946, Trinity Hall I 1908, Trinity Hall I 1907, Trinity Hall I 1897, Trinity Hall I 1896, Trinity Hall I 1895, Trinity Hall I 1894, Trinity Hall I 1893, Trinity Hall I 1892, Trinity Hall I 1891, Trinity Hall I 1890, Trinity Hall I 1888, Trinity Hall I 1887, Trinity Hall I 1886 June, Trinity Hall I 1865 March, Trinity Hall I 1864 May, Trinity Hall I 1863 March, Trinity Hall I 1862 May, Trinity Hall I 1859 February March
+  rises: Trinity Hall I 1839 February +8, Trinity Hall III 2004 +7, Trinity Hall III 2018 +6
+  falls: Trinity Hall V 1977 -8, Trinity Hall I 1847 May -7, Trinity Hall II 2024 -6
+  latest: Trinity Hall I 24 → 22, Trinity Hall II 46 → 48, Trinity Hall III 73 → 70
+
+mays women: 1978 to 2026, 47 races
+  lines: Trinity Hall 1, Trinity Hall 2, Trinity Hall 3, Trinity Hall 4
+  headships: 1983, 1982
+  blades: 9, spoons: 19
+  highest: 1, Trinity Hall I 1983, Trinity Hall I 1982
+  rises: Trinity Hall II 1993 +6, Trinity Hall I 1980 +6, Trinity Hall I 2023 +4
+  falls: Trinity Hall III 2022 -8, Trinity Hall III 1986 -6, Trinity Hall IV 1986 -6
+  latest: Trinity Hall I 2 → 2, Trinity Hall II 39 → 42

@@ -1,0 +1,20 @@
+Barclays Bank (Cambridge, barclays-bank)
+current: false
+
+town men: 1983 to 1992, 10 races
+  lines: Barclays Bank 1
+  headships: none
+  blades: 2, spoons: 0
+  highest: 32, Barclays Bank 1 1992, Barclays Bank 1 1991
+  rises: Barclays Bank 1 1990 +4, Barclays Bank 1 1986 +4, Barclays Bank 1 1983 +3
+  falls: Barclays Bank 1 1992 -2, Barclays Bank 1 1985 -2, Barclays Bank 1 1991 -1
+  latest: didn't race
+
+town women: 1991 to 1991, 1 races
+  lines: Barclays Bank 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 15, Barclays Bank 1 1991
+  rises: none
+  falls: Barclays Bank 1 1991 -1
+  latest: didn't race

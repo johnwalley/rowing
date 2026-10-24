@@ -1,0 +1,38 @@
+Merton College Boat Club (Oxford, merton)
+current: true
+
+torpids men: 1845 to 2026, 134 races
+  lines: Merton 1, Merton 2, Merton 3, Merton 4
+  headships: 1927
+  blades: 17, spoons: 23
+  highest: 1, Merton I 1927
+  rises: Merton II 1976 +7, Merton I 1888 +7, Merton II 2016 +6
+  falls: Merton II 2008 -13, Merton I 1984 -11, Merton II 1981 -11
+  latest: Merton I 7 → withdrew, Merton II 73 → withdrew
+
+torpids women: 1983 to 2026, 37 races
+  lines: Merton 1, Merton 2, Merton 3
+  headships: 2004, 2003
+  blades: 9, spoons: 2
+  highest: 1, Merton I 2004, Merton I 2003
+  rises: Merton I 2025 +7, Merton I 1991 +6, Merton I 2021 +5
+  falls: Merton II 2013 -10, Merton I 1987 -9, Merton I 2013 -8
+  latest: Merton I 26 → withdrew, Merton II 55 → withdrew
+
+eights men: 1838 to 2026, 165 races
+  lines: Merton 1, Merton & Corpus 1, Merton 2, Merton 3, Merton 4, Merton 5
+  headships: 1951
+  blades: 23, spoons: 44
+  highest: 1, Merton I 1951
+  rises: Merton I 1844 +11, Merton II 1949 +8, Merton I 1898 +7
+  falls: Merton II 2026 -6, Merton I 1983 -6, Merton V 1975 -6
+  latest: Merton I 11 → 13, Merton II 48 → 54
+
+eights women: 1983 to 2026, 42 races
+  lines: Merton 1, Merton 2, Merton 3, Merton 4
+  headships: none
+  blades: 11, spoons: 11
+  highest: 2, Merton I 2002
+  rises: Merton I 2024 +5, Merton II 2024 +5, Merton I 2019 +5
+  falls: Merton I 2017 -4, Merton I 2016 -4, Merton I 2015 -4
+  latest: Merton I 20 → 20, Merton II 55 → 52

@@ -1,0 +1,38 @@
+Churchill College Boat Club (Cambridge, churchill)
+current: true
+
+lents men: 1962 to 2026, 63 races
+  lines: Churchill 1, Churchill 2, Churchill 3, Churchill 4, Churchill 5, Churchill 6
+  headships: none
+  blades: 30, spoons: 20
+  highest: 5, Churchill I 1998
+  rises: Churchill V 1972 +8, Churchill IV 1985 +7, Churchill IV 1964 +7
+  falls: Churchill IV 1977 -7, Churchill II 2022 -6, Churchill II 2016 -6
+  latest: Churchill I 20 → 23
+
+lents women: 1976 to 2026, 50 races
+  lines: Churchill 1, Churchill 2, Churchill 3
+  headships: 1984
+  blades: 7, spoons: 7
+  highest: 1, Churchill I 1984
+  rises: Churchill I 2020 +4, Churchill I 2003 +4, Churchill II 1999 +4
+  falls: Churchill II 2017 -6, Churchill II 1993 -4, Churchill II 1992 -4
+  latest: Churchill I 12 → 9, Churchill II 45 → 42, Churchill III 54 → 55
+
+mays men: 1961 to 2026, 64 races
+  lines: Churchill 1, Churchill 2, Churchill 3, Churchill 4, Churchill 5, Churchill 6, Churchill 7, Churchill 8
+  headships: none
+  blades: 47, spoons: 29
+  highest: 6, Churchill I 2006
+  rises: Churchill III 1972 +9, Churchill VII 1971 +7, Churchill IV 1966 +7
+  falls: Churchill III 2000 -8, Churchill IV 1999 -6, Churchill IV 1996 -6
+  latest: Churchill I 19 → 16, Churchill II 43 → 46, Churchill III 64 → 67
+
+mays women: 1974 to 2026, 51 races
+  lines: Churchill 1, Churchill 2, Churchill 3, Churchill 4, Churchill 5
+  headships: 1990, 1989, 1987, 1986, 1985, 1978
+  blades: 15, spoons: 12
+  highest: 1, Churchill I 1990, Churchill I 1989, Churchill I 1987, Churchill I 1986, Churchill I 1985, Churchill I 1978
+  rises: Churchill II 2022 +7, Churchill II 2016 +7, Churchill IV 1986 +7
+  falls: Churchill I 2012 -4, Churchill II 2011 -4, Churchill I 2008 -4
+  latest: Churchill I 7 → 5, Churchill II 51 → 45, Churchill III 62 → 63, Churchill IV 69 → 71

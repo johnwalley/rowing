@@ -58,15 +58,19 @@ pnpm vitest run src/bumps.test.ts
 
 - **results.ts** - `events`: every TG file in `results/tg_format/`, parsed and processed, in file name order. Importing it throws, listing every file's errors, if any file has one. It bundles the files with `import.meta.glob`, so it works only under Vite (the bumps site, the viewer, Vitest), not in `tsx` scripts. The site imports it as `bumps-results-tools/results`
 
-- **stats.ts** - `headOf(event)` is the one headship rule: the best-placed 1st boat that didn't withdraw, in a complete event not flagged `skip_headship`. `getStats(events, combine?)` aggregates per-club statistics (headships, crews entered, blades) across an array of `Event`s, counting only complete events; with `combine`, crews count for their club (`clubOf`). `getRankings(events)` turns them into the statistics pages' tables (headships, crewsEntered, headDays, headLong, bladesAwarded), ranked with Arquero. Days at head are counted per club, from the crew at head after each day's racing, so a run carries on across years and between a club's former names. The site imports it as `bumps-results-tools/stats`
+- **crews.ts** - `crewResults(event)`: every crew's result in a race (start, positions after each day, finish, gain, blades, spoons, head), worked out once per race. `headOf(event)` is the one headship rule: the best-placed 1st boat that didn't withdraw, in a complete event not flagged `skip_headship`. Blades and spoons count only in complete events. The statistics and the club histories are both built on these
 
-- **math.ts** - Histogram + summary statistics helpers (`mean`, `variance`, `standardDeviation`, histogram variants)
+- **stats.ts** - `getRankings(events)`: the statistics pages' tables for one event and category (headships, crewsEntered, headDays, headLong, bladesAwarded), from complete events only, each crew counting for its club (`clubOf`). Days at head are counted per club, from the crew at head after each day's racing, so a run carries on across years and between a club's former names. Ties keep the order the clubs first raced in. The site imports it as `bumps-results-tools/stats`
 
-- **utils.ts** - Small helpers (`range`, etc.) shared by core and scripts
+- **club-history.ts** - `getClubHistory(club, events)`: a club's races under all its names, by event and category, with each crew's chart `line` (a rename carries a line on; a merged club keeps its own). `getSectionRecords` works out a section's records (headships, blades, spoons, highest finish, biggest rises and falls, latest crews), `isCurrent` whether the club still races. The site's club pages import it as `bumps-results-tools/club-history`
+
+- **utils.ts** - `range`, shared by core and scripts
 
 - **bumps.test.ts** - Vitest suite for the core library
 
 - **results.test.ts** - Parses and processes every file in `results/tg_format/`, fails on any error (so a typo in new results data breaks CI), and compares a per-crew summary (daily moves, gain, blades, withdrawn) against `src/__snapshots__/results/<file>`. When a data edit or processor change is meant to alter results, run `pnpm vitest run -u` and review the snapshot diff. New TG files need their snapshot committed, because CI won't write missing snapshots
+
+- **stats.test.ts**, **club-history.test.ts** - Snapshot the statistics tables (`src/__snapshots__/stats/<event>_<gender>.txt`) and what each club page shows (`src/__snapshots__/clubs/<city>/<slug>.txt`), and check the headship rule and the club crediting. A results change moves these snapshots too (the latest year's crews are on every club page), so `pnpm vitest run -u` after a data edit and review what moved
 
 ### UI (`src/ui/`)
 
@@ -94,7 +98,7 @@ React app rendered through Vite. `App.tsx` is a split-pane editor:
 
 ### How the site uses this package
 
-`package.json` `exports` point at the TypeScript source (`./clubs`, `./results`, `./stats` and `./types`, each `src/<name>.ts`), so the site's Vite build compiles them and this package never needs building for it. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site imports free of Node builtins at the top level (see `readFile`).
+`package.json` `exports` point at the TypeScript source (`./club-history`, `./clubs`, `./results`, `./stats` and `./types`, each `src/<name>.ts`), so the site's Vite build compiles them and this package never needs building for it. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site imports free of Node builtins at the top level (see `readFile`).
 
 ### Downstream sync
 

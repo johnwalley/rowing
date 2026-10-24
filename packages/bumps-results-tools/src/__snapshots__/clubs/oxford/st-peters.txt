@@ -1,0 +1,38 @@
+St Peter's College Boat Club (Oxford, st-peters)
+current: true
+
+torpids men: 1930 to 2026, 83 races
+  lines: St Peter's 1, St Peter's 2, St Peter's 3, St Peter's 4
+  headships: none
+  blades: 17, spoons: 18
+  highest: 6, St Peter's I 1956, St Peter's I 1955
+  rises: St Peter's II 2022 +7, St Peter's I 2021 +6, St Peter's II 2009 +6
+  falls: St Peter's III 1988 -12, St Peter's II 2012 -10, St Peter's II 1976 -10
+  latest: St Peter's I 24 → withdrew, St Peter's II 60 → withdrew
+
+torpids women: 1980 to 2026, 37 races
+  lines: St Peter's 1, St Peter's 2, St Peter's 3
+  headships: none
+  blades: 2, spoons: 1
+  highest: 22, St Peter's I 1999
+  rises: St Peter's I 2023 +6, St Peter's I 2010 +6, St Peter's II 2013 +5
+  falls: St Peter's I 2008 -25, St Peter's II 2011 -11, St Peter's I 2001 -7
+  latest: St Peter's I 25 → withdrew, St Peter's II 54 → withdrew, St Peter's III 63 → withdrew
+
+eights men: 1930 to 2026, 89 races
+  lines: St Peter's 1, St Peter's 2, St Peter's 3, St Peter's 4, St Peter's 5, St Peter's 6
+  headships: none
+  blades: 30, spoons: 24
+  highest: 13, St Peter's I 1955
+  rises: St Peter's IV 1972 +7, St Peter's V 1955 +7, St Peter's III 1951 +7
+  falls: St Peter's III 1984 -7, St Peter's II 2019 -6, St Peter's II 1997 -6
+  latest: St Peter's I 25 → 26, St Peter's II 47 → 50
+
+eights women: 1980 to 2026, 45 races
+  lines: St Peter's 1, St Peter's 2, St Peter's 3, Brasenose/St Peter's 1
+  headships: none
+  blades: 9, spoons: 4
+  highest: 25, St Peter's I 2025, St Peter's I 2023
+  rises: St Peter's II 2022 +6, St Peter's I 1986 +5, St Peter's II 2023 +4
+  falls: St Peter's II 2026 -10, St Peter's I 2026 -4, St Peter's I 2013 -4
+  latest: St Peter's I 25 → 29, St Peter's II 61 → 71

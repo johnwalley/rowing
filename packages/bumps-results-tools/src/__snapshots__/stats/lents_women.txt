@@ -1,0 +1,118 @@
+headships
+Jesus           11  2026
+Emmanuel        11  2009
+Downing         6   2020
+Newnham         5   2022
+1st and 3rd     4   2014
+Murray Edwards  3   1980
+Trinity Hall    2   1999
+LMBC            2   1993
+Girton          2   1981
+Christ's        1   2015
+Clare           1   2006
+Caius           1   2003
+Churchill       1   1984
+
+crewsEntered
+Newnham         127
+Jesus           117
+Emmanuel        109
+LMBC            108
+Clare           104
+Murray Edwards  104
+Queens'         93
+Caius           91
+Girton          90
+St Catharine's  89
+Trinity Hall    87
+Christ's        86
+Pembroke        86
+Churchill       84
+1st and 3rd     83
+Downing         80
+Selwyn          79
+Sidney Sussex   78
+Homerton        74
+King's          64
+Fitzwilliam     62
+Darwin          58
+Robinson        56
+Anglia Ruskin   51
+Wolfson         49
+Peterhouse      49
+Magdalene       49
+Corpus Christi  46
+St Edmund's     29
+Lucy Cavendish  25
+Clare Hall      23
+Hughes Hall     20
+Hughes/Lucy     14
+Addenbrooke's   12
+Vet School      5
+TSS             1
+
+headDays
+Jesus           47
+Emmanuel        41
+Newnham         24
+Downing         22
+1st and 3rd     13
+LMBC            9
+Girton          8
+Clare           7
+Trinity Hall    7
+Murray Edwards  6
+Churchill       5
+Caius           3
+Christ's        3
+
+headLong
+Jesus           14  1985 - 1988
+Downing         13  2011 - 2014
+Emmanuel        10  1988 - 1991
+Newnham         8   1982 - 1983
+Clare           6   2006 - 2007
+1st and 3rd     6   2007 - 2008
+Churchill       5   1984 - 1985
+Murray Edwards  4   1978 - 1979
+Girton          4   1979 - 1980
+Trinity Hall    4   1999
+LMBC            4   1992
+Caius           3   2003 - 2004
+Christ's        3   2015 - 2016
+
+bladesAwarded
+Jesus           18
+Emmanuel        16
+Downing         14
+1st and 3rd     12
+Caius           12
+St Catharine's  10
+Newnham         9
+Christ's        9
+LMBC            9
+Pembroke        9
+Murray Edwards  8
+Trinity Hall    8
+Churchill       7
+Wolfson         7
+Sidney Sussex   7
+Magdalene       7
+Darwin          6
+Selwyn          6
+Robinson        6
+Corpus Christi  6
+Girton          5
+Queens'         5
+Anglia Ruskin   5
+Peterhouse      5
+Clare           4
+Fitzwilliam     4
+Hughes/Lucy     4
+King's          3
+Homerton        2
+St Edmund's     2
+Lucy Cavendish  1
+Addenbrooke's   1
+Hughes Hall     1
+Clare Hall      1

@@ -1,0 +1,11 @@
+Leys Lysander (Cambridge, leys-lysander)
+current: false
+
+town men: 2008 to 2012, 5 races
+  lines: Leys Lysander 1
+  headships: none
+  blades: 2, spoons: 0
+  highest: 21, Leys Lysander 1 2012
+  rises: Leys Lysander 1 2012 +5, Leys Lysander 1 2011 +4, Leys Lysander 1 2010 +4
+  falls: none
+  latest: didn't race

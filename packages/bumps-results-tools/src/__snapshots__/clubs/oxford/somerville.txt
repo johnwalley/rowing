@@ -1,0 +1,38 @@
+Somerville College Boat Club (Oxford, somerville)
+current: true
+
+torpids men: 1996 to 2026, 25 races
+  lines: Somerville 1, Somerville 2
+  headships: none
+  blades: 4, spoons: 1
+  highest: 21, Somerville I 2013
+  rises: Somerville I 2008 +7, Somerville I 2009 +6, Somerville I 1999 +6
+  falls: Somerville I 2005 -11, Somerville I 2015 -4, Somerville I 2006 -4
+  latest: Somerville I 25 → withdrew, Somerville II 72 → withdrew
+
+torpids women: 1978 to 2026, 41 races
+  lines: Somerville 1, Somerville 2, Somerville 3, Somerville 4
+  headships: 1994, 1993, 1992, 1991, 1987
+  blades: 15, spoons: 4
+  highest: 1, Somerville I 1994, Somerville I 1993, Somerville I 1992, Somerville I 1991, Somerville I 1987
+  rises: Somerville II 1980 +6, Somerville I 2025 +5, Somerville II 2017 +5
+  falls: Somerville I 2006 -8, Somerville II 1997 -8, Somerville II 1996 -7
+  latest: Somerville I 17 → withdrew, Somerville II 42 → withdrew, Somerville III 71 → withdrew
+
+eights men: 1995 to 2026, 30 races
+  lines: Somerville 1, Somerville 2, Somerville 3
+  headships: none
+  blades: 6, spoons: 5
+  highest: 25, Somerville I 2013
+  rises: Somerville II 1999 +7, Somerville II 2026 +5, Somerville I 1997 +5
+  falls: Somerville I 2023 -6, Somerville II 2018 -5, Somerville II 2002 -5
+  latest: Somerville I 39 → 35, Somerville II 72 → 67
+
+eights women: 1976 to 2026, 49 races
+  lines: Somerville 1, Somerville 2, Somerville 3, Somerville 4
+  headships: 1993, 1992, 1991, 1990, 1987, 1986, 1981, 1980
+  blades: 14, spoons: 13
+  highest: 1, Somerville I 1993, Somerville I 1992, Somerville I 1991, Somerville I 1990, Somerville I 1987, Somerville I 1986, Somerville I 1981, Somerville I 1980
+  rises: Somerville II 1988 +5, Somerville I 2025 +4, Somerville II 2025 +4
+  falls: Somerville II 2016 -5, Somerville II 1996 -5, Somerville I 2023 -4
+  latest: Somerville I 21 → 18, Somerville II 53 → 50, Somerville III 76 → 77

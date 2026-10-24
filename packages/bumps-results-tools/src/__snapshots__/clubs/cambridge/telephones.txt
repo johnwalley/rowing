@@ -1,0 +1,20 @@
+Telephones (Cambridge, telephones)
+current: false
+
+town men: 1971 to 1983, 13 races
+  lines: Telephones 1, Telephones 2, Telephones 3, Telephones 4
+  headships: none
+  blades: 1, spoons: 3
+  highest: 11, Telephones 1 1977
+  rises: Telephones 2 1977 +4, Telephones 2 1978 +3, Telephones 3 1977 +3
+  falls: Telephones 3 1981 -6, Telephones 4 1980 -6, Telephones 1 1978 -5
+  latest: didn't race
+
+town women: 1983 to 1984, 2 races
+  lines: Telephones 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 15, Telephones 1 1983
+  rises: Telephones 1 1983 +1
+  falls: Telephones 1 1984 -4
+  latest: didn't race

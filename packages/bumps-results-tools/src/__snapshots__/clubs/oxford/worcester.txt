@@ -1,0 +1,38 @@
+Worcester College Boat Club (Oxford, worcester)
+current: true
+
+torpids men: 1838 to 2026, 160 races
+  lines: Worcester 1, Worcester 2, Worcester 3, Worcester 4
+  headships: 1930, 1922, 1838
+  blades: 30, spoons: 17
+  highest: 1, Worcester I 1930, Worcester I 1922, Worcester I 1838
+  rises: Worcester II 1967 +11, Worcester III 1983 +7, Worcester II 1979 +7
+  falls: Worcester II 2017 -15, Worcester II 1999 -15, Worcester I 1988 -12
+  latest: Worcester I 20 → withdrew, Worcester II 64 → withdrew, Worcester III 66 → withdrew
+
+torpids women: 1980 to 2026, 40 races
+  lines: Worcester 1, Worcester 2, Worcester 3
+  headships: none
+  blades: 9, spoons: 3
+  highest: 7, Worcester I 1984, Worcester I 1983
+  rises: Worcester II 2023 +7, Worcester III 2005 +6, Worcester I 2011 +5
+  falls: Worcester I 2016 -9, Worcester I 2008 -9, Worcester I 2021 -8
+  latest: Worcester I 24 → withdrew, Worcester II 35 → withdrew, Worcester III 68 → withdrew
+
+eights men: 1825 to 2026, 179 races
+  lines: Worcester 1, Worcester 2, Worcester 3, Worcester 4, Worcester 5, Worcester 6
+  headships: none
+  blades: 23, spoons: 48
+  highest: 2, Worcester I 1848, Worcester I 1834
+  rises: Worcester II 1952 +9, Worcester I 1913 +6, Worcester II 2026 +5
+  falls: Worcester III 1996 -6, Worcester III 1974 -6, Worcester IV 1969 -6
+  latest: Worcester I 17 → 15, Worcester II 53 → 48, Worcester III 75 → 76
+
+eights women: 1980 to 2026, 45 races
+  lines: Worcester 1, Worcester 2, Worcester 3, Worcester 4
+  headships: none
+  blades: 12, spoons: 14
+  highest: 7, Worcester I 1983
+  rises: Worcester I 2010 +7, Worcester IV 2026 +6, Worcester II 2023 +5
+  falls: Worcester II 2022 -5, Worcester I 2019 -4, Worcester I 2018 -4
+  latest: Worcester I 29 → 26, Worcester II 44 → 47, Worcester III 71 → 72, Worcester IV 85 → 79

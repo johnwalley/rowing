@@ -1,0 +1,38 @@
+Pembroke College Boat Club (Cambridge, pembroke)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: Pembroke 1, Pembroke 2, Pembroke 3, Pembroke 4, Pembroke 5, Pembroke 6
+  headships: 1989, 1942, 1933, 1931
+  blades: 44, spoons: 61
+  highest: 1, Pembroke I 1989, Pembroke I 1942, Pembroke I 1933, Pembroke I 1931
+  rises: Pembroke IV 1966 +7, Pembroke III 1984 +6, Pembroke IV 1986 +5
+  falls: Pembroke III 1990 -14, Pembroke II 2025 -6, Pembroke II 1957 -6
+  latest: Pembroke I 8 → 6, Pembroke II 34 → 31, Pembroke III 51 → 52
+
+lents women: 1985 to 2026, 41 races
+  lines: Pembroke 1, Pembroke 2, Pembroke 3, Pembroke 4
+  headships: none
+  blades: 9, spoons: 8
+  highest: 2, Pembroke I 2011
+  rises: Pembroke I 1998 +6, Pembroke I 2025 +4, Pembroke II 2022 +4
+  falls: Pembroke II 2019 -6, Pembroke I 2014 -6, Pembroke I 2017 -4
+  latest: Pembroke I 7 → 4, Pembroke II 32 → 31
+
+mays men: 1834 April to 2026, 215 races
+  lines: Pembroke 1, Pembroke 2, Pembroke 3, Pembroke 4, Pembroke 5, Pembroke 6, Pembroke 7
+  headships: 1986, 1985, 1978, 1977, 1976, 1934, 1933, 1932, 1931, 1923
+  blades: 70, spoons: 61
+  highest: 1, Pembroke I 1986, Pembroke I 1985, Pembroke I 1978, Pembroke I 1977, Pembroke I 1976, Pembroke I 1934, Pembroke I 1933, Pembroke I 1932, Pembroke I 1931, Pembroke I 1923
+  rises: Pembroke III 2014 +8, Pembroke I 1864 May +8, Pembroke III 2019 +7
+  falls: Pembroke III 1993 -8, Pembroke V 1985 -7, Pembroke VI 1971 -7
+  latest: Pembroke I 11 → 7, Pembroke II 26 → 29, Pembroke III 53 → 49, Pembroke IV 78 → 81
+
+mays women: 1985 to 2026, 40 races
+  lines: Pembroke 1, Pembroke 2, Pembroke 3, Pembroke 4, Pembroke 5
+  headships: 2010, 2009, 2008, 2006, 1998, 1997
+  blades: 22, spoons: 7
+  highest: 1, Pembroke I 2010, Pembroke I 2009, Pembroke I 2008, Pembroke I 2006, Pembroke I 1998, Pembroke I 1997
+  rises: Pembroke III 2008 +5, Pembroke IV 2007 +5, Pembroke II 1987 +5
+  falls: Pembroke II 2014 -6, Pembroke III 2013 -6, Pembroke III 2024 -5
+  latest: Pembroke I 5 → 4, Pembroke II 29 → 33, Pembroke III 55 → 58

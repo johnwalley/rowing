@@ -1,0 +1,38 @@
+Hertford College Boat Club (Oxford, hertford)
+current: true
+
+torpids men: 1850 to 2026, 131 races
+  lines: Hertford 1, Hertford 2, Hertford 3, Hertford 4
+  headships: none
+  blades: 24, spoons: 22
+  highest: 5, Hertford I 2017, Hertford I 1989
+  rises: Hertford II 1987 +7, Hertford I 1894 +7, Hertford I 2015 +6
+  falls: Hertford III 1991 -19, Hertford II 2019 -14, Hertford I 1973 -11
+  latest: Hertford I 8 → withdrew, Hertford II 55 → withdrew
+
+torpids women: 1978 to 2026, 42 races
+  lines: Hertford 1, Hertford 2, Hertford 3
+  headships: 1978
+  blades: 12, spoons: 4
+  highest: 1, Hertford I 1978
+  rises: Hertford I 2012 +7, Hertford I 2015 +5, Hertford I 2006 +5
+  falls: Hertford II 2016 -14, Hertford I 2013 -9, Hertford I 2023 -8
+  latest: Hertford I 12 → withdrew, Hertford II 59 → withdrew, Hertford III 66 → withdrew
+
+eights men: 1838 to 2026, 154 races
+  lines: Hertford 1, Hertford 2, Hertford 3, Hertford 4, Hertford 5, Hertford 6, Hertford 7
+  headships: 1881
+  blades: 23, spoons: 23
+  highest: 1, Hertford I 1881
+  rises: Hertford I 1988 +7, Hertford II 1950 +7, Hertford I 1887 +7
+  falls: Hertford IV 1990 -7, Hertford III 1949 -7, Hertford II 1994 -6
+  latest: Hertford I 15 → 11, Hertford II 43 → 44
+
+eights women: 1976 to 2026, 49 races
+  lines: Hertford 1, Hertford 2, Hertford 3, Hertford 4, Hertford 5
+  headships: none
+  blades: 9, spoons: 15
+  highest: 5, Hertford I 2012, Hertford I 1978
+  rises: Hertford I 1985 +6, Hertford II 2008 +5, Hertford II 2006 +5
+  falls: Hertford II 1990 -5, Hertford I 2026 -4, Hertford II 2026 -4
+  latest: Hertford I 18 → 22, Hertford II 51 → 55

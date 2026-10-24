@@ -1,0 +1,11 @@
+Marshall (Cambridge, marshall)
+current: false
+
+town men: 1991 to 1996, 6 races
+  lines: Marshalls 1
+  headships: none
+  blades: 1, spoons: 0
+  highest: 32, Marshalls 1 1996
+  rises: Marshalls 1 1993 +4, Marshalls 1 1995 +3, Marshalls 1 1994 +3
+  falls: Marshall 1 1992 -2, Marshalls 1 1996 -1
+  latest: didn't race

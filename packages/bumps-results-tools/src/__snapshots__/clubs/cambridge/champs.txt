@@ -1,0 +1,20 @@
+Champs (Cambridge, champs)
+current: true
+
+town men: 1950 to 2026, 75 races
+  lines: Champs 1, Champs 2, Champs 3, Champs 4, Champs 5, Champs 6, Champs 7, Champs 8, Champs 9, Champs 10
+  headships: none
+  blades: 23, spoons: 40
+  highest: 4, ACUA 1 1969
+  rises: Champs 1 2001 +7, Champs 6 2004 +6, Champs 2 2001 +6
+  falls: Champs 3 2024 -6, Univ Sports 2 1991 -6, ACUA 3 1970 -6
+  latest: Champs 1 21 → 18, Champs 2 38 → 34, Champs 3 44 → 42, Champs 4 45 → 43, Champs 5 52 → 55, Champs 6 54 → 52, Champs 7 56 → 53, Champs 8 59 → 61, Champs 9 62 → 63, Champs 10 64 → 64
+
+town women: 1986 to 2026, 30 races
+  lines: Champs 1, Champs 2, Champs 3, Champs 4, Champs 5, Champs 6, Champs 7, Champs 8, Champs 9, Champs 10
+  headships: none
+  blades: 9, spoons: 26
+  highest: 6, Champs 1 2008
+  rises: Champs 3 2019 +7, Champs 1 1999 +5, Champs 1 2026 +4
+  falls: Champs 4 2018 -6, Champs 5 2018 -5, Champs 1 2025 -4
+  latest: Champs 1 20 → 16, Champs 2 22 → 25, Champs 3 31 → 30, Champs 4 43 → 44

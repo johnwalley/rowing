@@ -1,0 +1,20 @@
+Cavendish College Boat Club (Cambridge, cavendish)
+current: false
+
+lents men: 1887 to 1891, 5 races
+  lines: Cavendish 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 13, Cavendish I 1889, Cavendish I 1888
+  rises: Cavendish I 1888 +1
+  falls: Cavendish I 1890 -3, Cavendish I 1887 -3, Cavendish I 1891 -2
+  latest: didn't race
+
+mays men: 1879 March to 1891, 21 races
+  lines: Cavendish 1, Cavendish 2
+  headships: none
+  blades: 0, spoons: 1
+  highest: 19, Cavendish I 1883 June
+  rises: Cavendish I 1882 June +4, Cavendish I 1881 May +4, Cavendish I 1885 June +3
+  falls: Cavendish I 1884 February March -4, Cavendish I 1884 June -4, Cavendish I 1888 -3
+  latest: didn't race

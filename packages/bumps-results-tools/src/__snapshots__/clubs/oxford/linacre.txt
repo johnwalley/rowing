@@ -1,0 +1,38 @@
+Linacre College Boat Club (Oxford, linacre)
+current: true
+
+torpids men: 1971 to 2026, 45 races
+  lines: Linacre 1, Linacre 2, Linacre 3
+  headships: none
+  blades: 12, spoons: 4
+  highest: 22, Linacre I 2023
+  rises: Linacre I 1993 +8, Linacre II 2021 +6, Linacre I 2015 +6
+  falls: Linacre I 2025 -11, Linacre II 2008 -8, Linacre I 1981 -8
+  latest: Linacre I 33 → withdrew, Linacre II 53 → withdrew
+
+torpids women: 1979 to 2026, 37 races
+  lines: Linacre 1, Linacre 2, Linacre 3
+  headships: none
+  blades: 8, spoons: 3
+  highest: 8, Linacre I 1979
+  rises: Linacre I 2015 +6, Linacre II 2022 +5, Linacre I 2016 +5
+  falls: Linacre II 1980 -10, Linacre I 2023 -7, Linacre II 2008 -7
+  latest: Linacre I 30 → withdrew, Linacre II 40 → withdrew
+
+eights men: 1848 to 2026, 57 races
+  lines: Linacre 1, Linacre 2, Linacre 3
+  headships: none
+  blades: 15, spoons: 5
+  highest: 25, Linacre I 2006
+  rises: Linacre II 1997 +6, Linacre II 2022 +5, Linacre II 1991 +5
+  falls: Linacre II 2026 -5, Linacre II 2000 -5, Linacre I 2012 -4
+  latest: Linacre I 34 → 37, Linacre II 66 → 71
+
+eights women: 1978 to 2026, 47 races
+  lines: Linacre 1, Linacre 2, Linacre 3, Linacre 4
+  headships: none
+  blades: 2, spoons: 11
+  highest: 7, Linacre I 1980
+  rises: Linacre I 1994 +6, Linacre II 2000 +5, Linacre I 2025 +4
+  falls: Linacre I 2014 -5, Linacre II 2016 -4, Linacre I 2012 -4
+  latest: Linacre I 14 → 13, Linacre II 41 → 42

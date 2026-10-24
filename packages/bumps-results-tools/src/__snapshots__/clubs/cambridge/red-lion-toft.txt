@@ -1,0 +1,20 @@
+Red Lion Toft (Cambridge, red-lion-toft)
+current: false
+
+town men: 1981 to 1995, 15 races
+  lines: Red Lion Toft 1, Red Lion Toft 2
+  headships: none
+  blades: 2, spoons: 4
+  highest: 15, Red Lion Toft 1 1992
+  rises: Red Lion Toft 2 1987 +6, Red Lion Toft 2 1992 +4, Red Lion Toft 2 1985 +4
+  falls: Red Lion Toft 1 1995 -4, Red Lion Toft 1 1993 -4, Red Lion Toft 2 1988 -4
+  latest: didn't race
+
+town women: 1987 to 1994, 2 races
+  lines: Red Lion Toft 1
+  headships: none
+  blades: 0, spoons: 0
+  highest: 14, Red Lion Toft 1 1994
+  rises: Red Lion Toft 1 1994 +3
+  falls: Red Lion Toft 1 1987 -1
+  latest: didn't race

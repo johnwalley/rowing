@@ -2,6 +2,7 @@
   "name": "bumps-results-tools",
   "private": true,
   "exports": {
+    "./club-history": "./src/club-history.ts",
     "./clubs": "./src/clubs.ts",
     "./results": "./src/results.ts",
     "./stats": "./src/stats.ts",
@@ -9,7 +10,6 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
-    "arquero": "^8",
     "react": "catalog:",
     "react-bumps-chart": "workspace:^",
     "react-dom": "catalog:",

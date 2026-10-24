@@ -1,0 +1,70 @@
+headships
+City     18  2026
+Cantabs  9   2024
+Rob Roy  7   2007
+99       7   2006
+X-Press  2   1999
+
+crewsEntered
+City               307
+Cantabs            254
+99                 198
+Champs             155
+X-Press            117
+Rob Roy            111
+Chesterton         77
+St Radegund        35
+St Neots           26
+Isle of Ely        25
+Camb Veterans      14
+Mott MacDonald     12
+Coopers & Lybrand  8
+Leckhampton        8
+Darwin             6
+Addenbrooke's      6
+Cam Consultants    6
+Max Entropy        6
+St Ives            5
+Camb Blue          4
+Peregrines         3
+Telephones         2
+Lady Somerset      2
+Red Lion Toft      2
+City/CCAT          1
+Barclays Bank      1
+Emmanuel           1
+PA Consultants     1
+Ionica             1
+Domino             1
+St Ives/Ely        1
+
+headDays
+City     73
+Cantabs  35
+99       31
+Rob Roy  23
+X-Press  9
+
+headLong
+City     33  2008 - 2016
+Cantabs  27  2017 - 2024
+Rob Roy  15  2000 - 2003
+99       13  2004 - 2007
+X-Press  9   1998 - 2000
+
+bladesAwarded
+City               36
+Cantabs            36
+99                 24
+Rob Roy            18
+X-Press            14
+Champs             9
+Chesterton         5
+Coopers & Lybrand  1
+Lady Somerset      1
+Leckhampton        1
+St Radegund        1
+Isle of Ely        1
+Camb Veterans      1
+St Neots           1
+Peregrines         1

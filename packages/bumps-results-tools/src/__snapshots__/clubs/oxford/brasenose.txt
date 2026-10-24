@@ -1,0 +1,38 @@
+Brasenose College Boat Club (Oxford, brasenose)
+current: true
+
+torpids men: 1839 to 2026, 167 races
+  lines: Brasenose 1, Brasenose 2, Brasenose 3, Brasenose 4, Brasenose 5
+  headships: 1894, 1893, 1892, 1891, 1890, 1889, 1888, 1887, 1886, 1881, 1875, 1874, 1866, 1862, 1861, 1853, 1852, 1851, 1850, 1848, 1845, 1842
+  blades: 35, spoons: 13
+  highest: 1, Brasenose I 1894, Brasenose I 1893, Brasenose I 1892, Brasenose I 1891, Brasenose I 1890, Brasenose I 1889, Brasenose I 1888, Brasenose I 1887, Brasenose I 1886, Brasenose I 1881, Brasenose I 1875, Brasenose I 1874, Brasenose I 1866, Brasenose I 1862, Brasenose I 1861, Brasenose I 1853, Brasenose I 1852, Brasenose I 1851, Brasenose I 1850, Brasenose I 1848, Brasenose I 1845, Brasenose I 1842
+  rises: Brasenose I 2019 +7, Brasenose II 1979 +7, Brasenose I 1946 +7
+  falls: Brasenose II 2009 -15, Brasenose II 2004 -14, Brasenose I 2004 -12
+  latest: Brasenose I 17 → withdrew, Brasenose II 50 → withdrew, Brasenose III 67 → withdrew
+
+torpids women: 1978 to 2026, 41 races
+  lines: Brasenose 1, Brasenose 2, Brasenose 3, Brasenose 4
+  headships: none
+  blades: 4, spoons: 1
+  highest: 5, Brasenose I 1978
+  rises: Brasenose IV 2008 +8, Brasenose I 2013 +6, Brasenose I 2022 +4
+  falls: Brasenose II 2015 -10, Brasenose II 2004 -10, Brasenose II 1991 -7
+  latest: Brasenose I 20 → withdrew, Brasenose II 51 → withdrew, Brasenose III 70 → withdrew
+
+eights men: 1815 to 2026, 187 races
+  lines: Brasenose 1, Brasenose 2, Brasenose 3, Brasenose 4, Brasenose 5
+  headships: 1931, 1930, 1929, 1928, 1891, 1890, 1889, 1876, 1867, 1866, 1865, 1854, 1853, 1852, 1846, 1845, 1840, 1839, 1827, 1822, 1816, 1815
+  blades: 36, spoons: 31
+  highest: 1, Brasenose I 1931, Brasenose I 1930, Brasenose I 1929, Brasenose I 1928, Brasenose I 1891, Brasenose I 1890, Brasenose I 1889, Brasenose I 1876, Brasenose I 1867, Brasenose I 1866, Brasenose I 1865, Brasenose I 1854, Brasenose I 1853, Brasenose I 1852, Brasenose I 1846, Brasenose I 1845, Brasenose I 1840, Brasenose I 1839, Brasenose I 1827, Brasenose I 1822, Brasenose I 1816, Brasenose I 1815
+  rises: Brasenose IV 1949 +6, Brasenose III 2003 +5, Brasenose II 1989 +5
+  falls: Brasenose III 1999 -6, Brasenose IV 1953 -6, Brasenose IV 1952 -6
+  latest: Brasenose I 26 → 24, Brasenose II 45 → 41, Brasenose III 80 → 77
+
+eights women: 1976 to 2026, 48 races
+  lines: Brasenose 1, Brasenose 2, Brasenose 3, Brasenose/St Peter's 1
+  headships: none
+  blades: 7, spoons: 11
+  highest: 2, Brasenose I 1992, Brasenose I 1991
+  rises: Brasenose II 2022 +6, Brasenose I 2019 +4, Brasenose I 2008 +4
+  falls: Brasenose I 2005 -6, Brasenose I 2000 -5, Brasenose I 2016 -4
+  latest: Brasenose I 27 → 24, Brasenose II 47 → 45, Brasenose III 78 → 76

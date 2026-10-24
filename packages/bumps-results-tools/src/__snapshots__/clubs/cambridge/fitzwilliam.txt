@@ -1,0 +1,38 @@
+Fitzwilliam College Boat Club (Cambridge, fitzwilliam)
+current: true
+
+lents men: 1887 to 2026, 119 races
+  lines: Fitzwilliam 1, Fitzwilliam 2, Fitzwilliam 3, Fitzwilliam 4, Fitzwilliam 5, Fitzwilliam 6
+  headships: 1969
+  blades: 29, spoons: 41
+  highest: 1, Fitzwilliam I 1969
+  rises: Fitzwilliam III 1962 +13, Fitzwilliam IV 1965 +9, Fitzwilliam III 1966 +6
+  falls: Fitzwilliam II 2011 -8, Fitzwilliam I 1989 -6, Fitzwilliam II 1972 -6
+  latest: Fitzwilliam I 18 → 16, Fitzwilliam II 39 → 39
+
+lents women: 1980 to 2026, 46 races
+  lines: Fitzwilliam 1, Fitzwilliam 2
+  headships: none
+  blades: 4, spoons: 8
+  highest: 7, Fitzwilliam I 1987, Fitzwilliam I 1986
+  rises: Fitzwilliam I 2019 +4, Fitzwilliam I 2013 +4, Fitzwilliam I 2005 +4
+  falls: Fitzwilliam I 1989 -6, Fitzwilliam I 2024 -5, Fitzwilliam I 2002 -5
+  latest: Fitzwilliam I 19 → 19
+
+mays men: 1875 March to 2026, 126 races
+  lines: Fitzwilliam 1, Fitzwilliam 2, Fitzwilliam 3, Fitzwilliam 4, Fitzwilliam 5, Fitzwilliam 6, Fitzwilliam 7, Fitzwilliam 8
+  headships: 1971, 1970, 1969
+  blades: 49, spoons: 53
+  highest: 1, Fitzwilliam I 1971, Fitzwilliam I 1970, Fitzwilliam I 1969
+  rises: Fitzwilliam IV 1979 +11, Fitzwilliam V 1973 +9, Fitzwilliam V 1985 +8
+  falls: Fitzwilliam IV 1971 -8, Fitzwilliam II 1948 -7, Fitzwilliam III 1976 -6
+  latest: Fitzwilliam I 15 → 13, Fitzwilliam II 45 → 47, Fitzwilliam III 65 → 62
+
+mays women: 1980 to 2026, 45 races
+  lines: Fitzwilliam 1, Fitzwilliam 2, Fitzwilliam 3
+  headships: none
+  blades: 10, spoons: 12
+  highest: 4, Fitzwilliam I 1988
+  rises: Fitzwilliam II 1984 +6, Fitzwilliam I 1983 +6, Fitzwilliam I 2017 +4
+  falls: Fitzwilliam I 2024 -4, Fitzwilliam II 2023 -4, Fitzwilliam III 2019 -4
+  latest: Fitzwilliam I 15 → 12, Fitzwilliam II 58 → 57

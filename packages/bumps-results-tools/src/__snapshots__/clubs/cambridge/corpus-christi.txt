@@ -1,0 +1,38 @@
+Corpus Christi College Boat Club (Cambridge, corpus-christi)
+current: true
+
+lents men: 1887 to 2026, 132 races
+  lines: Corpus Christi 1, Corpus Christi 2, Corpus Christi 3, Queens' and Corpus Christi 1, Corpus Christi 4, Corpus Christi 5
+  headships: 1891, 1887
+  blades: 25, spoons: 35
+  highest: 1, Corpus Christi I 1891, Corpus Christi I 1887
+  rises: Corpus Christi I 1905 +9, Corpus Christi II 1946 +7, Corpus Christi II 1996 +5
+  falls: Corpus Christi IV 1971 -8, Corpus Christi II 1965 -6, Corpus Christi III 1951 -6
+  latest: Corpus Christi I 26 → 22
+
+lents women: 1984 to 2026, 39 races
+  lines: Corpus Christi 1, Corpus Christi 2
+  headships: none
+  blades: 6, spoons: 5
+  highest: 16, Corpus Christi I 1987
+  rises: Corpus Christi I 1986 +6, Corpus Christi I 2020 +4, Corpus Christi I 2010 +4
+  falls: Corpus Christi I 2017 -4, Corpus Christi I 2002 -4, Corpus Christi I 2000 -4
+  latest: Corpus Christi I 20 → 23, Corpus Christi II 61 → 58
+
+mays men: 1828 February March to 2026, 240 races
+  lines: Corpus Christi 1, Corpus Christi 2, Corpus Christi 3, Corpus Christi 4, Corpus Christi 5, Corpus Christi 6
+  headships: 1836 April May
+  blades: 46, spoons: 50
+  highest: 1, Corpus Christi I 1836 April May
+  rises: Corpus Christi III 1996 +11, Corpus Christi II 2006 +9, Corpus Christi III 2001 +9
+  falls: Corpus Christi IV 1984 -11, Corpus Christi II 2004 -9, Corpus Christi IV 1989 -7
+  latest: Corpus Christi I 28 → 30, Corpus Christi II 52 → 56
+
+mays women: 1984 to 2026, 41 races
+  lines: Corpus Christi 1, Corpus Christi 2, Corpus Christi 3
+  headships: none
+  blades: 10, spoons: 12
+  highest: 19, Corpus Christi I 1996
+  rises: Corpus Christi I 2016 +6, Corpus Christi II 2019 +4, Corpus Christi I 2008 +4
+  falls: Corpus Christi II 1995 -7, Corpus Christi II 2024 -6, Corpus Christi II 2026 -4
+  latest: Corpus Christi I 25 → 28, Corpus Christi II 66 → 70
