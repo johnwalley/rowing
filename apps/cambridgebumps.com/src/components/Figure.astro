@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+
+import PhotoCredit from "@/components/PhotoCredit.astro";
+import type { Photo } from "@/config/photos";
+
+// A photo in the MDX pages, credited underneath when it isn't the author's.
+interface Props {
+  photo: Photo;
+}
+
+const { photo } = Astro.props;
+---
+
+<figure>
+  <Image src={photo.src} alt={photo.alt} />
+  {photo.credit && (
+    <figcaption>
+      Photo: <PhotoCredit credit={photo.credit} />
+    </figcaption>
+  )}
+</figure>

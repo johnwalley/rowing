@@ -4,7 +4,9 @@ title: Bumps explained
 description: "Bumps races are unique rowing races where crews aim to 'bump' the boat ahead due to the river's narrow, winding nature. Crews race over four days, with daily results determining subsequent starting positions. The ultimate goal is to secure the 'Head of the River' title by leading the top division at week's end."
 ---
 
+import Figure from "../components/Figure.astro";
 import ForSite from "../components/ForSite.astro";
+import { aboutPhotos } from "../config/photos";
 import { siteConfig } from "../config/site";
 
 # Bumps explained
@@ -17,17 +19,36 @@ format, different from conventional regattas, was developed to allow a large
 number of boats to compete in a dynamic and exciting manner, turning the
 river&rsquo;s limitations into a unique aspect of the race.
 
-![Multiple boats chasing each other](../images/about/motorway-bridge.webp)
+<Figure photo={aboutPhotos.chase} />
 
-Men and women race separately. Boats are split into multiple divisions. Each
-division has 17-18 boats and crews start 90 feet apart.
+Men and women race separately. Boats are split into multiple divisions.
+
+<ForSite site="Cambridge">
+
+Each division has 17-18 boats and crews start 90 feet apart.
+
+</ForSite>
+
+<ForSite site="Oxford">
+
+Each division has 12 or 13 boats and crews start about one and a half boat
+lengths apart.
+
+</ForSite>
 
 The aim of the race is to catch and ‘bump’ the crew in front of you. A bump is
 awarded if the crew in front concedes. And yes, this can require you to actually
 hit the boat in front! Crews that bump one another must pull over to the side to
 allow the crews behind to continue.
 
-![Crew about to bump another crew](../images/about/bump.webp)
+<ForSite site="Oxford">
+
+Torpids is the exception: there the bumped crew must row on to the finish, and
+can be bumped again by the crews behind.
+
+</ForSite>
+
+<Figure photo={aboutPhotos.bump} />
 
 Racing takes place over four days with the finishing order at the end of a day
 determining the starting order for the following day. This means that a crew
@@ -44,10 +65,14 @@ headship, or head of the river. Due to the nature of Bumps this might not
 necessarily be the fastest crew, but it is always a mighty achievement and well
 deserved.
 
+<ForSite site="Cambridge">
+
 Crews which achieve a bump are given willow branches to ‘wear’ as they row back
 to their boathouses.
 
-![Crew who have bumped](../images/about/willow.webp)
+{aboutPhotos.willow && <Figure photo={aboutPhotos.willow} />}
+
+</ForSite>
 
 ## FAQ
 
