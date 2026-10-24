@@ -11,7 +11,7 @@ A pnpm workspace for rowing: two published React libraries for bumps charts, the
 | `apps/results-editor` | A local Vite app for editing TG files beside a live chart. Not deployed | private |
 | `apps/coxing-recordings` | The coxing site (Astro): a searchable list of coxswain recordings. Uses none of the other packages | private |
 
-Read the `CLAUDE.md` in the package you're changing: the chart, the tools, the editor and both sites each have one.
+Read the `CLAUDE.md` in the package you're changing: every package has one. Results terms (Set, Event, Crew, Headship) are defined in `packages/bumps-results-tools/GLOSSARY.md`.
 
 ## How the packages connect
 
@@ -24,7 +24,7 @@ Read the `CLAUDE.md` in the package you're changing: the chart, the tools, the e
 
 - **pnpm 11**, pinned by `packageManager` in the root `package.json` and again in each app's. Vercel builds from the app's folder and reads the pin there. CI checks they all match, so change them together.
 - **React comes from the catalog** in `pnpm-workspace.yaml`, so every package gets one copy. In the libraries `catalog:` belongs in `devDependencies`; their `peerDependencies` stay ranges (`^18.0.0 || ^19.0.0`), because `pnpm publish` would write the catalog's exact version into the published package.
-- **Every change goes through a PR.** A ruleset on `main` requires CI's `check` job, which runs formatting, the build, the tests, the chart's `check-exports`, the bumps site's lint and typecheck, and the tools' AD-format check.
+- **Every change goes through a PR.** A ruleset on `main` requires CI's `check` job, which runs `pnpm check` (`scripts/check.sh`): formatting, the build, the tests, the chart's `check-exports`, the bumps site's lint and typecheck, and the tools' AD-format check. Run `pnpm check` before opening a PR; when it passes, CI's check does too. Add a step to the script, not to `ci.yml`.
 
 ## Releasing the libraries
 

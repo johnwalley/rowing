@@ -1,0 +1,63 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm check)",
+      "Bash(pnpm build)",
+      "Bash(pnpm -r build)",
+      "Bash(pnpm test)",
+      "Bash(pnpm format:check)",
+      "Bash(pnpm --filter bumps-results-tools build)",
+      "Bash(pnpm --filter bumps-results-tools test)",
+      "Bash(pnpm --filter bumps-results-tools typecheck)",
+      "Bash(pnpm --filter bumps-results-tools format)",
+      "Bash(pnpm --filter bumps-results-tools format:check)",
+      "Bash(pnpm --filter bumps-results-tools generate:ad)",
+      "Bash(pnpm --filter bumps-results-tools exec vitest run *)",
+      "Bash(pnpm --filter react-bumps-chart build)",
+      "Bash(pnpm --filter react-bumps-chart test)",
+      "Bash(pnpm --filter react-bumps-chart check-exports)",
+      "Bash(pnpm --filter react-bumps-chart exec vitest run *)",
+      "Bash(pnpm --filter react-rowing-blades build)",
+      "Bash(pnpm --filter cambridgebumps.com build)",
+      "Bash(pnpm --filter cambridgebumps.com typecheck)",
+      "Bash(pnpm --filter cambridgebumps.com lint)",
+      "Bash(pnpm --filter cambridgebumps.com format)",
+      "Bash(pnpm --filter cambridgebumps.com format:check)",
+      "Bash(pnpm --filter coxing-recordings build)",
+      "Bash(pnpm --filter coxing-recordings format)",
+      "Bash(pnpm --filter coxing-recordings format:check)",
+      "Bash(pnpm --filter results-editor build)",
+      "Bash(pnpm --filter results-editor typecheck)",
+      "Bash(pnpm --filter results-editor format)",
+      "Bash(pnpm --filter results-editor format:check)",
+      "Bash(pnpm run typecheck)",
+      "Bash(pnpm run format)",
+      "Bash(pnpm run format:check)",
+      "Bash(pnpm run generate:ad)",
+      "Bash(pnpm vitest run *)",
+      "Bash(pnpm exec vitest run *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr checks *)",
+      "Bash(gh pr diff *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/format.sh",
+            "timeout": 30,
+            "statusMessage": "Formatting with Prettier"
+          }
+        ]
+      }
+    ]
+  }
+}

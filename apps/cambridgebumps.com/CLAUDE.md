@@ -1,7 +1,5 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Overview
 
 This is an Astro application that displays bumps charts, statistics, and historical data for Cambridge and Oxford rowing races. Pages are Astro components; the interactive parts are React islands, styled with Tailwind CSS and Radix UI components.
@@ -182,29 +180,6 @@ Charts support URL search parameters:
 - Geist Sans and Geist Mono self-hosted from `public/fonts/`, declared in `src/styles/globals.css`
 - Roboto Flex via `@fontsource-variable/roboto-flex` (latin subset, GRAD axis) for bumps chart rendering. `scripts/generate-chart-font-metrics.mjs` reads its character widths from that same woff2 into `src/data/chart-font-metrics.json`; `measureChartText` passes them to react-bumps-chart as its `measureText`, which the chart uses on the server and in the browser alike. The chart draws unkerned (react-bumps-chart sets `font-kerning: none`), so a name's width is the sum of its characters'. If the chart font changes, change the script's font file with it
 
-## Key Dependencies
-
-- `astro` with `@astrojs/react` and `@astrojs/mdx`
-- `react-bumps-chart` - Core bumps chart visualization library
-- `react-rowing-blades` - Club blade/colors rendering
-- `bumps-results-tools` - processes the TG-format results and works out the statistics
-- `@tailwindcss/vite` - Tailwind v4
-- Radix UI components via shadcn/ui for accessible UI primitives
-
-## Path Aliases
-
-TypeScript is configured with `@/*` mapping to `src/*` for cleaner imports.
-
-## Important Patterns
-
-1. **Environment-driven configuration**: The same codebase serves both Cambridge and Oxford sites by reading `import.meta.env.PUBLIC_TITLE` and `import.meta.env.PUBLIC_BASE_URL`
-
-2. **Static generation with dynamic highlighting**: Pages are statically generated but client-side JavaScript enables interactive highlighting via URL params
-
-3. **Typed route parameters**: Events and genders are defined as const arrays with extracted types to ensure type safety across routing
-
-4. **Extensive redirects**: Legacy URLs are preserved via redirects to maintain SEO and existing links
-
 ## Redirects and the "latest year" default
 
 Redirects are defined once in `scripts/redirects.mjs`. `astro.config.mjs` passes them to Astro's `redirects` (via `buildAstroRedirects`, which expands the `:event`/`:gender` patterns into concrete paths). In production, `@astrojs/vercel` turns them into real HTTP redirects in `.vercel/output/config.json` at build time. `astro dev` serves them too. `astro preview` does not: the adapter turns off Astro's HTML redirect pages, so `dist/` has none.
@@ -212,4 +187,4 @@ Redirects are defined once in `scripts/redirects.mjs`. `astro.config.mjs` passes
 The default chart year (e.g. the target of `/charts`, `/charts/:event`, `/charts/:event/:gender`) is derived at build time from the latest year among each event/gender's TG file names (`mays2025_men.txt`), since `astro.config.mjs` runs before Vite can process the results — never hand-edited, and nothing to regenerate.
 
 > [!IMPORTANT]
-> **After adding a new year's results**: the results go into `packages/bumps-results-tools/results/tg_format/` (see that package's `CLAUDE.md`), and the site picks them up in the same PR, `astro dev` included. If the tools' `clubs.test.ts` then fails, a new or renamed club needs an entry in their `src/clubs.ts`.
+> **After adding a new year's results**: the results go into `packages/bumps-results-tools/results/tg_format/`, and the site picks them up in the same PR, `astro dev` included. Follow the `add-results` skill: it covers the tools' tests, snapshots, `clubs.ts` and AD files.
