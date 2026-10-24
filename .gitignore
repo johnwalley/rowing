@@ -1,0 +1,51 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+storybook-static/
+styleguide/
+*.tsbuildinfo
+
+# testing
+coverage/
+.nyc_output/
+
+# misc
+.DS_Store
+*.pem
+.vercel
+**/.claude/settings.local.json
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*storybook.log
+
+# env files; the site commits its per-city ones
+.env*
+!.env.cambridge
+!.env.oxford
+
+# react-rowing-blades
+/packages/react-rowing-blades/blades
+/packages/react-rowing-blades/build
+/packages/react-rowing-blades/lib
+/packages/react-rowing-blades/esm
+/packages/react-rowing-blades/umd
+
+# react-bumps-chart
+/packages/react-bumps-chart/build
+/packages/react-bumps-chart/lib
+/packages/react-bumps-chart/esm
+/packages/react-bumps-chart/umd
+
+# bumps-results-tools
+/packages/bumps-results-tools/.vscode
+/packages/bumps-results-tools/output
+/packages/bumps-results-tools/**/generated.json
+/packages/bumps-results-tools/**/results.json
+/packages/bumps-results-tools/**/stats.json
+/packages/bumps-results-tools/**/website_results.json
