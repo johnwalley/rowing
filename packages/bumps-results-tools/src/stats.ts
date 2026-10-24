@@ -149,3 +149,8 @@ export function getRankings(events: ProcessedEvent[]) {
     ),
   };
 }
+
+/** The statistics pages' tables, by statistic. */
+export type Rankings = ReturnType<typeof getRankings>;
+
+export type Statistic = keyof Rankings;

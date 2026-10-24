@@ -1,5 +1,5 @@
 import { events as processed } from "bumps-results-tools/results";
-import type { Event } from "react-bumps-chart";
+import type { ProcessedEvent } from "bumps-results-tools/types";
 
 import {
   events,
@@ -10,8 +10,9 @@ import {
 } from "@/lib/utils";
 
 // Every race, processed from the tools' TG files when the site builds, by
-// event and category, oldest file first.
-export const processedResults = Object.fromEntries(
+// event and category, oldest file first. A `ProcessedEvent` is also the
+// chart's `Event`, so races go straight to react-bumps-chart.
+export const results = Object.fromEntries(
   events.map((event) => [
     event,
     Object.fromEntries(
@@ -25,20 +26,13 @@ export const processedResults = Object.fromEntries(
       ]),
     ),
   ]),
-) as Record<Set, Record<Gender, typeof processed>>;
-
-// The same races, typed as react-bumps-chart's `Event` for the charts. It
-// differs from the tools' type only in which fields may be missing.
-export const results = processedResults as unknown as Record<
-  string,
-  Record<string, Event[]>
->;
+) as Record<Set, Record<Gender, ProcessedEvent[]>>;
 
 // Some historical entries store compound year strings such as
 // "1827 February March" (two races in one season). The leading 4-digit year is
 // the canonical key used by URLs and pickers, so collapse to that. See `yearOf`
 // in @/lib/utils.
-const leadYear = (year: Event["year"]): string => String(year).split(" ")[0];
+const leadYear = (year: string): string => year.split(" ")[0];
 
 // The per-event/gender summary of available years, derived at build time from
 // the source results above so it can never drift from the actual data. For each

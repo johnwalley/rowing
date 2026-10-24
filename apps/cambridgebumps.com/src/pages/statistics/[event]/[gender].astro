@@ -3,8 +3,8 @@ import type { GetStaticPaths } from "astro";
 import { Blade } from "react-rowing-blades";
 
 import ClubName from "@/components/ClubName.astro";
-import { statisticMapping } from "@/data/statistic-mapping";
-import { stats } from "@/data/stats";
+import { statisticMapping, statistics } from "@/data/statistic-mapping";
+import { statisticRows } from "@/data/stats";
 import StatisticsLayout from "@/layouts/StatisticsLayout.astro";
 import {
   events,
@@ -89,8 +89,6 @@ const gender = Astro.params.gender as Gender;
 
 const eventName = set[event];
 const genderName = getGenderLabel(event, gender);
-
-const clubStatistics = Object.keys(statisticMapping);
 ---
 
 <StatisticsLayout
@@ -102,9 +100,9 @@ const clubStatistics = Object.keys(statisticMapping);
 >
   <div>
     <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-      {clubStatistics.map((statistic) => {
+      {statistics.map((statistic) => {
         const mapping = statisticMapping[statistic];
-        const data = stats[event][gender][statistic];
+        const data = statisticRows(event, gender, statistic);
         const heroColor = getColor(data[0].club, event);
         const heroText = textClassFor(heroColor);
         const heroClub = getCode(data[0].club, event);
@@ -128,24 +126,20 @@ const clubStatistics = Object.keys(statisticMapping);
                       <div>
                         <div class="text-sm font-bold">1</div>
                         <div class="font-bold">
-                          <ClubName event={event} name={data[0][mapping.key]} />
+                          <ClubName event={event} name={data[0].club} />
                         </div>
                         {mapping.additional && (
-                          <div class="text-sm">
-                            {data[0][mapping.additional]}
-                          </div>
+                          <div class="text-sm">{data[0].additional}</div>
                         )}
                       </div>
-                      <div class="text-4xl font-extrabold">
-                        {data[0][mapping.value]}
-                      </div>
+                      <div class="text-4xl font-extrabold">{data[0].value}</div>
                     </div>
                     <div class="flex flex-col justify-center pt-2 pr-2 pb-2">
                       {heroClub && <Blade club={heroClub} size={140} />}
                     </div>
                   </div>
                 </li>
-                {data.slice(1, 10).map((d: any, i: number) => {
+                {data.slice(1, 10).map((d, i) => {
                   const dClub = getCode(d.club, event);
 
                   return (
@@ -159,14 +153,12 @@ const clubStatistics = Object.keys(statisticMapping);
                         </div>
                         <div class="flex flex-col">
                           <div class="text-base font-bold">
-                            <ClubName event={event} name={d[mapping.key]} />
+                            <ClubName event={event} name={d.club} />
                           </div>
-                          <div class="text-sm">
-                            {mapping.additional ? d[mapping.additional] : " "}
-                          </div>
+                          <div class="text-sm">{d.additional ?? " "}</div>
                         </div>
                       </div>
-                      <div class="text-lg font-bold">{d[mapping.value]}</div>
+                      <div class="text-lg font-bold">{d.value}</div>
                     </li>
                   );
                 })}

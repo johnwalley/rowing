@@ -1,10 +1,16 @@
+import type { Statistic } from "bumps-results-tools/stats";
+
 // Safe to import into islands: unlike `@/data/stats`, it doesn't pull in the
 // results.
+
+/**
+ * How each statistics table is labelled, and which of its row's fields are
+ * the figure and the extra column (see `statisticRows`).
+ */
 export const statisticMapping: Record<
-  string,
+  Statistic,
   {
     label: string;
-    key: string;
     keyLabel: string;
     value: string;
     valueLabel: string;
@@ -14,7 +20,6 @@ export const statisticMapping: Record<
 > = {
   headships: {
     label: "Headships",
-    key: "club",
     keyLabel: "Club",
     value: "headships",
     valueLabel: "Headships",
@@ -23,14 +28,12 @@ export const statisticMapping: Record<
   },
   headDays: {
     label: "Total days at headship",
-    key: "club",
     keyLabel: "Club",
     value: "days",
     valueLabel: "Days",
   },
   headLong: {
     label: "Continuous days at headship",
-    key: "club",
     keyLabel: "Club",
     value: "days",
     valueLabel: "Days",
@@ -39,16 +42,17 @@ export const statisticMapping: Record<
   },
   crewsEntered: {
     label: "Crews entered",
-    key: "club",
     keyLabel: "Club",
     value: "count",
     valueLabel: "Number",
   },
   bladesAwarded: {
     label: "Blades awarded",
-    key: "club",
     keyLabel: "Club",
     value: "count",
     valueLabel: "Number",
   },
 };
+
+/** The statistics, in the order the pages list them. */
+export const statistics = Object.keys(statisticMapping) as Statistic[];

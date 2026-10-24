@@ -114,9 +114,9 @@ The site has no results data of its own. `src/data/results.ts` imports `bumps-re
 
 ```
 src/data/
-├── results.ts                 (`results[event][gender]`, from the tools; derives the `summary` of years)
-├── stats.ts                   (`stats[event][gender]`: the statistics tables)
-├── statistic-mapping.ts       (statistic → label mapping; safe for islands, unlike `stats.ts`)
+├── results.ts                 (`results[event][gender]`: the tools' `ProcessedEvent`s, which are also the chart's `Event`; derives the `summary` of years)
+├── stats.ts                   (`statisticRows(event, gender, statistic)`: a statistics table's rows, typed)
+├── statistic-mapping.ts       (each statistic's labels and fields, keyed by the tools' `Statistic`, and the `statistics` in page order; safe for islands, unlike `stats.ts`)
 ├── clubs.ts                   (the tools' club list, plus `clubPageUrl`)
 └── chart-font-metrics.json    (generated, committed — Roboto Flex character widths)
 ```

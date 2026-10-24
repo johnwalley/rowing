@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { statisticMapping } from "@/data/statistic-mapping";
+import { statisticMapping, statistics } from "@/data/statistic-mapping";
 import type { Gender, Set } from "@/lib/utils";
 
 type StatisticsNavProps = {
@@ -59,7 +59,7 @@ export function StatisticsNav({
               <SelectValue placeholder="Select a statistic" />
             </SelectTrigger>
             <SelectContent>
-              {Object.keys(statisticMapping).map((key) => (
+              {statistics.map((key) => (
                 <SelectItem key={key} value={key}>
                   {statisticMapping[key].label}
                 </SelectItem>
