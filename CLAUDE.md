@@ -6,7 +6,7 @@ A pnpm workspace for rowing: two published React libraries for bumps charts, the
 |---|---|---|
 | `packages/react-rowing-blades` | SVG blades for each club | published to npm |
 | `packages/react-bumps-chart` | The bumps chart (SVG and PDF); uses blades | published to npm |
-| `packages/bumps-results-tools` | TG-format results, the scripts that turn them into JSON, and a viewer app | private |
+| `packages/bumps-results-tools` | TG-format results, the code that processes them and works out the statistics, and a viewer app | private |
 | `apps/cambridgebumps.com` | The bumps site (Astro); one codebase, two Vercel projects (Cambridge and Oxford) | private |
 | `apps/coxing-recordings` | The coxing site (Astro): a searchable list of coxswain recordings. Uses none of the other packages | private |
 
@@ -15,7 +15,7 @@ Read the `CLAUDE.md` in the package you're changing: the chart, the tools and bo
 ## How the packages connect
 
 - The chart depends on blades, and the bumps site on both, through `workspace:^`. Their `exports` point at `dist/`, so the site sees a library change only after that library is rebuilt. `pnpm -r build` builds everything in dependency order. To work on the chart and the site together, run `pnpm --filter react-bumps-chart exec vite build --watch` beside the site's `dev` script.
-- The bumps site doesn't import `bumps-results-tools`. Its results data comes from the tools as files: on every push to `main` that changes `packages/bumps-results-tools/**`, the Sync downstream workflow regenerates the JSON and opens a PR here that updates `apps/cambridgebumps.com/src/data/`, plus a PR in `johnwalley/bumps-results` with the TG and AD files. Fix results in the tools' TG files; the site's data JSON is generated.
+- The bumps site builds its results data from the tools' TG files. It imports `bumps-results-tools/results` (every TG file, parsed and processed) and `bumps-results-tools/stats`, which point at the tools' TypeScript source, so the tools need no build. A results fix is one PR to the TG files, and its preview shows the change on the site. On every push to `main` that changes `packages/bumps-results-tools/**`, the Sync downstream workflow opens a PR in `johnwalley/bumps-results` with the TG and AD files.
 - Each package keeps its own Prettier, TypeScript and Vite config.
 
 ## Workspace rules
@@ -32,4 +32,4 @@ On `main`, `.github/workflows/release.yml` keeps a "Version Packages" PR open. M
 
 ## Deploying the sites
 
-The two bumps Vercel projects build `apps/cambridgebumps.com` with the build command in its `vercel.json`, which builds blades and the chart first. The coxing project builds `apps/coxing-recordings` with Vercel's Astro defaults. A merge to `main` deploys all three; a PR gets a preview of each.
+The two bumps Vercel projects build `apps/cambridgebumps.com` with the build command in its `vercel.json`, which builds blades and the chart first (not the tools, whose source the site imports directly). The coxing project builds `apps/coxing-recordings` with Vercel's Astro defaults. A merge to `main` deploys all three; a PR gets a preview of each.

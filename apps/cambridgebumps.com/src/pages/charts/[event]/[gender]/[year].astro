@@ -5,7 +5,6 @@ import chartFontUrl from "@fontsource-variable/roboto-flex/files/roboto-flex-lat
 
 import { ChartsShell } from "@/components/charts-shell";
 import type { YearFor } from "@/components/events-nav";
-import { clubsByYear } from "@/data/chart-meta";
 import { results, summary } from "@/data/results";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { slimRace } from "@/lib/slim-results";
@@ -45,7 +44,6 @@ const gender = Astro.params.gender as Gender;
 const year = Astro.params.year as string;
 
 const years = summary[event][gender];
-const clubs = clubsByYear[event]?.[gender]?.[year] ?? [];
 
 // Years pre-generated without results yet (see `getStaticPaths`) render a
 // friendly message and stay out of the index rather than being thin content.
@@ -54,6 +52,13 @@ const clubs = clubsByYear[event]?.[gender]?.[year] ?? [];
 // Astro escapes every quote in them to `&quot;`, so each byte here costs six.
 const result = findResultByYear(results[event][gender], year);
 const data = result && result.crews.length > 0 ? slimRace(result) : null;
+
+// The "Highlight club" choices: every club racing that year.
+const clubs = result
+  ? [...new Set(result.crews.map((crew) => crew.club))].sort((a, b) =>
+      a.localeCompare(b),
+    )
+  : [];
 
 // Where each event/category link from this page lands: this year if that
 // event/category raced it, otherwise its nearest year that did — so switching

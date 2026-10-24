@@ -4,25 +4,29 @@
 //
 // The default chart year is derived from the results data, never hand-edited.
 
-import { readFileSync } from "node:fs";
+import { readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+// The TG files the site's results are built from. This runs in plain Node, as
+// `astro.config.mjs` loads, so it reads their names rather than the results.
+const tgFormat = join(
+  dirname(fileURLToPath(import.meta.url)),
+  "../../../packages/bumps-results-tools/results/tg_format",
+);
 
-// The latest year for which a given event/gender has results. Read straight
-// from the source results (the same data the app's summary is derived from) so
-// there's no separate summary file to keep in sync.
+// The latest year for which a given event/gender has results, from the TG
+// file names: `mays2025_men.txt`, or `mays1827.2_men.txt` in a year with more
+// than one race.
 export function getLatestYear(event, gender) {
-  const results = JSON.parse(
-    readFileSync(
-      join(root, `src/data/results/${event}/${gender}/results.json`),
-      "utf8",
-    ),
-  );
-  // Years may be compound strings such as "1827 February March"; the leading
-  // 4-digit year is canonical.
-  return Math.max(...results.map((r) => Number(String(r.year).split(" ")[0])));
+  const years = readdirSync(tgFormat).flatMap((file) => {
+    const match = file.match(/^([a-z]+)(\d{4})(?:\.\d+)?_(men|women)\.txt$/);
+    return match && match[1] === event && match[3] === gender
+      ? [Number(match[2])]
+      : [];
+  });
+
+  return Math.max(...years);
 }
 
 const EVENTS = ["eights", "lents", "mays", "torpids", "town"];

@@ -772,44 +772,6 @@ function checkResults(
   return errors;
 }
 
-export function writeWeb(sets: Event[]) {
-  const series: Record<
-    string,
-    Partial<Record<"all" | "split" | "Men" | "Women", string[]>>
-  > = {};
-
-  for (const s of sets) {
-    if (!(s["short"] in series)) {
-      series[s["short"]] = { all: [], split: [] };
-    }
-
-    if (!(s["gender"] in series[s["short"]])) {
-      series[s["short"]][s["gender"]] = [];
-    }
-
-    let year = s["year"];
-    let p = year.split(" ");
-
-    if (p.length > 1) {
-      year = p[0];
-
-      if (!series[s["short"]]["split"]!.includes(year)) {
-        series[s["short"]]["split"]!.push(year);
-      }
-    }
-
-    if (!series[s["short"]][s["gender"]]!.includes(year)) {
-      series[s["short"]][s["gender"]]!.push(year);
-    }
-
-    if (!series[s["short"]]["all"]!.includes(year)) {
-      series[s["short"]]["all"]!.push(year);
-    }
-  }
-
-  return series;
-}
-
 export function stepOn(event: Readonly<Event>) {
   const newEvent: Event = structuredClone(event);
 

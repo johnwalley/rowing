@@ -3,7 +3,7 @@ import type { APIRoute } from "astro";
 import { homeCity, siteConfig } from "@/config/site";
 import { clubs } from "@/data/clubs";
 import { summary } from "@/data/results";
-import { statisticMapping } from "@/data/stats";
+import { statisticMapping } from "@/data/statistic-mapping";
 import { events, genders } from "@/lib/utils";
 
 type Entry = {

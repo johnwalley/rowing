@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Tools for manipulating bumps rowing results data (Cambridge Bumps, Oxford Summer Eights, Torpids, Town Bumps). Produces data and charts for cambridgebumps.com. Related repositories: [bumps-results](https://github.com/johnwalley/bumps-results), [d3-bumps-chart](https://github.com/johnwalley/d3-bumps-chart), [react-bumps-chart](https://github.com/johnwalley/react-bumps-chart).
+Tools for manipulating bumps rowing results data (Cambridge Bumps, Oxford Summer Eights, Torpids, Town Bumps). The bumps site in `apps/cambridgebumps.com` builds its results and statistics with this package's code. Related repositories: [bumps-results](https://github.com/johnwalley/bumps-results), [d3-bumps-chart](https://github.com/johnwalley/d3-bumps-chart), [react-bumps-chart](https://github.com/johnwalley/react-bumps-chart).
 
 The repo is a Node (24+) + TypeScript project using pnpm. Scripts run via `tsx`; tests use Vitest. The UI is a Vite + React 19 + Tailwind 4 app under `src/ui/`. Builds use `tsgo` (`@typescript/native-preview`) for type-checking and Vite 8 for bundling.
 
@@ -27,11 +27,8 @@ pnpm run format:check
 # Preview the production build
 pnpm run preview
 
-# Regenerate per-event results + per-club stats JSON for the website
-pnpm run generate            # both
-pnpm run generate:results    # event-level results only → output/results/
-pnpm run generate:stats      # per-club statistics only → output/stats/
-pnpm run generate:ad         # regenerate results/ad_format/ from the TG files (CI fails if committed files differ)
+# Regenerate results/ad_format/ from the TG files (CI fails if committed files differ)
+pnpm run generate:ad
 
 # Run tests
 pnpm test
@@ -50,7 +47,6 @@ pnpm vitest run src/bumps.test.ts
   - `processResults(event, debug?)` - Computes crew movements, blades, gains from result codes. Returns `{ event, errors }`; on error it stops and returns the partially processed event. Unrecognised result codes are errors. Problems are returned, never logged — `console.log` is only for `debug` tracing
   - `stepOn(event)` - Generates next year's starting positions from current results
   - `writeString(event)` - Serializes an `Event` back to TG format
-  - `writeWeb(events)` - Builds the per-set/per-gender year manifest consumed by the UI
 
 - **types.ts** - Zod schemas and TypeScript types for `Event`, `Crew`, and `Statistics`
 
@@ -58,7 +54,9 @@ pnpm vitest run src/bumps.test.ts
 
 - **club-mappings.ts** - Display-name mappings (`clubMapping`, `clubMappingFull`) for normalising historical club names
 
-- **stats.ts** - `getStats(events, combine?)` aggregates per-club statistics (headships, crews entered, blades, highest positions) across an array of `Event`s. Pure JS; downstream ranking/sorting is done with Arquero in `scripts/generate_stats.ts`
+- **results.ts** - `events`: every TG file in `results/tg_format/`, parsed and processed, in file name order. Importing it throws, listing every file's errors, if any file has one. It bundles the files with `import.meta.glob`, so it works only under Vite (the bumps site, the viewer, Vitest), not in `tsx` scripts. The site imports it as `bumps-results-tools/results`
+
+- **stats.ts** - `getStats(events, combine?)` aggregates per-club statistics (headships, crews entered, blades, highest positions) across an array of `Event`s, counting only complete events. `getRankings(events)` turns them into the statistics pages' tables (headships, crewsEntered, headDays, headLong, bladesAwarded), ranked with Arquero. The site imports it as `bumps-results-tools/stats`
 
 - **math.ts** - Histogram + summary statistics helpers (`mean`, `variance`, `standardDeviation`, histogram variants)
 
@@ -80,9 +78,6 @@ React app rendered through Vite. `App.tsx` is a split-pane editor:
 
 ### Scripts (`scripts/`)
 
-- **load_events.ts** - Shared loader for the generate scripts: reads and processes every TG file, and if any file has errors prints them all and exits non-zero before anything is written
-- **generate_results.ts** - Reads every file in `results/tg_format/`, runs `processResults`, writes `output/results/results.json` (year manifest) and `output/results/<set>/<gender>/results.json` (per-set processed events)
-- **generate_stats.ts** - Same input, runs `getStats` and Arquero-based ranking, writes `output/stats/<set>/<gender>/stats.json` (headships, crewsEntered, headDays, headLong, bladesAwarded). Output is Prettier-formatted JSON
 - **process_tg_file.ts** - Filter: reads TG from stdin (or a path), runs `processResults`, writes JSON to stdout and errors to stderr (exit 1 on error)
 - **convert_rssbc_to_tg.ts** - Converts the historical RSSBC JSON (under `results/rssbc/`) to TG format
 - **download_rssbc_results.ts** - Fetches RSSBC API data into `results/rssbc/`
@@ -94,16 +89,14 @@ React app rendered through Vite. `App.tsx` is a split-pane editor:
 
 - **results/tg_format/** - Canonical source results in TG format (text files, ~1050 files spanning Eights, Lents, Mays, Torpids, Town from the 1800s onward)
 - **results/rssbc/**, **results/dudhia/**, **results/dudhia_per_crew/**, **results/ad_format/**, **results/mcshane/** - Historical / alternate-format source data used by the conversion scripts in `scripts/`
-- **output/** - Generated by `pnpm run generate`; not checked in as source of truth. Contains `output/results/{set}/{gender}/results.json` and `output/stats/{set}/{gender}/stats.json` for the site in `apps/cambridgebumps.com`
+
+### How the site uses this package
+
+`package.json` `exports` point at the TypeScript source (`./results` → `src/results.ts`, `./stats` → `src/stats.ts`), so the site's Vite build compiles them and this package never needs building for it. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site imports free of Node builtins at the top level (see `readFile`).
 
 ### Downstream sync
 
-The repo root's `.github/workflows/sync-downstream.yml` runs on every push to `main` that touches this package. It regenerates everything and opens (or updates) a PR on the `sync/bumps-results-tools` branch:
-
-- **In this repo**, for `apps/cambridgebumps.com`: `output/results` and `output/stats` JSON copied to its `src/data/`, plus a regenerated `src/data/chart-meta.json`
-- **In johnwalley/bumps-results**: `results/tg_format/` and `results/ad_format/` copied verbatim
-
-No PR is opened when nothing changed. It needs the `DOWNSTREAM_REPOS_TOKEN` secret, a fine-grained PAT with Contents and Pull requests write on johnwalley/rowing and johnwalley/bumps-results. The site's PR uses it too, because a PR opened with the default `GITHUB_TOKEN` doesn't run CI.
+The repo root's `.github/workflows/sync-downstream.yml` runs on every push to `main` that touches this package. It regenerates `results/ad_format/` and opens (or updates) a PR on the `sync/bumps-results-tools` branch of johnwalley/bumps-results that copies in `results/tg_format/` and `results/ad_format/` verbatim. No PR is opened when nothing changed. It needs the `DOWNSTREAM_REPOS_TOKEN` secret, a fine-grained PAT with Contents and Pull requests write on johnwalley/bumps-results.
 
 ## TG Format
 

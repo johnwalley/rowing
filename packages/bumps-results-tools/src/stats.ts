@@ -1,3 +1,5 @@
+import { desc, from } from "arquero";
+
 import { range, updateStats } from "./utils";
 
 import type { ProcessedEvent } from "./types";
@@ -116,10 +118,8 @@ export function getStats(events: ProcessedEvent[], combine = false) {
     const clubCount: Record<string, StatCounter> = {};
     const headships: Record<number, { club: string; num: number }> = {};
 
+    // Statistics count only events that raced every day.
     if (!event.full_set) {
-      console.log(
-        `Ignoring set as not complete: ${event.set}, ${event.year}, ${event.gender}`,
-      );
       continue;
     }
 
@@ -363,4 +363,94 @@ export function getStats(events: ProcessedEvent[], combine = false) {
   }
 
   return stats;
+}
+
+type ClubStats = ReturnType<typeof getStats>["club"][string];
+
+/**
+ * The statistics pages' tables for one event and category: clubs ranked by
+ * headships, crews entered, total and continuous days at head, and blades.
+ * Club names are combined with `clubMapping` first.
+ */
+export function getRankings(events: ProcessedEvent[]) {
+  const stats = getStats(events, true);
+
+  const rHeadships: Record<string, ClubStats["headships"][string]> = {};
+  const rCrewsEntered: Record<string, number> = {};
+  const rHeadDays: Record<string, ClubStats["highest"][number]> = {};
+  const rHeadLong: Record<string, ClubStats["highest"][number]> = {};
+  const rBladesAwarded: Record<string, number> = {};
+
+  // Generate rankings
+  for (const club in stats.club) {
+    if ("1" in stats.club[club].headships) {
+      rHeadships[club] = stats.club[club].headships["1"];
+    }
+
+    if (
+      "1" in stats.club[club].highest &&
+      stats.club[club].highest["1"].high === 0
+    ) {
+      rHeadDays[club] = stats.club[club].highest["1"];
+    }
+
+    if (
+      "1" in stats.club[club].highest &&
+      stats.club[club].highest["1"].high === 0
+    ) {
+      rHeadLong[club] = stats.club[club].highest["1"];
+    }
+
+    rCrewsEntered[club] = stats.club[club].count;
+
+    if (stats.club[club].blades.length > 0) {
+      rBladesAwarded[club] = stats.club[club].blades.length;
+    }
+  }
+
+  return {
+    headships: from(
+      Object.entries(rHeadships).map(([club, res]) => ({
+        club: club,
+        headships: res.total,
+        lastYear: res.labels[res.labels.length - 1].year,
+      })),
+    )
+      .orderby(desc("headships"), desc("lastYear"))
+      .objects(),
+    crewsEntered: from(
+      Object.entries(rCrewsEntered).map(([club, res]) => ({
+        club: club,
+        count: res,
+      })),
+    )
+      .orderby(desc("count"))
+      .objects(),
+    headDays: from(
+      Object.entries(rHeadDays).map(([club, res]) => ({
+        club: club,
+        days: res.days,
+      })),
+    )
+      .orderby(desc("days"))
+      .objects(),
+    headLong: from(
+      Object.entries(rHeadLong).map(([club, res]) => ({
+        club: club,
+        days: res.longest,
+        span:
+          res.start !== res.end ? `${res.start} - ${res.end}` : `${res.start}`,
+      })),
+    )
+      .orderby(desc("days"))
+      .objects(),
+    bladesAwarded: from(
+      Object.entries(rBladesAwarded).map(([club, res]) => ({
+        club: club,
+        count: res,
+      })),
+    )
+      .orderby(desc("count"))
+      .objects(),
+  };
 }

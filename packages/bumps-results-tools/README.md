@@ -42,23 +42,10 @@ Then preview the built app with:
 pnpm run preview
 ```
 
-## 🗂️ Regenerating results and stats
+## 🗂️ Results on the website
 
-The website's data is produced from the TG-format sources under
-`results/tg_format/`. To regenerate both result and statistics JSON, run:
-
-```shell
-pnpm run generate
-```
-
-Or run them individually:
-
-```shell
-pnpm run generate:results   # writes output/results/<event>/<gender>/
-pnpm run generate:stats     # writes output/stats/<event>/<gender>/stats.json
-```
-
-You don't normally need to copy these anywhere by hand: every push to `main`
-opens a PR in [cambridgebumps.com](https://github.com/johnwalley/cambridgebumps.com)
-with the regenerated data, and one in [bumps-results](https://github.com/johnwalley/bumps-results)
+The bumps site in `apps/cambridgebumps.com` builds its results and statistics
+straight from the TG-format sources under `results/tg_format/`, using
+`src/results.ts` and `src/stats.ts`, so there's nothing to regenerate or copy.
+Every push to `main` also opens a PR in [bumps-results](https://github.com/johnwalley/bumps-results)
 with the TG and AD files (see `.github/workflows/sync-downstream.yml`).
