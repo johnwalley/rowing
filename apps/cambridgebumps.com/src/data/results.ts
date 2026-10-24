@@ -1,3 +1,4 @@
+import { events as processed } from "bumps-results-tools/results";
 import type { Event } from "react-bumps-chart";
 
 import {
@@ -5,41 +6,33 @@ import {
   genders,
   type Gender,
   type ResultsSummary,
+  type Set,
 } from "@/lib/utils";
 
-import results_eights_men from "./results/eights/men/results.json";
-import results_eights_women from "./results/eights/women/results.json";
-import results_lents_men from "./results/lents/men/results.json";
-import results_lents_women from "./results/lents/women/results.json";
-import results_mays_men from "./results/mays/men/results.json";
-import results_mays_women from "./results/mays/women/results.json";
-import results_torpids_men from "./results/torpids/men/results.json";
-import results_torpids_women from "./results/torpids/women/results.json";
-import results_town_men from "./results/town/men/results.json";
-import results_town_women from "./results/town/women/results.json";
+// Every race, processed from the tools' TG files when the site builds, by
+// event and category, oldest file first.
+export const processedResults = Object.fromEntries(
+  events.map((event) => [
+    event,
+    Object.fromEntries(
+      genders.map((gender) => [
+        gender,
+        processed.filter(
+          (race) =>
+            race.short.toLowerCase() === event &&
+            race.gender.toLowerCase() === gender,
+        ),
+      ]),
+    ),
+  ]),
+) as Record<Set, Record<Gender, typeof processed>>;
 
-export const results = {
-  eights: {
-    men: results_eights_men,
-    women: results_eights_women,
-  },
-  lents: {
-    men: results_lents_men,
-    women: results_lents_women,
-  },
-  mays: {
-    men: results_mays_men,
-    women: results_mays_women,
-  },
-  torpids: {
-    men: results_torpids_men,
-    women: results_torpids_women,
-  },
-  town: {
-    men: results_town_men,
-    women: results_town_women,
-  },
-} as Record<string, Record<string, Event[]>>;
+// The same races, typed as react-bumps-chart's `Event` for the charts. It
+// differs from the tools' type only in which fields may be missing.
+export const results = processedResults as unknown as Record<
+  string,
+  Record<string, Event[]>
+>;
 
 // Some historical entries store compound year strings such as
 // "1827 February March" (two races in one season). The leading 4-digit year is

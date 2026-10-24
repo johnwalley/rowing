@@ -2,8 +2,7 @@
 import type { GetStaticPaths } from "astro";
 
 import { MultiYearChartsShell } from "@/components/multi-year-charts-shell";
-import { clubsAll } from "@/data/chart-meta";
-import { summary } from "@/data/results";
+import { results, summary } from "@/data/results";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import {
   events,
@@ -26,7 +25,16 @@ const gender = Astro.params.gender as Gender;
 // Distinct years, oldest first — the early mays/men seasons have two races a
 // year, so this is not the number of races.
 const years = summary[event][gender];
-const clubs = clubsAll[event]?.[gender] ?? [];
+// The "Highlight club" choices: every club that has ever raced.
+const clubs = [
+  ...new Set(
+    results[event][gender].flatMap((race) =>
+      race.crews.map((crew) => crew.club),
+    ),
+  ),
+]
+  .filter((club) => club.length > 0)
+  .sort((a, b) => a.localeCompare(b));
 
 const eventName = set[event];
 const genderName = getGenderLabel(event, gender);

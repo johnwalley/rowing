@@ -50,17 +50,16 @@ Open [http://localhost:4321](http://localhost:4321) with your browser to see the
 
 ### Commands
 
-| Command               | Action                                   |
-| --------------------- | ---------------------------------------- |
-| `pnpm dev`            | Start the dev server at `localhost:4321` |
-| `pnpm dev:oxford`     | Same, serving the Oxford configuration   |
-| `pnpm build`          | Build the production site to `./dist/`   |
-| `pnpm build:oxford`   | Build the Oxford site to `./dist/`       |
-| `pnpm preview`        | Serve the built site locally             |
-| `pnpm lint`           | Run ESLint                               |
-| `pnpm typecheck`      | Run `astro check`                        |
-| `pnpm format`         | Format with Prettier                     |
-| `pnpm gen:chart-meta` | Regenerate `src/data/chart-meta.json`    |
+| Command             | Action                                   |
+| ------------------- | ---------------------------------------- |
+| `pnpm dev`          | Start the dev server at `localhost:4321` |
+| `pnpm dev:oxford`   | Same, serving the Oxford configuration   |
+| `pnpm build`        | Build the production site to `./dist/`   |
+| `pnpm build:oxford` | Build the Oxford site to `./dist/`       |
+| `pnpm preview`      | Serve the built site locally             |
+| `pnpm lint`         | Run ESLint                               |
+| `pnpm typecheck`    | Run `astro check`                        |
+| `pnpm format`       | Format with Prettier                     |
 
 ### Environment Variables
 

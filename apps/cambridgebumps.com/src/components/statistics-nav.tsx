@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { statisticMapping } from "@/data/stats";
+import { statisticMapping } from "@/data/statistic-mapping";
 import type { Gender, Set } from "@/lib/utils";
 
 type StatisticsNavProps = {

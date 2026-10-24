@@ -1,10 +1,13 @@
 {
   "name": "bumps-results-tools",
   "private": true,
+  "exports": {
+    "./results": "./src/results.ts",
+    "./stats": "./src/stats.ts"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
     "arquero": "^8",
-    "chalk": "^5.6.2",
     "react": "catalog:",
     "react-bumps-chart": "workspace:^",
     "react-dom": "catalog:",
@@ -43,10 +46,7 @@
     "test": "vitest run",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "generate:results": "tsx scripts/generate_results.ts",
-    "generate:stats": "tsx scripts/generate_stats.ts",
-    "generate:ad": "tsx scripts/convert_tg_to_ad.ts",
-    "generate": "pnpm run generate:results && pnpm run generate:stats"
+    "generate:ad": "tsx scripts/convert_tg_to_ad.ts"
   },
   "type": "module",
   "engines": {
