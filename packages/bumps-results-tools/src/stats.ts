@@ -2,14 +2,58 @@ import { desc, from } from "arquero";
 
 import { range, updateStats } from "./utils";
 
+import { clubOf, type EventKey } from "./clubs";
 import type { ProcessedEvent } from "./types";
-import { clubMapping } from "./club-mappings";
-
-const clubMappings = new Map<string, string>(Object.entries(clubMapping));
 
 type StatCounter<Label = unknown> = { total: number; labels: Label[] };
 
 export type EventInfo = { gender: string; year: string };
+
+/** The name a crew's results count under: its club's, if it has one. */
+const creditedTo = (event: ProcessedEvent, name: string) =>
+  clubOf(event.short.toLowerCase() as EventKey, name)?.short ?? name;
+
+/**
+ * The crew that finished head, as its index in `event.crews`: the best-placed
+ * 1st boat that didn't withdraw. Undefined in an incomplete event, or one
+ * flagged `skip_headship` (the early Mays, raced several times a year).
+ */
+export function headOf(event: ProcessedEvent): number | undefined {
+  if (!event.full_set || event.flags.includes("skip_headship")) {
+    return undefined;
+  }
+
+  let best: { index: number; finish: number } | undefined;
+
+  event.crews.forEach((crew, index) => {
+    if (crew.number !== 1 || crew.gain === null) return;
+    const finish = index - crew.gain;
+    if (!best || finish < best.finish) best = { index, finish };
+  });
+
+  return best?.index;
+}
+
+/**
+ * The crew at head after each day's racing, as its index in `event.crews`.
+ * Undefined on a day the head division didn't race.
+ */
+function dailyHeads(event: ProcessedEvent): (number | undefined)[] {
+  const heads: (number | undefined)[] = Array(event.days).fill(undefined);
+
+  event.crews.forEach((_, start) => {
+    let pos = start;
+
+    for (const day of range(0, event.days)) {
+      const move = event.move[day][pos];
+      if (move === null || move === undefined) break;
+      pos -= move;
+      if (pos === 0 && event.completed[day][0]) heads[day] = start;
+    }
+  });
+
+  return heads;
+}
 
 /**
  * Computes and aggregates statistics from an array of bumping events.
@@ -22,12 +66,12 @@ export type EventInfo = { gender: string; year: string };
  * - Set gain values for crews.
  * - Attainment of blades.
  * - Crew counts per event and per club.
- * - Headship counts and the highest achieved positions with associated metadata.
+ * - Headship counts (see {@link headOf}).
  *
- * If the `combine` flag is set to true, club names are normalized using predefined club mappings.
+ * If the `combine` flag is set to true, each name is credited to the club it belongs to (see `clubOf`).
  *
  * @param events - An array of Event objects containing bumping event data.
- * @param combine - A boolean flag indicating whether to combine or normalize club names using predefined mappings (default is false).
+ * @param combine - A boolean flag indicating whether to credit former names to their clubs (default is false).
  *
  * @returns An object containing:
  * - An optional `set` representing the event set identifier.
@@ -37,8 +81,7 @@ export type EventInfo = { gender: string; year: string };
  *   - `set`: A record of set-level gain counts.
  *   - `blades`: An array recording instances where blades were earned.
  *   - `crews`: A record of crew counts per event.
- *   - `headships`: A record of headship counts.
- *   - `highest`: A record mapping crew numbers to their best performance metrics.
+ *   - `headships`: Headships of the club's 1st boats, under `"1"`.
  *   - `years`: An array of years the club participated.
  *   - `count`: The total number of events involving the club.
  *   - `withdrew`: An object capturing withdrawal statistics.
@@ -56,18 +99,6 @@ export function getStats(events: ProcessedEvent[], combine = false) {
         blades: unknown[];
         crews: Record<string, StatCounter>;
         headships: Record<string, StatCounter<EventInfo>>;
-        highest: Record<
-          number,
-          {
-            high: number;
-            days: number;
-            run: number;
-            runStart: number;
-            longest: number;
-            start: number;
-            end: number;
-          }
-        >;
         years: string[];
         count: number;
         withdrew: StatCounter;
@@ -80,18 +111,6 @@ export function getStats(events: ProcessedEvent[], combine = false) {
       crews: Record<string, StatCounter>;
       clubs: Record<string, StatCounter>;
       headships: Record<string, StatCounter>;
-      highest: Record<
-        number,
-        {
-          high: number;
-          days: number;
-          run: number;
-          runStart: number;
-          longest: number;
-          start: number;
-          end: number;
-        }
-      >;
       years: string[];
       count: number;
       withdrew: StatCounter;
@@ -105,7 +124,6 @@ export function getStats(events: ProcessedEvent[], combine = false) {
       crews: {},
       clubs: {},
       headships: {},
-      highest: {},
       years: [],
       count: 0,
       withdrew: { total: 0, labels: [] },
@@ -116,7 +134,7 @@ export function getStats(events: ProcessedEvent[], combine = false) {
     const eventInfo: EventInfo = { gender: event.gender, year: event.year };
     const overallStats = stats.all;
     const clubCount: Record<string, StatCounter> = {};
-    const headships: Record<number, { club: string; num: number }> = {};
+    const names: string[] = [];
 
     // Statistics count only events that raced every day.
     if (!event.full_set) {
@@ -156,11 +174,8 @@ export function getStats(events: ProcessedEvent[], combine = false) {
       let pos = num;
       const crew = event.crews[num];
 
-      let clubName = crew.club;
-
-      if (combine && clubMappings.has(clubName)) {
-        clubName = clubMappings.get(clubName)!;
-      }
+      const clubName = combine ? creditedTo(event, crew.club) : crew.club;
+      names.push(clubName);
 
       if (clubName.length === 0) {
         continue;
@@ -173,7 +188,6 @@ export function getStats(events: ProcessedEvent[], combine = false) {
           blades: [],
           crews: {},
           headships: {},
-          highest: {},
           years: [],
           count: 0,
           withdrew: { total: 0, labels: [] },
@@ -258,55 +272,6 @@ export function getStats(events: ProcessedEvent[], combine = false) {
         }
 
         pos -= m;
-
-        if (!event.skip[day][pos]) {
-          if (divRaced) {
-            if (!(crew.number in club.highest)) {
-              club.highest[crew.number] = {
-                high: pos,
-                days: 1,
-                run: 1,
-                runStart: parseInt(event.year),
-                longest: 1,
-                start: parseInt(event.year),
-                end: parseInt(event.year),
-              };
-            } else {
-              const rec = club.highest[crew.number];
-
-              if (pos < rec.high) {
-                club.highest[crew.number] = {
-                  high: pos,
-                  days: 1,
-                  run: 1,
-                  runStart: parseInt(event.year),
-                  longest: 1,
-                  start: parseInt(event.year),
-                  end: parseInt(event.year),
-                };
-              } else if (pos === rec.high) {
-                if (rec.run === 0) {
-                  rec.runStart = parseInt(event.year);
-                }
-
-                rec.days += 1;
-                rec.run += 1;
-
-                if (rec.run > rec.longest) {
-                  rec.longest = rec.run;
-                  rec.start = rec.runStart;
-                  rec.end = parseInt(event.year);
-                }
-              } else {
-                rec.run = 0;
-              }
-            }
-          }
-        } else {
-          if (crew.number in club.highest) {
-            club.highest[crew.number].run = 0;
-          }
-        }
       }
 
       const crewInfo = {
@@ -318,13 +283,6 @@ export function getStats(events: ProcessedEvent[], combine = false) {
 
       updateStats(overallStats.set, String(gained), 1, crewInfo);
       updateStats(club.set, String(gained), 1, crewInfo);
-
-      if (!(crew.number in headships)) {
-        headships[crew.number] = { club: clubName, num: pos };
-      } else if (pos < headships[crew.number].num) {
-        headships[crew.number].club = clubName;
-        headships[crew.number].num = pos;
-      }
 
       if (crew.blades) {
         overallStats.blades.push(crewInfo);
@@ -348,17 +306,11 @@ export function getStats(events: ProcessedEvent[], combine = false) {
       });
     }
 
-    if (!event.flags.includes("skip_headship")) {
-      eventInfo.year = eventInfo.year.split(" ")[0];
+    const head = headOf(event);
 
-      for (const num in headships) {
-        updateStats(
-          stats.club[headships[num].club].headships,
-          num,
-          1,
-          eventInfo,
-        );
-      }
+    if (head !== undefined && names[head]) {
+      eventInfo.year = eventInfo.year.split(" ")[0];
+      updateStats(stats.club[names[head]].headships, "1", 1, eventInfo);
     }
   }
 
@@ -367,18 +319,64 @@ export function getStats(events: ProcessedEvent[], combine = false) {
 
 type ClubStats = ReturnType<typeof getStats>["club"][string];
 
+type HeadDays = {
+  days: number;
+  /** The longest run of consecutive racing days at head, and its years. */
+  longest: number;
+  start: number;
+  end: number;
+};
+
+/**
+ * Each club's days at head across `events`, which must be in year order: the
+ * days its crews finished at head, counting only complete events. A run at
+ * head carries on from one year to the next until another club takes it.
+ */
+function getHeadDays(events: ProcessedEvent[]): Record<string, HeadDays> {
+  const clubs: Record<string, HeadDays> = {};
+  let run: { club: string; days: number; start: number } | undefined;
+
+  for (const event of events) {
+    if (!event.full_set) continue;
+
+    const year = parseInt(event.year);
+
+    for (const index of dailyHeads(event)) {
+      if (index === undefined) continue;
+
+      const club = creditedTo(event, event.crews[index].club);
+      clubs[club] ??= { days: 0, longest: 0, start: year, end: year };
+      clubs[club].days += 1;
+
+      run =
+        run?.club === club
+          ? { ...run, days: run.days + 1 }
+          : { club, days: 1, start: year };
+
+      if (run.days > clubs[club].longest) {
+        clubs[club].longest = run.days;
+        clubs[club].start = run.start;
+        clubs[club].end = year;
+      }
+    }
+  }
+
+  return clubs;
+}
+
 /**
  * The statistics pages' tables for one event and category: clubs ranked by
  * headships, crews entered, total and continuous days at head, and blades.
- * Club names are combined with `clubMapping` first.
+ * Each crew counts for the club it belongs to (see `clubOf`).
  */
 export function getRankings(events: ProcessedEvent[]) {
   const stats = getStats(events, true);
+  const head = getHeadDays(events);
 
   const rHeadships: Record<string, ClubStats["headships"][string]> = {};
   const rCrewsEntered: Record<string, number> = {};
-  const rHeadDays: Record<string, ClubStats["highest"][number]> = {};
-  const rHeadLong: Record<string, ClubStats["highest"][number]> = {};
+  const rHeadDays: Record<string, HeadDays> = {};
+  const rHeadLong: Record<string, HeadDays> = {};
   const rBladesAwarded: Record<string, number> = {};
 
   // Generate rankings
@@ -387,18 +385,9 @@ export function getRankings(events: ProcessedEvent[]) {
       rHeadships[club] = stats.club[club].headships["1"];
     }
 
-    if (
-      "1" in stats.club[club].highest &&
-      stats.club[club].highest["1"].high === 0
-    ) {
-      rHeadDays[club] = stats.club[club].highest["1"];
-    }
-
-    if (
-      "1" in stats.club[club].highest &&
-      stats.club[club].highest["1"].high === 0
-    ) {
-      rHeadLong[club] = stats.club[club].highest["1"];
+    if (club in head) {
+      rHeadDays[club] = head[club];
+      rHeadLong[club] = head[club];
     }
 
     rCrewsEntered[club] = stats.club[club].count;

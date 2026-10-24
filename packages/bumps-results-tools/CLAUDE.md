@@ -52,11 +52,13 @@ pnpm vitest run src/bumps.test.ts
 
 - **abbreviations.ts** - Club abbreviation mappings per event set: Cambridge colleges (`ccol`), Oxford colleges (`ocol`), Town clubs (`cra`), plus `sets` (short → long name) and a `roman` numeral table
 
-- **club-mappings.ts** - Display-name mappings (`clubMapping`, `clubMappingFull`) for normalising historical club names
+- **clubs.ts** - The one list of clubs: each club's slug, full name, the name the results use, its city, and any `formerly` (renames, mergers, other spellings) and `joint` (combined crews) names, plus `unlisted` (names that deliberately have no club). `clubOf(event, name)` is the club a results name belongs to. The statistics credit a former name's crews to its club, and the bumps site builds a page for each club, so 1st and 3rd counts 1st, 2nd and 3rd Trinity's headships in both. Safe for the browser: it imports nothing. The site imports it as `bumps-results-tools/clubs`
+
+- **clubs.test.ts** - Checks `clubs.ts` against the results: a name that raced in five or more years (or in an event's latest year) needs a club or an `unlisted` entry, every listed name must have raced, a name is only one club's own in an event, and slugs are unique per city. So after adding a new year, a new or renamed club needs an entry in `clubs.ts`
 
 - **results.ts** - `events`: every TG file in `results/tg_format/`, parsed and processed, in file name order. Importing it throws, listing every file's errors, if any file has one. It bundles the files with `import.meta.glob`, so it works only under Vite (the bumps site, the viewer, Vitest), not in `tsx` scripts. The site imports it as `bumps-results-tools/results`
 
-- **stats.ts** - `getStats(events, combine?)` aggregates per-club statistics (headships, crews entered, blades, highest positions) across an array of `Event`s, counting only complete events. `getRankings(events)` turns them into the statistics pages' tables (headships, crewsEntered, headDays, headLong, bladesAwarded), ranked with Arquero. The site imports it as `bumps-results-tools/stats`
+- **stats.ts** - `headOf(event)` is the one headship rule: the best-placed 1st boat that didn't withdraw, in a complete event not flagged `skip_headship`. `getStats(events, combine?)` aggregates per-club statistics (headships, crews entered, blades) across an array of `Event`s, counting only complete events; with `combine`, crews count for their club (`clubOf`). `getRankings(events)` turns them into the statistics pages' tables (headships, crewsEntered, headDays, headLong, bladesAwarded), ranked with Arquero. Days at head are counted per club, from the crew at head after each day's racing, so a run carries on across years and between a club's former names. The site imports it as `bumps-results-tools/stats`
 
 - **math.ts** - Histogram + summary statistics helpers (`mean`, `variance`, `standardDeviation`, histogram variants)
 
@@ -92,7 +94,7 @@ React app rendered through Vite. `App.tsx` is a split-pane editor:
 
 ### How the site uses this package
 
-`package.json` `exports` point at the TypeScript source (`./results` → `src/results.ts`, `./stats` → `src/stats.ts`), so the site's Vite build compiles them and this package never needs building for it. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site imports free of Node builtins at the top level (see `readFile`).
+`package.json` `exports` point at the TypeScript source (`./clubs`, `./results`, `./stats` and `./types`, each `src/<name>.ts`), so the site's Vite build compiles them and this package never needs building for it. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site imports free of Node builtins at the top level (see `readFile`).
 
 ### Downstream sync
 

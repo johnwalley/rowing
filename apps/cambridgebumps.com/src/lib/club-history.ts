@@ -1,19 +1,15 @@
-import type { Event } from "react-bumps-chart";
+import { headOf } from "bumps-results-tools/stats";
+import type { ProcessedEvent as Event } from "bumps-results-tools/types";
 
-import { clubs, eventsOf, unlisted, type Club } from "@/data/clubs";
-import { results, summary } from "@/data/results";
+import { clubs, eventsOf, namesOf, type Club } from "@/data/clubs";
+import { processedResults as results, summary } from "@/data/results";
 import {
-  events,
   genders,
   yearOf,
   type City,
   type Gender,
   type Set as EventKey,
 } from "@/lib/utils";
-
-// A name in the results qualifies for a page once it has raced in this many
-// years, or in an event's latest year.
-const MIN_YEARS = 5;
 
 /** One crew's result in one race. Positions count from 1, the head. */
 export type CrewResult = {
@@ -80,13 +76,6 @@ export type SectionRecords = {
   current: CrewResult[];
 };
 
-/** The results names a club's crews raced under. */
-const namesOf = (club: Club) => [
-  club.short,
-  ...(club.formerly ?? []),
-  ...(club.joint ?? []),
-];
-
 const raceCrewNames = (race: Event) =>
   new Set(race.crews.map((crew) => crew.club));
 
@@ -104,23 +93,6 @@ function dailyPositions(race: Event, start: number): (number | null)[] {
   }
 
   return positions;
-}
-
-// Which crew finished head, by the statistics pages' rule: the best-placed
-// 1st boat, in complete events that aren't flagged `skip_headship` (the
-// early Mays, raced several times a year).
-function headIndex(race: Event): number | undefined {
-  if (!race.full_set || race.flags.includes("skip_headship")) return undefined;
-
-  let best: { index: number; finish: number } | undefined;
-
-  race.crews.forEach((crew, index) => {
-    if (crew.number !== 1 || crew.gain === null) return;
-    const finish = index - crew.gain;
-    if (!best || finish < best.finish) best = { index, finish };
-  });
-
-  return best?.index;
 }
 
 // A former name is a rename, carrying the club's lines on, when no race has it
@@ -152,7 +124,7 @@ function getSection(
   const races: ClubRace[] = [];
 
   for (const race of results[event][gender]) {
-    const head = headIndex(race);
+    const head = headOf(race);
     const crews: CrewResult[] = [];
 
     race.crews.forEach((crew, index) => {
@@ -284,91 +256,3 @@ export const clubsIn = (city: City) =>
 export function getClub(city: City, slug: string): Club | undefined {
   return clubsIn(city).find((club) => club.slug === slug);
 }
-
-// Fails the build when the curated club list and the results disagree: a name
-// that qualifies for a page but has no club (and isn't `unlisted`), or a
-// listed name that never raced (a typo). A name can be only one club's own in
-// an event; only joint crews belong to more than one.
-function checkClubs() {
-  const problems: string[] = [];
-  const raced = new Map<EventKey, Map<string, Set<number>>>();
-
-  for (const event of events) {
-    const years = new Map<string, Set<number>>();
-    const current = new Set<string>();
-
-    for (const gender of genders) {
-      const latest = yearOf(summary[event][gender].at(-1)!);
-
-      for (const race of results[event][gender]) {
-        for (const name of raceCrewNames(race)) {
-          if (!name) continue;
-          const yearsRaced = years.get(name) ?? new Set<number>();
-          yearsRaced.add(yearOf(race.year));
-          years.set(name, yearsRaced);
-          if (yearOf(race.year) === latest) current.add(name);
-        }
-      }
-    }
-
-    raced.set(event, years);
-
-    const owners = new Map<string, Club[]>();
-    for (const club of clubs.filter((club) => eventsOf(club).includes(event))) {
-      for (const name of namesOf(club)) {
-        owners.set(name, [...(owners.get(name) ?? []), club]);
-      }
-    }
-
-    for (const [name, clubsOwning] of owners) {
-      const own = clubsOwning.filter((club) => !club.joint?.includes(name));
-      if (own.length > 1) {
-        problems.push(
-          `${event}: "${name}" belongs to ${own.map((club) => club.slug).join(" and ")}`,
-        );
-      }
-    }
-
-    for (const [name, yearsRaced] of years) {
-      const qualifies = yearsRaced.size >= MIN_YEARS || current.has(name);
-      if (qualifies && !owners.has(name) && !unlisted[event]?.includes(name)) {
-        problems.push(
-          `${event}: "${name}" raced in ${yearsRaced.size} years but has no club`,
-        );
-      }
-    }
-
-    for (const name of unlisted[event] ?? []) {
-      if (!years.has(name)) {
-        problems.push(`${event}: unlisted "${name}" never raced`);
-      }
-    }
-  }
-
-  for (const club of clubs) {
-    for (const name of namesOf(club)) {
-      if (!eventsOf(club).some((event) => raced.get(event)?.has(name))) {
-        problems.push(
-          `${club.slug}: "${name}" never raced in ${eventsOf(club).join("/")}`,
-        );
-      }
-    }
-  }
-
-  for (const city of ["Cambridge", "Oxford"] as City[]) {
-    const slugs = clubsIn(city).map((club) => club.slug);
-    for (const slug of new Set(slugs)) {
-      if (slugs.indexOf(slug) !== slugs.lastIndexOf(slug)) {
-        problems.push(`${city}: two clubs share the slug "${slug}"`);
-      }
-    }
-  }
-
-  if (problems.length > 0) {
-    throw new Error(
-      `src/data/clubs.ts disagrees with the results:\n  ${problems.join("\n  ")}`,
-    );
-  }
-}
-
-checkClubs();
