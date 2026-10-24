@@ -1,0 +1,55 @@
+{
+  "name": "bumps-results-tools",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "arquero": "^8",
+    "chalk": "^5.6.2",
+    "react": "^19.2.6",
+    "react-bumps-chart": "^1.12.3",
+    "react-dom": "^19.2.6",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript/native-preview": "^7.0.0-dev.20260517.1",
+    "@vitejs/plugin-react": "^6",
+    "prettier": "^3.8.3",
+    "tailwindcss": "^4.3.0",
+    "tsx": "^4.23.15",
+    "vite": "^8",
+    "vitest": "^5.0.5"
+  },
+  "peerDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev",
+    "typescript": "^5.0.0 || ^6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    },
+    "@typescript/native-preview": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm run typecheck && vite build",
+    "typecheck": "tsgo --noEmit && tsgo --noEmit -p tsconfig.scripts.json",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "generate:results": "tsx scripts/generate_results.ts",
+    "generate:stats": "tsx scripts/generate_stats.ts",
+    "generate:ad": "tsx scripts/convert_tg_to_ad.ts",
+    "generate": "pnpm run generate:results && pnpm run generate:stats"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@10.23.0"
+}
