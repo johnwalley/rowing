@@ -22,24 +22,12 @@ Run the tests with:
 pnpm test
 ```
 
-## 📈 Using the UI
+## 📈 Editing results
 
-Start the Vite dev server:
-
-```shell
-pnpm run dev
-```
-
-To produce a production build:
+The editor for TG files, with a live chart, is in `apps/results-editor`:
 
 ```shell
-pnpm run build
-```
-
-Then preview the built app with:
-
-```shell
-pnpm run preview
+pnpm --filter results-editor dev
 ```
 
 ## 🗂️ Results on the website

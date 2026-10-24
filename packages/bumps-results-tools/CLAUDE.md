@@ -6,26 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Tools for manipulating bumps rowing results data (Cambridge Bumps, Oxford Summer Eights, Torpids, Town Bumps). The bumps site in `apps/cambridgebumps.com` builds its results and statistics with this package's code. Related repositories: [bumps-results](https://github.com/johnwalley/bumps-results), [d3-bumps-chart](https://github.com/johnwalley/d3-bumps-chart), [react-bumps-chart](https://github.com/johnwalley/react-bumps-chart).
 
-The repo is a Node (24+) + TypeScript project using pnpm. Scripts run via `tsx`; tests use Vitest. The UI is a Vite + React 19 + Tailwind 4 app under `src/ui/`. Builds use `tsgo` (`@typescript/native-preview`) for type-checking and Vite 8 for bundling.
+The repo is a Node (24+) + TypeScript project using pnpm. Scripts run via `tsx`; tests use Vitest. The package has no UI and nothing to bundle: its build only type-checks, with `tsgo` (`@typescript/native-preview`). The editor for TG files is `apps/results-editor`.
 
 ## Commands
 
 ```bash
-# Development server (Vite + React UI)
-pnpm run dev
-
-# Type-check (src + scripts) + production build
-pnpm run build
-
-# Type-check only (src via tsconfig.json, scripts via tsconfig.scripts.json)
+# Type-check (src via tsconfig.json, scripts via tsconfig.scripts.json); build does the same
 pnpm run typecheck
 
 # Format / check formatting (CI runs format:check)
 pnpm run format
 pnpm run format:check
-
-# Preview the production build
-pnpm run preview
 
 # Regenerate results/ad_format/ from the TG files (CI fails if committed files differ)
 pnpm run generate:ad
@@ -56,7 +47,9 @@ pnpm vitest run src/bumps.test.ts
 
 - **clubs.test.ts** - Checks `clubs.ts` against the results: a name that raced in five or more years (or in an event's latest year) needs a club or an `unlisted` entry, every listed name must have raced, a name is only one club's own in an event, and slugs are unique per city. So after adding a new year, a new or renamed club needs an entry in `clubs.ts`
 
-- **results.ts** - `events`: every TG file in `results/tg_format/`, parsed and processed, in file name order. Importing it throws, listing every file's errors, if any file has one. It bundles the files with `import.meta.glob`, so it works only under Vite (the bumps site, the viewer, Vitest), not in `tsx` scripts. The site imports it as `bumps-results-tools/results`
+- **results.ts** - `events`: every TG file in `results/tg_format/`, parsed and processed, in file name order. Importing it throws, listing every file's errors, if any file has one. It bundles the files with `import.meta.glob`, so it works only under Vite (the bumps site, the results editor, Vitest), not in `tsx` scripts. The site imports it as `bumps-results-tools/results`
+
+- **tg-files.ts** - `resultFiles`: every TG file in `results/tg_format/` with its set, gender and year, and a `load()` that fetches its text lazily (one chunk per file), so the results editor can list them all without bundling them. Vite only, like `results.ts`. The editor imports it as `bumps-results-tools/tg-files`
 
 - **crews.ts** - `crewResults(event)`: every crew's result in a race (start, positions after each day, finish, gain, blades, spoons, head), worked out once per race. `headOf(event)` is the one headship rule: the best-placed 1st boat that didn't withdraw, in a complete event not flagged `skip_headship`. Blades and spoons count only in complete events. The statistics and the club histories are both built on these
 
@@ -71,16 +64,6 @@ pnpm vitest run src/bumps.test.ts
 - **results.test.ts** - Parses and processes every file in `results/tg_format/`, fails on any error (so a typo in new results data breaks CI), and compares a per-crew summary (daily moves, gain, blades, withdrawn) against `src/__snapshots__/results/<file>`. When a data edit or processor change is meant to alter results, run `pnpm vitest run -u` and review the snapshot diff. New TG files need their snapshot committed, because CI won't write missing snapshots
 
 - **stats.test.ts**, **club-history.test.ts** - Snapshot the statistics tables (`src/__snapshots__/stats/<event>_<gender>.txt`) and what each club page shows (`src/__snapshots__/clubs/<city>/<slug>.txt`), and check the headship rule and the club crediting. A results change moves these snapshots too (the latest year's crews are on every club page), so `pnpm vitest run -u` after a data edit and review what moved
-
-### UI (`src/ui/`)
-
-React app rendered through Vite. `App.tsx` is a split-pane editor:
-
-- Left: a `<select>` listing every TG file (grouped by set and gender) and a `<textarea>` for live editing of TG-format text
-- Right: a `BumpsChart` from `react-bumps-chart` that re-renders as the textarea changes
-- A "Generate next years starting positions" button runs `stepOn` + `writeString` to seed next year's TG text from the currently loaded event
-
-`src/ui/results.ts` imports TG files straight from `results/tg_format/` via `import.meta.glob` (lazy, one chunk per file), so the UI always matches the canonical data — don't reintroduce copies under `public/`. Styling is Tailwind 4 via `@tailwindcss/vite`.
 
 ### Scripts (`scripts/`)
 
@@ -98,7 +81,7 @@ React app rendered through Vite. `App.tsx` is a split-pane editor:
 
 ### How the site uses this package
 
-`package.json` `exports` point at the TypeScript source (`./club-history`, `./clubs`, `./results`, `./stats` and `./types`, each `src/<name>.ts`), so the site's Vite build compiles them and this package never needs building for it. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site imports free of Node builtins at the top level (see `readFile`).
+`package.json` `exports` point at the TypeScript source (`./bumps`, `./club-history`, `./clubs`, `./results`, `./stats`, `./tg-files` and `./types`, each `src/<name>.ts`), so the site's and the results editor's Vite builds compile them and this package never needs building for them. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site and the editor import free of Node builtins at the top level (see `readFile`).
 
 ### Downstream sync
 

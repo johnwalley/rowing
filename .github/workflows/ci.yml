@@ -30,9 +30,9 @@ jobs:
           done
 
       - run: pnpm format:check
-      # In dependency order: blades, chart, tools, then the two sites. The
-      # chart's build runs tsc and the tools' build runs tsgo, so this also
-      # typechecks them.
+      # In dependency order: blades, chart, tools, then the sites and the
+      # results editor. The chart's build runs tsc and the tools' and the
+      # editor's run tsgo, so this also typechecks them.
       - run: pnpm -r build
 
       - run: pnpm test

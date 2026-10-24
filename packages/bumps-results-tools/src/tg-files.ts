@@ -1,7 +1,7 @@
-// TG files are imported straight from the canonical results/tg_format/
-// directory so the UI can never drift from the source data. Each file is
-// lazily loaded as its own chunk.
-const loaders = import.meta.glob<string>("../../results/tg_format/*.txt", {
+// Every TG file in results/tg_format/, each loaded lazily as its own chunk, so
+// the results editor lists every file without bundling them all. Like
+// results.ts, this needs Vite.
+const loaders = import.meta.glob<string>("../results/tg_format/*.txt", {
   query: "?raw",
   import: "default",
 });

@@ -1,12 +1,16 @@
 import "react-bumps-chart/dist/index.css";
-import "./App.css";
 
-import { processResults, readEvent, stepOn, writeString } from "../bumps";
+import {
+  processResults,
+  readEvent,
+  stepOn,
+  writeString,
+} from "bumps-results-tools/bumps";
 import { ComponentProps, useEffect, useMemo, useState } from "react";
 
 import { BumpsChart } from "react-bumps-chart";
-import { Event } from "../types";
-import { resultFiles } from "./results";
+import { Event } from "bumps-results-tools/types";
+import { resultFiles } from "bumps-results-tools/tg-files";
 
 type BumpsChartData = ComponentProps<typeof BumpsChart>["data"];
 
