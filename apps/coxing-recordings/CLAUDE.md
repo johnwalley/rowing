@@ -14,6 +14,7 @@ pnpm build        # Build production site to ./dist/
 pnpm preview      # Preview production build locally
 pnpm format       # Format code with Prettier
 pnpm format:check # Check formatting
+pnpm typecheck    # Type-check (astro check: .astro, .ts and .tsx)
 ```
 
 ## Architecture

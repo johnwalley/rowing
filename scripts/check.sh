@@ -46,6 +46,8 @@ step "The bumps site's lint"
 pnpm --filter cambridgebumps.com lint
 step "The bumps site's typecheck"
 pnpm --filter cambridgebumps.com typecheck
+step "The coxing site's typecheck"
+pnpm --filter coxing-recordings typecheck
 
 # Compares the folder before and after regenerating it, rather than against
 # git, so uncommitted TG edits with their regenerated AD files pass locally.

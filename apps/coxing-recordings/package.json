@@ -13,7 +13,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "typecheck": "astro check"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.1",
@@ -27,6 +28,8 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "prettier": "^3.9.10"
+    "@astrojs/check": "^0.9.10",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.3"
   }
 }
