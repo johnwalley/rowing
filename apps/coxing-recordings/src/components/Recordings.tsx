@@ -12,6 +12,9 @@ interface Recording {
 const embedUrl = (videoId: string) =>
   `https://www.youtube.com/embed/${videoId}`;
 
+const thumbnailUrl = (videoId: string) =>
+  `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+
 /**
  * Shows the video's thumbnail, and loads the YouTube player only once it is clicked.
  */
@@ -39,7 +42,7 @@ function Video({ recording }: { recording: Recording }) {
     >
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src={`https://i.ytimg.com/vi/${recording.videoId}/hqdefault.jpg`}
+        src={thumbnailUrl(recording.videoId)}
         alt={recording.name}
         loading="lazy"
       />
@@ -92,6 +95,7 @@ export default function Recordings({
         name: `${recording.name} - Coxswain Recording`,
         description: recording.description,
         embedUrl: embedUrl(recording.videoId),
+        thumbnailUrl: thumbnailUrl(recording.videoId),
         uploadDate: `${recording.year}-01-01`,
         creator: {
           "@type": "Person",
