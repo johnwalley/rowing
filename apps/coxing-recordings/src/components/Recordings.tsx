@@ -68,21 +68,16 @@ export default function Recordings({
 }) {
   const [searchValue, setSearchValue] = useState("");
 
-  const filteredRecordings = useMemo(
-    () =>
-      recordings
-        .sort((a, b) => +b.year - +a.year)
-        .filter(
-          (recording) =>
-            recording.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-            recording.description
-              .toLowerCase()
-              .includes(searchValue.toLowerCase()) ||
-            recording.cox.toLowerCase().includes(searchValue.toLowerCase()) ||
-            recording.year.toLowerCase().includes(searchValue.toLowerCase()),
-        ),
-    [searchValue],
-  );
+  const filteredRecordings = useMemo(() => {
+    const query = searchValue.toLowerCase();
+    return recordings.filter(
+      (recording) =>
+        recording.name.toLowerCase().includes(query) ||
+        recording.description.toLowerCase().includes(query) ||
+        recording.cox.toLowerCase().includes(query) ||
+        recording.year.toLowerCase().includes(query),
+    );
+  }, [recordings, searchValue]);
 
   const filteredIds = useMemo(
     () => new Set(filteredRecordings.map((r) => r.id)),
