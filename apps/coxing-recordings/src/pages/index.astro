@@ -4,7 +4,10 @@ import Recordings from '../components/Recordings.tsx';
 import { getCollection } from 'astro:content';
 
 const recordingsCollection = await getCollection('recordings');
-const recordings = recordingsCollection.map(entry => entry.data);
+// Newest first, and by name within a year, so the order is the same on every build.
+const recordings = recordingsCollection
+  .map(entry => entry.data)
+  .sort((a, b) => +b.year - +a.year || a.name.localeCompare(b.name));
 ---
 
 <Layout title="Coxswain Recordings | Rowing Race Audio from Henley & World Championships">
