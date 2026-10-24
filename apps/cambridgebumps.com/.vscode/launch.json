@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Astro: dev server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev"
+    },
+    {
+      "name": "Astro: debug client-side",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4321"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+import * as React from "react";
+
+import { docsConfig } from "@/config/docs";
+import { siteConfig } from "@/config/site";
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useEventPreference } from "@/hooks/use-event-preference";
+import { cn, isGender } from "@/lib/utils";
+import type { MainNavItem } from "@/types/nav";
+
+export function MobileNav({ pathname }: { pathname: string }) {
+  const [open, setOpen] = React.useState(false);
+
+  const pref = useEventPreference();
+
+  // The header is persisted across view transitions, so following one of the
+  // sheet's own links no longer tears the sheet down with the old page: it
+  // would stay mounted — scroll lock, focus trap and all — over the page it
+  // just navigated to. Close it as soon as a navigation starts.
+  React.useEffect(() => {
+    const close = () => setOpen(false);
+
+    document.addEventListener("astro:before-preparation", close);
+    return () =>
+      document.removeEventListener("astro:before-preparation", close);
+  }, []);
+
+  // Extract the current event and gender from the URL, e.g.
+  // "/charts/eights/women/2025" -> event "eights", gender "women".
+  const [, currentEvent, currentGender] = pathname.split("/").filter(Boolean);
+
+  // Build href with event/gender context. Prefer the event/gender in the
+  // current URL; otherwise fall back to the remembered preference so a visitor
+  // on / or /about is taken back to their last-chosen event. The year is
+  // omitted — the redirect supplies the latest year.
+  const buildHref = (item: MainNavItem): string => {
+    if (item.requiresEventGender) {
+      if (currentEvent && currentGender) {
+        return `${item.href}/${currentEvent}/${currentGender}`;
+      }
+      if (pref) {
+        return `${item.href}/${pref.event}/${pref.gender}`;
+      }
+    }
+
+    return `${item.href}`;
+  };
+
+  // The Events links go to an event's latest chart. Keep the category the
+  // visitor is looking at (or last looked at) rather than always landing on
+  // the men's/Open chart.
+  const gender =
+    currentGender && isGender(currentGender) ? currentGender : pref?.gender;
+
+  const buildEventHref = (href: string): string =>
+    gender ? `${href}/${gender}` : href;
+
+  const isActive = (href: string): boolean =>
+    pathname === href || pathname.startsWith(`${href}/`);
+
+  return (
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button
+          variant="ghost"
+          className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent lg:hidden"
+        >
+          <svg
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+          >
+            <path
+              d="M3 5H11"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+            <path
+              d="M3 12H16"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+            <path
+              d="M3 19H21"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+          </svg>
+          <span className="sr-only">Toggle Menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="left" className="pr-0">
+        <a href="/" className="flex items-center">
+          <Icons.logo className="mr-2 h-4 w-4" />
+          <span className="font-bold">{siteConfig.name}</span>
+        </a>
+        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
+          <div className="flex flex-col space-y-3">
+            {docsConfig.mainNav.map(
+              (item) =>
+                item.href && (
+                  <a
+                    key={item.href}
+                    href={buildHref(item)}
+                    aria-current={isActive(item.href) ? "true" : undefined}
+                    className={cn(isActive(item.href) && "font-medium")}
+                  >
+                    {item.title}
+                  </a>
+                ),
+            )}
+          </div>
+          <div className="flex flex-col space-y-2">
+            {docsConfig.sidebarNav.map((item, index) => (
+              <div key={index} className="flex flex-col space-y-3 pt-6">
+                <h4 className="font-medium">{item.title}</h4>
+                {item?.items?.length &&
+                  item.items.map((item) => (
+                    <React.Fragment key={item.href}>
+                      {!item.disabled &&
+                        (item.href ? (
+                          <a
+                            href={buildEventHref(item.href)}
+                            aria-current={
+                              isActive(item.href) ? "true" : undefined
+                            }
+                            className={cn(
+                              isActive(item.href)
+                                ? "font-medium text-foreground"
+                                : "text-muted-foreground",
+                            )}
+                          >
+                            {item.title}
+                            {item.label && (
+                              <span className="ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
+                                {item.label}
+                              </span>
+                            )}
+                          </a>
+                        ) : (
+                          item.title
+                        ))}
+                    </React.Fragment>
+                  ))}
+              </div>
+            ))}
+          </div>
+        </ScrollArea>
+      </SheetContent>
+    </Sheet>
+  );
+}

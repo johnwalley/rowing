@@ -1,0 +1,14 @@
+{
+  "framework": "astro",
+  "headers": [
+    {
+      "source": "/data/results/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=600, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ]
+}
