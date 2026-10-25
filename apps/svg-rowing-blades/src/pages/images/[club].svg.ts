@@ -3,14 +3,22 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { Blade } from "react-rowing-blades";
 
-import { allClubs, type Club } from "../../lib/clubs";
+import { allClubs, designsOf } from "../../lib/clubs";
 
-// The files the club pages' Download buttons link to, rendered at 500px.
+// The files the club pages' Download buttons link to, rendered at 500px: one
+// per design, so `wro.svg` and `wro-men.svg` for a club with two.
 export const getStaticPaths = (() =>
-  allClubs.map((club) => ({ params: { club } }))) satisfies GetStaticPaths;
+  allClubs.flatMap((club) =>
+    designsOf(club).map(({ file, gender }) => ({
+      params: { club: file },
+      props: { club, gender },
+    })),
+  )) satisfies GetStaticPaths;
 
-export const GET: APIRoute = ({ params }) => {
-  const club = params.club as Club;
-  const svg = renderToStaticMarkup(createElement(Blade, { size: 500, club }));
+export const GET: APIRoute = ({ props }) => {
+  const { club, gender } = props;
+  const svg = renderToStaticMarkup(
+    createElement(Blade, { size: 500, club, gender }),
+  );
   return new Response(svg, { headers: { "Content-Type": "image/svg+xml" } });
 };
