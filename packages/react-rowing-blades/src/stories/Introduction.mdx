@@ -147,6 +147,17 @@ React Rowing Blades is a library of SVG illustrations (React components) of rowi
       </span>
     </div>
   </a>
+
+  <a href="#overseas">
+    <div class="link-item">
+      <Blade club="yal" />
+
+      <span>
+        <strong>Overseas Clubs</strong>
+        Clubs, colleges and universities outside the UK
+      </span>
+    </div>
+  </a>
 </div>
 
 <div class="subheading" id="cambridge-college">
@@ -258,6 +269,36 @@ React Rowing Blades is a library of SVG illustrations (React components) of rowi
               <tr key={club}>
                 <td>
                   <strong>{shortNames.international[club]}</strong>
+                </td>
+                <td>{club}</td>
+                <td>
+                  <Blade club={club} size={100} />
+                </td>
+              </tr>
+            ))}
+    </tbody>
+  </table>
+</div>
+
+<div class="subheading" id="overseas">
+  Overseas Clubs
+</div>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Blade</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {clubs.overseas.map((club) => (
+              <tr key={club}>
+                <td>
+                  <strong>{shortNames.overseas[club]}</strong>
                 </td>
                 <td>{club}</td>
                 <td>
