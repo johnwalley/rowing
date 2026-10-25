@@ -1,18 +1,18 @@
-import './globals.css';
+import "./globals.css";
 
-import { Crews } from './crews/crews';
-import { Division } from './division/division';
-import { Event } from '../types';
-import { Join } from './join/join';
-import { Label } from './label/label';
-import { Numbers } from './numbers/numbers';
-import { Stripes } from './stripes/stripes';
-import classNames from 'classnames';
-import classes from './bumps-chart.module.css';
-import { layoutChartMultiYear } from '@/utils/layout-chart-multi-year';
-import { MeasureText, scale } from '@/utils/layout-chart';
-import { useMeasureText } from '@/utils/measure-text';
-import { useMemo, useRef } from 'react';
+import { Crews } from "./crews/crews";
+import { Division } from "./division/division";
+import { Event } from "../types";
+import { Join } from "./join/join";
+import { Label } from "./label/label";
+import { Numbers } from "./numbers/numbers";
+import { Stripes } from "./stripes/stripes";
+import classNames from "classnames";
+import classes from "./bumps-chart.module.css";
+import { layoutChartMultiYear } from "@/utils/layout-chart-multi-year";
+import { MeasureText, scale } from "@/utils/layout-chart";
+import { useMeasureText } from "@/utils/measure-text";
+import { useMemo, useRef } from "react";
 
 namespace BumpsChartMultiYear {
   export type Props = {
@@ -45,7 +45,7 @@ export const BumpsChartMultiYear = ({
 
   const layout = useMemo(
     () => layoutChartMultiYear(data, { measureText, blades }),
-    [data, measureText, blades]
+    [data, measureText, blades],
   );
 
   return (

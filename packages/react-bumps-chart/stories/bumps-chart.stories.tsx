@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { BumpsChart } from '../src/components/bumps-chart';
-import React from 'react';
-import eights1838_men from './eights1838_men.json';
-import mays2023_men from './mays2023_men.json';
-import mays2023_men_incomplete from './mays2023_men_incomplete.json';
-import torpids1858_men from './torpids1858_men.json';
-import torpids1975_men from './torpids1975_men.json';
-import town2024_women from './town2024_women.json';
+import { BumpsChart } from "../src/components/bumps-chart";
+import React from "react";
+import eights1838_men from "./eights1838_men.json";
+import mays2023_men from "./mays2023_men.json";
+import mays2023_men_incomplete from "./mays2023_men_incomplete.json";
+import torpids1858_men from "./torpids1858_men.json";
+import torpids1975_men from "./torpids1975_men.json";
+import town2024_women from "./town2024_women.json";
 
 const meta: Meta<typeof BumpsChart> = {
   component: BumpsChart,
@@ -45,7 +45,7 @@ export const DarkMode: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="dark" style={{ backgroundColor: 'black' }}>
+      <div className="dark" style={{ backgroundColor: "black" }}>
         <h1>May Bumps 2023 - Men's Divisions</h1>
         <div>
           <Story />
@@ -63,7 +63,7 @@ export const StartOrderOnly: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="dark" style={{ backgroundColor: 'black' }}>
+      <div className="dark" style={{ backgroundColor: "black" }}>
         <h1>Town Bumps 2024 - Women's Divisions</h1>
         <div>
           <Story />
@@ -100,7 +100,7 @@ export const Blades: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="dark" style={{ backgroundColor: 'black' }}>
+      <div className="dark" style={{ backgroundColor: "black" }}>
         <h1>May Bumps 2023 - Men's Divisions</h1>
         <div>
           <Story />

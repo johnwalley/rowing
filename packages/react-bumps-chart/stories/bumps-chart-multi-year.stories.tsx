@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { BumpsChartMultiYear } from '../src/components/bumps-chart-multi-year';
-import React from 'react';
-import mays18451_men from './mays1845.1_men.json';
-import mays18452_men from './mays1845.2_men.json';
-import mays18461_men from './mays1846.1_men.json';
-import mays18462_men from './mays1846.2_men.json';
-import mays2022_men from './mays2022_men.json';
-import mays2023_men from './mays2023_men.json';
-import mays2024_men from './mays2024_men.json';
-import mays_full from './mays_full.json';
+import { BumpsChartMultiYear } from "../src/components/bumps-chart-multi-year";
+import React from "react";
+import mays18451_men from "./mays1845.1_men.json";
+import mays18452_men from "./mays1845.2_men.json";
+import mays18461_men from "./mays1846.1_men.json";
+import mays18462_men from "./mays1846.2_men.json";
+import mays2022_men from "./mays2022_men.json";
+import mays2023_men from "./mays2023_men.json";
+import mays2024_men from "./mays2024_men.json";
+import mays_full from "./mays_full.json";
 
 const meta: Meta<typeof BumpsChartMultiYear> = {
   component: BumpsChartMultiYear,
@@ -82,7 +82,7 @@ export const DarkMode: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="dark" style={{ backgroundColor: 'black' }}>
+      <div className="dark" style={{ backgroundColor: "black" }}>
         <h1>May Bumps - 1845 - Men's Divisions</h1>
         <div>
           <Story />
@@ -100,13 +100,13 @@ export const MayBumpsFull: Story = {
       ...event,
       crews: event.crews.map((crew) => ({
         ...crew,
-        highlight: crew.start === 'LMBC',
+        highlight: crew.start === "LMBC",
       })),
     })),
   },
   decorators: [
     (Story) => (
-      <div style={{ width: '40000px' }}>
+      <div style={{ width: "40000px" }}>
         <h1>May Bumps - Full Men's History</h1>
         <div>
           <Story />

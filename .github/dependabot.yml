@@ -15,6 +15,14 @@ updates:
       dependencies:
         dependency-type: production
         update-types: [minor, patch]
+    ignore:
+      # Matches the Node version in .nvmrc; bump both together.
+      - dependency-name: "@types/node"
+        update-types: [version-update:semver-major]
+      # TypeScript 7 is the native (Go) compiler, without the JavaScript API
+      # the libraries' Vite builds call into. Revisit when they support it.
+      - dependency-name: typescript
+        update-types: [version-update:semver-major]
 
   - package-ecosystem: github-actions
     directory: /

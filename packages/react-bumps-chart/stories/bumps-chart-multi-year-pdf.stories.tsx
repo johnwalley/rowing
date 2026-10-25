@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { PDFViewer, usePDF } from '@react-pdf/renderer';
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { PDFViewer, usePDF } from "@react-pdf/renderer";
 
-import { BumpsChartMultiYear } from '../src/components/pdf/bumps-chart-multi-year';
-import React from 'react';
-import mays18451_men from './mays1845.1_men.json';
-import mays18452_men from './mays1845.2_men.json';
-import mays18461_men from './mays1846.1_men.json';
-import mays18462_men from './mays1846.2_men.json';
+import { BumpsChartMultiYear } from "../src/components/pdf/bumps-chart-multi-year";
+import React from "react";
+import mays18451_men from "./mays1845.1_men.json";
+import mays18452_men from "./mays1845.2_men.json";
+import mays18461_men from "./mays1846.1_men.json";
+import mays18462_men from "./mays1846.2_men.json";
 
 const meta: Meta<typeof BumpsChartMultiYear> = {
   component: BumpsChartMultiYear,
@@ -30,7 +30,7 @@ export const MayBumps2023MensDivisions: Story = {
           {/*   <a href={instance.url!} download="test.pdf">
             Download
           </a> */}
-          <PDFViewer width={'100%'} height={600}>
+          <PDFViewer width={"100%"} height={600}>
             <Story />
           </PDFViewer>
         </>

@@ -1,4 +1,4 @@
-import classes from './join.module.css';
+import classes from "./join.module.css";
 
 namespace Join {
   export type Props = {
@@ -28,7 +28,7 @@ export const Join = ({ lines, joins, text, x }: Join.Props) => {
       {joins.map((line, index) => (
         <polyline
           key={index}
-          points={line.map((point) => point.join(',')).join(' ')}
+          points={line.map((point) => point.join(",")).join(" ")}
           fill="none"
           stroke="grey"
           strokeWidth="1"

@@ -59,7 +59,6 @@ Open [http://localhost:4321](http://localhost:4321) with your browser to see the
 | `pnpm preview`      | Serve the built site locally             |
 | `pnpm lint`         | Run ESLint                               |
 | `pnpm typecheck`    | Run `astro check`                        |
-| `pnpm format`       | Format with Prettier                     |
 
 ### Environment Variables
 

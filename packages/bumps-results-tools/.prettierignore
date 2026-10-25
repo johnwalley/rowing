@@ -1,7 +1,0 @@
-# Source data and generated files
-results/
-scripts/data/
-output/
-dist/
-pnpm-lock.yaml
-src/__snapshots__/

@@ -1,12 +1,12 @@
-import { Event } from '../types';
-import { range } from 'lodash';
+import { Event } from "../types";
+import { range } from "lodash";
 
 export function calculateDivisions(
   event: Event,
   scale: number,
   spaceLeft: number,
   spaceRight: number,
-  blades = false
+  blades = false,
 ) {
   let top = 0;
 

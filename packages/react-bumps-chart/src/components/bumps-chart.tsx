@@ -1,17 +1,17 @@
-import './globals.css';
+import "./globals.css";
 
-import { Blades } from './blades/blades';
-import { Crews } from './crews/crews';
-import { Division } from './division/division';
-import { Event } from '../types';
-import { ExtraText } from './extra-text/extra-text';
-import { Numbers } from './numbers/numbers';
-import { Stripes } from './stripes/stripes';
-import classNames from 'classnames';
-import classes from './bumps-chart.module.css';
-import { MeasureText, layoutChart, scale } from '@/utils/layout-chart';
-import { useMeasureText } from '@/utils/measure-text';
-import { useMemo, useRef } from 'react';
+import { Blades } from "./blades/blades";
+import { Crews } from "./crews/crews";
+import { Division } from "./division/division";
+import { Event } from "../types";
+import { ExtraText } from "./extra-text/extra-text";
+import { Numbers } from "./numbers/numbers";
+import { Stripes } from "./stripes/stripes";
+import classNames from "classnames";
+import classes from "./bumps-chart.module.css";
+import { MeasureText, layoutChart, scale } from "@/utils/layout-chart";
+import { useMeasureText } from "@/utils/measure-text";
+import { useMemo, useRef } from "react";
 
 namespace BumpsChart {
   export type Props = {
@@ -44,10 +44,10 @@ export const BumpsChart = ({
 
   const layout = useMemo(
     () => layoutChart(data, { measureText, blades }),
-    [data, measureText, blades]
+    [data, measureText, blades],
   );
 
-  const gender = data.gender === 'Women' ? 'women' : 'men';
+  const gender = data.gender === "Women" ? "women" : "men";
 
   return (
     <svg

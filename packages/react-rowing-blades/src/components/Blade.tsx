@@ -640,7 +640,7 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
         </g>
       </svg>
     );
-  }
+  },
 );
 
 const abn = (

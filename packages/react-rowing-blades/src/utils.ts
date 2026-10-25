@@ -1,13 +1,159 @@
 type Category = "cambridge" | "international" | "oxford" | "uk";
 
-type UKClub = "abn" | "abs" | "age" | "akn" | "avn" | "bau" | "bbl" | "bed" | "ber" | "bms" | "bou" | "brd" | "bra" | "cab" | "cam" | "cbs" | "cfu" | "cha" | "cls" | "cnn" | "crc" | "cox" | "cub" | "dur" | "dus" | "etn" | "glw" | "iel" | "imp" | "ldr" | "ldu" | "ley" | "mau" | "oub" | "oxb" | "pet" | "rdu" | "rho" | "rob" | "sne" | "son" | "srg" | "trc" | "tss" | "twk" | "ucl" | "uyo" | "vet" | "wrc" | "xpr" | "yrk";
-type CambridgeClub = "ad" | "aru" | "cai" | "cco" | "chu" | "cla" | "clh" | "cor" | "daw" | "dow" | "emm" | "fit" | "ftt" | "gir" | "hom" | "huh" | "jec" | "kcb" | "lcc" | "lmb" | "mgd" | "mec" | "nnm" | "pem" | "pbc" | "qcc" | "roc" | "sel" | "sid" | "scc" | "sec" | "trh" | "woc";
-type OxfordClub = "bal" | "brc" | "chb" | "coo" | "exc" | "gtm" | "hec" | "jeo" | "keb" | "lic" | "lin" | "lmh" | "mag" | "man" | "mer" | "nec" | "oro" | "osg" | "pmb" | "qco" | "reu" | "rpc" | "som" | "sac" | "say" | "sbh" | "sco" | "seh" | "shi" | "shg" | "sjo" | "spc" | "tro" | "uxo" | "wad" | "woo" | "wro";
-type InternationalClub = "arg" | "aus" | "aut" | "bel" | "bul" | "can" | "cro" | "den" | "esp" | "est" | "fra" | "gbr" | "ger" | "gre" | "irl" | "ita" | "ned" | "nor" | "nzl" | "pol" | "rou" | "rsa" | "rus" | "sui" | "usa";
+type UKClub =
+  | "abn"
+  | "abs"
+  | "age"
+  | "akn"
+  | "avn"
+  | "bau"
+  | "bbl"
+  | "bed"
+  | "ber"
+  | "bms"
+  | "bou"
+  | "brd"
+  | "bra"
+  | "cab"
+  | "cam"
+  | "cbs"
+  | "cfu"
+  | "cha"
+  | "cls"
+  | "cnn"
+  | "crc"
+  | "cox"
+  | "cub"
+  | "dur"
+  | "dus"
+  | "etn"
+  | "glw"
+  | "iel"
+  | "imp"
+  | "ldr"
+  | "ldu"
+  | "ley"
+  | "mau"
+  | "oub"
+  | "oxb"
+  | "pet"
+  | "rdu"
+  | "rho"
+  | "rob"
+  | "sne"
+  | "son"
+  | "srg"
+  | "trc"
+  | "tss"
+  | "twk"
+  | "ucl"
+  | "uyo"
+  | "vet"
+  | "wrc"
+  | "xpr"
+  | "yrk";
+type CambridgeClub =
+  | "ad"
+  | "aru"
+  | "cai"
+  | "cco"
+  | "chu"
+  | "cla"
+  | "clh"
+  | "cor"
+  | "daw"
+  | "dow"
+  | "emm"
+  | "fit"
+  | "ftt"
+  | "gir"
+  | "hom"
+  | "huh"
+  | "jec"
+  | "kcb"
+  | "lcc"
+  | "lmb"
+  | "mgd"
+  | "mec"
+  | "nnm"
+  | "pem"
+  | "pbc"
+  | "qcc"
+  | "roc"
+  | "sel"
+  | "sid"
+  | "scc"
+  | "sec"
+  | "trh"
+  | "woc";
+type OxfordClub =
+  | "bal"
+  | "brc"
+  | "chb"
+  | "coo"
+  | "exc"
+  | "gtm"
+  | "hec"
+  | "jeo"
+  | "keb"
+  | "lic"
+  | "lin"
+  | "lmh"
+  | "mag"
+  | "man"
+  | "mer"
+  | "nec"
+  | "oro"
+  | "osg"
+  | "pmb"
+  | "qco"
+  | "reu"
+  | "rpc"
+  | "som"
+  | "sac"
+  | "say"
+  | "sbh"
+  | "sco"
+  | "seh"
+  | "shi"
+  | "shg"
+  | "sjo"
+  | "spc"
+  | "tro"
+  | "uxo"
+  | "wad"
+  | "woo"
+  | "wro";
+type InternationalClub =
+  | "arg"
+  | "aus"
+  | "aut"
+  | "bel"
+  | "bul"
+  | "can"
+  | "cro"
+  | "den"
+  | "esp"
+  | "est"
+  | "fra"
+  | "gbr"
+  | "ger"
+  | "gre"
+  | "irl"
+  | "ita"
+  | "ned"
+  | "nor"
+  | "nzl"
+  | "pol"
+  | "rou"
+  | "rsa"
+  | "rus"
+  | "sui"
+  | "usa";
 
 type ClubCode = UKClub | CambridgeClub | OxfordClub | InternationalClub;
 
-const clubs: { 
+const clubs: {
   uk: readonly UKClub[];
   cambridge: readonly CambridgeClub[];
   oxford: readonly OxfordClub[];
@@ -883,5 +1029,19 @@ abbreviations.international = {
 // The clubs whose men's and women's blades differ: Blade draws each from its gender prop.
 const genderedClubs: readonly ClubCode[] = ["wro"];
 
-export { clubs, genderedClubs, names, shortNames, shortShortNames, abbreviations };
-export type { Category, ClubCode, UKClub, CambridgeClub, OxfordClub, InternationalClub };
+export {
+  clubs,
+  genderedClubs,
+  names,
+  shortNames,
+  shortShortNames,
+  abbreviations,
+};
+export type {
+  Category,
+  ClubCode,
+  UKClub,
+  CambridgeClub,
+  OxfordClub,
+  InternationalClub,
+};

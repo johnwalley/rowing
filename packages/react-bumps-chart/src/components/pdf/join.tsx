@@ -1,4 +1,4 @@
-import { G, Text, Polyline, Line } from '@react-pdf/renderer';
+import { G, Text, Polyline, Line } from "@react-pdf/renderer";
 
 export type JoinProps = {
   lines: number[][][];
@@ -25,7 +25,7 @@ export const Join = ({ lines, joins, text, x }: JoinProps) => {
       {joins.map((line, index) => (
         <Polyline
           key={index}
-          points={line.map((point) => point.join(',')).join(' ')}
+          points={line.map((point) => point.join(",")).join(" ")}
           fill="none"
           stroke="grey"
           strokeWidth="1"

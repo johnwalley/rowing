@@ -13,11 +13,13 @@ React Bumps Chart is a library for drawing rowing bumps charts.
 ### How to use
 
 ```tsx
-import 'react-bumps-chart/dist/index.css';
+import "react-bumps-chart/dist/index.css";
 
-import { BumpsChart, BumpsChartMultiYear, type Event } from 'react-bumps-chart';
+import { BumpsChart, BumpsChartMultiYear, type Event } from "react-bumps-chart";
 
-const Example = ({ data }: { data: Event }) => <BumpsChart data={data} blades />;
+const Example = ({ data }: { data: Event }) => (
+  <BumpsChart data={data} blades />
+);
 
 const History = ({ data }: { data: Event[] }) => (
   <BumpsChartMultiYear data={data} />
@@ -31,8 +33,8 @@ PDF versions of both charts are available from `react-bumps-chart/pdf`. They nee
 `npm install --save @react-pdf/renderer`
 
 ```tsx
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import { BumpsChart, type Event } from 'react-bumps-chart/pdf';
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import { BumpsChart, type Event } from "react-bumps-chart/pdf";
 
 const Download = ({ data }: { data: Event }) => (
   <PDFDownloadLink document={<BumpsChart data={data} />} fileName="bumps.pdf">

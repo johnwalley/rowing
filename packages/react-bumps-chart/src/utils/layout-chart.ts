@@ -1,9 +1,9 @@
-import { Event } from '../types';
-import { calculateDivisions } from './calculate-divisions';
-import { calculateExtraText } from './calculate-extra-text';
-import { calculateNumbers } from './calculate-numbers';
-import { calculateStripes } from './calculate-stripes';
-import { getClubCode } from './get-club-code';
+import { Event } from "../types";
+import { calculateDivisions } from "./calculate-divisions";
+import { calculateExtraText } from "./calculate-extra-text";
+import { calculateNumbers } from "./calculate-numbers";
+import { calculateStripes } from "./calculate-stripes";
+import { getClubCode } from "./get-club-code";
 
 /** Returns the rendered width of `text` at the chart's font size. */
 export type MeasureText = (text: string) => number;
@@ -27,7 +27,7 @@ export type CrewsColumn = { x: number; crews: CrewLabel[] };
 export type BladesColumn = { x: number; clubs: (string | undefined)[] };
 export type DivisionLayout = Omit<
   ReturnType<typeof calculateDivisions>,
-  'height'
+  "height"
 > & { x: number };
 
 export type ChartLayout = {
@@ -61,7 +61,7 @@ export function getMaxWidth(strings: string[], measureText: MeasureText) {
 /** Calculates the position of every part of a single-event chart. */
 export function layoutChart(
   event: Event,
-  { measureText, blades = false, bladeIcons = true }: LayoutOptions
+  { measureText, blades = false, bladeIcons = true }: LayoutOptions,
 ): ChartLayout {
   const left = xOffset + scale * 2;
   const right = gap;
@@ -73,7 +73,7 @@ export function layoutChart(
   const widthCrews =
     getMaxWidth(
       event.crews.map((crew) => crew.start),
-      measureText
+      measureText,
     ) +
     2 * gap;
 
@@ -93,7 +93,7 @@ export function layoutChart(
     scale,
     widthBeforeDivisions,
     widthAfterDivisions,
-    blades
+    blades,
   );
 
   const clubCode = bladeIcons ? getClubCode(event.set) : null;
@@ -114,7 +114,7 @@ export function layoutChart(
         ? {
             x: left + widthBeforeDivisions + widthDivisions + widthCrews + gap,
             clubs: event.crews.map((crew) =>
-              crew.end && crew.club_end ? clubCode(crew.club_end) : undefined
+              crew.end && crew.club_end ? clubCode(crew.club_end) : undefined,
             ),
           }
         : null,

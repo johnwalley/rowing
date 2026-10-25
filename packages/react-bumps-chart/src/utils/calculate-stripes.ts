@@ -1,4 +1,4 @@
-import { Event } from '../types';
+import { Event } from "../types";
 
 export function calculateStripes(
   event: Event,
@@ -6,7 +6,7 @@ export function calculateStripes(
   scale: number,
   x: number,
   width: number,
-  sep: number
+  sep: number,
 ) {
   const out = [];
 
