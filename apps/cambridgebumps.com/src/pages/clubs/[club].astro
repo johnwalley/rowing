@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { Blade } from "react-rowing-blades";
+import { Blade, genderedClubs } from "react-rowing-blades";
 
 import ClubPositionChart from "@/components/ClubPositionChart.astro";
 import { homeCity, siteConfig } from "@/config/site";
@@ -221,7 +221,15 @@ const structuredData = {
     <section>
       <div class="mx-auto px-4 pb-12 sm:px-6 md:px-8 lg:px-12">
         <header class="flex items-center gap-4 pt-4">
-          {code && <Blade club={code} size={72} />}
+          {code &&
+            (genderedClubs.includes(code) ? (
+              <div class="flex gap-2">
+                <Blade club={code} gender="men" size={72} />
+                <Blade club={code} gender="women" size={72} />
+              </div>
+            ) : (
+              <Blade club={code} size={72} />
+            ))}
           <div>
             <h1 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">
               {club.name}
