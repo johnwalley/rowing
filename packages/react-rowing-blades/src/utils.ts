@@ -23,6 +23,7 @@ type UKClub =
   | "cnn"
   | "crc"
   | "cox"
+  | "cub"
   | "dur"
   | "dus"
   | "etn"
@@ -33,6 +34,7 @@ type UKClub =
   | "ldu"
   | "ley"
   | "mau"
+  | "oub"
   | "oxb"
   | "pet"
   | "rdu"
@@ -105,6 +107,7 @@ type OxfordClub =
   | "osg"
   | "pmb"
   | "qco"
+  | "reu"
   | "rpc"
   | "som"
   | "sac"
@@ -136,12 +139,15 @@ type InternationalClub =
   | "gbr"
   | "ger"
   | "gre"
+  | "irl"
   | "ita"
+  | "ned"
   | "nor"
   | "nzl"
   | "pol"
   | "rou"
   | "rsa"
+  | "rus"
   | "sui"
   | "usa";
 
@@ -234,6 +240,7 @@ clubs.uk = [
   "cnn",
   "crc",
   "cox",
+  "cub",
   "dur",
   "dus",
   "etn",
@@ -243,6 +250,7 @@ clubs.uk = [
   "ldr",
   "ldu",
   "mau",
+  "oub",
   "oxb",
   "pet",
   "rdu",
@@ -348,6 +356,7 @@ shortShortNames.uk = {
   cnn: "99",
   cox: "City of Oxford",
   crc: "Chesterton",
+  cub: "CUBC",
   dur: "Durham",
   dus: "Durham School",
   etn: "Eton College",
@@ -358,6 +367,7 @@ shortShortNames.uk = {
   ldu: "Leeds University",
   ley: "Leys School",
   mau: "Manchester University",
+  oub: "OUBC",
   oxb: "Oxford Brookes",
   pet: "Peterborough",
   rdu: "Reading University",
@@ -400,6 +410,7 @@ shortNames.uk = {
   cnn: "Cambridge 99",
   cox: "City of Oxford",
   crc: "Chesterton",
+  cub: "Cambridge University",
   dur: "Durham",
   dus: "Durham School",
   etn: "Eton College",
@@ -410,6 +421,7 @@ shortNames.uk = {
   ldu: "Leeds University",
   ley: "Leys School",
   mau: "Manchester University",
+  oub: "Oxford University",
   oxb: "Oxford Brookes University",
   pet: "Peterborough City",
   rdu: "Reading University",
@@ -452,6 +464,7 @@ names.uk = {
   cnn: "Cambridge 99 Rowing Club",
   cox: "City of Oxford Rowing Club",
   crc: "Chesterton Rowing Club",
+  cub: "Cambridge University Boat Club",
   dur: "Durham Amateur Rowing Club",
   dus: "Durham School Boat Club",
   etn: "Eton College Boat Club",
@@ -462,6 +475,7 @@ names.uk = {
   ldu: "University of Leeds Boat Club",
   ley: "Leys School Boat Club",
   mau: "Manchester University Boat Club",
+  oub: "Oxford University Boat Club",
   oxb: "Oxford Brookes University Boat Club",
   pet: "Peterborough City Rowing Club",
   rdu: "Reading University Boat Club",
@@ -694,6 +708,7 @@ clubs.oxford = [
   "osg",
   "pmb",
   "qco",
+  "reu",
   "rpc",
   "som",
   "sac",
@@ -703,6 +718,7 @@ clubs.oxford = [
   "seh",
   "shi",
   "shg",
+  "sjo",
   "spc",
   "tro",
   "uxo",
@@ -771,6 +787,7 @@ shortShortNames.oxford = {
   osg: "Osler House",
   pmb: "Pembroke",
   qco: "Queen's",
+  reu: "Reuben",
   rpc: "Regent's Park",
   som: "Somerville",
   sac: "St Anne's",
@@ -810,6 +827,7 @@ shortNames.oxford = {
   osg: "Osler House",
   pmb: "Pembroke College",
   qco: "Queen's College",
+  reu: "Reuben College",
   rpc: "Regent's Park College",
   som: "Somerville College",
   sac: "St Anne's College",
@@ -849,6 +867,7 @@ names.oxford = {
   osg: "Osler House Boat Club",
   pmb: "Pembroke College Boat Club",
   qco: "The Queen's College Boat Club",
+  reu: "Reuben College Boat Club",
   rpc: "Regent's Park College Boat Club",
   som: "Somerville College Boat Club",
   sac: "St Anne's College Boat Club",
@@ -882,12 +901,15 @@ clubs.international = [
   "gbr",
   "ger",
   "gre",
+  "irl",
   "ita",
+  "ned",
   "nor",
   "nzl",
   "pol",
   "rou",
   "rsa",
+  "rus",
   "sui",
   "usa",
 ];
@@ -907,12 +929,15 @@ names.international = {
   gbr: "Great Britain",
   ger: "Germany",
   gre: "Greece",
+  irl: "Ireland",
   ita: "Italy",
+  ned: "Netherlands",
   nor: "Norway",
   nzl: "New Zealand",
   pol: "Poland",
   rou: "Romania",
   rsa: "South Africa",
+  rus: "Russia",
   sui: "Switzerland",
   usa: "United States of America",
 };
@@ -932,12 +957,15 @@ shortNames.international = {
   gbr: "Great Britain",
   ger: "Germany",
   gre: "Greece",
+  irl: "Ireland",
   ita: "Italy",
+  ned: "Netherlands",
   nor: "Norway",
   nzl: "New Zealand",
   pol: "Poland",
   rou: "Romania",
   rsa: "South Africa",
+  rus: "Russia",
   sui: "Switzerland",
   usa: "United States of America",
 };
@@ -957,12 +985,15 @@ shortShortNames.international = {
   gbr: "Great Britain",
   ger: "Germany",
   gre: "Greece",
+  irl: "Ireland",
   ita: "Italy",
+  ned: "Netherlands",
   nor: "Norway",
   nzl: "New Zealand",
   pol: "Poland",
   rou: "Romania",
   rsa: "South Africa",
+  rus: "Russia",
   sui: "Switzerland",
   usa: "United States of America",
 };
@@ -982,12 +1013,15 @@ abbreviations.international = {
   GBR: "Great Britain",
   GER: "Germany",
   GRE: "Greece",
+  IRL: "Ireland",
   ITA: "Italy",
+  NED: "Netherlands",
   NOR: "Norway",
   NZL: "New Zealand",
   POL: "Poland",
   ROU: "Romania",
   RSA: "South Africa",
+  RUS: "Russia",
   SUI: "Switzerland",
   USA: "United States of America",
 };
