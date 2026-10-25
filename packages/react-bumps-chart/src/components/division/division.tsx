@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import classes from "./division.module.css";
+import { useId } from "react";
 
 namespace Division {
   export type Props = {
@@ -9,6 +10,8 @@ namespace Division {
     circles: number[][];
     rect: number[][];
     x: number;
+    /** Draw crews' lines only this far across, for a replay. */
+    drawnTo?: number;
   };
 }
 
@@ -19,22 +22,49 @@ export const Division = ({
   rect,
   skipped,
   x,
+  drawnTo,
 }: Division.Props) => {
+  // React's ids hold characters a url() reference can't
+  const clipId = `division-clip-${useId().replace(/[^\w-]/g, "")}`;
+  const clipped = drawnTo !== undefined;
+
   return (
     <g transform={`translate(${x} 0)`}>
-      {lines.map((line, index) => (
-        <polyline
-          key={index}
-          points={line.points.map((point) => point.join(",")).join(" ")}
-          fill="none"
-          stroke={line.highlight ? "red" : "grey"}
-          strokeWidth="1"
-          className={classNames(classes.line, {
-            [classes.blades]: line.blades,
-            [classes.highlight]: line.highlight,
-          })}
-        />
-      ))}
+      {clipped && (
+        <clipPath id={clipId}>
+          <rect
+            x={rect[0][0]}
+            y={rect[0][1]}
+            width={drawnTo - rect[0][0]}
+            height={rect[1][1]}
+          />
+        </clipPath>
+      )}
+      <g clipPath={clipped ? `url(#${clipId})` : undefined}>
+        {lines.map((line, index) => (
+          <polyline
+            key={index}
+            points={line.points.map((point) => point.join(",")).join(" ")}
+            fill="none"
+            stroke={line.highlight ? "red" : "grey"}
+            strokeWidth="1"
+            className={classNames(classes.line, {
+              [classes.blades]: line.blades,
+              [classes.highlight]: line.highlight,
+            })}
+          />
+        ))}
+        {skipped.map((line, index) => (
+          <polyline
+            key={index}
+            points={line.map((point) => point.join(",")).join(" ")}
+            fill="none"
+            stroke="lightgrey"
+            strokeWidth="1"
+            className={classes.skipped}
+          />
+        ))}
+      </g>
       {divisionLines.map((line, index) => (
         <polyline
           key={index}
@@ -45,26 +75,18 @@ export const Division = ({
           className={classes.border}
         />
       ))}
-      {skipped.map((line, index) => (
-        <polyline
-          key={index}
-          points={line.map((point) => point.join(",")).join(" ")}
-          fill="none"
-          stroke="lightgrey"
-          strokeWidth="1"
-          className={classes.skipped}
-        />
-      ))}
-      {circles.map((circle, index) => (
-        <circle
-          key={index}
-          cx={circle[0]}
-          cy={circle[1]}
-          r="3"
-          fill="grey"
-          className={classes.withdrawn}
-        />
-      ))}
+      {circles.map((circle, index) =>
+        clipped && circle[0] > drawnTo ? null : (
+          <circle
+            key={index}
+            cx={circle[0]}
+            cy={circle[1]}
+            r="3"
+            fill="grey"
+            className={classes.withdrawn}
+          />
+        ),
+      )}
       <rect
         x={rect[0][0]}
         y={rect[0][1]}

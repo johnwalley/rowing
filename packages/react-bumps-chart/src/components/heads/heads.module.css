@@ -1,0 +1,13 @@
+.head {
+  fill: hsl(var(--react-bumps-chart-foreground));
+  stroke: hsl(var(--react-bumps-chart-background));
+  stroke-width: 1;
+}
+
+.blades {
+  fill: hsl(var(--react-bumps-chart-blades));
+}
+
+.highlight {
+  fill: hsl(var(--react-bumps-chart-highlight));
+}

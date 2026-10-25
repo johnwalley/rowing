@@ -180,6 +180,7 @@ export function ChartsShell({
           <div className="mb-4 flex w-full flex-col items-center">
             <div className="w-full max-w-[520px]">
               <BumpsChart
+                key={`${event}/${gender}/${year}`}
                 data={data}
                 club={club}
                 blades={blades}

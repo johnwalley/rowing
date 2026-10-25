@@ -36,6 +36,19 @@ export const MayBumps2023MensDivisions: Story = {
   ],
 };
 
+export const Replay: Story = {
+  name: "May Bumps 2023 - Men's Divisions (Replay)",
+
+  args: {
+    data: mays2023_men,
+    blades: true,
+    progress: 2.5,
+  },
+  argTypes: {
+    progress: { control: { type: "range", min: 0, max: 4, step: 0.05 } },
+  },
+};
+
 export const DarkMode: Story = {
   name: "May Bumps 2023 - Men's Divisions (Dark mode)",
 

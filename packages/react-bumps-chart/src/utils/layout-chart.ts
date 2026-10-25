@@ -3,6 +3,7 @@ import { calculateDivisions } from "./calculate-divisions";
 import { calculateExtraText } from "./calculate-extra-text";
 import { calculateNumbers } from "./calculate-numbers";
 import { calculateStripes } from "./calculate-stripes";
+import { Track, calculateTracks } from "./calculate-tracks";
 import { getClubCode } from "./get-club-code";
 
 /** Returns the rendered width of `text` at the chart's font size. */
@@ -43,6 +44,8 @@ export type ChartLayout = {
   startCrews: CrewsColumn;
   endCrews: CrewsColumn;
   division: DivisionLayout;
+  /** Each crew's path through the event, in the division's coordinates. */
+  tracks: Track[];
   extraText: { x: number; text: { label: string; pos: number[] }[] };
 };
 
@@ -137,6 +140,7 @@ export function layoutChart(
       })),
     },
     division: { x: left + widthBeforeDivisions, ...division },
+    tracks: calculateTracks(event, scale, blades),
     extraText: { x: 16, text: calculateExtraText(event, scale) },
   };
 }
