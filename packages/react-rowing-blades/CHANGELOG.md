@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.6.0
+
+### Minor Changes
+
+- b853343: New blades: Reuben College and St John's College, Oxford (`reu`, `sjo`), Cambridge and Oxford University Boat Clubs (`cub`, `oub`), and Ireland, the Netherlands and Russia (`irl`, `ned`, `rus`). Updated to match their current designs on Wikimedia Commons: Addenbrooke's (`ad`, navy with Cambridge blue and red stripes, where it was plain white), St Edmund Hall (`seh`), Anglia Ruskin (`aru`), Magdalene (`mgd`) and Jesus College, Cambridge (`jec`).
+- 7c3da4c: `Blade` takes an optional `gender` prop (`"men"` or `"women"`) for clubs whose men's and women's blades differ. Worcester College, Oxford (`wro`) is the first: its men's blade is black with a pink cross, and its women's blade, the default, stays pink with a black cross. The new `genderedClubs` export lists the clubs with both designs. `BumpsChart` passes its event's gender, so men's charts show the men's blade.
+
 ## 2.5.1
 
 ### Patch Changes
