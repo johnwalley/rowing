@@ -135,7 +135,9 @@ const genderName = getGenderLabel(event, gender);
                       <div class="text-4xl font-extrabold">{data[0].value}</div>
                     </div>
                     <div class="flex flex-col justify-center pt-2 pr-2 pb-2">
-                      {heroClub && <Blade club={heroClub} size={140} />}
+                      {heroClub && (
+                        <Blade club={heroClub} gender={gender} size={140} />
+                      )}
                     </div>
                   </div>
                 </li>
@@ -149,7 +151,9 @@ const genderName = getGenderLabel(event, gender);
                           {i + 2}
                         </div>
                         <div class="mr-4">
-                          {dClub && <Blade club={dClub} size={48} />}
+                          {dClub && (
+                            <Blade club={dClub} gender={gender} size={48} />
+                          )}
                         </div>
                         <div class="flex flex-col">
                           <div class="text-base font-bold">
