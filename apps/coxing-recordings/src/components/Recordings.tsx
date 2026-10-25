@@ -6,12 +6,63 @@ interface Recording {
   year: string;
   description: string;
   cox: string;
-  imageSrc: string;
+  videoId: string;
+}
+
+const embedUrl = (videoId: string) =>
+  `https://www.youtube.com/embed/${videoId}`;
+
+const thumbnailUrl = (videoId: string) =>
+  `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+
+/**
+ * Shows the video's thumbnail, and loads the YouTube player only once it is clicked.
+ */
+function Video({ recording }: { recording: Recording }) {
+  const [playing, setPlaying] = useState(false);
+
+  if (playing) {
+    return (
+      <iframe
+        className="w-full h-full border-0"
+        src={`https://www.youtube-nocookie.com/embed/${recording.videoId}?autoplay=1&rel=0`}
+        title={`${recording.name} - Coxswain Recording`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      className="group relative w-full h-full cursor-pointer"
+      aria-label={`Play ${recording.name}`}
+      onClick={() => setPlaying(true)}
+    >
+      <img
+        className="absolute inset-0 w-full h-full object-cover"
+        src={thumbnailUrl(recording.videoId)}
+        alt={recording.name}
+        loading="lazy"
+      />
+      <span className="absolute inset-0 flex items-center justify-center">
+        <svg
+          className="w-16 h-16 text-gray-900/70 group-hover:text-pink-600 group-focus-visible:text-pink-600"
+          viewBox="0 0 64 64"
+          aria-hidden="true"
+        >
+          <circle cx="32" cy="32" r="32" fill="currentColor" />
+          <path d="M26 20v24l18-12z" fill="white" />
+        </svg>
+      </span>
+    </button>
+  );
 }
 
 /**
  * Recordings component that displays a searchable grid of coxing recordings.
- * Renders all recordings but hides non-matching ones to prevent YouTube embed reloading.
+ * Renders all recordings but hides non-matching ones, so a playing video doesn't reload.
  */
 export default function Recordings({
   recordings,
@@ -20,21 +71,16 @@ export default function Recordings({
 }) {
   const [searchValue, setSearchValue] = useState("");
 
-  const filteredRecordings = useMemo(
-    () =>
-      recordings
-        .sort((a, b) => +b.year - +a.year)
-        .filter(
-          (recording) =>
-            recording.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-            recording.description
-              .toLowerCase()
-              .includes(searchValue.toLowerCase()) ||
-            recording.cox.toLowerCase().includes(searchValue.toLowerCase()) ||
-            recording.year.toLowerCase().includes(searchValue.toLowerCase()),
-        ),
-    [searchValue],
-  );
+  const filteredRecordings = useMemo(() => {
+    const query = searchValue.toLowerCase();
+    return recordings.filter(
+      (recording) =>
+        recording.name.toLowerCase().includes(query) ||
+        recording.description.toLowerCase().includes(query) ||
+        recording.cox.toLowerCase().includes(query) ||
+        recording.year.toLowerCase().includes(query),
+    );
+  }, [recordings, searchValue]);
 
   const filteredIds = useMemo(
     () => new Set(filteredRecordings.map((r) => r.id)),
@@ -48,7 +94,8 @@ export default function Recordings({
         "@type": "VideoObject",
         name: `${recording.name} - Coxswain Recording`,
         description: recording.description,
-        embedUrl: recording.imageSrc,
+        embedUrl: embedUrl(recording.videoId),
+        thumbnailUrl: thumbnailUrl(recording.videoId),
         uploadDate: `${recording.year}-01-01`,
         creator: {
           "@type": "Person",
@@ -76,6 +123,7 @@ export default function Recordings({
         className="mt-4 mb-6 sm:flex"
         role="search"
         aria-label="Search coxswain recordings"
+        onSubmit={(event) => event.preventDefault()}
       >
         <label htmlFor="recording-search" className="sr-only">
           Search
@@ -101,19 +149,10 @@ export default function Recordings({
         {recordings.map((recording) => (
           <div
             key={recording.id}
-            className={`group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden ${filteredIds.has(recording.id) ? "" : "hidden"}`}
+            className={`relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden ${filteredIds.has(recording.id) ? "" : "hidden"}`}
           >
-            <div className="aspect-video bg-gray-200 group-hover:opacity-75">
-              <iframe
-                width="100%"
-                height="100%"
-                src={recording.imageSrc}
-                title={`${recording.name} - Coxswain Recording`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
+            <div className="aspect-video bg-gray-200">
+              <Video recording={recording} />
             </div>
             <div className="flex-1 p-4 space-y-2 flex flex-col">
               <h3 className="text-sm font-medium text-gray-900">
@@ -130,6 +169,9 @@ export default function Recordings({
           </div>
         ))}
       </div>
+      {filteredRecordings.length === 0 && (
+        <p className="text-gray-500">No recordings match “{searchValue}”</p>
+      )}
     </>
   );
 }

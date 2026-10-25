@@ -1,7 +1,5 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
 React Bumps Chart is a React library for rendering rowing bumps charts - specialized visualizations used in Oxford and Cambridge university rowing events. The library visualizes crew positions and movements over multi-day racing events, supporting both SVG rendering and PDF export.

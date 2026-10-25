@@ -1,0 +1,87 @@
+---
+import { Blade } from "react-rowing-blades";
+
+import Layout from "../layouts/Layout.astro";
+import { allClubs, allShortNames, designsOf } from "../lib/clubs";
+---
+
+<Layout title="SVG Rowing Blades">
+  <div class="bg-white">
+    <div class="pb-8">
+      <h2 class="block text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        SVG Rowing Blades
+      </h2>
+      <p class="block text-3xl font-extrabold tracking-tight text-pink-600 sm:text-4xl">
+        Find and download images
+      </p>
+      <form class="mt-8 sm:flex">
+        <label for="blade-search" class="sr-only">
+          Search
+        </label>
+        <input
+          id="blade-search"
+          name="search"
+          type="search"
+          class="mb-4 w-full rounded-md border-gray-300 px-5 py-3 placeholder-gray-500 focus:border-pink-500 focus:ring-pink-500 sm:mr-4 sm:mb-0 sm:max-w-xs"
+          placeholder="Search..."
+        />
+        <p class="self-end">
+          Showing <strong id="blade-count">{allClubs.length}</strong> of{" "}
+          <strong>{allClubs.length}</strong> blades
+        </p>
+      </form>
+    </div>
+  </div>
+  <ul
+    id="blades"
+    role="list"
+    class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-6 lg:grid-cols-6 xl:gap-x-8"
+  >
+    {allClubs.map((club) => (
+      <li class="relative" data-name={allShortNames[club].toLowerCase()}>
+        <a href={`/club/${club}`} class="group block focus:outline-none">
+          <div class="relative aspect-10/7 w-full overflow-hidden rounded-lg bg-gray-100 group-focus-visible:ring-2 group-focus-visible:ring-pink-500 group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-gray-100">
+            <div class="pointer-events-none absolute inset-0 flex flex-col group-hover:opacity-75">
+              {designsOf(club).map(({ gender }) => (
+                <Blade
+                  club={club}
+                  gender={gender}
+                  className="min-h-0 w-full flex-1"
+                />
+              ))}
+            </div>
+          </div>
+          <p class="mt-2 block truncate text-sm font-medium text-gray-900">
+            {allShortNames[club]}
+          </p>
+          <p class="block font-mono text-sm font-medium text-gray-500">
+            {club}
+          </p>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Layout>
+
+<script>
+  const input = document.querySelector<HTMLInputElement>("#blade-search")!;
+  const count = document.querySelector("#blade-count")!;
+  const list = document.querySelector("#blades")!;
+  const items = [...list.children] as HTMLLIElement[];
+
+  function filter() {
+    const query = input.value.toLowerCase();
+    const shown = items.filter((item) => item.dataset.name!.includes(query));
+    // Take the rest out of the page rather than hiding them. Every blade
+    // defines the same clip path IDs and uses the first in the page, and a clip
+    // path inside a hidden SVG doesn't apply.
+    list.replaceChildren(...shown);
+    count.textContent = String(shown.length);
+  }
+
+  input.addEventListener("input", filter);
+  // Enter would otherwise reload the page with ?search=.
+  input.form!.addEventListener("submit", (event) => event.preventDefault());
+  // The browser may restore a search when coming back to the page.
+  filter();
+</script>

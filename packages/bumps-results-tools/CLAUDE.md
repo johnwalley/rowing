@@ -1,12 +1,12 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
-Tools for manipulating bumps rowing results data (Cambridge Bumps, Oxford Summer Eights, Torpids, Town Bumps). The bumps site in `apps/cambridgebumps.com` builds its results and statistics with this package's code. Related repositories: [bumps-results](https://github.com/johnwalley/bumps-results), [d3-bumps-chart](https://github.com/johnwalley/d3-bumps-chart), [react-bumps-chart](https://github.com/johnwalley/react-bumps-chart).
+Tools for manipulating bumps rowing results data (Cambridge Bumps, Oxford Summer Eights, Torpids, Town Bumps). The bumps site in `apps/cambridgebumps.com` builds its results and statistics with this package's code. Related repositories: [bumps-results](https://github.com/johnwalley/bumps-results) (gets this package's TG and AD files; see Downstream sync), [d3-bumps-chart](https://github.com/johnwalley/d3-bumps-chart).
 
-The repo is a Node (24+) + TypeScript project using pnpm. Scripts run via `tsx`; tests use Vitest. The package has no UI and nothing to bundle: its build only type-checks, with `tsgo` (`@typescript/native-preview`). The editor for TG files is `apps/results-editor`.
+`GLOSSARY.md` defines the results terms: Set, Event, Crew, Position, Headship, Blades. Use them in code, tests and docs. An Event is one results file, not a year.
+
+The package is Node (24+) + TypeScript. Scripts run via `tsx`; tests use Vitest. The package has no UI and nothing to bundle: its build only type-checks, with `tsgo` (`@typescript/native-preview`). The editor for TG files is `apps/results-editor`.
 
 ## Commands
 
@@ -34,7 +34,7 @@ pnpm vitest run src/bumps.test.ts
 
 - **bumps.ts** - Parser, processor, and serializer. Key functions:
   - `readEvent(text)` - Parses TG format text into `{ event: Event | null, errors }`
-  - `readFile(path?)` - Reads a TG format file via `node:fs` (or stdin when `path` is omitted) and returns the same shape as `readEvent`. Node builtins are imported lazily inside the function because `bumps.ts` is also bundled into the browser UI — keep it that way
+  - `readFile(path?)` - Reads a TG format file via `node:fs` (or stdin when `path` is omitted) and returns the same shape as `readEvent`. Node builtins are imported lazily inside the function because `bumps.ts` is also bundled into the results editor — keep it that way
   - `processResults(event, debug?)` - Computes crew movements, blades, gains from result codes. Returns `{ event, errors }`; on error it stops and returns the partially processed event. Unrecognised result codes are errors. Problems are returned, never logged — `console.log` is only for `debug` tracing
   - `stepOn(event)` - Generates next year's starting positions from current results
   - `writeString(event)` - Serializes an `Event` back to TG format
@@ -68,6 +68,7 @@ pnpm vitest run src/bumps.test.ts
 ### Scripts (`scripts/`)
 
 - **process_tg_file.ts** - Filter: reads TG from stdin (or a path), runs `processResults`, writes JSON to stdout and errors to stderr (exit 1 on error)
+- **step_on_tg_file.ts** - Reads TG from stdin (or a path) and writes next year's starting order as TG to stdout (`stepOn` + `writeString`, as the results editor's "Generate next years starting positions"); exit 1 on error
 - **convert_rssbc_to_tg.ts** - Converts the historical RSSBC JSON (under `results/rssbc/`) to TG format
 - **download_rssbc_results.ts** - Fetches RSSBC API data into `results/rssbc/`
 - **convert_tg_to_ad.ts** - Writes `results/ad_format/` from the TG files (`pnpm run generate:ad`), one AD file per TG file (`mays1848.1_men.txt` → `m1848.1m.txt`). It exits non-zero if two TG files would map to the same AD name, and deletes AD files that no longer have a TG source. The AD files are committed, and CI fails if they don't match what this script produces, so rerun it after editing TG data
@@ -76,7 +77,7 @@ pnpm vitest run src/bumps.test.ts
 
 ### Results Data
 
-- **results/tg_format/** - Canonical source results in TG format (text files, ~1050 files spanning Eights, Lents, Mays, Torpids, Town from the 1800s onward)
+- **results/tg_format/** - Canonical source results in TG format (text files, ~1050 files spanning Eights, Lents, Mays, Torpids, Town from the 1800s onward). To add or correct results, use the `add-results` skill (`.claude/skills/add-results/SKILL.md` at the repo root): it runs the steps the tests, snapshots, `clubs.ts` and AD files need
 - **results/rssbc/**, **results/dudhia/**, **results/dudhia_per_crew/**, **results/ad_format/**, **results/mcshane/** - Historical / alternate-format source data used by the conversion scripts in `scripts/`
 
 ### How the site uses this package
