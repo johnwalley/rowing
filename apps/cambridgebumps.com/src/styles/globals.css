@@ -243,4 +243,33 @@ html body[data-scroll-locked] {
   .year-tab[aria-current="page"] {
     @apply bg-background text-foreground shadow;
   }
+
+  /* A break between two years that aren't consecutive. The hover target is
+     the whole gap, though the line drawn is only a pixel wide. */
+  .year-picker-gap {
+    @apply flex h-8 items-center px-1;
+  }
+
+  .year-picker-gap > [title] {
+    @apply flex h-full w-2 justify-center;
+  }
+
+  .year-picker-gap > [title]::before {
+    content: "";
+    @apply my-2 w-px bg-current opacity-50;
+  }
+
+  /* The native select is drawn without its own arrow, so it looks the same in
+     every browser; the chevron after it stands in. */
+  .year-picker-select {
+    @apply relative mr-1 flex shrink-0 items-center text-foreground;
+  }
+
+  .year-picker-select select {
+    @apply h-8 appearance-none rounded-sm bg-background py-0 pr-6 pl-2.5 text-sm font-medium shadow focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none;
+  }
+
+  .year-picker-select svg {
+    @apply pointer-events-none absolute right-1.5;
+  }
 }
