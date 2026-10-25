@@ -12,8 +12,6 @@ Run these from this folder, or from the repo root with `pnpm --filter coxing-rec
 pnpm dev          # Start dev server at localhost:4321
 pnpm build        # Build production site to ./dist/
 pnpm preview      # Preview production build locally
-pnpm format       # Format code with Prettier
-pnpm format:check # Check formatting
 pnpm typecheck    # Type-check (astro check: .astro, .ts and .tsx)
 ```
 
@@ -28,6 +26,7 @@ pnpm typecheck    # Type-check (astro check: .astro, .ts and .tsx)
 ## Adding New Recordings
 
 Create a JSON file in `src/content/recordings/` following the schema:
+
 ```json
 {
   "id": "unique-slug",

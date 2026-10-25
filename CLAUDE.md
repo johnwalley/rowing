@@ -2,15 +2,15 @@
 
 A pnpm workspace for rowing: two published React libraries for bumps charts, the bumps results data pipeline and a local editor for it, the bumps site behind cambridgebumps.com and oxfordbumps.com, the coxing site behind coxing.co.uk, and the SVG blades site.
 
-| Package | What it is | |
-|---|---|---|
-| `packages/react-rowing-blades` | SVG blades for each club | published to npm |
-| `packages/react-bumps-chart` | The bumps chart (SVG and PDF); uses blades | published to npm |
-| `packages/bumps-results-tools` | TG-format results, and the code that processes them and works out the statistics | private |
-| `apps/cambridgebumps.com` | The bumps site (Astro); one codebase, two Vercel projects (Cambridge and Oxford) | private |
-| `apps/results-editor` | A local Vite app for editing TG files beside a live chart. Not deployed | private |
-| `apps/coxing-recordings` | The coxing site (Astro): a searchable list of coxswain recordings. Uses none of the other packages | private |
-| `apps/svg-rowing-blades` | The SVG blades site (Astro): every blade, to search and download as an SVG | private |
+| Package                        | What it is                                                                                         |                  |
+| ------------------------------ | -------------------------------------------------------------------------------------------------- | ---------------- |
+| `packages/react-rowing-blades` | SVG blades for each club                                                                           | published to npm |
+| `packages/react-bumps-chart`   | The bumps chart (SVG and PDF); uses blades                                                         | published to npm |
+| `packages/bumps-results-tools` | TG-format results, and the code that processes them and works out the statistics                   | private          |
+| `apps/cambridgebumps.com`      | The bumps site (Astro); one codebase, two Vercel projects (Cambridge and Oxford)                   | private          |
+| `apps/results-editor`          | A local Vite app for editing TG files beside a live chart. Not deployed                            | private          |
+| `apps/coxing-recordings`       | The coxing site (Astro): a searchable list of coxswain recordings. Uses none of the other packages | private          |
+| `apps/svg-rowing-blades`       | The SVG blades site (Astro): every blade, to search and download as an SVG                         | private          |
 
 Read the `CLAUDE.md` in the package you're changing: every package has one. Results terms (Set, Event, Crew, Headship) are defined in `packages/bumps-results-tools/GLOSSARY.md`.
 
@@ -20,7 +20,7 @@ Read the `CLAUDE.md` in the package you're changing: every package has one. Resu
 - The bumps site builds its results data from the tools' TG files. It imports `bumps-results-tools/results` (every TG file, parsed and processed), `/stats`, `/club-history` and `/clubs` (the one list of clubs, used by the statistics and the club pages alike), which point at the tools' TypeScript source, so the tools need no build. A results fix is one PR to the TG files, and its preview shows the change on the site. On every push to `main` that changes `packages/bumps-results-tools/**`, the Sync downstream workflow opens a PR in `johnwalley/bumps-results` with the TG and AD files.
 - The results editor depends on the tools and the chart the same way: the tools through their source (`/bumps`, `/tg-files`, `/types`), the chart through its `dist/`.
 - The SVG blades site depends on blades through its `dist/`, and renders every blade to a page and an SVG when it builds.
-- Each package keeps its own Prettier, TypeScript and Vite config.
+- Each package keeps its own TypeScript and Vite config. Prettier has one config for the whole repo, at the root (`prettier.config.mjs`, `.prettierignore`), and one copy, in the root's `devDependencies`: run `pnpm format` from the root. The bumps site's Tailwind class sorting is an override in that config.
 
 ## Workspace rules
 

@@ -9,10 +9,14 @@
     "build": "pnpm -r build",
     "check": "bash scripts/check.sh",
     "test": "pnpm -r --if-present test",
-    "format:check": "pnpm -r --if-present format:check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "changeset": "changeset"
   },
   "devDependencies": {
-    "@changesets/cli": "^3.0.3"
+    "@changesets/cli": "^3.0.3",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1",
+    "prettier-plugin-tailwindcss": "^0.8.1"
   }
 }

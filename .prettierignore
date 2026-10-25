@@ -1,0 +1,13 @@
+# Prettier also skips what .gitignore lists.
+pnpm-lock.yaml
+
+# Written by Changesets
+CHANGELOG.md
+
+# Results data, and files generated from it
+packages/bumps-results-tools/results/
+packages/bumps-results-tools/scripts/data/
+packages/bumps-results-tools/output/
+packages/bumps-results-tools/src/__snapshots__/
+apps/cambridgebumps.com/src/data/
+packages/react-bumps-chart/stories/*.json

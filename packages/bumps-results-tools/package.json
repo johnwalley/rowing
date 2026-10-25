@@ -16,7 +16,6 @@
   "devDependencies": {
     "@types/node": "^24.19.2",
     "@typescript/native-preview": "^7.0.0-dev.20260517.1",
-    "prettier": "^3.8.3",
     "tsx": "^4.23.15",
     "vite": "^8",
     "vitest": "^5.0.5"
@@ -37,8 +36,6 @@
     "build": "pnpm run typecheck",
     "typecheck": "tsgo --noEmit && tsgo --noEmit -p tsconfig.scripts.json",
     "test": "vitest run",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
     "generate:ad": "tsx scripts/convert_tg_to_ad.ts"
   },
   "type": "module",

@@ -11,8 +11,6 @@ pnpm dev          # Start dev server at localhost:4321
 pnpm build        # Build to ./dist/ (CI runs this)
 pnpm preview      # Preview the production build
 pnpm typecheck    # Type-check (astro check: .astro and .ts; CI runs this)
-pnpm format       # Format code with Prettier
-pnpm format:check # Check formatting
 ```
 
 The blades come from `react-rowing-blades`' `dist/`, so build it first (`pnpm --filter react-rowing-blades build`, or `pnpm -r build`).
