@@ -1,4 +1,4 @@
-import { Event } from '../types';
+import { Event } from "../types";
 
 export function calculateNumbers(event: Event, reset = false) {
   const out = [];

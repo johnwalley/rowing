@@ -10,8 +10,6 @@ Run these from this folder, or from the repo root with `pnpm --filter results-ed
 pnpm dev          # Start the dev server
 pnpm build        # Type-check with tsgo, then build to ./dist/ (CI runs this)
 pnpm typecheck    # Type-check only
-pnpm format       # Format code with Prettier
-pnpm format:check # Check formatting
 ```
 
 The chart comes from `react-bumps-chart`'s `dist/`, so build it first (`pnpm -r build`, or `pnpm --filter react-bumps-chart exec vite build --watch` while changing the chart).

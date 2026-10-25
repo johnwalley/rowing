@@ -7,6 +7,7 @@ Website for www.coxing.co.uk - a curated collection of coxswain recordings from 
 This site showcases audio and video recordings from coxswains during competitive rowing races. Coxswains are responsible for steering the boat and motivating the crew, and these recordings provide insight into race strategy, calls, and the intensity of competitive rowing.
 
 The collection includes recordings from:
+
 - Henley Royal Regatta
 - World Rowing Championships
 - BUCS Regattas
@@ -19,6 +20,7 @@ Each recording features detailed information about the race, year, competing cre
 ## Tech Stack
 
 Built with modern web technologies:
+
 - **Astro** - Static site generator
 - **React** - UI components
 - **Tailwind CSS** - Styling

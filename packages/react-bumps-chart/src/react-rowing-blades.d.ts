@@ -1,1 +1,1 @@
-declare module 'react-rowing-blades';
+declare module "react-rowing-blades";

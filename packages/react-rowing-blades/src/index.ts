@@ -8,4 +8,12 @@ import {
   abbreviations,
 } from "./utils";
 
-export { Blade, clubs, genderedClubs, names, shortNames, shortShortNames, abbreviations };
+export {
+  Blade,
+  clubs,
+  genderedClubs,
+  names,
+  shortNames,
+  shortShortNames,
+  abbreviations,
+};

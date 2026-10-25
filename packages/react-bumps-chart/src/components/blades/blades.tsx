@@ -1,11 +1,11 @@
-import { Blade } from 'react-rowing-blades';
-import classes from './blades.module.css';
+import { Blade } from "react-rowing-blades";
+import classes from "./blades.module.css";
 
 namespace Blades {
   export type Props = {
     flip?: boolean;
     crews: (string | undefined)[];
-    gender?: 'men' | 'women';
+    gender?: "men" | "women";
     scale: number;
     x: number;
   };
@@ -28,7 +28,7 @@ export const Blades = ({
           >
             <Blade club={crew} gender={gender} size={1.8 * scale} />
           </g>
-        ) : null
+        ) : null,
       )}
     </g>
   );

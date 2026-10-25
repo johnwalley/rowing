@@ -1,4 +1,4 @@
-import { G, Line, Text } from '@react-pdf/renderer';
+import { G, Line, Text } from "@react-pdf/renderer";
 
 namespace Label {
   export type Props = {

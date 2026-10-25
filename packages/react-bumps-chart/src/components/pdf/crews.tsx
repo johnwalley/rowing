@@ -1,7 +1,7 @@
-import { G, Text } from '@react-pdf/renderer';
+import { G, Text } from "@react-pdf/renderer";
 
 export type NumbersProps = {
-  align: 'start' | 'middle' | 'end';
+  align: "start" | "middle" | "end";
   crews: {
     crew: string | null;
     blades: boolean;

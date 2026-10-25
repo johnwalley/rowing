@@ -14,10 +14,6 @@ The package is Node (24+) + TypeScript. Scripts run via `tsx`; tests use Vitest.
 # Type-check (src via tsconfig.json, scripts via tsconfig.scripts.json); build does the same
 pnpm run typecheck
 
-# Format / check formatting (CI runs format:check)
-pnpm run format
-pnpm run format:check
-
 # Regenerate results/ad_format/ from the TG files (CI fails if committed files differ)
 pnpm run generate:ad
 

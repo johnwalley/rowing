@@ -1,8 +1,8 @@
-import { describe, expect, test } from 'vitest';
-import { ChartLayout, layoutChart } from '@/utils/layout-chart';
-import { estimateTextWidth } from '@/utils/measure-text';
-import { events } from './fixtures';
-import { measurePdfText } from '../src/components/pdf/measure-text';
+import { describe, expect, test } from "vitest";
+import { ChartLayout, layoutChart } from "@/utils/layout-chart";
+import { estimateTextWidth } from "@/utils/measure-text";
+import { events } from "./fixtures";
+import { measurePdfText } from "../src/components/pdf/measure-text";
 
 // Where each column sits; the shapes inside are covered by the util snapshots
 function columns(layout: ChartLayout) {
@@ -19,29 +19,29 @@ function columns(layout: ChartLayout) {
   };
 }
 
-describe('layoutChart', () => {
-  test.each(Object.entries(events))('%s', (_name, event) => {
+describe("layoutChart", () => {
+  test.each(Object.entries(events))("%s", (_name, event) => {
     expect({
       svg: columns(layoutChart(event, { measureText: estimateTextWidth })),
       pdf: columns(
-        layoutChart(event, { measureText: measurePdfText, bladeIcons: false })
+        layoutChart(event, { measureText: measurePdfText, bladeIcons: false }),
       ),
     }).toMatchSnapshot();
   });
 
-  test('looks up blades for each crew', () => {
+  test("looks up blades for each crew", () => {
     const layout = layoutChart(events.mays2023_men, {
       measureText: estimateTextWidth,
     });
 
     expect(layout.startBlades?.clubs.slice(0, 3)).toEqual([
-      'cai',
-      'lmb',
-      'mgd',
+      "cai",
+      "lmb",
+      "mgd",
     ]);
   });
 
-  test('leaves out end blades until there are results', () => {
+  test("leaves out end blades until there are results", () => {
     const layout = layoutChart(events.town2024_women, {
       measureText: estimateTextWidth,
     });
@@ -50,7 +50,7 @@ describe('layoutChart', () => {
     expect(layout.endBlades).toBeNull();
   });
 
-  test('reserves no space for blades without blade icons', () => {
+  test("reserves no space for blades without blade icons", () => {
     const options = { measureText: estimateTextWidth };
     const withIcons = layoutChart(events.mays2023_men, options);
     const without = layoutChart(events.mays2023_men, {
@@ -63,7 +63,7 @@ describe('layoutChart', () => {
     expect(withIcons.width - without.width).toBeCloseTo(64);
   });
 
-  test('places finishing crews by how far they moved', () => {
+  test("places finishing crews by how far they moved", () => {
     const event = events.mays2023_men;
     const layout = layoutChart(event, { measureText: estimateTextWidth });
 
@@ -72,19 +72,19 @@ describe('layoutChart', () => {
     });
   });
 
-  test('marks blades only when asked to', () => {
+  test("marks blades only when asked to", () => {
     const event = events.mays2023_men;
     const measureText = estimateTextWidth;
 
     expect(
       layoutChart(event, { measureText }).startCrews.crews.some(
-        (crew) => crew.blades
-      )
+        (crew) => crew.blades,
+      ),
     ).toBe(false);
     expect(
       layoutChart(event, { measureText, blades: true }).startCrews.crews.some(
-        (crew) => crew.blades
-      )
+        (crew) => crew.blades,
+      ),
     ).toBe(true);
   });
 });

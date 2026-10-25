@@ -1,8 +1,0 @@
-dist/
-node_modules/
-.astro/
-.gitignore
-.prettierignore
-.prettierrc
-package-lock.json
-*.md
