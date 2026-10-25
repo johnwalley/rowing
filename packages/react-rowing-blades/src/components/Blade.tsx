@@ -25,6 +25,10 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
         decal = abs;
         fill = "#cc0066";
         break;
+      case "ad":
+        decal = ad;
+        fill = "#0f1d4b";
+        break;
       case "age":
         decal = age;
         fill = "#AB0A19";
@@ -177,6 +181,10 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
         decal = cro;
         fill = "#f2f2f2";
         break;
+      case "cub":
+        decal = null;
+        fill = "#A6D6BC";
+        break;
       case "daw":
         decal = daw;
         fill = "#000080";
@@ -273,13 +281,17 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
         decal = imp;
         fill = "#101010";
         break;
+      case "irl":
+        decal = null;
+        fill = "#018000";
+        break;
       case "ita":
         decal = ita;
         fill = "#008d46";
         break;
       case "jec":
         decal = jec;
-        fill = "#202020";
+        fill = "#000000";
         break;
       case "jeo":
         decal = null;
@@ -343,11 +355,15 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
         break;
       case "mgd":
         decal = mgd;
-        fill = "#8c00cd";
+        fill = "#765d94";
         break;
       case "nec":
         decal = nec;
         fill = "#800080";
+        break;
+      case "ned":
+        decal = ned;
+        fill = "#AE1C28";
         break;
       case "nzl":
         decal = nzl;
@@ -363,6 +379,10 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
         break;
       case "oro":
         decal = oro;
+        fill = "#002163";
+        break;
+      case "oub":
+        decal = null;
         fill = "#002163";
         break;
       case "oxb":
@@ -401,6 +421,10 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
         decal = rdu;
         fill = "#f0f0f0";
         break;
+      case "reu":
+        decal = reu;
+        fill = "#f9f9f9";
+        break;
       case "rho":
         decal = rho;
         fill = "#005500";
@@ -424,6 +448,10 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
       case "rsa":
         decal = rsa;
         fill = "#ff0000";
+        break;
+      case "rus":
+        decal = rus;
+        fill = "#f9f9f9";
         break;
       case "sac":
         decal = sac;
@@ -451,7 +479,7 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
         break;
       case "seh":
         decal = seh;
-        fill = "#ffcc00";
+        fill = "#f0dc82";
         break;
       case "sel":
         decal = sel;
@@ -468,6 +496,10 @@ export const Blade = React.forwardRef<SVGSVGElement, BladeProps>(
       case "sid":
         decal = sid;
         fill = "#000066";
+        break;
+      case "sjo":
+        decal = sjo;
+        fill = "#002163";
         break;
       case "sne":
         decal = sne;
@@ -614,6 +646,23 @@ const abs = (
   <path d="M 432,0 l 16,250" style={{ strokeWidth: 35, stroke: "white" }} />
 );
 
+const ad = (
+  <g>
+    <path
+      d="m 401.8247,198.38929 c 0.007,-0.68625 -2.37599,-39.88635 -5.29642,-87.11132 -2.92043,-47.224974 -5.22344,-85.941009 -5.11781,-86.035632 0.24062,-0.215533 15.90566,-1.294019 16.06435,-1.105977 0.0639,0.07573 2.49223,38.828703 5.39627,86.117719 2.90404,47.28902 5.38323,86.74569 5.50931,87.68149 l 0.22923,1.70145 h -8.39919 -8.39919 l 0.0135,-1.24773 z"
+      style={{ fill: "#a3c1ad" }}
+    />
+    <path
+      d="M 368.85101,198.61615 C 368.621,197.89301 357.82838,27.960607 357.99831,27.737583 c 0.10591,-0.13901 16.2055,-1.35829 16.31614,-1.235681 0.0917,0.10162 10.66122,170.327558 10.64451,171.433668 l -0.0188,1.24773 h -7.95435 c -5.96479,0 -7.99947,-0.14185 -8.13475,-0.56715 z"
+      style={{ fill: "#a3c1ad" }}
+    />
+    <path
+      d="m 392.52042,199.317 -7.8702,-0.11417 -0.24631,-3.01938 c -0.13547,-1.66066 -2.52192,-39.494 -5.30323,-84.07407 -2.78132,-44.580083 -5.15991,-82.120878 -5.28577,-83.423994 l -0.22884,-2.369301 9.05768,-0.560386 c 5.95764,-0.368592 9.09429,-0.426693 9.16466,-0.169761 0.0588,0.214843 2.42292,38.095703 5.2535,84.179692 2.83059,46.08398 5.24697,85.15136 5.36974,86.8164 l 0.22321,3.02735 -1.13212,-0.0891 c -0.62266,-0.049 -4.67371,-0.14048 -9.00232,-0.20327 z"
+      style={{ fill: "#901639" }}
+    />
+  </g>
+);
+
 const age = (
   <g>
     <path d="M 0,55 L 145,199 L 500,205 L 500,137 Z" fill="#023A6B" />
@@ -666,7 +715,7 @@ const arg = (
 const aru = (
   <g transform="rotate(-3) translate(0,130)">
     <rect fill="#000000" x="0" y="0" width="100%" height="50%" />
-    <path d="M 465,-100 L 350,0 L 455,100 Z" fill="orange" />
+    <path d="M 465,-100 L 350,0 L 455,100 Z" fill="#ffff00" />
   </g>
 );
 
@@ -1381,11 +1430,11 @@ const jec = (
   <g transform="rotate(-4) translate(400,20)">
     <path
       d="M 5,00 l 0,300 "
-      style={{ stroke: "darkred", strokeWidth: 20, fill: "none" }}
+      style={{ stroke: "#ff0000", strokeWidth: 20, fill: "none" }}
     />
     <path
       d="M -30,00 l 0,300 "
-      style={{ stroke: "darkred", strokeWidth: 20, fill: "none" }}
+      style={{ stroke: "#ff0000", strokeWidth: 20, fill: "none" }}
     />
   </g>
 );
@@ -1641,7 +1690,7 @@ const mgd = (
   <g transform="rotate(-4) translate(431, 20)">
     <path
       d="M 6,0 l 0,300"
-      style={{ stroke: "#000fb0", strokeWidth: 20, fill: "none" }}
+      style={{ stroke: "#030045", strokeWidth: 20, fill: "none" }}
     />
   </g>
 );
@@ -1656,6 +1705,13 @@ const nec = (
       d="m 357.75677,27.187088 23.99452,-1.642361 14.7652,174.434323 -23.90835,-0.55595 z"
       style={{ fill: "#fdd017", stroke: "none" }}
     />
+  </g>
+);
+
+const ned = (
+  <g transform="rotate(-3) scale(0.71 0.81) translate(140,50)">
+    <rect width="100%" height="33.33%" y="33.33%" style={{ fill: "#ffffff" }} />
+    <rect width="100%" height="33.33%" y="66.66%" style={{ fill: "#21468b" }} />
   </g>
 );
 
@@ -1819,6 +1875,19 @@ const qco = (
   </g>
 );
 
+const reu = (
+  <g>
+    <path
+      d="m 413.23894,23.305081 24.02873,-0.94693 9.57955,178.581489 -23.8916,-0.80568 z"
+      style={{ fill: "#000050" }}
+    />
+    <path
+      d="m 371.40521,24.626146 24.02873,-0.94693 9.57955,178.581494 -23.8916,-0.80568 z"
+      style={{ fill: "#078930" }}
+    />
+  </g>
+);
+
 const rob = (
   <g>
     <path
@@ -1930,6 +1999,13 @@ const rsa = (
       </g>
     </g>
   </>
+);
+
+const rus = (
+  <g transform="rotate(-3) scale(0.71 0.81) translate(140,50)">
+    <rect width="100%" height="33.33%" y="33.33%" style={{ fill: "#0000ff" }} />
+    <rect width="100%" height="33.33%" y="66.66%" style={{ fill: "#ff0000" }} />
+  </g>
 );
 
 const sac = (
@@ -2134,20 +2210,11 @@ const sco = (
 );
 
 const seh = (
-  <g
-    style={{ fill: "#d40000", stroke: "none" }}
-    transform="matrix(0.26159327,-0.01731013,0.01858136,0.28080429,341.4759,-142.53978)"
-  >
-    <path
-      style={{
-        fill: "#d40000",
-        fillOpacity: 1,
-        stroke: "none",
-        strokeWidth: 3,
-      }}
-      d="m 92.4091,758.86218 0,32.45455 41.443,0 0,94.81817 -94.8976,0 0,-41.44318 -32.4545,0 0,115.26137 32.4545,0 0,-41.44319 94.8976,0 0,94.8977 -41.443,0 0,32.4546 115.2612,0 0,-32.4546 -41.443,0 0,-94.8977 94.8181,0 0,41.44319 32.4546,0 0,-115.26137 -32.4546,0 0,41.44318 -94.8181,0 0,-94.81817 41.443,0 0,-32.45455 -115.2612,0 z"
-    />
-  </g>
+  <path
+    transform="matrix(1,1.38304e-09,6.16746e-10,1,1.06479e-05,-1.20604e-06)"
+    d="m 383.44274,59.272748 c -3.47822,3.653922 -6.68485,7.422633 -5.66475,12.438054 -3.18353,-6.281292 -10.93493,-5.358408 -12.77808,2.266604 7.07443,-1.339572 13.70984,6.31877 14.14458,11.326052 l 1.84723,21.276752 -21.27676,1.84724 c -5.00727,0.43472 -13.69456,-4.78157 -13.59425,-11.981016 -7.19327,3.129678 -6.76647,10.924156 -0.0305,12.977536 -5.1162,-0.14046 -8.27588,3.66765 -11.27569,7.72355 3.65392,3.47821 7.42264,6.68485 12.43807,5.66474 -6.28131,3.18354 -5.35741,10.94653 2.2676,12.78969 -1.33957,-7.07443 6.31776,-13.72145 11.32504,-14.15618 l 21.27675,-1.84723 1.84724,21.27675 c 0.43472,5.00728 -4.78156,13.69458 -11.98101,13.59425 3.12967,7.19329 10.92414,6.76648 12.97752,0.0305 -0.14046,5.11618 3.66767,8.27586 7.72356,11.27568 3.47822,-3.65393 6.68484,-7.42263 5.66474,-12.43806 3.18353,6.28132 10.93494,5.35844 12.7781,-2.26659 -7.07445,1.33957 -13.70986,-6.31877 -14.14459,-11.32605 l -1.84723,-21.27675 21.27675,-1.84724 c 5.00729,-0.43472 13.69558,4.79316 13.59527,11.99261 7.19328,-3.12968 6.76546,-10.93575 0.0295,-12.98913 5.11618,0.14046 8.27586,-3.66766 11.27569,-7.72356 -3.65394,-3.47821 -7.42264,-6.68484 -12.43807,-5.66473 6.28131,-3.183537 5.35843,-10.934939 -2.26659,-12.778099 1.33956,7.074439 -6.31877,13.709859 -11.32606,14.144589 l -21.27672,1.84721 -1.84724,-21.27675 c -0.43473,-5.007281 4.78157,-13.694582 11.98102,-13.594264 -3.12969,-7.193272 -10.92416,-6.766472 -12.97754,-0.03052 0.14046,-5.116184 -3.66766,-8.275876 -7.72355,-11.275689 z"
+    style={{ fill: "#801213", stroke: "#801213", strokeWidth: 1.11746 }}
+  />
 );
 
 const sel = (
@@ -2184,6 +2251,23 @@ const sid = (
     <path d="M 0,40 l 0,15 l 15,-15 l 0,-15 z" fill="red" />
     <path d="M 0,80 l 0,15 l 15,-15 l 0,-15 z" fill="red" />
     <path d="M 0,120 l 0,15 l 15,-15 l 0,-15 z" fill="red" />
+  </g>
+);
+
+const sjo = (
+  <g transform="matrix(0.12804885,-0.00779433,0.00779433,0.12804885,359.39019,74.586796)">
+    <path
+      d="M 300.00001,658.5 C 300.00001,658.5 1.5,546.06392 1.5,260.31818 V 1.5 h 597.00001 v 258.81818 c 0,285.74574 -298.5,398.18182 -298.5,398.18182 z"
+      style={{ fill: "#ffffff" }}
+    />
+    <path
+      d="m 224,1.5 v 210 H 1.5 v 48.77734 C 1.5,297.59855 6.6004286,331.957 15.457031,363.5 H 224 v 256.01758 c 43.5224,26.64113 76,38.8789 76,38.8789 0,0 32.4776,-12.23777 76,-38.8789 V 363.5 H 584.54297 C 593.39957,331.957 598.5,297.59855 598.5,260.27734 V 211.5 H 376 V 1.5 Z"
+      style={{ fill: "#002163", stroke: "#000000", strokeWidth: 3 }}
+    />
+    <path
+      d="M 299.99999,658.39715 C 299.99999,658.39715 1.5,545.97874 1.5,260.2779 V 1.5003973 H 598.49999 V 260.2779 c 0,285.70084 -298.5,398.11925 -298.5,398.11925 z"
+      style={{ fill: "none", stroke: "#ffffff", strokeWidth: 3 }}
+    />
   </g>
 );
 
