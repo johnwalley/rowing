@@ -1,7 +1,7 @@
-import { G, StyleSheet, Text } from '@react-pdf/renderer';
+import { G, StyleSheet, Text } from "@react-pdf/renderer";
 
 const styles = StyleSheet.create({
-  g: { fontSize: '12.8px' },
+  g: { fontSize: "12.8px" },
 });
 
 export type DivisionProps = {

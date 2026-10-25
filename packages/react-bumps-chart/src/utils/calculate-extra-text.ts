@@ -1,5 +1,5 @@
-import { range } from 'lodash';
-import { Event } from '../types';
+import { range } from "lodash";
+import { Event } from "../types";
 
 export function calculateExtraText(event: Event, scale: number) {
   const out = [];

@@ -1,12 +1,12 @@
-import { Event } from '../types';
-import { range } from 'lodash';
+import { Event } from "../types";
+import { range } from "lodash";
 
 export function calculateJoin(
   event: Event,
   event2: Event,
   yOff: number,
   scale: number,
-  sep: number
+  sep: number,
 ) {
   const lines = [];
   const polylines = [];
@@ -105,7 +105,7 @@ export function markJointYearHeadship(event: Event, event2: Event): Event {
   return {
     ...event,
     crews: event.crews.map((crew, i) =>
-      i === index ? { ...crew, blades: true } : crew
+      i === index ? { ...crew, blades: true } : crew,
     ),
   };
 }

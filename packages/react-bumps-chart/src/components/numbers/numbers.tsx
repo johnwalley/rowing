@@ -1,8 +1,8 @@
-import classes from './numbers.module.css';
+import classes from "./numbers.module.css";
 
 namespace Numbers {
   export type Props = {
-    align: 'start' | 'middle' | 'end';
+    align: "start" | "middle" | "end";
     numbers: string[];
     scale: number;
     x: number;

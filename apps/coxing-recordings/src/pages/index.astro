@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Recordings from '../components/Recordings.tsx';
-import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import Recordings from "../components/Recordings.tsx";
+import { getCollection } from "astro:content";
 
-const recordingsCollection = await getCollection('recordings');
+const recordingsCollection = await getCollection("recordings");
 // Newest first, and by name within a year, so the order is the same on every build.
 const recordings = recordingsCollection
-  .map(entry => entry.data)
+  .map((entry) => entry.data)
   .sort((a, b) => +b.year - +a.year || a.name.localeCompare(b.name));
 ---
 

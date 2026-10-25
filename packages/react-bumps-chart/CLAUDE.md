@@ -19,10 +19,12 @@ Tests snapshot the pure `src/utils` layout functions against the event fixtures 
 ### Main Components
 
 **BumpsChart** - Single event chart (SVG)
+
 - Props: `data: Event`, `blades?: boolean`, `spoons?: boolean`, `measureText?: MeasureText`
 - Renders crew trajectories as polylines showing position changes across racing days
 
 **BumpsChartMultiYear** - Multiple consecutive years (SVG)
+
 - Props: `data: Event[]`, `blades?: boolean`, `measureText?: MeasureText`
 - Handles year labels, coordinate alignment, and visual connections between years
 
@@ -77,6 +79,7 @@ The `Event` interface represents a racing event with properties like `set` (even
 ## Dependencies
 
 Key external libraries:
+
 - `@react-pdf/renderer` - PDF generation
 - `d3-*` packages - Data manipulation and scaling
 - `react-rowing-blades` - Boat blade SVG icons

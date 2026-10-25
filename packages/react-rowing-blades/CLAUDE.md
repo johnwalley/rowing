@@ -11,7 +11,7 @@ pnpm storybook   # Storybook at localhost:6006: every blade, picked by code
 pnpm build       # Type-check with tsc, then build to dist/ (the chart and the site read dist/)
 ```
 
-There are no tests, no lint and no Prettier config here: CI checks this package only through its build. Look at a blade in Storybook to check it.
+There are no tests and no lint here: CI checks this package through its build and the repo's Prettier check. Look at a blade in Storybook to check it.
 
 ## How it works
 

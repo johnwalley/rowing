@@ -1,5 +1,5 @@
-import classNames from 'classnames';
-import classes from './division.module.css';
+import classNames from "classnames";
+import classes from "./division.module.css";
 
 namespace Division {
   export type Props = {
@@ -25,9 +25,9 @@ export const Division = ({
       {lines.map((line, index) => (
         <polyline
           key={index}
-          points={line.points.map((point) => point.join(',')).join(' ')}
+          points={line.points.map((point) => point.join(",")).join(" ")}
           fill="none"
-          stroke={line.highlight ? 'red' : 'grey'}
+          stroke={line.highlight ? "red" : "grey"}
           strokeWidth="1"
           className={classNames(classes.line, {
             [classes.blades]: line.blades,
@@ -38,7 +38,7 @@ export const Division = ({
       {divisionLines.map((line, index) => (
         <polyline
           key={index}
-          points={line.map((point) => point.join(',')).join(' ')}
+          points={line.map((point) => point.join(",")).join(" ")}
           fill="none"
           stroke="grey"
           strokeWidth="1"
@@ -48,7 +48,7 @@ export const Division = ({
       {skipped.map((line, index) => (
         <polyline
           key={index}
-          points={line.map((point) => point.join(',')).join(' ')}
+          points={line.map((point) => point.join(",")).join(" ")}
           fill="none"
           stroke="lightgrey"
           strokeWidth="1"

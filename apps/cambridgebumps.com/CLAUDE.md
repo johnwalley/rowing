@@ -33,10 +33,6 @@ pnpm lint
 # Type-check (astro check: .astro, .ts and .tsx)
 pnpm typecheck
 
-# Format (Prettier) / check formatting
-pnpm format
-pnpm format:check
-
 # Regenerate the chart font's character widths (also runs automatically on prebuild)
 pnpm gen:chart-font-metrics
 
