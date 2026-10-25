@@ -1,0 +1,38 @@
+Selwyn College Boat Club (Cambridge, selwyn)
+current: true
+
+lents men: 1887 to 2026, 132 races
+  lines: Selwyn 1, Selwyn 2, Selwyn 3, Selwyn 4, Selwyn 5
+  headships: none
+  blades: 37, spoons: 39
+  highest: 2, Selwyn I 1933
+  rises: Selwyn III 1987 +7, Selwyn II 1931 +7, Selwyn IV 1975 +6
+  falls: Selwyn IV 1979 -6, Selwyn V 1971 -6, Selwyn III 1965 -6
+  latest: Selwyn I 14 → 12, Selwyn II 43 → 47
+
+lents women: 1977 to 2026, 49 races
+  lines: Selwyn 1, Selwyn 2, Selwyn 3
+  headships: none
+  blades: 6, spoons: 16
+  highest: 3, Selwyn I 1981
+  rises: Selwyn II 1992 +5, Selwyn I 1991 +5, Selwyn I 2025 +4
+  falls: Selwyn II 2010 -4, Selwyn I 2007 -4, Selwyn II 1999 -4
+  latest: Selwyn I 15 → 13, Selwyn II 53 → 54
+
+mays men: 1883 February March to 2026, 141 races
+  lines: Selwyn 1, Selwyn 2, Selwyn 3, Selwyn 4, Selwyn 5, Selwyn 6, Selwyn 7, Selwyn 8, Selwyn 9
+  headships: none
+  blades: 41, spoons: 64
+  highest: 3, Selwyn I 1935, Selwyn I 1934, Selwyn I 1932, Selwyn I 1931
+  rises: Selwyn IV 1988 +7, Selwyn I 2016 +6, Selwyn III 1988 +6
+  falls: Selwyn III 1985 -8, Selwyn IV 1977 -8, Selwyn III 1998 -6
+  latest: Selwyn I 10 → 14, Selwyn II 42 → 40, Selwyn III 72 → 73
+
+mays women: 1977 to 2026, 48 races
+  lines: Selwyn 1, Selwyn 2, Selwyn 3
+  headships: none
+  blades: 6, spoons: 9
+  highest: 6, Selwyn I 1979
+  rises: Selwyn II 2025 +7, Selwyn III 2011 +5, Selwyn II 2008 +5
+  falls: Selwyn II 1983 -6, Selwyn I 2017 -4, Selwyn I 2016 -4
+  latest: Selwyn I 20 → 18, Selwyn II 63 → 61

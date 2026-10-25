@@ -1,0 +1,38 @@
+Oriel College Boat Club (Oxford, oriel)
+current: true
+
+torpids men: 1839 to 2026, 159 races
+  lines: Oriel 1, Oriel 2, St Mary Hall 1, Oriel 3, Oriel 4, Oriel 5, Oriel 6, Oriel 7
+  headships: 2022, 2021, 2019, 2018, 2006, 2005, 2004, 2003, 2001, 1998, 1997, 1996, 1995, 1994, 1993, 1992, 1990, 1989, 1988, 1987, 1986, 1985, 1984, 1983, 1982, 1981, 1980, 1979, 1978, 1976, 1975, 1974, 1973, 1972, 1844, 1839
+  blades: 63, spoons: 17
+  highest: 1, Oriel I 2022, Oriel I 2021, Oriel I 2019, Oriel I 2018, Oriel I 2006, Oriel I 2005, Oriel I 2004, Oriel I 2003, Oriel I 2001, Oriel I 1998, Oriel I 1997, Oriel I 1996, Oriel I 1995, Oriel I 1994, Oriel I 1993, Oriel I 1992, Oriel I 1990, Oriel I 1989, Oriel I 1988, Oriel I 1987, Oriel I 1986, Oriel I 1985, Oriel I 1984, Oriel I 1983, Oriel I 1982, Oriel I 1981, Oriel I 1980, Oriel I 1979, Oriel I 1978, Oriel I 1976, Oriel I 1975, Oriel I 1974, Oriel I 1973, Oriel I 1972, Oriel I 1844, Oriel I 1839
+  rises: Oriel III 1967 +9, Oriel VI 1988 +7, Oriel IV 1975 +7
+  falls: Oriel III 2005 -16, Oriel III 2004 -15, Oriel IV 1999 -15
+  latest: Oriel I 2 → withdrew, Oriel II 32 → withdrew
+
+torpids women: 1987 to 2026, 33 races
+  lines: Oriel 1, Oriel 2, Oriel 3, Oriel 4
+  headships: 2018, 2017, 2006
+  blades: 12, spoons: 2
+  highest: 1, Oriel I 2018, Oriel I 2017, Oriel I 2006
+  rises: Oriel II 2017 +7, Oriel I 1993 +7, Oriel I 1992 +7
+  falls: Oriel II 2005 -13, Oriel I 1999 -6, Oriel II 2021 -5
+  latest: Oriel I 4 → withdrew, Oriel II 38 → withdrew
+
+eights men: 1828 to 2026, 173 races
+  lines: Oriel 1, St Mary Hall 1, Oriel 2, Oriel 3, Oriel 4, Oriel 5, Oriel 6, Oriel 7, Oriel 8, Oriel 9
+  headships: 2026, 2024, 2023, 2022, 2019, 2016, 2015, 2014, 2012, 2011, 2002, 2001, 2000, 1999, 1998, 1997, 1996, 1994, 1993, 1992, 1989, 1988, 1987, 1984, 1983, 1982, 1981, 1980, 1979, 1978, 1976, 1966, 1936, 1935, 1934, 1933, 1842
+  blades: 74, spoons: 30
+  highest: 1, Oriel I 2026, Oriel I 2024, Oriel I 2023, Oriel I 2022, Oriel I 2019, Oriel I 2016, Oriel I 2015, Oriel I 2014, Oriel I 2012, Oriel I 2011, Oriel I 2002, Oriel I 2001, Oriel I 2000, Oriel I 1999, Oriel I 1998, Oriel I 1997, Oriel I 1996, Oriel I 1994, Oriel I 1993, Oriel I 1992, Oriel I 1989, Oriel I 1988, Oriel I 1987, Oriel I 1984, Oriel I 1983, Oriel I 1982, Oriel I 1981, Oriel I 1980, Oriel I 1979, Oriel I 1978, Oriel I 1976, Oriel I 1966, Oriel I 1936, Oriel I 1935, Oriel I 1934, Oriel I 1933, Oriel I 1842
+  rises: Oriel I 1874 +8, Oriel II 1966 +7, Oriel I 1953 +7
+  falls: Oriel VI 1989 -10, Oriel I 1876 -8, Oriel III 1998 -6
+  latest: Oriel I 2 → 1, Oriel II 19 → 20, Oriel III 64 → 61
+
+eights women: 1986 to 2026, 39 races
+  lines: Oriel 1, Oriel 2, Oriel 3, Oriel 4
+  headships: none
+  blades: 6, spoons: 11
+  highest: 4, Oriel I 2023
+  rises: Oriel I 1987 +6, Oriel III 2026 +5, Oriel II 2013 +4
+  falls: Oriel III 2014 -6, Oriel I 2024 -4, Oriel III 2024 -4
+  latest: Oriel I 11 → 9, Oriel II 39 → 37, Oriel III 69 → 64

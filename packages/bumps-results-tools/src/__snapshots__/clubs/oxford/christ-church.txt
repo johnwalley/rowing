@@ -1,0 +1,38 @@
+Christ Church Boat Club (Oxford, christ-church)
+current: true
+
+torpids men: 1838 to 2026, 167 races
+  lines: Christ Church 1, Christ Church 2, Christ Church 3, Christ Church 4
+  headships: 2023, 2011, 2010, 2009, 1991, 1948, 1925, 1924, 1921, 1920, 1914, 1910, 1909, 1908
+  blades: 27, spoons: 13
+  highest: 1, Christ Church I 2023, Christ Church I 2011, Christ Church I 2010, Christ Church I 2009, Christ Church I 1991, Christ Church I 1948, Christ Church I 1925, Christ Church I 1924, Christ Church I 1921, Christ Church I 1920, Christ Church I 1914, Christ Church I 1910, Christ Church I 1909, Christ Church I 1908
+  rises: Christ Church III 1968 +11, Christ Church IV 1969 +8, Christ Church II 1952 +7
+  falls: Christ Church II 2016 -15, Christ Church III 2013 -12, Christ Church III 1996 -12
+  latest: Christ Church I 5 → withdrew
+
+torpids women: 1982 to 2026, 38 races
+  lines: Christ Church 1, Christ Church 2, Christ Church 3
+  headships: none
+  blades: 9, spoons: 3
+  highest: 2, Christ Church I 2025, Christ Church I 2009
+  rises: Christ Church II 2019 +6, Christ Church II 2011 +6, Christ Church I 1993 +6
+  falls: Christ Church II 1996 -11, Christ Church II 2017 -7, Christ Church II 2012 -7
+  latest: Christ Church I 2 → withdrew
+
+eights men: 1817 to 2026, 191 races
+  lines: Christ Church 1, Christ Church 2, Christ Church 3, Christ Church 4, Christ Church 5, Christ Church 6, Christ Church 7
+  headships: 2017, 2010, 2009, 1985, 1975, 1974, 1973, 1971, 1962, 1958, 1927, 1926, 1925, 1924, 1909, 1908, 1907, 1849, 1848, 1847, 1844, 1836, 1835, 1834, 1832, 1831, 1830, 1828, 1826, 1825, 1819, 1818, 1817
+  blades: 55, spoons: 29
+  highest: 1, Christ Church I 2017, Christ Church I 2010, Christ Church I 2009, Christ Church I 1985, Christ Church I 1975, Christ Church I 1974, Christ Church I 1973, Christ Church I 1971, Christ Church I 1962, Christ Church I 1958, Christ Church I 1927, Christ Church I 1926, Christ Church I 1925, Christ Church I 1924, Christ Church I 1909, Christ Church I 1908, Christ Church I 1907, Christ Church I 1849, Christ Church I 1848, Christ Church I 1847, Christ Church I 1844, Christ Church I 1836, Christ Church I 1835, Christ Church I 1834, Christ Church I 1832, Christ Church I 1831, Christ Church I 1830, Christ Church I 1828, Christ Church I 1826, Christ Church I 1825, Christ Church I 1819, Christ Church I 1818, Christ Church I 1817
+  rises: Christ Church II 1908 +9, Christ Church III 1968 +8, Christ Church IV 1938 +7
+  falls: Christ Church IV 2005 -8, Christ Church III 1996 -8, Christ Church IV 1986 -8
+  latest: Christ Church I 4 → 6, Christ Church II 32 → 36, Christ Church III 67 → 68, Christ Church IV 85 → 82
+
+eights women: 1982 to 2026, 43 races
+  lines: Christ Church 1, Christ Church 2, Christ Church 3, Christ Church 4
+  headships: 2024, 2023
+  blades: 5, spoons: 8
+  highest: 1, Christ Church I 2024, Christ Church I 2023
+  rises: Christ Church I 1990 +7, Christ Church I 1986 +5, Christ Church II 2019 +4
+  falls: Christ Church I 2025 -5, Christ Church III 2016 -4, Christ Church II 2015 -4
+  latest: Christ Church I 6 → 8, Christ Church II 36 → 33

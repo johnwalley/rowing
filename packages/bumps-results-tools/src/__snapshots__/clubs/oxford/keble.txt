@@ -1,0 +1,38 @@
+Keble College Boat Club (Oxford, keble)
+current: true
+
+torpids men: 1871 to 2026, 136 races
+  lines: Keble 1, Keble 2, Keble 3, Keble 4, Keble 5, Keble 6
+  headships: none
+  blades: 23, spoons: 14
+  highest: 2, Keble I 1987, Keble I 1986, Keble I 1985, Keble I 1983, Keble I 1982, Keble I 1981, Keble I 1980, Keble I 1882, Keble I 1881, Keble I 1880
+  rises: Keble II 2015 +7, Keble II 1960 +7, Keble I 2019 +6
+  falls: Keble IV 1985 -16, Keble III 1984 -13, Keble II 2001 -11
+  latest: Keble I 6 → withdrew, Keble II 42 → withdrew
+
+torpids women: 1980 to 2026, 38 races
+  lines: Keble 1, Keble 2, Keble 3
+  headships: none
+  blades: 10, spoons: 2
+  highest: 4, Keble I 2019
+  rises: Keble II 2023 +6, Keble I 2004 +6, Keble I 2017 +5
+  falls: Keble I 1992 -7, Keble I 2011 -6, Keble I 1994 -6
+  latest: Keble I 7 → withdrew, Keble II 48 → withdrew
+
+eights men: 1871 to 2026, 143 races
+  lines: Keble 1, Keble 2, Keble 3, Keble 4, Keble 5, Keble 6, Keble 7, Keble 8
+  headships: 2018, 1977, 1972, 1970, 1969, 1968, 1967, 1963
+  blades: 36, spoons: 49
+  highest: 1, Keble I 2018, Keble I 1977, Keble I 1972, Keble I 1970, Keble I 1969, Keble I 1968, Keble I 1967, Keble I 1963
+  rises: Keble III 2015 +7, Keble III 1978 +7, Keble V 1984 +6
+  falls: Keble II 1987 -11, Keble IV 2016 -8, Keble II 1952 -8
+  latest: Keble I 6 → 7, Keble II 41 → 43, Keble III 62 → 66
+
+eights women: 1980 to 2026, 45 races
+  lines: Keble 1, Keble 2, Keble 4, Keble 3, Keble 5
+  headships: none
+  blades: 7, spoons: 4
+  highest: 5, Keble I 2017
+  rises: Keble II 2024 +5, Keble II 2023 +5, Keble I 2000 +5
+  falls: Keble II 1985 -6, Keble II 2006 -5, Keble II 2005 -5
+  latest: Keble I 7 → 10, Keble II 43 → 41

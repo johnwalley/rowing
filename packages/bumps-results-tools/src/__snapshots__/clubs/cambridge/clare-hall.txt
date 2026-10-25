@@ -1,0 +1,38 @@
+Clare Hall Boat Club (Cambridge, clare-hall)
+current: true
+
+lents men: 1998 to 2026, 27 races
+  lines: Clare Hall 1
+  headships: none
+  blades: 1, spoons: 4
+  highest: 39, Clare Hall I 2015
+  rises: Clare Hall I 2011 +6, Clare Hall I 2015 +3, Clare Hall I 2014 +3
+  falls: Clare Hall I 2017 -4, Clare Hall I 2004 -4, Clare Hall I 2000 -4
+  latest: Clare Hall I 45 → 45
+
+lents women: 1999 to 2026, 23 races
+  lines: Clare Hall 1
+  headships: none
+  blades: 1, spoons: 5
+  highest: 35, Clare Hall I 2003
+  rises: Clare Hall I 2024 +4, Clare Hall I 2025 +3, Clare Hall I 2008 +2
+  falls: Clare Hall I 2022 -4, Clare Hall I 2014 -4, Clare Hall I 2007 -4
+  latest: Clare Hall I 37 → 38
+
+mays men: 1996 to 2026, 25 races
+  lines: Clare Hall 1, Clare Hall 2
+  headships: none
+  blades: 6, spoons: 5
+  highest: 37, Clare Hall I 2025, Clare Hall I 2024
+  rises: Clare Hall I 2019 +7, Clare Hall I 2007 +7, Clare Hall I 2023 +6
+  falls: Clare Hall I 1996 -6, Clare Hall I 2026 -4, Clare Hall I 2017 -4
+  latest: Clare Hall I 37 → 41
+
+mays women: 1998 to 2026, 22 races
+  lines: Clare Hall 1, Clare Hall 2
+  headships: none
+  blades: 4, spoons: 4
+  highest: 45, Clare Hall I 2005, Clare Hall I 2004
+  rises: Clare Hall I 2016 +6, Clare Hall I 2025 +4, Clare Hall I 2010 +4
+  falls: Clare Hall I 2022 -4, Clare Hall I 2014 -4, Clare Hall I 2006 -4
+  latest: Clare Hall I 49 → 47

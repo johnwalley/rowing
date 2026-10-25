@@ -1,0 +1,20 @@
+Cambridge Consultants (Cambridge, cambridge-consultants)
+current: false
+
+town men: 1991 to 1997, 6 races
+  lines: Cam Consultants 1
+  headships: none
+  blades: 1, spoons: 3
+  highest: 35, Cam Consultants 1 1991
+  rises: Cam Consultants 1 1997 +5, Cam Consultants 1 1991 +4
+  falls: Cam Consultants 1 1996 -4, Cam Consultants 1 1995 -4, Cam Consultants 1 1993 -4
+  latest: didn't race
+
+town women: 1992 to 1996, 5 races
+  lines: Cam Consultants 1, Cam Consultants 2
+  headships: none
+  blades: 0, spoons: 2
+  highest: 9, Cam Consultants 1 1994
+  rises: none
+  falls: Cam Consultants 1 1996 -6, Cam Consultants 2 1994 -4, Cam Consultants 1 1993 -4
+  latest: didn't race

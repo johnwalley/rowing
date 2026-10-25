@@ -1,51 +1,38 @@
-import type { Event } from "react-bumps-chart";
+import { events as processed } from "bumps-results-tools/results";
+import type { ProcessedEvent } from "bumps-results-tools/types";
 
 import {
   events,
   genders,
   type Gender,
   type ResultsSummary,
+  type Set,
 } from "@/lib/utils";
 
-import results_eights_men from "./results/eights/men/results.json";
-import results_eights_women from "./results/eights/women/results.json";
-import results_lents_men from "./results/lents/men/results.json";
-import results_lents_women from "./results/lents/women/results.json";
-import results_mays_men from "./results/mays/men/results.json";
-import results_mays_women from "./results/mays/women/results.json";
-import results_torpids_men from "./results/torpids/men/results.json";
-import results_torpids_women from "./results/torpids/women/results.json";
-import results_town_men from "./results/town/men/results.json";
-import results_town_women from "./results/town/women/results.json";
-
-export const results = {
-  eights: {
-    men: results_eights_men,
-    women: results_eights_women,
-  },
-  lents: {
-    men: results_lents_men,
-    women: results_lents_women,
-  },
-  mays: {
-    men: results_mays_men,
-    women: results_mays_women,
-  },
-  torpids: {
-    men: results_torpids_men,
-    women: results_torpids_women,
-  },
-  town: {
-    men: results_town_men,
-    women: results_town_women,
-  },
-} as Record<string, Record<string, Event[]>>;
+// Every race, processed from the tools' TG files when the site builds, by
+// event and category, oldest file first. A `ProcessedEvent` is also the
+// chart's `Event`, so races go straight to react-bumps-chart.
+export const results = Object.fromEntries(
+  events.map((event) => [
+    event,
+    Object.fromEntries(
+      genders.map((gender) => [
+        gender,
+        processed.filter(
+          (race) =>
+            race.short.toLowerCase() === event &&
+            race.gender.toLowerCase() === gender,
+        ),
+      ]),
+    ),
+  ]),
+) as Record<Set, Record<Gender, ProcessedEvent[]>>;
 
 // Some historical entries store compound year strings such as
 // "1827 February March" (two races in one season). The leading 4-digit year is
 // the canonical key used by URLs and pickers, so collapse to that. See `yearOf`
 // in @/lib/utils.
-const leadYear = (year: Event["year"]): string => String(year).split(" ")[0];
+const leadYear = (year: string): string => year.split(" ")[0];
 
 // The per-event/gender summary of available years, derived at build time from
 // the source results above so it can never drift from the actual data. For each

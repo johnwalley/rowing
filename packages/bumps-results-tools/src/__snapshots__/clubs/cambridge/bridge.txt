@@ -1,0 +1,11 @@
+Bridge (Cambridge, bridge)
+current: false
+
+town men: 1962 to 1966, 5 races
+  lines: Bridge 1, Bridge 2
+  headships: none
+  blades: 1, spoons: 0
+  highest: 8, Bridge 1 1966
+  rises: Bridge 1 1963 +5, Bridge 1 1965 +1, Bridge 2 1965 +1
+  falls: Bridge 1 1962 -1
+  latest: didn't race

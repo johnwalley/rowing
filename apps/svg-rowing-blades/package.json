@@ -1,0 +1,39 @@
+{
+  "name": "svg-rowing-blades",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.13.1+sha512.b2fc7683b8a6525414e7d13e1ba28caaddde96bf66ec540bfaeb7e702b81f3e0be4d1f295edf7f9fe0396740a8dce4509c582ddf79891f4543fea32d37645f25",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "typecheck": "astro check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@astrojs/react": "^7.1.1",
+    "@astrojs/vercel": "^11.0.16",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.2",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-rowing-blades": "workspace:^",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@tailwindcss/forms": "^0.5.11",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1",
+    "typescript": "^5.9.3"
+  },
+  "license": "MIT"
+}

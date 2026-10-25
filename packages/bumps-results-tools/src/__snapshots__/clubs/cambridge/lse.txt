@@ -1,0 +1,20 @@
+London School of Economics Boat Club (Cambridge, lse)
+current: false
+
+lents men: 1940 to 1945, 6 races
+  lines: London School of Economics 1, London School of Economics 2
+  headships: none
+  blades: 1, spoons: 0
+  highest: 29, London School of Economics I 1941
+  rises: London School of Economics I 1940 +6, London School of Economics I 1941 +5, London School of Economics II 1941 +2
+  falls: London School of Economics I 1944 -2, London School of Economics I 1943 -2, London School of Economics I 1942 -1
+  latest: didn't race
+
+mays men: 1942 to 1945, 4 races
+  lines: London School of Economics 1
+  headships: none
+  blades: 0, spoons: 2
+  highest: 32, London School of Economics I 1942
+  rises: none
+  falls: London School of Economics I 1943 -5, London School of Economics I 1944 -3, London School of Economics I 1942 -2
+  latest: didn't race

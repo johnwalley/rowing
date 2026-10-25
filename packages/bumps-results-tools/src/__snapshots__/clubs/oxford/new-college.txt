@@ -1,0 +1,38 @@
+New College Boat Club (Oxford, new-college)
+current: true
+
+torpids men: 1866 to 2026, 141 races
+  lines: New College 1, New College 2, New College 3, New College 4, New College 5
+  headships: 1953, 1952, 1951, 1950, 1949, 1947, 1938, 1935, 1904, 1903, 1902, 1901, 1900, 1896, 1882
+  blades: 27, spoons: 13
+  highest: 1, New College I 1953, New College I 1952, New College I 1951, New College I 1950, New College I 1949, New College I 1947, New College I 1938, New College I 1935, New College I 1904, New College I 1903, New College I 1902, New College I 1901, New College I 1900, New College I 1896, New College I 1882
+  rises: New College III 1989 +7, New College II 1988 +6, New College II 1947 +6
+  falls: New College III 1996 -13, New College III 1992 -11, New College II 1999 -10
+  latest: New College I 9 → withdrew, New College II 39 → withdrew, New College III 58 → withdrew, New College IV 70 → withdrew
+
+torpids women: 1981 to 2026, 38 races
+  lines: New College 1, New College 2, New College 3
+  headships: 2005
+  blades: 8, spoons: 2
+  highest: 1, New College I 2005
+  rises: New College III 2019 +6, New College III 2022 +5, New College II 2016 +5
+  falls: New College I 2006 -12, New College II 2017 -9, New College II 1996 -9
+  latest: New College I 10 → withdrew, New College II 41 → withdrew, New College III 72 → withdrew
+
+eights men: 1840 to 2026, 152 races
+  lines: New College 1, New College 2, New College 3, New College 4, New College 5, New College 6, New College 7
+  headships: 1986, 1950, 1937, 1922, 1921, 1913, 1912, 1911, 1904, 1903, 1901, 1899, 1898, 1897, 1896, 1887
+  blades: 42, spoons: 30
+  highest: 1, New College I 1986, New College I 1950, New College I 1937, New College I 1922, New College I 1921, New College I 1913, New College I 1912, New College I 1911, New College I 1904, New College I 1903, New College I 1901, New College I 1899, New College I 1898, New College I 1897, New College I 1896, New College I 1887
+  rises: New College III 1976 +9, New College III 1948 +8, New College III 1947 +8
+  falls: New College III 2017 -8, New College IV 1953 -6, New College III 1951 -6
+  latest: New College I 7 → 4, New College II 36 → 33, New College III 61 → 55, New College IV 71 → 69
+
+eights women: 1981 to 2026, 44 races
+  lines: New College 1, New College 3, New College 2
+  headships: 2005, 2004
+  blades: 13, spoons: 10
+  highest: 1, New College I 2005, New College I 2004
+  rises: New College II 2012 +6, New College I 1988 +5, New College II 2026 +4
+  falls: New College III 2025 -5, New College I 2001 -5, New College I 2023 -4
+  latest: New College I 12 → 12, New College II 52 → 48

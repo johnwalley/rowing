@@ -3,7 +3,7 @@ import type { APIRoute } from "astro";
 import { homeCity, siteConfig } from "@/config/site";
 import { clubs } from "@/data/clubs";
 import { summary } from "@/data/results";
-import { statisticMapping } from "@/data/stats";
+import { statistics } from "@/data/statistic-mapping";
 import { events, genders } from "@/lib/utils";
 
 type Entry = {
@@ -11,8 +11,6 @@ type Entry = {
   changefreq: "monthly" | "yearly";
   priority: number;
 };
-
-const statistics = Object.keys(statisticMapping);
 
 const entries: Entry[] = [
   { path: "", changefreq: "monthly", priority: 1 },

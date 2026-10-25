@@ -1,0 +1,38 @@
+Balliol College Boat Club (Oxford, balliol)
+current: true
+
+torpids men: 1838 to 2026, 163 races
+  lines: Balliol 1, Balliol 2, Balliol 3, Balliol 4, Balliol 5
+  headships: 1971, 1970, 1969, 1968, 1959, 1956, 1955, 1954, 1929, 1928, 1911, 1907, 1899, 1898, 1897
+  blades: 29, spoons: 12
+  highest: 1, Balliol I 1971, Balliol I 1970, Balliol I 1969, Balliol I 1968, Balliol I 1959, Balliol I 1956, Balliol I 1955, Balliol I 1954, Balliol I 1929, Balliol I 1928, Balliol I 1911, Balliol I 1907, Balliol I 1899, Balliol I 1898, Balliol I 1897
+  rises: Balliol I 1850 +8, Balliol I 2008 +7, Balliol II 1976 +7
+  falls: Balliol I 1984 -9, Balliol III 1989 -8, Balliol II 2017 -7
+  latest: Balliol I 10 → withdrew, Balliol II 45 → withdrew
+
+torpids women: 1980 to 2026, 40 races
+  lines: Balliol 1, Balliol 2, Balliol 3
+  headships: none
+  blades: 14, spoons: 3
+  highest: 9, Balliol I 2019, Balliol I 2010, Balliol I 1985
+  rises: Balliol I 2013 +8, Balliol III 2008 +7, Balliol I 2019 +6
+  falls: Balliol I 2004 -12, Balliol III 2012 -9, Balliol II 2019 -8
+  latest: Balliol I 14 → withdrew, Balliol II 57 → withdrew
+
+eights men: 1825 to 2026, 184 races
+  lines: Balliol 1, Balliol 2, Balliol 3, Balliol 4, Balliol 5, Balliol 6
+  headships: 2008, 1956, 1955, 1952, 1879, 1873, 1860, 1859, 1855, 1851
+  blades: 34, spoons: 38
+  highest: 1, Balliol I 2008, Balliol I 1956, Balliol I 1955, Balliol I 1952, Balliol I 1879, Balliol I 1873, Balliol I 1860, Balliol I 1859, Balliol I 1855, Balliol I 1851
+  rises: Balliol III 1946 +8, Balliol V 1970 +7, Balliol III 1954 +7
+  falls: Balliol IV 1952 -12, Balliol III 2025 -8, Balliol III 1996 -6
+  latest: Balliol I 10 → 8, Balliol II 40 → 42
+
+eights women: 1980 to 2026, 45 races
+  lines: Balliol 1, Balliol 2, Balliol 3
+  headships: 2011, 2010
+  blades: 10, spoons: 2
+  highest: 1, Balliol I 2011, Balliol I 2010
+  rises: Balliol I 2007 +7, Balliol II 2009 +5, Balliol I 2024 +4
+  falls: Balliol I 2022 -4, Balliol II 2013 -4, Balliol II 2025 -3
+  latest: Balliol I 5 → 3, Balliol II 59 → 60

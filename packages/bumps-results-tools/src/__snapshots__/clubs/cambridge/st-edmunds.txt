@@ -1,0 +1,38 @@
+St Edmund's College Boat Club (Cambridge, st-edmunds)
+current: true
+
+lents men: 1970 to 2026, 46 races
+  lines: St Edmund's 1, St Edmund's 2, St Edmund's 3
+  headships: none
+  blades: 7, spoons: 13
+  highest: 25, St Edmund's I 2019
+  rises: St Edmund's I 2014 +5, St Edmund's II 2016 +4, St Edmund's I 2009 +4
+  falls: St Edmund's II 2017 -6, St Edmund's I 1981 -6, St Edmund's I 2022 -4
+  latest: St Edmund's I 35 → 35
+
+lents women: 1979 to 2026, 28 races
+  lines: St Edmund's 1, St Edmund's 2
+  headships: none
+  blades: 2, spoons: 5
+  highest: 11, St Edmund's I 1979
+  rises: St Edmund's I 2026 +5, St Edmund's I 2004 +5, St Edmund's I 2011 +4
+  falls: St Edmund's I 2022 -4, St Edmund's I 2017 -4, St Edmund's I 2014 -4
+  latest: St Edmund's I 39 → 34, St Edmund's II 59 → 60
+
+mays men: 1970 to 2026, 47 races
+  lines: St Edmund's 1, St Edmund's 2, St Edmund's 3
+  headships: none
+  blades: 13, spoons: 11
+  highest: 21, St Edmund's I 2014
+  rises: St Edmund's II 2022 +7, St Edmund's I 2007 +7, St Edmund's II 2014 +6
+  falls: St Edmund's II 1996 -8, St Edmund's I 2023 -6, St Edmund's II 2012 -4
+  latest: St Edmund's I 30 → 31
+
+mays women: 1980 to 2026, 29 races
+  lines: St Edmund's 1, St Edmund's 2
+  headships: none
+  blades: 5, spoons: 4
+  highest: 26, St Edmund's I 1980
+  rises: St Edmund's I 2008 +7, St Edmund's II 2019 +6, St Edmund's I 2025 +5
+  falls: St Edmund's I 2010 -5, St Edmund's I 2003 -5, St Edmund's I 2012 -4
+  latest: St Edmund's I 33 → 30, St Edmund's II 76 → 72

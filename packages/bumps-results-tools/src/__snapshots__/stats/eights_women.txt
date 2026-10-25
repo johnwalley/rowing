@@ -1,0 +1,131 @@
+headships
+Somerville     8  1993
+Pembroke       7  2025
+Wadham         6  2017
+Osler House    5  1995
+S.E.H.         4  2009
+Osler-Green    4  1999
+St Hugh's      4  1984
+University     2  2026
+Christ Church  2  2024
+Balliol        2  2011
+New College    2  2005
+Wolfson        1  2019
+St John's      1  2013
+L.M.H.         1  1977
+
+crewsEntered
+St Hilda's            116
+Wadham                114
+St Hugh's             113
+Somerville            113
+Pembroke              112
+Wolfson               111
+L.M.H.                108
+Jesus                 104
+University            104
+St Catherine's        103
+Worcester             102
+New College           102
+Hertford              100
+Christ Church         100
+St John's             99
+Oriel                 99
+Lincoln               98
+Keble                 96
+Magdalen              91
+Linacre               90
+Brasenose             87
+S.E.H.                86
+St Anne's             84
+Exeter                83
+Balliol               81
+Queen's               78
+Merton                76
+St Peter's            72
+Corpus Christi        68
+Trinity               67
+Mansfield             62
+Osler House           49
+St Antony's           43
+Green Templeton       37
+Regent's Park         34
+Osler-Green           24
+Reuben                4
+St Benet's Hall       3
+Westminster           2
+Manchester            1
+Brasenose/St Peter's  1
+St Anne's/St Hilda's  1
+
+headDays
+Somerville     33
+Pembroke       31
+Wadham         25
+Osler House    21
+S.E.H.         16
+Osler-Green    16
+St Hugh's      14
+Balliol        8
+Christ Church  8
+New College    6
+Wolfson        5
+L.M.H.         4
+University     4
+St John's      4
+
+headLong
+Pembroke       18  2000 - 2004
+S.E.H.         16  2006 - 2009
+Osler-Green    16  1996 - 1999
+Wadham         15  2014 - 2017
+Somerville     15  1990 - 1993
+St Hugh's      10  1982 - 1984
+Osler House    8   1988 - 1990
+Balliol        8   2010 - 2011
+Christ Church  8   2023 - 2024
+New College    6   2004 - 2005
+Wolfson        5   2019 - 2022
+St John's      4   2013 - 2014
+L.M.H.         3   1977 - 1978
+University     2   2022
+
+bladesAwarded
+Lincoln          17
+University       16
+S.E.H.           16
+Osler House      15
+Somerville       14
+Pembroke         14
+St Hugh's        13
+Wadham           13
+New College      13
+Wolfson          12
+Worcester        12
+St John's        11
+Merton           11
+Jesus            10
+Balliol          10
+St Catherine's   9
+Hertford         9
+St Peter's       9
+L.M.H.           8
+Green Templeton  8
+Brasenose        7
+Keble            7
+Mansfield        7
+St Hilda's       6
+Oriel            6
+Corpus Christi   5
+Exeter           5
+Trinity          5
+Christ Church    5
+St Antony's      5
+Regent's Park    5
+Queen's          4
+Magdalen         4
+Osler-Green      4
+St Anne's        2
+Linacre          2
+St Benet's Hall  1
+Reuben           1

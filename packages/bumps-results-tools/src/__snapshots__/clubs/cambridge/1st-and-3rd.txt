@@ -1,0 +1,38 @@
+First and Third Trinity Boat Club (Cambridge, 1st-and-3rd)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: 1st Trinity 1, 1st Trinity 2, 3rd Trinity 1, 1st Trinity 3, 1st Trinity 4, 1st Trinity 5, 3rd Trinity 2, 1st Trinity 6, 1st and 3rd 1, 1st and 3rd 2, 1st and 3rd 3, 1st and 3rd 4, 1st and 3rd 5, 1st and 3rd 6, 1st and 3rd 7
+  headships: 2010, 2009, 2008, 2007, 2000, 1998, 1971, 1967, 1958, 1951, 1928, 1925, 1921, 1913, 1906, 1904, 1902, 1901, 1900, 1899, 1898, 1896, 1894, 1893, 1892
+  blades: 75, spoons: 88
+  highest: 1, 1st and 3rd I 2010, 1st and 3rd I 2009, 1st and 3rd I 2008, 1st and 3rd I 2007, 1st and 3rd I 2000, 1st and 3rd I 1998, 1st and 3rd I 1971, 1st and 3rd I 1967, 1st and 3rd I 1958, 1st and 3rd I 1951, 1st Trinity I 1928, 1st Trinity I 1925, 1st Trinity I 1921, 1st Trinity II 1919, 1st Trinity I 1913, 1st Trinity I 1906, 1st Trinity I 1904, 1st Trinity I 1902, 1st Trinity I 1901, 1st Trinity I 1900, 1st Trinity I 1899, 1st Trinity I 1898, 1st Trinity I 1896, 1st Trinity I 1894, 1st Trinity I 1893, 1st Trinity I 1892
+  rises: 1st and 3rd V 1979 +6, 1st and 3rd VI 1960 +6, 1st and 3rd VI 1959 +6
+  falls: 1st and 3rd IV 1984 -6, 1st and 3rd V 1956 -6, 1st and 3rd VI 1950 -6
+  latest: 1st and 3rd I 12 → 9, 1st and 3rd II 29 → 26, 1st and 3rd III 50 → 51
+
+lents women: 1979 to 2026, 47 races
+  lines: 1st and 3rd 1, 1st and 3rd 2, 1st and 3rd 3
+  headships: 2014, 2010, 2008, 2007
+  blades: 12, spoons: 11
+  highest: 1, 1st and 3rd I 2014, 1st and 3rd I 2010, 1st and 3rd I 2008, 1st and 3rd I 2007
+  rises: 1st and 3rd II 1987 +8, 1st and 3rd I 2005 +6, 1st and 3rd I 1998 +6
+  falls: 1st and 3rd II 2019 -6, 1st and 3rd I 1988 -6, 1st and 3rd I 2020 -4
+  latest: 1st and 3rd I 9 → 12, 1st and 3rd II 43 → 45
+
+mays men: 1827 February March to 2026, 252 races
+  lines: Trinity Monarch 1, Trinity King Edward 1, Trinity Westminster 1, Trinity Eton 1, 2nd Trinity 1, Trinty Nautilus 1, 1st Trinity 1, Trinity Tobacco Pipes and Punch Bowls 1, 1st Trinity 2, 3rd Trinity 1, 2nd Trinity 2, 3rd Trinity 2, 1st Trinity 3, 1st Trinity 4, 2nd Trinity 3, 2nd Trinity 4, 1st Trinity 5, 3rd Trinity 3, 2nd Trinity 5, 1st Trinity 6, 1st Trinity 7, 1st and 3rd 1, 1st and 3rd 2, 1st and 3rd 3, 1st and 3rd 4, 1st and 3rd 5, 1st and 3rd 6, 1st and 3rd 7, 1st and 3rd 8, 1st and 3rd 9, 1st and 3rd 10, 1st and 3rd 11
+  headships: 2010, 2009, 2008, 1973, 1967, 1966, 1965, 1964, 1945, 1929, 1928, 1919, 1911, 1906, 1905, 1904, 1903, 1902, 1901, 1900, 1899, 1898, 1889, 1874 May, 1873 May, 1871 May, 1870 May June, 1869 May, 1868 February, 1868 May, 1867 May, 1866 May, 1865 May, 1863 May, 1861 May, 1860 May, 1859 May, 1858 May, 1853 April May, 1852 May, 1851 May, 1850 May, 1849 May, 1848 May, 1847 May, 1846 May, 1845 April May, 1843 May, 1839 April May, 1835 May, 1834 April, 1832 April May, 1831 April May, 1830 April May, 1827 April May November
+  blades: 142, spoons: 141
+  highest: 1, 1st and 3rd I 2010, 1st and 3rd I 2009, 1st and 3rd I 2008, 1st and 3rd I 1973, 1st and 3rd I 1967, 1st and 3rd I 1966, 1st and 3rd I 1965, 1st and 3rd I 1964, 1st and 3rd I 1945, 3rd Trinity I 1929, 1st Trinity I 1928, 3rd Trinity I 1919, 1st Trinity I 1911, 3rd Trinity I 1906, 3rd Trinity I 1905, 3rd Trinity I 1904, 3rd Trinity I 1903, 3rd Trinity I 1902, 3rd Trinity I 1901, 1st Trinity I 1900, 1st Trinity I 1899, 1st Trinity I 1898, 3rd Trinity I 1889, 1st Trinity I 1875 March, 1st Trinity I 1874 March, 1st Trinity I 1874 May, 1st Trinity I 1873 May, 1st Trinity I 1872 March, 1st Trinity I 1871 March, 1st Trinity I 1871 May, 1st Trinity I 1870 March, 1st Trinity I 1870 May June, 1st Trinity I 1869 March, 1st Trinity I 1869 May, 1st Trinity I 1868 February, 1st Trinity I 1868 May, 1st Trinity I 1867 March, 1st Trinity I 1867 May, 3rd Trinity I 1866 February March, 1st Trinity I 1866 May, 3rd Trinity I 1865 May, 3rd Trinity I 1864 February, 3rd Trinity I 1863 May, 1st Trinity I 1862 February, 1st Trinity I 1861 February, 1st Trinity I 1861 May, 3rd Trinity I 1860 February March, 1st Trinity I 1860 May, 3rd Trinity I 1859 May, 1st Trinity I 1858 May, 1st Trinity I 1854 February, 1st Trinity I 1853 February, 1st Trinity I 1853 April May, 1st Trinity I 1852 February March, 1st Trinity I 1852 May, 1st Trinity I 1851 May, 1st Trinity I 1850 February March, 1st Trinity I 1850 May, 3rd Trinity I 1849 March, 2nd Trinity I 1849 May, 3rd Trinity I 1848 March, 3rd Trinity I 1848 May, 1st Trinity I 1847 February March, 1st Trinity I 1847 May, 1st Trinity I 1846 March, 1st Trinity I 1846 May, 1st Trinity I 1845 February, 1st Trinity I 1845 April May, 1st Trinity I 1843 March, 1st Trinity I 1843 May, 1st Trinity (Black Prince) I 1840 March, 1st Trinity (Black Prince) I 1839 February, 1st Trinity (Black Prince) I 1839 April May, 1st Trinity (Black Prince) I 1836 February March, 3rd Trinity (Dolphin) I 1835 March, 2nd Trinity (Queen Bess) I 1835 May, 1st Trinity (Black Prince) I 1834 February March, 3rd Trinity (Dolphin) I 1834 April, 1st Trinity (Black Prince) I 1833 March, Trinity Monarch I 1832 February March, 1st Trinity (Black Prince) I 1832 April May, Trinity Monarch I 1831 April May, Trinity Monarch I 1830 April May, Trinity Monarch I 1828 February March, Trinity King Edward I 1827 February March, Trinity King Edward I 1827 April May November
+  rises: 1st and 3rd VI 1991 +9, 1st and 3rd IX 1969 +8, 1st and 3rd VII 1954 +8
+  falls: 1st and 3rd III 2001 -9, 1st and 3rd VIII 2000 -8, 1st and 3rd VII 1955 -8
+  latest: 1st and 3rd I 18 → 15, 1st and 3rd II 27 → 24, 1st and 3rd III 58 → 55
+
+mays women: 1977 to 2026, 48 races
+  lines: 1st and 3rd 1, 1st and 3rd 2, 1st and 3rd 3, 1st and 3rd 4
+  headships: none
+  blades: 19, spoons: 14
+  highest: 5, 1st and 3rd I 2015
+  rises: 1st and 3rd II 1993 +8, 1st and 3rd II 1986 +8, 1st and 3rd II 2004 +6
+  falls: 1st and 3rd III 2002 -8, 1st and 3rd III 1999 -6, 1st and 3rd III 1983 -6
+  latest: 1st and 3rd I 9 → 11, 1st and 3rd II 54 → 51, 1st and 3rd III 80 → 79

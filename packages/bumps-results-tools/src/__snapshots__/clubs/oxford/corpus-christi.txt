@@ -1,0 +1,38 @@
+Corpus Christi College Boat Club (Oxford, corpus-christi)
+current: true
+
+torpids men: 1858 to 2026, 148 races
+  lines: Corpus Christi 1, Corpus Christi 2, Corpus Christi 3, Corpus Christi 4
+  headships: 1931, 1885, 1884, 1883
+  blades: 17, spoons: 13
+  highest: 1, Corpus Christi I 1931, Corpus Christi I 1885, Corpus Christi I 1884, Corpus Christi I 1883
+  rises: Corpus Christi I 1954 +7, Corpus Christi II 1955 +6, Corpus Christi I 1921 +6
+  falls: Corpus Christi I 1987 -12, Corpus Christi I 2022 -11, Corpus Christi II 1983 -10
+  latest: Corpus Christi I 35 → withdrew
+
+torpids women: 1980 to 2026, 38 races
+  lines: Corpus Christi 1, Corpus Christi 2
+  headships: none
+  blades: 5, spoons: 1
+  highest: 18, Corpus Christi I 1987
+  rises: Corpus Christi I 2013 +6, Corpus Christi I 2021 +5, Corpus Christi II 2021 +5
+  falls: Corpus Christi I 2017 -11, Corpus Christi I 2025 -10, Corpus Christi I 2016 -8
+  latest: Corpus Christi I 36 → withdrew
+
+eights men: 1834 to 2026, 162 races
+  lines: Corpus Christi 1, Merton & Corpus 1, Corpus & Magdalen 1, Corpus Christi 2, Corpus Christi 3, Corpus Christi 4
+  headships: 1885, 1868
+  blades: 20, spoons: 27
+  highest: 1, Corpus Christi I 1885, Corpus Christi I 1868
+  rises: Corpus Christi II 1953 +7, Corpus Christi II 1951 +7, Corpus Christi I 1935 +7
+  falls: Corpus Christi III 1975 -6, Corpus Christi II 1952 -6, Corpus Christi I 1948 -6
+  latest: Corpus Christi I 37 → 39
+
+eights women: 1978 to 2026, 46 races
+  lines: Corpus Christi 1, Corpus Christi 2, Corpus Christi 3
+  headships: none
+  blades: 5, spoons: 10
+  highest: 6, Corpus Christi I 1979
+  rises: Corpus Christi II 2018 +6, Corpus Christi II 2014 +5, Corpus Christi I 1981 +5
+  falls: Corpus Christi II 2007 -6, Corpus Christi I 1991 -6, Corpus Christi I 1995 -5
+  latest: Corpus Christi I 37 → 40

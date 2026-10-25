@@ -1,0 +1,38 @@
+Jesus College Boat Club (Cambridge, jesus)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: Jesus 1, Jesus 2, Jesus 3, Jesus 4, Jesus 5, Jesus 6
+  headships: 1974, 1972, 1970, 1964, 1962, 1961, 1960, 1959, 1957, 1955, 1953, 1952, 1947, 1946, 1945, 1944, 1941, 1940, 1938, 1937, 1936, 1935, 1934, 1932, 1929, 1927, 1926, 1924, 1923, 1922, 1914, 1912, 1911, 1910, 1909, 1908, 1907, 1905, 1888
+  blades: 66, spoons: 47
+  highest: 1, Jesus I 1974, Jesus I 1972, Jesus I 1970, Jesus I 1964, Jesus I 1962, Jesus I 1961, Jesus I 1960, Jesus I 1959, Jesus I 1957, Jesus I 1955, Jesus I 1953, Jesus I 1952, Jesus I 1947, Jesus I 1946, Jesus I 1945, Jesus I 1944, Jesus I 1941, Jesus I 1940, Jesus I 1938, Jesus I 1937, Jesus I 1936, Jesus I 1935, Jesus I 1934, Jesus I 1932, Jesus I 1929, Jesus I 1927, Jesus I 1926, Jesus I 1924, Jesus I 1923, Jesus I 1922, Jesus I 1914, Jesus I 1912, Jesus I 1911, Jesus I 1910, Jesus I 1909, Jesus I 1908, Jesus I 1907, Jesus I 1905, Jesus I 1888
+  rises: Jesus IV 1936 +6, Jesus III 1974 +5, Jesus V 1970 +5
+  falls: Jesus IV 1990 -8, Jesus IV 1996 -6, Jesus II 1995 -6
+  latest: Jesus I 5 → 3, Jesus II 27 → 25, Jesus III 48 → 50
+
+lents women: 1980 to 2026, 46 races
+  lines: Jesus 1, Jesus 2, Jesus 3, Jesus 4
+  headships: 2026, 2025, 2024, 2023, 2018, 2017, 2016, 2001, 1987, 1986, 1985
+  blades: 18, spoons: 3
+  highest: 1, Jesus I 2026, Jesus I 2025, Jesus I 2024, Jesus I 2023, Jesus I 2018, Jesus I 2017, Jesus I 2016, Jesus I 2001, Jesus I 1987, Jesus I 1986, Jesus I 1985
+  rises: Jesus III 2026 +5, Jesus II 2015 +4, Jesus II 2008 +4
+  falls: Jesus II 2022 -4, Jesus II 2012 -4, Jesus II 2010 -4
+  latest: Jesus I 1 → 1, Jesus II 24 → 21, Jesus III 55 → 50, Jesus IV 62 → 62
+
+mays men: 1827 February March to 2026, 251 races
+  lines: Jesus 1, Jesus 2, Jesus 3, Jesus 4, Jesus 5, Jesus 6, Jesus 7, Jesus 8
+  headships: 1972, 1958, 1957, 1956, 1955, 1948, 1947, 1939, 1938, 1937, 1936, 1935, 1930, 1927, 1925, 1924, 1922, 1921, 1920, 1914, 1913, 1912, 1910, 1909, 1885 June, 1884 June, 1883 June, 1882 June, 1881 May, 1880 May, 1879 May, 1878 May, 1877 May, 1876 May, 1875 May
+  blades: 86, spoons: 86
+  highest: 1, Jesus I 1972, Jesus I 1958, Jesus I 1957, Jesus I 1956, Jesus I 1955, Jesus I 1948, Jesus I 1947, Jesus I 1939, Jesus I 1938, Jesus I 1937, Jesus I 1936, Jesus I 1935, Jesus I 1930, Jesus I 1927, Jesus I 1925, Jesus I 1924, Jesus I 1922, Jesus I 1921, Jesus I 1920, Jesus I 1914, Jesus I 1913, Jesus I 1912, Jesus I 1910, Jesus I 1909, Jesus I 1886 February March, Jesus I 1885 February, Jesus I 1885 June, Jesus I 1884 February March, Jesus I 1884 June, Jesus I 1883 February March, Jesus I 1883 June, Jesus I 1882 March, Jesus I 1882 June, Jesus I 1881 March, Jesus I 1881 May, Jesus I 1880 March, Jesus I 1880 May, Jesus I 1879 March, Jesus I 1879 May, Jesus I 1878 March, Jesus I 1878 May, Jesus I 1877 March, Jesus I 1877 May, Jesus I 1876 March, Jesus I 1876 May, Jesus I 1875 May
+  rises: Jesus VI 1964 +10, Jesus I 1858 May +8, Jesus V 1992 +7
+  falls: Jesus V 2001 -10, Jesus VI 1994 -8, Jesus III 2010 -6
+  latest: Jesus I 5 → 5, Jesus II 31 → 34, Jesus III 49 → 45, Jesus IV 62 → 60, Jesus V 83 → 80
+
+mays women: 1980 to 2026, 45 races
+  lines: Jesus 1, Jesus 2, Jesus 3, Jesus 4, Jesus 5, Jesus 6, Jesus 7
+  headships: 2026, 2025, 2023, 2018, 2017, 2007, 2005, 1994, 1993, 1988
+  blades: 36, spoons: 23
+  highest: 1, Jesus I 2026, Jesus I 2025, Jesus I 2023, Jesus I 2018, Jesus I 2017, Jesus I 2007, Jesus I 2005, Jesus I 1994, Jesus I 1993, Jesus I 1988
+  rises: Jesus II 2014 +6, Jesus IV 1995 +6, Jesus II 1985 +6
+  falls: Jesus I 2010 -6, Jesus V 1987 -6, Jesus VI 1987 -6
+  latest: Jesus I 1 → 1, Jesus II 22 → 22, Jesus III 44 → 41, Jesus IV 70 → 65, Jesus V 75 → 74, Jesus VI 78 → 78

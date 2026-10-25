@@ -1,0 +1,38 @@
+Girton College Boat Club (Cambridge, girton)
+current: true
+
+lents men: 1980 to 2026, 46 races
+  lines: Girton 1, Girton 2, Girton 3, Girton 4
+  headships: none
+  blades: 11, spoons: 6
+  highest: 9, Girton I 2012
+  rises: Girton II 1990 +9, Girton II 2007 +6, Girton I 1989 +6
+  falls: Girton I 2019 -6, Girton II 2004 -6, Girton II 2009 -5
+  latest: Girton I 22 → 24
+
+lents women: 1977 to 2026, 49 races
+  lines: Girton 1, Girton 2, Girton 3
+  headships: 1981, 1979
+  blades: 5, spoons: 5
+  highest: 1, Girton I 1981, Girton I 1979
+  rises: Girton I 2016 +6, Girton II 1990 +5, Girton III 1981 +5
+  falls: Girton I 1998 -6, Girton I 2020 -4, Girton I 2009 -4
+  latest: Girton I 30 → 30
+
+mays men: 1980 to 2026, 45 races
+  lines: Girton 1, Girton 2, Girton 3, Girton 4, Girton 5
+  headships: none
+  blades: 19, spoons: 18
+  highest: 14, Girton I 2013
+  rises: Girton II 2022 +8, Girton III 1999 +6, Girton III 1991 +6
+  falls: Girton II 2018 -8, Girton IV 2000 -8, Girton IV 1988 -8
+  latest: Girton I 22 → 25, Girton II 56 → 59
+
+mays women: 1974 to 2026, 51 races
+  lines: Girton 1, Girton 2, Girton 3, Girton 4, Girton 5, Girton 6
+  headships: none
+  blades: 11, spoons: 33
+  highest: 3, Girton I 1982, Girton I 1979
+  rises: Girton IV 1984 +6, Girton I 1979 +6, Girton II 2003 +5
+  falls: Girton II 2025 -6, Girton II 1994 -6, Girton III 1989 -6
+  latest: Girton I 27 → 26, Girton II 68 → 67, Girton III 73 → 77

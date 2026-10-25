@@ -21,32 +21,5 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      # Vercel builds from each app's folder, and Corepack there may read that
-      # package.json's packageManager instead of the root's.
-      - name: Check the apps pin the same pnpm as the root
-        run: |
-          for app in apps/*/package.json; do
-            test "$(jq -r .packageManager package.json)" = "$(jq -r .packageManager "$app")" || { echo "$app pins a different pnpm"; exit 1; }
-          done
-
-      - run: pnpm format:check
-      # In dependency order: blades, chart, tools, then the two sites. The
-      # chart's build runs tsc and the tools' build runs tsgo, so this also
-      # typechecks them.
-      - run: pnpm -r build
-
-      - run: pnpm test
-        env:
-          CI: true
-      - run: pnpm --filter react-bumps-chart check-exports
-      # The site's types for the libraries come from their dist/, so these run
-      # after the build.
-      - run: pnpm --filter cambridgebumps.com lint
-      - run: pnpm --filter cambridgebumps.com typecheck
-
-      - name: Check AD format files match the TG sources
-        working-directory: packages/bumps-results-tools
-        run: |
-          pnpm run generate:ad
-          git add --intent-to-add results/ad_format
-          git diff --exit-code --stat results/ad_format
+      # Everything else is in scripts/check.sh, which `pnpm check` runs locally.
+      - run: pnpm check

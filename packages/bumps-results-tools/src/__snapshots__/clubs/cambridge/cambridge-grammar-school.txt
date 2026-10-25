@@ -1,0 +1,11 @@
+Cambridge Grammar School (Cambridge, cambridge-grammar-school)
+current: false
+
+town men: 1961 to 1970, 10 races
+  lines: Cam Grammar School 1, Cam Grammar School 2
+  headships: none
+  blades: 3, spoons: 3
+  highest: 12, Cam Grammar School 1 1969
+  rises: Cam Grammar School 1 1969 +4, Cam Grammar School 1 1962 +4, Cam Grammar School 1 1961 +4
+  falls: Cam Grammar School 2 1970 -4, Cam Grammar School 2 1968 -4, Cam Grammar School 2 1967 -4
+  latest: didn't race

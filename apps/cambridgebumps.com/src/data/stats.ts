@@ -1,86 +1,46 @@
-import stats_eights_men from "./stats/eights/men/stats.json";
-import stats_eights_women from "./stats/eights/women/stats.json";
-import stats_lents_men from "./stats/lents/men/stats.json";
-import stats_lents_women from "./stats/lents/women/stats.json";
-import stats_mays_men from "./stats/mays/men/stats.json";
-import stats_mays_women from "./stats/mays/women/stats.json";
-import stats_torpids_men from "./stats/torpids/men/stats.json";
-import stats_torpids_women from "./stats/torpids/women/stats.json";
-import stats_town_men from "./stats/town/men/stats.json";
-import stats_town_women from "./stats/town/women/stats.json";
+import {
+  getRankings,
+  type Rankings,
+  type Statistic,
+} from "bumps-results-tools/stats";
 
-export const statisticMapping: Record<
-  string,
-  {
-    label: string;
-    key: string;
-    keyLabel: string;
-    value: string;
-    valueLabel: string;
-    additional?: string;
-    additionalLabel?: string;
-  }
-> = {
-  headships: {
-    label: "Headships",
-    key: "club",
-    keyLabel: "Club",
-    value: "headships",
-    valueLabel: "Headships",
-    additional: "lastYear",
-    additionalLabel: "Last year",
-  },
-  headDays: {
-    label: "Total days at headship",
-    key: "club",
-    keyLabel: "Club",
-    value: "days",
-    valueLabel: "Days",
-  },
-  headLong: {
-    label: "Continuous days at headship",
-    key: "club",
-    keyLabel: "Club",
-    value: "days",
-    valueLabel: "Days",
-    additional: "span",
-    additionalLabel: "Span",
-  },
-  crewsEntered: {
-    label: "Crews entered",
-    key: "club",
-    keyLabel: "Club",
-    value: "count",
-    valueLabel: "Number",
-  },
-  bladesAwarded: {
-    label: "Blades awarded",
-    key: "club",
-    keyLabel: "Club",
-    value: "count",
-    valueLabel: "Number",
-  },
+import { results } from "@/data/results";
+import { statisticMapping } from "@/data/statistic-mapping";
+import { events, genders, type Gender, type Set } from "@/lib/utils";
+
+// The statistics tables for each event and category, from the same results
+// as the charts.
+const stats = Object.fromEntries(
+  events.map((event) => [
+    event,
+    Object.fromEntries(
+      genders.map((gender) => [gender, getRankings(results[event][gender])]),
+    ),
+  ]),
+) as Record<Set, Record<Gender, Rankings>>;
+
+/** A statistics table's row as the pages show it. */
+export type StatisticRow = {
+  club: string;
+  value: number;
+  additional?: string;
 };
 
-export const stats = {
-  eights: {
-    men: stats_eights_men,
-    women: stats_eights_women,
-  },
-  lents: {
-    men: stats_lents_men,
-    women: stats_lents_women,
-  },
-  mays: {
-    men: stats_mays_men,
-    women: stats_mays_women,
-  },
-  torpids: {
-    men: stats_torpids_men,
-    women: stats_torpids_women,
-  },
-  town: {
-    men: stats_town_men,
-    women: stats_town_women,
-  },
-} as Record<string, Record<string, any>>;
+/** A statistics table, with each row's figures picked out by its mapping. */
+export function statisticRows(
+  event: Set,
+  gender: Gender,
+  statistic: Statistic,
+): StatisticRow[] {
+  const { value, additional } = statisticMapping[statistic];
+  const rows = stats[event][gender][statistic] as Record<
+    string,
+    string | number
+  >[];
+
+  return rows.map((row) => ({
+    club: row.club as string,
+    value: row[value] as number,
+    additional: additional === undefined ? undefined : String(row[additional]),
+  }));
+}

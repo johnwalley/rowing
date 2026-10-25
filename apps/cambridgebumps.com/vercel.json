@@ -1,6 +1,6 @@
 {
   "framework": "astro",
-  "buildCommand": "pnpm --filter cambridgebumps.com... run build",
+  "buildCommand": "pnpm --filter cambridgebumps.com... --filter '!bumps-results-tools' run build",
   "headers": [
     {
       "source": "/data/results/(.*)",

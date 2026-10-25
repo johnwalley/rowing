@@ -1,0 +1,38 @@
+Addenbrooke's Boat Club (Cambridge, addenbrookes)
+current: true
+
+lents men: 1977 to 2022, 23 races
+  lines: Addenbrooke's 1
+  headships: none
+  blades: 2, spoons: 4
+  highest: 51, Addenbrooke's I 2020, Addenbrooke's I 1991
+  rises: Addenbrooke's I 1990 +7, Addenbrooke's I 1991 +4, Addenbrooke's I 1989 +4
+  falls: Addenbrooke's I 1985 -8, Addenbrooke's I 1986 -5, Addenbrooke's I 1994 -4
+  latest: didn't race
+
+lents women: 1986 to 2024, 12 races
+  lines: Addenbrooke's 1
+  headships: none
+  blades: 1, spoons: 2
+  highest: 29, Addenbrooke's I 1987
+  rises: Addenbrooke's I 1987 +4, Addenbrooke's I 1990 +3, Addenbrooke's I 2024 +1
+  falls: Addenbrooke's I 1994 -4, Addenbrooke's I 1993 -4, Addenbrooke's I 2011 -3
+  latest: didn't race
+
+mays men: 1978 to 2011, 24 races
+  lines: Addenbrooke's 1, Addenbrooke's 2
+  headships: none
+  blades: 6, spoons: 1
+  highest: 41, Addenbrooke's I 1992, Addenbrooke's I 1990, Addenbrooke's I 1985
+  rises: Addenbrooke's I 1990 +4, Addenbrooke's I 1989 +4, Addenbrooke's I 1984 +4
+  falls: Addenbrooke's I 1987 -6, Addenbrooke's I 1993 -5, Addenbrooke's I 1986 -4
+  latest: didn't race
+
+mays women: 1977 to 2011, 28 races
+  lines: Addenbrooke's 1, Addenbrooke's 2
+  headships: none
+  blades: 3, spoons: 10
+  highest: 8, Addenbrooke's I 1979
+  rises: Addenbrooke's II 1986 +4, Addenbrooke's I 1979 +4, Addenbrooke's I 1978 +4
+  falls: Addenbrooke's I 1983 -6, Addenbrooke's I 2007 -5, Addenbrooke's I 2009 -4
+  latest: didn't race

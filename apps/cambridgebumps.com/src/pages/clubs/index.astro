@@ -1,5 +1,5 @@
 ---
-import { Blade } from "react-rowing-blades";
+import { Blade, genderedClubs } from "react-rowing-blades";
 
 import { homeCity, siteConfig } from "@/config/site";
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -63,8 +63,16 @@ const groups = [
                     href={`/clubs/${club.slug}`}
                     class="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-muted"
                   >
-                    <span class="flex w-12 shrink-0 justify-center">
-                      {code && <Blade club={code} size={48} />}
+                    <span class="flex w-12 shrink-0 flex-col items-center justify-center">
+                      {code &&
+                        (genderedClubs.includes(code) ? (
+                          <>
+                            <Blade club={code} gender="men" size={48} />
+                            <Blade club={code} gender="women" size={48} />
+                          </>
+                        ) : (
+                          <Blade club={code} size={48} />
+                        ))}
                     </span>
                     <span>
                       <span class="block font-medium">{club.name}</span>

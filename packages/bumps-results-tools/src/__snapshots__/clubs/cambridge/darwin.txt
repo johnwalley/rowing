@@ -1,0 +1,38 @@
+Darwin College Boat Club (Cambridge, darwin)
+current: true
+
+lents men: 1971 to 2026, 55 races
+  lines: Darwin 1, Darwin 2
+  headships: none
+  blades: 7, spoons: 8
+  highest: 26, Darwin I 2019, Darwin I 2006
+  rises: Darwin I 1977 +7, Darwin I 2015 +4, Darwin I 2005 +4
+  falls: Darwin I 1973 -5, Darwin I 2024 -4, Darwin I 2011 -4
+  latest: Darwin I 31 → 28, Darwin II 57 → 57
+
+lents women: 1976 to 2026, 47 races
+  lines: Darwin 1, Darwin 2
+  headships: none
+  blades: 6, spoons: 8
+  highest: 8, Darwin I 1976
+  rises: Darwin I 1993 +5, Darwin I 1988 +5, Darwin I 2019 +4
+  falls: Darwin I 1990 -6, Darwin I 2025 -4, Darwin II 2017 -4
+  latest: Darwin I 25 → 28
+
+mays men: 1971 to 2026, 54 races
+  lines: Darwin 1, Darwin 2, Darwin 3
+  headships: none
+  blades: 15, spoons: 13
+  highest: 25, Darwin I 2009
+  rises: Darwin I 2025 +8, Darwin III 2012 +8, Darwin II 2001 +8
+  falls: Darwin II 2022 -7, Darwin II 2024 -6, Darwin II 1985 -6
+  latest: Darwin I 32 → 28, Darwin II 63 → 63, Darwin III 86 → 85
+
+mays women: 1976 to 2026, 46 races
+  lines: Darwin 1, Darwin 2, Darwin 3
+  headships: none
+  blades: 8, spoons: 17
+  highest: 11, Darwin I 1977
+  rises: Darwin I 1998 +9, Darwin II 1999 +6, Darwin I 1986 +6
+  falls: Darwin I 2024 -4, Darwin II 2024 -4, Darwin I 2023 -4
+  latest: Darwin I 34 → 32, Darwin II 82 → 80

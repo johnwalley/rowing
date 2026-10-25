@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { Blade } from "react-rowing-blades";
+import { Blade, genderedClubs } from "react-rowing-blades";
 
 import ClubPositionChart from "@/components/ClubPositionChart.astro";
 import { homeCity, siteConfig } from "@/config/site";
@@ -10,8 +10,9 @@ import {
   getClubHistory,
   getSectionRecords,
   latestYear,
+  type ClubCrew,
+  type ClubRace,
   type ClubSection,
-  type CrewResult,
   type CrewYear,
 } from "@/lib/club-history";
 import { getCode, getGenderLabel, set, yearOf } from "@/lib/utils";
@@ -52,15 +53,107 @@ const formatGain = (gain: number | null) =>
         ? `−${-gain}`
         : "0";
 
-const notes = (crew: CrewResult) =>
+const notes = (crew: ClubCrew) =>
   [
     crew.head && "Head",
     crew.blades && "Blades",
     crew.spoons && "Spoons",
   ].filter(Boolean) as string[];
 
-const chartHref = (section: ClubSection, year: string, crew: CrewResult) =>
+const describe = (crew: ClubCrew) =>
+  (crew.finish === null
+    ? `started ${ordinal(crew.start).toLowerCase()}, withdrew`
+    : `${ordinal(crew.start)} → ${ordinal(crew.finish)} (${formatGain(crew.gain)})`) +
+  (notes(crew).length > 0 ? ` · ${notes(crew).join(", ")}` : "");
+
+const chartHref = (section: ClubSection, year: string, crew: ClubCrew) =>
   `/charts/${section.event}/${section.gender}/${yearOf(year)}?club=${encodeURIComponent(crew.club)}`;
+
+// The year-by-year grid: a row for each decade, newest first, and a cell for
+// each year from the club's first race to its last. A cell gives the 1st
+// boat's result; a year with two races (the early Mays) shows the later, as
+// the chart does. Decades the event never raced in are left out.
+type Tone = "up-1" | "up-2" | "up-3" | "down-1" | "down-2" | "down-3";
+type GridCell =
+  | {
+      kind: "result";
+      label: string;
+      tone: Tone | "level" | "head" | "withdrew";
+      href: string;
+      title: string;
+    }
+  | { kind: "absent"; title: string }
+  | null;
+
+const toneOf = (gain: number): Tone => {
+  const size = Math.abs(gain) >= 4 ? 3 : Math.abs(gain) >= 2 ? 2 : 1;
+  return `${gain > 0 ? "up" : "down"}-${size}`;
+};
+
+const decadeRows = (section: ClubSection) => {
+  const held = new Set(section.years.map(yearOf));
+  const racesIn = new Map<number, ClubRace[]>();
+  for (const race of section.races) {
+    const year = yearOf(race.year);
+    racesIn.set(year, [...(racesIn.get(year) ?? []), race]);
+  }
+  const first = yearOf(section.races[0].year);
+  const last = yearOf(section.races[section.races.length - 1].year);
+
+  const cellFor = (year: number): GridCell => {
+    if (year < first || year > last || !held.has(year)) return null;
+    const races = racesIn.get(year);
+    if (!races) return { kind: "absent", title: `${year}: didn't race` };
+
+    const leading = (race: ClubRace) =>
+      race.crews.find((crew) => crew.number === 1) ?? race.crews[0];
+    const race = races[races.length - 1];
+    const crew = leading(race);
+    return {
+      kind: "result",
+      label: crew.head ? "H" : crew.gain === null ? "W" : formatGain(crew.gain),
+      tone: crew.head
+        ? "head"
+        : crew.gain === null
+          ? "withdrew"
+          : crew.gain === 0
+            ? "level"
+            : toneOf(crew.gain),
+      href: chartHref(section, race.year, crew),
+      title: races
+        .map(
+          (race) =>
+            `${race.year}: ${leading(race).name}, ${describe(leading(race))}`,
+        )
+        .join("\n"),
+    };
+  };
+
+  const rows = [];
+  for (
+    let decade = last - (last % 10);
+    decade >= first - (first % 10);
+    decade -= 10
+  ) {
+    const years = Array.from({ length: 10 }, (_, i) => decade + i);
+    if (!years.some((year) => held.has(year))) continue;
+    rows.push({ decade, cells: years.map(cellFor) });
+  }
+  return rows;
+};
+
+const gridLegend: { label: string; tone: string; text?: string }[] = [
+  { label: "−4", tone: "down-3" },
+  { label: "−2", tone: "down-2" },
+  { label: "−1", tone: "down-1" },
+  { label: "0", tone: "level" },
+  { label: "+1", tone: "up-1" },
+  { label: "+2", tone: "up-2" },
+  { label: "+4", tone: "up-3", text: "places" },
+  { label: "H", tone: "head", text: "head" },
+  { label: "W", tone: "withdrew", text: "withdrew" },
+  { label: "·", tone: "absent", text: "didn't race" },
+];
 
 // "1972, 1975 and 4 more"
 const listYears = (races: CrewYear[], most = 6) => {
@@ -115,8 +208,6 @@ const structuredData = {
   url: new URL(canonical, siteConfig.url).href,
   location: { "@type": "City", name: club.city },
 };
-
-const th = "h-10 px-2 text-left align-middle font-medium text-muted-foreground";
 ---
 
 <BaseLayout title={title} description={description} canonical={canonical}>
@@ -130,7 +221,15 @@ const th = "h-10 px-2 text-left align-middle font-medium text-muted-foreground";
     <section>
       <div class="mx-auto px-4 pb-12 sm:px-6 md:px-8 lg:px-12">
         <header class="flex items-center gap-4 pt-4">
-          {code && <Blade club={code} size={72} />}
+          {code &&
+            (genderedClubs.includes(code) ? (
+              <div class="flex gap-2">
+                <Blade club={code} gender="men" size={72} />
+                <Blade club={code} gender="women" size={72} />
+              </div>
+            ) : (
+              <Blade club={code} size={72} />
+            ))}
           <div>
             <h1 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">
               {club.name}
@@ -154,12 +253,6 @@ const th = "h-10 px-2 text-left align-middle font-medium text-muted-foreground";
 
         {sections.map(({ section, records, id, title }) => {
           const latest = latestYear(section);
-          const crewYears = section.races
-            .flatMap((race) =>
-              race.crews.map((crew) => ({ year: race.year, crew })),
-            )
-            .reverse();
-          const lowerBoats = crewYears.filter(({ crew }) => crew.number > 1);
 
           return (
             <section id={id} class="mt-10 scroll-mt-20">
@@ -225,11 +318,7 @@ const th = "h-10 px-2 text-left align-middle font-medium text-muted-foreground";
                           </a>
                           <span class="text-muted-foreground">
                             {" "}
-                            {crew.finish === null
-                              ? `started ${ordinal(crew.start).toLowerCase()}, withdrew`
-                              : `${ordinal(crew.start)} → ${ordinal(crew.finish)} (${formatGain(crew.gain)})`}
-                            {notes(crew).length > 0 &&
-                              ` · ${notes(crew).join(", ")}`}
+                            {describe(crew)}
                           </span>
                         </li>
                       ))}
@@ -266,63 +355,55 @@ const th = "h-10 px-2 text-left align-middle font-medium text-muted-foreground";
               </div>
 
               <h3 class="mt-8 text-lg font-semibold">Year by year</h3>
-              {[
-                {
-                  rows: crewYears.filter(({ crew }) => crew.number === 1),
-                  lower: false,
-                },
-                { rows: lowerBoats, lower: true },
-              ].map(({ rows, lower }) => {
-                if (rows.length === 0) return null;
-
-                const table = (
-                  <div class="relative mt-2 w-full overflow-auto">
-                    {/* The cells are styled from the table, not one by one:
-                        LMBC has over two thousand rows. */}
-                    <table class="w-full text-sm [&_a]:underline [&_a]:decoration-border [&_a]:underline-offset-4 [&_a:hover]:decoration-current [&_tbody_tr]:border-b [&_tbody_tr:last-child]:border-0 [&_td]:p-2 [&_td]:align-middle [&_td:nth-child(n+3)]:text-right [&_td:nth-child(6)]:text-left [&_td:nth-child(6)]:text-muted-foreground">
-                      <thead class="border-b">
-                        <tr>
-                          <th class={th}>Year</th>
-                          <th class={th}>Crew</th>
-                          <th class={`${th} text-right`}>Start</th>
-                          <th class={`${th} text-right`}>Finish</th>
-                          <th class={`${th} text-right`}>Change</th>
-                          <th class={th}>
-                            <span class="sr-only">Notes</span>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody class="tabular-nums">
-                        {rows.map(({ year, crew }) => (
-                          <tr>
-                            <td>{year}</td>
-                            <td>
-                              <a href={chartHref(section, year, crew)}>
-                                {crew.name}
-                              </a>
-                            </td>
-                            <td>{crew.start}</td>
-                            <td>{crew.finish ?? "–"}</td>
-                            <td>{formatGain(crew.gain)}</td>
-                            <td>{notes(crew).join(", ")}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                );
-
-                return lower ? (
-                  <details class="mt-4">
-                    <summary class="cursor-pointer text-sm font-medium">
-                      Lower boats ({rows.length} results)
-                    </summary>
-                    {table}
-                  </details>
-                ) : (
-                  table
-                );
-              })}
+              <p class="mt-1 text-sm text-muted-foreground">
+                The 1st boat's result each year. Each year links to its chart.
+              </p>
+              <ul class="year-grid-legend mt-3" aria-hidden="true">
+                {gridLegend.map(({ label, tone, text }) => (
+                  <li>
+                    <span data-tone={tone}>{label}</span>
+                    {text}
+                  </li>
+                ))}
+              </ul>
+              {/* Styled from the table, not cell by cell: a club's oldest
+                  section runs to about 250 cells. */}
+              <table class="year-grid mt-3">
+                <thead>
+                  <tr>
+                    <th>
+                      <span class="sr-only">Decade</span>
+                    </th>
+                    {Array.from({ length: 10 }, (_, i) => (
+                      <th scope="col">{i}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {decadeRows(section).map(({ decade, cells }) => (
+                    <tr>
+                      <th scope="row">{decade}s</th>
+                      {cells.map((cell) => (
+                        <td>
+                          {cell?.kind === "result" ? (
+                            <a
+                              href={cell.href}
+                              title={cell.title}
+                              data-tone={cell.tone}
+                            >
+                              {cell.label}
+                            </a>
+                          ) : cell?.kind === "absent" ? (
+                            <span title={cell.title} data-tone="absent">
+                              ·
+                            </span>
+                          ) : null}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </section>
           );
         })}
@@ -330,3 +411,99 @@ const th = "h-10 px-2 text-left align-middle font-medium text-muted-foreground";
     </section>
   </div>
 </BaseLayout>
+
+<style>
+  /* Places gained in blue, lost in red: the poles of a diverging scale, which
+     unlike green and red stay apart for colour-blind readers. Text stays in
+     the page's ink; the sign carries the direction too. */
+  .year-grid,
+  .year-grid-legend {
+    --up: #2a78d6;
+    --down: #e34948;
+  }
+  :global(.dark) .year-grid,
+  :global(.dark) .year-grid-legend {
+    --up: #3987e5;
+    --down: #e66767;
+  }
+
+  .year-grid {
+    width: 100%;
+    max-width: 36rem;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 2px;
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .year-grid th {
+    font-weight: 400;
+    color: var(--muted-foreground);
+  }
+  .year-grid thead th:first-child,
+  .year-grid tbody th {
+    width: 3.25rem;
+    text-align: left;
+  }
+
+  [data-tone] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.75rem;
+    border-radius: 4px;
+    color: var(--foreground);
+  }
+  .year-grid a:hover,
+  .year-grid a:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: -2px;
+  }
+  [data-tone="up-1"] {
+    background: color-mix(in oklab, var(--up) 22%, transparent);
+  }
+  [data-tone="up-2"] {
+    background: color-mix(in oklab, var(--up) 45%, transparent);
+  }
+  [data-tone="up-3"] {
+    background: color-mix(in oklab, var(--up) 70%, transparent);
+  }
+  [data-tone="down-1"] {
+    background: color-mix(in oklab, var(--down) 22%, transparent);
+  }
+  [data-tone="down-2"] {
+    background: color-mix(in oklab, var(--down) 45%, transparent);
+  }
+  [data-tone="down-3"] {
+    background: color-mix(in oklab, var(--down) 70%, transparent);
+  }
+  [data-tone="level"] {
+    background: var(--muted);
+  }
+  [data-tone="head"] {
+    box-shadow: inset 0 0 0 1.5px var(--foreground);
+    font-weight: 600;
+  }
+  [data-tone="withdrew"],
+  [data-tone="absent"] {
+    color: var(--muted-foreground);
+  }
+
+  .year-grid-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+  }
+  .year-grid-legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+  .year-grid-legend [data-tone] {
+    width: 1.75rem;
+    font-variant-numeric: tabular-nums;
+  }
+</style>

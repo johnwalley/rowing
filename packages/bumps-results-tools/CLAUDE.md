@@ -1,37 +1,25 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
-Tools for manipulating bumps rowing results data (Cambridge Bumps, Oxford Summer Eights, Torpids, Town Bumps). Produces data and charts for cambridgebumps.com. Related repositories: [bumps-results](https://github.com/johnwalley/bumps-results), [d3-bumps-chart](https://github.com/johnwalley/d3-bumps-chart), [react-bumps-chart](https://github.com/johnwalley/react-bumps-chart).
+Tools for manipulating bumps rowing results data (Cambridge Bumps, Oxford Summer Eights, Torpids, Town Bumps). The bumps site in `apps/cambridgebumps.com` builds its results and statistics with this package's code. Related repositories: [bumps-results](https://github.com/johnwalley/bumps-results) (gets this package's TG and AD files; see Downstream sync), [d3-bumps-chart](https://github.com/johnwalley/d3-bumps-chart).
 
-The repo is a Node (24+) + TypeScript project using pnpm. Scripts run via `tsx`; tests use Vitest. The UI is a Vite + React 19 + Tailwind 4 app under `src/ui/`. Builds use `tsgo` (`@typescript/native-preview`) for type-checking and Vite 8 for bundling.
+`GLOSSARY.md` defines the results terms: Set, Event, Crew, Position, Headship, Blades. Use them in code, tests and docs. An Event is one results file, not a year.
+
+The package is Node (24+) + TypeScript. Scripts run via `tsx`; tests use Vitest. The package has no UI and nothing to bundle: its build only type-checks, with `tsgo` (`@typescript/native-preview`). The editor for TG files is `apps/results-editor`.
 
 ## Commands
 
 ```bash
-# Development server (Vite + React UI)
-pnpm run dev
-
-# Type-check (src + scripts) + production build
-pnpm run build
-
-# Type-check only (src via tsconfig.json, scripts via tsconfig.scripts.json)
+# Type-check (src via tsconfig.json, scripts via tsconfig.scripts.json); build does the same
 pnpm run typecheck
 
 # Format / check formatting (CI runs format:check)
 pnpm run format
 pnpm run format:check
 
-# Preview the production build
-pnpm run preview
-
-# Regenerate per-event results + per-club stats JSON for the website
-pnpm run generate            # both
-pnpm run generate:results    # event-level results only → output/results/
-pnpm run generate:stats      # per-club statistics only → output/stats/
-pnpm run generate:ad         # regenerate results/ad_format/ from the TG files (CI fails if committed files differ)
+# Regenerate results/ad_format/ from the TG files (CI fails if committed files differ)
+pnpm run generate:ad
 
 # Run tests
 pnpm test
@@ -46,44 +34,41 @@ pnpm vitest run src/bumps.test.ts
 
 - **bumps.ts** - Parser, processor, and serializer. Key functions:
   - `readEvent(text)` - Parses TG format text into `{ event: Event | null, errors }`
-  - `readFile(path?)` - Reads a TG format file via `node:fs` (or stdin when `path` is omitted) and returns the same shape as `readEvent`. Node builtins are imported lazily inside the function because `bumps.ts` is also bundled into the browser UI — keep it that way
+  - `readFile(path?)` - Reads a TG format file via `node:fs` (or stdin when `path` is omitted) and returns the same shape as `readEvent`. Node builtins are imported lazily inside the function because `bumps.ts` is also bundled into the results editor — keep it that way
   - `processResults(event, debug?)` - Computes crew movements, blades, gains from result codes. Returns `{ event, errors }`; on error it stops and returns the partially processed event. Unrecognised result codes are errors. Problems are returned, never logged — `console.log` is only for `debug` tracing
   - `stepOn(event)` - Generates next year's starting positions from current results
   - `writeString(event)` - Serializes an `Event` back to TG format
-  - `writeWeb(events)` - Builds the per-set/per-gender year manifest consumed by the UI
 
 - **types.ts** - Zod schemas and TypeScript types for `Event`, `Crew`, and `Statistics`
 
 - **abbreviations.ts** - Club abbreviation mappings per event set: Cambridge colleges (`ccol`), Oxford colleges (`ocol`), Town clubs (`cra`), plus `sets` (short → long name) and a `roman` numeral table
 
-- **club-mappings.ts** - Display-name mappings (`clubMapping`, `clubMappingFull`) for normalising historical club names
+- **clubs.ts** - The one list of clubs: each club's slug, full name, the name the results use, its city, and any `formerly` (renames, mergers, other spellings) and `joint` (combined crews) names, plus `unlisted` (names that deliberately have no club). `clubOf(event, name)` is the club a results name belongs to. The statistics credit a former name's crews to its club, and the bumps site builds a page for each club, so 1st and 3rd counts 1st, 2nd and 3rd Trinity's headships in both. Safe for the browser: it imports nothing. The site imports it as `bumps-results-tools/clubs`
 
-- **stats.ts** - `getStats(events, combine?)` aggregates per-club statistics (headships, crews entered, blades, highest positions) across an array of `Event`s. Pure JS; downstream ranking/sorting is done with Arquero in `scripts/generate_stats.ts`
+- **clubs.test.ts** - Checks `clubs.ts` against the results: a name that raced in five or more years (or in an event's latest year) needs a club or an `unlisted` entry, every listed name must have raced, a name is only one club's own in an event, and slugs are unique per city. So after adding a new year, a new or renamed club needs an entry in `clubs.ts`
 
-- **math.ts** - Histogram + summary statistics helpers (`mean`, `variance`, `standardDeviation`, histogram variants)
+- **results.ts** - `events`: every TG file in `results/tg_format/`, parsed and processed, in file name order. Importing it throws, listing every file's errors, if any file has one. It bundles the files with `import.meta.glob`, so it works only under Vite (the bumps site, the results editor, Vitest), not in `tsx` scripts. The site imports it as `bumps-results-tools/results`
 
-- **utils.ts** - Small helpers (`range`, etc.) shared by core and scripts
+- **tg-files.ts** - `resultFiles`: every TG file in `results/tg_format/` with its set, gender and year, and a `load()` that fetches its text lazily (one chunk per file), so the results editor can list them all without bundling them. Vite only, like `results.ts`. The editor imports it as `bumps-results-tools/tg-files`
+
+- **crews.ts** - `crewResults(event)`: every crew's result in a race (start, positions after each day, finish, gain, blades, spoons, head), worked out once per race. `headOf(event)` is the one headship rule: the best-placed 1st boat that didn't withdraw, in a complete event not flagged `skip_headship`. Blades and spoons count only in complete events. The statistics and the club histories are both built on these
+
+- **stats.ts** - `getRankings(events)`: the statistics pages' tables for one event and category (headships, crewsEntered, headDays, headLong, bladesAwarded), from complete events only, each crew counting for its club (`clubOf`). Days at head are counted per club, from the crew at head after each day's racing, so a run carries on across years and between a club's former names. Ties keep the order the clubs first raced in. `Rankings` and `Statistic` type the tables. The site imports it as `bumps-results-tools/stats`
+
+- **club-history.ts** - `getClubHistory(club, events)`: a club's races under all its names, by event and category, with each crew's chart `line` (a rename carries a line on; a merged club keeps its own). `getSectionRecords` works out a section's records (headships, blades, spoons, highest finish, biggest rises and falls, latest crews), `isCurrent` whether the club still races. The site's club pages import it as `bumps-results-tools/club-history`
+
+- **utils.ts** - `range`, shared by core and scripts
 
 - **bumps.test.ts** - Vitest suite for the core library
 
 - **results.test.ts** - Parses and processes every file in `results/tg_format/`, fails on any error (so a typo in new results data breaks CI), and compares a per-crew summary (daily moves, gain, blades, withdrawn) against `src/__snapshots__/results/<file>`. When a data edit or processor change is meant to alter results, run `pnpm vitest run -u` and review the snapshot diff. New TG files need their snapshot committed, because CI won't write missing snapshots
 
-### UI (`src/ui/`)
-
-React app rendered through Vite. `App.tsx` is a split-pane editor:
-
-- Left: a `<select>` listing every TG file (grouped by set and gender) and a `<textarea>` for live editing of TG-format text
-- Right: a `BumpsChart` from `react-bumps-chart` that re-renders as the textarea changes
-- A "Generate next years starting positions" button runs `stepOn` + `writeString` to seed next year's TG text from the currently loaded event
-
-`src/ui/results.ts` imports TG files straight from `results/tg_format/` via `import.meta.glob` (lazy, one chunk per file), so the UI always matches the canonical data — don't reintroduce copies under `public/`. Styling is Tailwind 4 via `@tailwindcss/vite`.
+- **stats.test.ts**, **club-history.test.ts** - Snapshot the statistics tables (`src/__snapshots__/stats/<event>_<gender>.txt`) and what each club page shows (`src/__snapshots__/clubs/<city>/<slug>.txt`), and check the headship rule and the club crediting. A results change moves these snapshots too (the latest year's crews are on every club page), so `pnpm vitest run -u` after a data edit and review what moved
 
 ### Scripts (`scripts/`)
 
-- **load_events.ts** - Shared loader for the generate scripts: reads and processes every TG file, and if any file has errors prints them all and exits non-zero before anything is written
-- **generate_results.ts** - Reads every file in `results/tg_format/`, runs `processResults`, writes `output/results/results.json` (year manifest) and `output/results/<set>/<gender>/results.json` (per-set processed events)
-- **generate_stats.ts** - Same input, runs `getStats` and Arquero-based ranking, writes `output/stats/<set>/<gender>/stats.json` (headships, crewsEntered, headDays, headLong, bladesAwarded). Output is Prettier-formatted JSON
 - **process_tg_file.ts** - Filter: reads TG from stdin (or a path), runs `processResults`, writes JSON to stdout and errors to stderr (exit 1 on error)
+- **step_on_tg_file.ts** - Reads TG from stdin (or a path) and writes next year's starting order as TG to stdout (`stepOn` + `writeString`, as the results editor's "Generate next years starting positions"); exit 1 on error
 - **convert_rssbc_to_tg.ts** - Converts the historical RSSBC JSON (under `results/rssbc/`) to TG format
 - **download_rssbc_results.ts** - Fetches RSSBC API data into `results/rssbc/`
 - **convert_tg_to_ad.ts** - Writes `results/ad_format/` from the TG files (`pnpm run generate:ad`), one AD file per TG file (`mays1848.1_men.txt` → `m1848.1m.txt`). It exits non-zero if two TG files would map to the same AD name, and deletes AD files that no longer have a TG source. The AD files are committed, and CI fails if they don't match what this script produces, so rerun it after editing TG data
@@ -92,18 +77,16 @@ React app rendered through Vite. `App.tsx` is a split-pane editor:
 
 ### Results Data
 
-- **results/tg_format/** - Canonical source results in TG format (text files, ~1050 files spanning Eights, Lents, Mays, Torpids, Town from the 1800s onward)
+- **results/tg_format/** - Canonical source results in TG format (text files, ~1050 files spanning Eights, Lents, Mays, Torpids, Town from the 1800s onward). To add or correct results, use the `add-results` skill (`.claude/skills/add-results/SKILL.md` at the repo root): it runs the steps the tests, snapshots, `clubs.ts` and AD files need
 - **results/rssbc/**, **results/dudhia/**, **results/dudhia_per_crew/**, **results/ad_format/**, **results/mcshane/** - Historical / alternate-format source data used by the conversion scripts in `scripts/`
-- **output/** - Generated by `pnpm run generate`; not checked in as source of truth. Contains `output/results/{set}/{gender}/results.json` and `output/stats/{set}/{gender}/stats.json` for the site in `apps/cambridgebumps.com`
+
+### How the site uses this package
+
+`package.json` `exports` point at the TypeScript source (`./bumps`, `./club-history`, `./clubs`, `./results`, `./stats`, `./tg-files` and `./types`, each `src/<name>.ts`), so the site's and the results editor's Vite builds compile them and this package never needs building for them. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site and the editor import free of Node builtins at the top level (see `readFile`).
 
 ### Downstream sync
 
-The repo root's `.github/workflows/sync-downstream.yml` runs on every push to `main` that touches this package. It regenerates everything and opens (or updates) a PR on the `sync/bumps-results-tools` branch:
-
-- **In this repo**, for `apps/cambridgebumps.com`: `output/results` and `output/stats` JSON copied to its `src/data/`, plus a regenerated `src/data/chart-meta.json`
-- **In johnwalley/bumps-results**: `results/tg_format/` and `results/ad_format/` copied verbatim
-
-No PR is opened when nothing changed. It needs the `DOWNSTREAM_REPOS_TOKEN` secret, a fine-grained PAT with Contents and Pull requests write on johnwalley/rowing and johnwalley/bumps-results. The site's PR uses it too, because a PR opened with the default `GITHUB_TOKEN` doesn't run CI.
+The repo root's `.github/workflows/sync-downstream.yml` runs on every push to `main` that touches this package. It regenerates `results/ad_format/` and opens (or updates) a PR on the `sync/bumps-results-tools` branch of johnwalley/bumps-results that copies in `results/tg_format/` and `results/ad_format/` verbatim. No PR is opened when nothing changed. It needs the `DOWNSTREAM_REPOS_TOKEN` secret, a fine-grained PAT with Contents and Pull requests write on johnwalley/bumps-results.
 
 ## TG Format
 

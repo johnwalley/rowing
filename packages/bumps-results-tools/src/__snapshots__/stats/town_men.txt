@@ -1,0 +1,182 @@
+headships
+Rob Roy           30  2014
+City              21  2026
+99                15  2022
+Cantabs           11  2021
+Albert Institute  1   1869
+
+crewsEntered
+Cantabs                                598
+99                                     514
+City                                   496
+Rob Roy                                361
+Champs                                 307
+X-Press                                294
+Chesterton                             141
+Scouts                                 85
+St Radegund                            56
+St Neots                               42
+Churchill                              31
+Mott MacDonald                         31
+St Ives                                31
+Telephones                             30
+Camb Veterans                          30
+Max Entropy                            30
+Leckhampton                            29
+Red Lion Toft                          27
+Leys School                            25
+Beehives                               21
+Cambs High School                      20
+Cam Grammar School                     18
+Isle of Ely                            18
+Instrument Co                          15
+Lady Somerset                          15
+Old YM                                 14
+King's                                 14
+Darwin                                 14
+Central Old Boys                       10
+Barclays Bank                          10
+Camb Blue                              10
+Cavendish Lab                          9
+Clare                                  8
+Wolfson                                8
+Rob Roy/City                           7
+Addenbrooke's                          7
+Metallurgy                             7
+Bridge                                 6
+Selwyn                                 6
+Trinity Hall                           6
+Marshalls                              6
+Cam Consultants                        6
+Police                                 5
+Peterborough                           5
+Leys Lysander                          5
+Albert Institute                       4
+College Servants                       4
+Town                                   4
+Fitzwilliam                            4
+TTFNTT                                 4
+Hornets                                4
+Pitt Press                             3
+Town Rowing Club                       3
+Grammar School                         3
+Grammarians                            3
+Goldilocks                             3
+Clare Crabs                            3
+Christ's                               3
+Chemical Lab                           3
+Chemical Eng                           3
+Applied Biology                        3
+Deloitte                               3
+Cherry Hinton                          3
+Bullard Lab                            3
+United College Servants                2
+Church of England                      2
+Grammar School OB                      2
+Magdalene                              2
+Consultant Owls                        2
+Billygoats                             2
+St Cats                                2
+Peterhouse                             2
+Eleans                                 2
+Cam RUFC                               2
+City Ladies                            2
+Hole in the Wall                       2
+NatWest Bank                           2
+Coopers & Lybrand                      2
+Touche Ross                            2
+Ionica                                 2
+Sharks                                 2
+Church of England Young Men's Society  1
+Young Men's Christian Association      1
+Hero                                   1
+Leander                                1
+RAF Brampton                           1
+Bean Group                             1
+CU Medics                              1
+Nobblets                               1
+County Boys                            1
+CCL Owls                               1
+Soham Village College                  1
+Downing                                1
+Soham                                  1
+Kidney Donors                          1
+Cambridge Ladies                       1
+Cardinals                              1
+Sidney Sussex                          1
+MacDonalds Ladies                      1
+Rob Roy Ladies                         1
+Geography Department                   1
+City/Netherhall                        1
+Vaughan Cornish                        1
+Ditton Dodgers                         1
+The Mohos                              1
+British Welding                        1
+Unicorn Cherry Hinton                  1
+Hannah Road                            1
+OTIB                                   1
+Pineapple                              1
+Pineapple Chunks                       1
+Cam Cable                              1
+Applied Psychology                     1
+Strangeways Lab                        1
+
+headDays
+Rob Roy                  120
+City                     85
+99                       56
+Cantabs                  45
+Albert Institute         5
+United College Servants  2
+
+headLong
+City                     44  1951 - 1962
+Rob Roy                  36  1998 - 2006
+Cantabs                  16  2015 - 2018
+99                       8   1965 - 1966
+Albert Institute         5   1869
+United College Servants  2   1868
+
+bladesAwarded
+City                69
+Rob Roy             52
+Cantabs             46
+99                  41
+Champs              23
+X-Press             17
+Chesterton          8
+St Radegund         8
+Leys School         7
+St Ives             6
+St Neots            5
+Scouts              4
+Churchill           4
+Darwin              4
+Central Old Boys    3
+Cam Grammar School  3
+King's              2
+Leckhampton         2
+Lady Somerset       2
+Addenbrooke's       2
+Red Lion Toft       2
+Barclays Bank       2
+Isle of Ely         2
+Leys Lysander       2
+Albert Institute    1
+Instrument Co       1
+Bridge              1
+Police              1
+Selwyn              1
+Telephones          1
+Goldilocks          1
+Billygoats          1
+Mott MacDonald      1
+Eleans              1
+TTFNTT              1
+Cavendish Lab       1
+Cam RUFC            1
+Chemical Eng        1
+Max Entropy         1
+Trinity Hall        1
+Marshalls           1
+Cam Consultants     1

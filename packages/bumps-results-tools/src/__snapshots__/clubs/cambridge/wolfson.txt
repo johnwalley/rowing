@@ -1,0 +1,38 @@
+Wolfson College Boat Club (Cambridge, wolfson)
+current: true
+
+lents men: 1969 to 2026, 57 races
+  lines: Wolfson 1, Wolfson 2
+  headships: none
+  blades: 12, spoons: 5
+  highest: 19, Wolfson I 2026
+  rises: Wolfson I 1970 +8, Wolfson I 1996 +6, Wolfson I 2023 +5
+  falls: Wolfson I 2022 -4, Wolfson I 2020 -4, Wolfson I 2008 -4
+  latest: Wolfson I 21 → 19
+
+lents women: 1977 to 2026, 44 races
+  lines: Wolfson 1, Wolfson 2
+  headships: none
+  blades: 7, spoons: 1
+  highest: 14, Wolfson I 1977
+  rises: Wolfson I 1993 +7, Wolfson I 2026 +4, Wolfson II 2026 +4
+  falls: Wolfson I 2022 -4, Wolfson I 2008 -4, Wolfson I 2020 -3
+  latest: Wolfson I 28 → 24, Wolfson II 50 → 46
+
+mays men: 1975 to 2026, 50 races
+  lines: Wolfson 2, Wolfson 1, Wolfson 3
+  headships: none
+  blades: 15, spoons: 9
+  highest: 16, Wolfson I 2018
+  rises: Wolfson II 2018 +8, Wolfson I 1986 +7, Wolfson II 2007 +5
+  falls: Wolfson II 2022 -9, Wolfson II 1998 -6, Wolfson II 1991 -6
+  latest: Wolfson I 20 → 23, Wolfson II 50 → 52
+
+mays women: 1974 to 2026, 51 races
+  lines: Wolfson 1, Wolfson 2
+  headships: none
+  blades: 8, spoons: 12
+  highest: 5, Wolfson I 1974
+  rises: Wolfson II 2016 +7, Wolfson I 2000 +6, Wolfson I 2023 +4
+  falls: Wolfson I 1985 -6, Wolfson I 1983 -6, Wolfson I 2015 -4
+  latest: Wolfson I 23 → 20, Wolfson II 64 → 64

@@ -1,0 +1,38 @@
+Magdalen College Boat Club (Oxford, magdalen)
+current: true
+
+torpids men: 1860 to 2026, 143 races
+  lines: Magdalen 1, Magdalen 2, Magdalen 3, Magdalen 4, Magdalen 5
+  headships: 2008, 1937, 1936, 1934, 1933, 1932, 1923, 1913, 1912
+  blades: 29, spoons: 15
+  highest: 1, Magdalen I 2008, Magdalen I 1937, Magdalen I 1936, Magdalen I 1934, Magdalen I 1933, Magdalen I 1932, Magdalen I 1923, Magdalen I 1913, Magdalen I 1912
+  rises: Magdalen II 1933 +8, Magdalen I 1953 +7, Magdalen II 1953 +7
+  falls: Magdalen II 2015 -12, Magdalen II 1978 -12, Magdalen II 1968 -10
+  latest: Magdalen I 14 → withdrew, Magdalen II 44 → withdrew
+
+torpids women: 1981 to 2026, 38 races
+  lines: Magdalen 1, Magdalen 2, Magdalen 3
+  headships: 2016, 2013, 2012, 2011, 2010
+  blades: 15, spoons: 5
+  highest: 1, Magdalen I 2016, Magdalen I 2013, Magdalen I 2012, Magdalen I 2011, Magdalen I 2010
+  rises: Magdalen II 1996 +6, Magdalen II 2022 +5, Magdalen II 2021 +5
+  falls: Magdalen I 2017 -11, Magdalen I 1984 -10, Magdalen II 2017 -8
+  latest: Magdalen I 13 → withdrew, Magdalen II 47 → withdrew
+
+eights men: 1845 to 2026, 156 races
+  lines: Corpus & Magdalen 1, Magdalen 1, Magdalen 2, Magdalen 3, Magdalen 4, Magdalen 5
+  headships: 2007, 2006, 2005, 2004, 1954, 1953, 1932, 1923, 1920, 1910, 1906, 1905, 1900, 1895, 1894, 1893, 1892, 1888, 1886, 1880
+  blades: 41, spoons: 42
+  highest: 1, Magdalen I 2007, Magdalen I 2006, Magdalen I 2005, Magdalen I 2004, Magdalen I 1954, Magdalen I 1953, Magdalen I 1932, Magdalen I 1923, Magdalen I 1920, Magdalen I 1910, Magdalen I 1906, Magdalen I 1905, Magdalen I 1900, Magdalen I 1895, Magdalen I 1894, Magdalen I 1893, Magdalen I 1892, Magdalen I 1888, Magdalen I 1886, Magdalen I 1880
+  rises: Magdalen I 1859 +8, Magdalen III 2007 +7, Magdalen III 1947 +7
+  falls: Magdalen III 2004 -8, Magdalen III 1949 -8, Magdalen IV 1947 -8
+  latest: Magdalen I 8 → 10, Magdalen II 50 → 49
+
+eights women: 1981 to 2026, 44 races
+  lines: Magdalen 1, Magdalen 2, Magdalen 3, Magdalen 4
+  headships: none
+  blades: 4, spoons: 8
+  highest: 3, Magdalen I 2015
+  rises: Magdalen III 2022 +4, Magdalen II 2018 +4, Magdalen II 2010 +4
+  falls: Magdalen II 2019 -4, Magdalen I 2017 -4, Magdalen I 2011 -4
+  latest: Magdalen I 8 → 5, Magdalen II 40 → 43, Magdalen III 81 → 81, Magdalen IV 83 → 84

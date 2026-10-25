@@ -1,0 +1,38 @@
+Christ's College Boat Club (Cambridge, christs)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: Christ's 1, Christ's 2, Christ's 3, Christ's 4, Christ's 5, Christ's 6
+  headships: none
+  blades: 41, spoons: 47
+  highest: 2, Christ's I 1946
+  rises: Christ's II 1972 +6, Christ's III 1971 +6, Christ's II 1968 +6
+  falls: Christ's II 1973 -6, Christ's III 1965 -6, Christ's III 1950 -6
+  latest: Christ's I 17 → 18, Christ's II 36 → 33
+
+lents women: 1980 to 2026, 46 races
+  lines: Christ's 1, Christ's 2, Christ's 3
+  headships: 2015
+  blades: 9, spoons: 11
+  highest: 1, Christ's I 2015
+  rises: Christ's II 2011 +7, Christ's II 2013 +5, Christ's II 2024 +4
+  falls: Christ's II 1987 -6, Christ's II 2025 -4, Christ's II 2019 -4
+  latest: Christ's I 17 → 16, Christ's II 40 → 43
+
+mays men: 1829 May to 2026, 245 races
+  lines: Magdalene and Christ's 1, Christ's 1, Christ's 2, Christ's 3, Christ's 4, Christ's 5, Christ's 6, Christ's 7, Christ's 8, Christ's 9
+  headships: 1833 May
+  blades: 55, spoons: 67
+  highest: 1, Christ's I 1833 May
+  rises: Christ's II 1842 April May +8, Christ's VI 1966 +7, Christ's II 1848 March +7
+  falls: Christ's IV 1996 -8, Christ's III 1972 -8, Christ's III 2006 -6
+  latest: Christ's I 23 → 20, Christ's II 44 → 42, Christ's III 84 → 86
+
+mays women: 1980 to 2026, 45 races
+  lines: Christ's 1, Christ's 2, Christ's 3, Christ's 4
+  headships: none
+  blades: 16, spoons: 22
+  highest: 3, Christ's I 2011, Christ's I 2010
+  rises: Christ's II 1993 +8, Christ's I 1983 +7, Christ's II 1983 +7
+  falls: Christ's III 1986 -6, Christ's I 2026 -4, Christ's I 2025 -4
+  latest: Christ's I 21 → 25, Christ's II 56 → 53

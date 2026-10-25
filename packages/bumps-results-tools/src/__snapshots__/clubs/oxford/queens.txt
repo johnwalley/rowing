@@ -1,0 +1,38 @@
+Queen's College Boat Club (Oxford, queens)
+current: true
+
+torpids men: 1845 to 2026, 150 races
+  lines: Queen's 1, Queen's 2, Queen's 3, Queen's 4, Queen's 5
+  headships: 1958, 1957
+  blades: 19, spoons: 15
+  highest: 1, Queen's I 1958, Queen's I 1957
+  rises: Queen's II 1968 +12, Queen's III 1979 +10, Queen's I 2021 +8
+  falls: Queen's II 2006 -11, Queen's III 1994 -11, Queen's III 1982 -11
+  latest: Queen's I 22 → withdrew, Queen's II 61 → withdrew
+
+torpids women: 1980 to 2026, 40 races
+  lines: Queen's 1, Queen's 2, Queen's 3
+  headships: none
+  blades: 4, spoons: 3
+  highest: 2, Queen's I 2006
+  rises: Queen's I 2023 +6, Queen's I 1993 +5, Queen's II 2023 +4
+  falls: Queen's I 2015 -12, Queen's I 2022 -10, Queen's II 2010 -9
+  latest: Queen's I 32 → withdrew, Queen's II 60 → withdrew
+
+eights men: 1832 to 2026, 174 races
+  lines: Queen's 1, Queen's 2, Queen's 3, Queen's 4, Queen's 5, Queen's 6, Queen's 7, Queen's 8
+  headships: 1957, 1837, 1833
+  blades: 30, spoons: 40
+  highest: 1, Queen's I 1957, Queen's I 1837, Queen's I 1833
+  rises: Queen's III 2004 +11, Queen's II 1968 +7, Queen's II 1934 +7
+  falls: Queen's II 2013 -6, Queen's II 2006 -6, Queen's V 1967 -6
+  latest: Queen's I 24 → 23, Queen's II 51 → 47, Queen's III 77 → 80
+
+eights women: 1981 to 2026, 43 races
+  lines: Queen's 1, Queen's 2, Queen's 4, Queen's 3
+  headships: none
+  blades: 4, spoons: 15
+  highest: 8, Queen's I 2005
+  rises: Queen's I 2004 +5, Queen's I 2003 +5, Queen's I 2001 +5
+  falls: Queen's II 2022 -6, Queen's II 2026 -4, Queen's II 2016 -4
+  latest: Queen's I 24 → 27, Queen's II 62 → 66

@@ -14,15 +14,16 @@ pnpm build        # Build production site to ./dist/
 pnpm preview      # Preview production build locally
 pnpm format       # Format code with Prettier
 pnpm format:check # Check formatting
+pnpm typecheck    # Type-check (astro check: .astro, .ts and .tsx)
 ```
 
 ## Architecture
 
-**Content Collections**: Recordings are stored as JSON files in `src/content/recordings/`. `src/content.config.ts` loads them with a `glob` loader and validates them with a Zod schema with fields: id, name, year, description, cox, imageSrc (YouTube embed URL).
+**Content Collections**: Recordings are stored as JSON files in `src/content/recordings/`. `src/content.config.ts` loads them with a `glob` loader and validates them with a Zod schema with fields: id, name, year, description, cox, videoId (the 11-character YouTube video ID, from which `Recordings.tsx` builds the embed URL).
 
 **Page Flow**: `src/pages/index.astro` fetches all recordings via `getCollection('recordings')` and passes them to the `Recordings.tsx` React component with `client:load` hydration.
 
-**Recordings Component**: The main interactive component at `src/components/Recordings.tsx` implements search filtering. It renders all recordings but uses CSS to hide non-matching ones (rather than removing from DOM) to prevent YouTube embeds from reloading on filter changes.
+**Recordings Component**: The main interactive component at `src/components/Recordings.tsx` implements search filtering. It renders all recordings but uses CSS to hide non-matching ones (rather than removing from DOM), so a playing video doesn't reload when the search changes. Each card shows the video's thumbnail from `i.ytimg.com` and swaps in the YouTube player (`youtube-nocookie.com`, autoplaying) only when the thumbnail is clicked, so the page loads no YouTube player until a video is played.
 
 ## Adding New Recordings
 
@@ -34,6 +35,6 @@ Create a JSON file in `src/content/recordings/` following the schema:
   "year": "2024",
   "description": "Event details",
   "cox": "Coxswain Name",
-  "imageSrc": "https://www.youtube.com/embed/VIDEO_ID"
+  "videoId": "BOxYoHi0ugA"
 }
 ```

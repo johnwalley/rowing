@@ -1,0 +1,11 @@
+Cambridge Instrument Company (Cambridge, instrument-co)
+current: false
+
+town men: 1951 to 1961, 11 races
+  lines: Instrument Co 1, Instrument Co 2
+  headships: none
+  blades: 1, spoons: 0
+  highest: 13, Instrument Co 1 1958, Instrument Co 1 1957, Instrument Co 1 1956
+  rises: Instrument Co 1 1952 +5, Instrument Co 1 1956 +4, Instrument Co 2 1957 +3
+  falls: Instrument Co 1 1961 -3, Instrument Co 1 1959 -2, Instrument Co 1 1960 -1
+  latest: didn't race

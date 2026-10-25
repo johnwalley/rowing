@@ -1,0 +1,38 @@
+St Hilda's College Boat Club (Oxford, st-hildas)
+current: true
+
+torpids men: 2009 to 2026, 15 races
+  lines: St Hilda's 1, St Hilda's 2
+  headships: none
+  blades: 6, spoons: 0
+  highest: 30, St Hilda's I 2025
+  rises: St Hilda's I 2013 +7, St Hilda's I 2022 +6, St Hilda's I 2025 +5
+  falls: St Hilda's I 2012 -5, St Hilda's II 2010 -5, St Hilda's I 2011 -2
+  latest: St Hilda's I 30 → withdrew, St Hilda's II 63 → withdrew
+
+torpids women: 1979 to 2026, 41 races
+  lines: St Hilda's 1, St Hilda's 2, St Hilda's 3
+  headships: none
+  blades: 10, spoons: 4
+  highest: 4, St Hilda's I 1984
+  rises: St Hilda's II 2023 +6, St Hilda's I 2019 +5, St Hilda's I 2006 +5
+  falls: St Hilda's I 1987 -15, St Hilda's I 2013 -12, St Hilda's I 2011 -9
+  latest: St Hilda's I 27 → withdrew, St Hilda's II 50 → withdrew, St Hilda's III 73 → withdrew
+
+eights men: 1969 to 2026, 19 races
+  lines: St Hilda's 1, St Hilda's 2, St Hilda's 3
+  headships: none
+  blades: 4, spoons: 8
+  highest: 32, St Hilda's I 2026
+  rises: St Hilda's I 2025 +7, St Hilda's II 2016 +5, St Hilda's I 2018 +4
+  falls: St Hilda's II 2014 -6, St Hilda's I 1969 -6, St Hilda's III 2026 -4
+  latest: St Hilda's I 33 → 32, St Hilda's II 65 → 63, St Hilda's III 79 → 83
+
+eights women: 1976 to 2026, 49 races
+  lines: St Hilda's 1, St Hilda's 2, St Hilda's 3, St Hilda's 4, St Anne's/St Hilda's 1
+  headships: none
+  blades: 6, spoons: 12
+  highest: 2, St Hilda's I 1981
+  rises: St Hilda's II 2025 +7, St Hilda's III 2008 +6, St Hilda's II 2026 +4
+  falls: St Hilda's II 2022 -6, St Hilda's II 2018 -6, St Hilda's III 2003 -6
+  latest: St Hilda's I 34 → 31, St Hilda's II 60 → 56, St Hilda's III 77 → 78

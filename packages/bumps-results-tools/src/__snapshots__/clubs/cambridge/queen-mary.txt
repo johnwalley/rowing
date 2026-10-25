@@ -1,0 +1,11 @@
+Queen Mary College Boat Club (Cambridge, queen-mary)
+current: false
+
+lents men: 1940 to 1945, 6 races
+  lines: Queen Mary 1, Queen Mary 2, Queen Mary 3
+  headships: none
+  blades: 3, spoons: 1
+  highest: 18, Queen Mary I 1944
+  rises: Queen Mary I 1942 +4, Queen Mary I 1940 +4, Queen Mary I 1943 +3
+  falls: Queen Mary II 1944 -3, Queen Mary II 1945 -2, Queen Mary II 1942 -2
+  latest: didn't race

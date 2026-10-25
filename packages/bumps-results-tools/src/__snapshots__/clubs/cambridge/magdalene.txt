@@ -1,0 +1,38 @@
+Magdalene Boat Club (Cambridge, magdalene)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: Magdalene 1, Magdalene 2, Magdalene 3, Magdalene 4, Magdalene 5
+  headships: none
+  blades: 38, spoons: 42
+  highest: 2, Magdalene I 2024
+  rises: Magdalene III 1977 +9, Magdalene IV 1992 +6, Magdalene II 1990 +6
+  falls: Magdalene III 1981 -6, Magdalene III 1976 -6, Magdalene III 1960 -6
+  latest: Magdalene I 6 → 10, Magdalene II 37 → 41
+
+lents women: 1989 to 2026, 37 races
+  lines: Magdalene 1, Magdalene 2
+  headships: none
+  blades: 7, spoons: 4
+  highest: 13, Magdalene I 2011
+  rises: Magdalene I 1992 +6, Magdalene II 1994 +5, Magdalene II 2026 +4
+  falls: Magdalene I 2026 -4, Magdalene I 2017 -4, Magdalene I 2013 -4
+  latest: Magdalene I 21 → 25, Magdalene II 52 → 48
+
+mays men: 1829 May to 2026, 241 races
+  lines: Magdalene and Christ's 1, Magdalene 1, Magdalene 2, Magdalene 3, Magdalene 4, Magdalene 5, Magdalene 6, Magdalene 7, Magdalene 8, Magdalene 9
+  headships: none
+  blades: 53, spoons: 60
+  highest: 2, Magdalene I 2024, Magdalene I 2019, Magdalene I 1840 March
+  rises: Magdalene IV 2018 +11, Magdalene V 1961 +8, Magdalene I 1833 May +8
+  falls: Magdalene I 1861 May -8, Magdalene IV 2022 -6, Magdalene IV 1991 -6
+  latest: Magdalene I 6 → 8, Magdalene II 38 → 37, Magdalene III 60 → 64
+
+mays women: 1989 to 2026, 36 races
+  lines: Magdalene 1, Magdalene 2, Magdalene 3
+  headships: none
+  blades: 17, spoons: 13
+  highest: 10, Magdalene I 2005
+  rises: Magdalene I 1991 +9, Magdalene II 2013 +7, Magdalene I 1989 +7
+  falls: Magdalene II 2025 -6, Magdalene II 2011 -6, Magdalene I 2007 -6
+  latest: Magdalene I 16 → 19, Magdalene II 57 → 55

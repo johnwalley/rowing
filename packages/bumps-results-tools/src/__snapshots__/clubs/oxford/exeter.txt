@@ -1,0 +1,38 @@
+Exeter College Boat Club (Oxford, exeter)
+current: true
+
+torpids men: 1838 to 2026, 166 races
+  lines: Exeter 1, Exeter 2, Exeter 3, Exeter 4, Exeter 5
+  headships: 1868, 1867, 1865, 1864, 1863, 1860, 1859, 1857, 1856, 1855, 1854, 1847, 1846
+  blades: 28, spoons: 17
+  highest: 1, Exeter I 1868, Exeter I 1867, Exeter I 1865, Exeter I 1864, Exeter I 1863, Exeter I 1860, Exeter I 1859, Exeter I 1857, Exeter I 1856, Exeter I 1855, Exeter I 1854, Exeter I 1847, Exeter I 1846
+  rises: Exeter II 1999 +8, Exeter III 1975 +8, Exeter I 1972 +7
+  falls: Exeter II 2013 -22, Exeter III 2011 -13, Exeter I 1988 -12
+  latest: Exeter I 15 → withdrew, Exeter II 51 → withdrew
+
+torpids women: 1980 to 2026, 40 races
+  lines: Exeter 1, Exeter 2, Exeter 3
+  headships: none
+  blades: 9, spoons: 4
+  highest: 9, Exeter I 2011
+  rises: Exeter II 2004 +7, Exeter I 2023 +6, Exeter I 2022 +6
+  falls: Exeter I 2013 -10, Exeter II 2013 -10, Exeter I 2015 -9
+  latest: Exeter I 16 → withdrew, Exeter II 62 → withdrew
+
+eights men: 1824 to 2026, 185 races
+  lines: Exeter 1, Exeter 2, Exeter 3, Exeter 4, Exeter 5, Exeter 6
+  headships: 1884, 1883, 1882, 1858, 1857, 1838, 1824
+  blades: 34, spoons: 42
+  highest: 1, Exeter I 1884, Exeter I 1883, Exeter I 1882, Exeter I 1858, Exeter I 1857, Exeter I 1838, Exeter I 1824
+  rises: Exeter IV 1975 +7, Exeter III 1950 +7, Exeter II 1933 +7
+  falls: Exeter III 1938 -8, Exeter III 1973 -7, Exeter II 1968 -7
+  latest: Exeter I 21 → 17, Exeter II 49 → 46, Exeter III 73 → 73
+
+eights women: 1980 to 2026, 44 races
+  lines: Exeter 1, Exeter 2, Exeter 3
+  headships: none
+  blades: 5, spoons: 4
+  highest: 15, Exeter I 2026
+  rises: Exeter II 2025 +5, Exeter I 2023 +5, Exeter I 2005 +5
+  falls: Exeter III 2009 -5, Exeter II 2007 -5, Exeter II 2026 -4
+  latest: Exeter I 17 → 15, Exeter II 57 → 61, Exeter III 73 → 75

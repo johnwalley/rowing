@@ -1,0 +1,20 @@
+Cambridge University Women's Boat Club (Cambridge, cuwbc)
+current: false
+
+lents men: 1962 to 1965, 2 races
+  lines: CUWBC 1
+  headships: none
+  blades: 0, spoons: 1
+  highest: 74, CUWBC I 1965
+  rises: none
+  falls: CUWBC I 1962 -4
+  latest: didn't race
+
+mays men: 1962 to 1973, 12 races
+  lines: CUWBC 1
+  headships: none
+  blades: 0, spoons: 4
+  highest: 115, CUWBC I 1971
+  rises: CUWBC I 1971 +2, CUWBC I 1970 +1
+  falls: CUWBC I 1964 -10, CUWBC I 1966 -5, CUWBC I 1965 -4
+  latest: didn't race

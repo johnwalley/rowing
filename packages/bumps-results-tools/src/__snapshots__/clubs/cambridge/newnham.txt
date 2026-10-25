@@ -1,0 +1,20 @@
+Newnham College Boat Club (Cambridge, newnham)
+current: true
+
+lents women: 1976 to 2026, 50 races
+  lines: Newnham 1, Newnham 2, Newnham 3, Newnham 4
+  headships: 2022, 2019, 1983, 1982, 1977
+  blades: 9, spoons: 9
+  highest: 1, Newnham I 2022, Newnham I 2019, Newnham I 1983, Newnham I 1982, Newnham I 1977
+  rises: Newnham II 2011 +5, Newnham II 2017 +4, Newnham I 2016 +4
+  falls: Newnham II 2009 -6, Newnham I 1995 -5, Newnham II 1986 -5
+  latest: Newnham I 5 → 3, Newnham II 27 → 26, Newnham III 47 → 49
+
+mays women: 1974 to 2026, 51 races
+  lines: Newnham 1, Newnham 2, Newnham 3, Newnham 4, Newnham 5, Newnham 6
+  headships: 2022, 2019, 2003, 1976, 1975
+  blades: 16, spoons: 26
+  highest: 1, Newnham I 2022, Newnham I 2019, Newnham I 2003, Newnham I 1976, Newnham I 1975
+  rises: Newnham III 2006 +6, Newnham III 2015 +4, Newnham II 2011 +4
+  falls: Newnham II 2007 -6, Newnham II 2001 -6, Newnham I 2024 -4
+  latest: Newnham I 11 → 9, Newnham II 30 → 31, Newnham III 43 → 46, Newnham IV 74 → 75

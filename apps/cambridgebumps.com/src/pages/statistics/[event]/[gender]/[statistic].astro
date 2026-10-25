@@ -1,9 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
+import type { Statistic } from "bumps-results-tools/stats";
 import { Blade } from "react-rowing-blades";
 
 import ClubName from "@/components/ClubName.astro";
-import { statisticMapping, stats } from "@/data/stats";
+import { statisticMapping, statistics } from "@/data/statistic-mapping";
+import { statisticRows } from "@/data/stats";
 import StatisticsLayout from "@/layouts/StatisticsLayout.astro";
 import {
   events,
@@ -19,7 +21,7 @@ import {
 export const getStaticPaths = (() =>
   events.flatMap((event) =>
     genders.flatMap((gender) =>
-      Object.keys(statisticMapping).map((statistic) => ({
+      statistics.map((statistic) => ({
         params: { event, gender, statistic },
       })),
     ),
@@ -27,10 +29,10 @@ export const getStaticPaths = (() =>
 
 const event = Astro.params.event as Set;
 const gender = Astro.params.gender as Gender;
-const statistic = Astro.params.statistic as string;
+const statistic = Astro.params.statistic as Statistic;
 
 const mapping = statisticMapping[statistic];
-const data = stats[event][gender][statistic];
+const data = statisticRows(event, gender, statistic);
 
 const eventName = set[event];
 const genderName = getGenderLabel(event, gender);
@@ -69,8 +71,8 @@ const genderName = getGenderLabel(event, gender);
             </tr>
           </thead>
           <tbody class="[&_tr:last-child]:border-0">
-            {data.map((row: any, index: number) => {
-              const clubCode = getCode(row[mapping.key], event);
+            {data.map((row, index) => {
+              const clubCode = getCode(row.club, event);
 
               return (
                 <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
@@ -79,16 +81,16 @@ const genderName = getGenderLabel(event, gender);
                     {/* The flex layout lives on an inner div: a flex <td> drops
                         out of table layout and loses its column. */}
                     <div class="flex flex-row items-center gap-2">
-                      {clubCode && <Blade club={clubCode} size={32} />}
-                      <ClubName event={event} name={row[mapping.key]} />
+                      {clubCode && (
+                        <Blade club={clubCode} gender={gender} size={32} />
+                      )}
+                      <ClubName event={event} name={row.club} />
                     </div>
                   </td>
-                  <td class="p-2 text-right align-middle">
-                    {row[mapping.value]}
-                  </td>
+                  <td class="p-2 text-right align-middle">{row.value}</td>
                   {mapping.additional && (
                     <td class="p-2 text-right align-middle">
-                      {row[mapping.additional]}
+                      {row.additional}
                     </td>
                   )}
                 </tr>

@@ -1,0 +1,38 @@
+Downing College Boat Club (Cambridge, downing)
+current: true
+
+lents men: 1887 to 2026, 133 races
+  lines: Downing 1, Downing 2, Downing 3, Downing 4, Downing 5, Downing 6
+  headships: 2014, 1997, 1996, 1995, 1994, 1988, 1987, 1986, 1985, 1984
+  blades: 42, spoons: 36
+  highest: 1, Downing I 2014, Downing I 1997, Downing I 1996, Downing I 1995, Downing I 1994, Downing I 1988, Downing I 1987, Downing I 1986, Downing I 1985, Downing I 1984
+  rises: Downing II 2010 +6, Downing IV 1997 +6, Downing III 1995 +6
+  falls: Downing IV 1996 -6, Downing II 2018 -5, Downing III 2005 -5
+  latest: Downing I 2 → 4, Downing II 32 → 34
+
+lents women: 1981 to 2026, 44 races
+  lines: Downing 1, Downing 2, Downing 3
+  headships: 2020, 2013, 2012, 2011, 2005, 2004
+  blades: 14, spoons: 6
+  highest: 1, Downing I 2020, Downing I 2013, Downing I 2012, Downing I 2011, Downing I 2005, Downing I 2004
+  rises: Downing II 2017 +6, Downing II 2020 +5, Downing II 2010 +5
+  falls: Downing II 2024 -4, Downing II 2007 -4, Downing I 2006 -4
+  latest: Downing I 3 → 6, Downing II 42 → 39
+
+mays men: 1864 February to 2026, 178 races
+  lines: Downing 1, Downing 2, Downing 3, Downing 4, Downing 5, Downing 6, Downing 7
+  headships: 1997, 1996, 1991, 1990, 1984, 1982
+  blades: 44, spoons: 60
+  highest: 1, Downing I 1997, Downing I 1996, Downing I 1991, Downing I 1990, Downing I 1984, Downing I 1982
+  rises: Downing V 2002 +11, Downing V 1984 +11, Downing IV 1994 +9
+  falls: Downing V 1949 -8, Downing III 2026 -7, Downing IV 2012 -7
+  latest: Downing I 8 → 11, Downing II 35 → 39, Downing III 70 → 77
+
+mays women: 1981 to 2026, 44 races
+  lines: Downing 1, Downing 2, Downing 3
+  headships: 2016, 2015, 2014, 2012, 2011
+  blades: 17, spoons: 8
+  highest: 1, Downing I 2016, Downing I 2015, Downing I 2014, Downing I 2012, Downing I 2011
+  rises: Downing I 1982 +8, Downing II 2002 +6, Downing III 2002 +6
+  falls: Downing III 1988 -6, Downing II 2022 -4, Downing I 2017 -4
+  latest: Downing I 10 → 10, Downing II 36 → 35

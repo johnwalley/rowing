@@ -1,0 +1,20 @@
+Rob Roy Boat Club (Cambridge, rob-roy)
+current: true
+
+town men: 1950 to 2023, 73 races
+  lines: Rob Roy 1, Rob Roy 2, Rob Roy 3, Rob Roy 4, Rob Roy 5, Rob Roy 6, Rob Roy/City 1, Rob Roy/City 2, Rob Roy/City 3, Rob Roy/City 4, Rob Roy/City 5, Rob Roy/City 6, Rob Roy/City 7, Rob Roy 7, Rob Roy 8, Rob Roy 9, Rob Roy 10, Rob Roy 11, Rob Roy 12
+  headships: 2014, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999, 1998, 1995, 1994, 1993, 1992, 1991, 1988, 1987, 1985, 1984, 1983, 1979, 1978, 1974, 1973, 1972, 1971, 1970, 1969, 1968, 1967
+  blades: 52, spoons: 27
+  highest: 1, Rob Roy 1 2014, Rob Roy 1 2006, Rob Roy 1 2005, Rob Roy 1 2004, Rob Roy 1 2003, Rob Roy 1 2002, Rob Roy 1 2001, Rob Roy 1 2000, Rob Roy 1 1999, Rob Roy 1 1998, Rob Roy 1 1995, Rob Roy 1 1994, Rob Roy 1 1993, Rob Roy 1 1992, Rob Roy 1 1991, Rob Roy 1 1988, Rob Roy 1 1987, Rob Roy 1 1985, Rob Roy 1 1984, Rob Roy 1 1983, Rob Roy 1 1979, Rob Roy 1 1978, Rob Roy 1 1974, Rob Roy 1 1973, Rob Roy 1 1972, Rob Roy 1 1971, Rob Roy 1 1970, Rob Roy 1 1969, Rob Roy 1 1968, Rob Roy 1 1967
+  rises: Rob Roy 5 1995 +6, Rob Roy 4 2016 +5, Rob Roy 9 2002 +5
+  falls: Rob Roy 4 1962 -6, Rob Roy 2 2023 -4, Rob Roy 2 2018 -4
+  latest: didn't race
+
+town women: 1983 to 2024, 38 races
+  lines: Rob Roy 1, Rob Roy 2, Rob Roy 3, Rob Roy 4, Rob Roy 5, Rob Roy 6
+  headships: 2007, 2003, 2002, 2001, 2000, 1995, 1994
+  blades: 18, spoons: 2
+  highest: 1, Rob Roy 1 2007, Rob Roy 1 2003, Rob Roy 1 2002, Rob Roy 1 2001, Rob Roy 1 2000, Rob Roy 1 1995, Rob Roy 1 1994
+  rises: Rob Roy 2 2017 +7, Rob Roy 3 1995 +6, Rob Roy 2 2023 +4
+  falls: Rob Roy 1 1990 -7, Rob Roy 4 2005 -4, Rob Roy 2 1992 -4
+  latest: didn't race

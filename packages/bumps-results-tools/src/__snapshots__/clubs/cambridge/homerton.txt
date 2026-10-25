@@ -1,0 +1,38 @@
+Homerton College Boat Club (Cambridge, homerton)
+current: true
+
+lents men: 1993 to 2026, 29 races
+  lines: Homerton 1, Homerton 2
+  headships: none
+  blades: 4, spoons: 3
+  highest: 21, Homerton I 2016
+  rises: Homerton I 2022 +6, Homerton I 2004 +6, Homerton I 2002 +5
+  falls: Homerton I 2026 -4, Homerton I 2019 -4, Homerton I 2017 -4
+  latest: Homerton I 23 → 27
+
+lents women: 1978 to 2026, 48 races
+  lines: Homerton 1, Homerton 2
+  headships: none
+  blades: 2, spoons: 8
+  highest: 2, Homerton I 1986
+  rises: Homerton II 2013 +5, Homerton I 2024 +4, Homerton II 1993 +4
+  falls: Homerton II 2000 -6, Homerton I 1991 -5, Homerton I 2005 -4
+  latest: Homerton I 13 → 11, Homerton II 56 → 56
+
+mays men: 1981 to 2026, 36 races
+  lines: Homerton 1, Homerton 2, Homerton 3
+  headships: none
+  blades: 15, spoons: 7
+  highest: 16, Homerton I 2013
+  rises: Homerton I 2001 +13, Homerton I 2000 +8, Homerton III 2012 +6
+  falls: Homerton I 1991 -8, Homerton I 2022 -4, Homerton I 2019 -4
+  latest: Homerton I 29 → 26, Homerton II 80 → 76
+
+mays women: 1978 to 2026, 47 races
+  lines: Homerton 1, Homerton 2, Homerton 3, Homerton 4, Homerton 5
+  headships: none
+  blades: 12, spoons: 24
+  highest: 6, Homerton I 1993, Homerton I 1985
+  rises: Homerton III 2024 +9, Homerton II 2017 +5, Homerton III 1998 +5
+  falls: Homerton I 2000 -6, Homerton IV 1996 -6, Homerton III 1984 -6
+  latest: Homerton I 14 → 13, Homerton II 38 → 38, Homerton III 60 → 60
