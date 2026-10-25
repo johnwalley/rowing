@@ -54,10 +54,6 @@
     "@storybook/addon-links": "^10.1.10",
     "@storybook/addon-webpack5-compiler-swc": "^4.0.2",
     "@storybook/react-vite": "^10.1.10",
-    "@types/d3-array": "^3.2.2",
-    "@types/d3-delaunay": "^6.0.4",
-    "@types/d3-scale": "^4.0.9",
-    "@types/d3-shape": "^3.1.7",
     "@types/lodash": "^4.17.21",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
@@ -73,10 +69,6 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "d3-array": "^2.0.0",
-    "d3-delaunay": "^6.0.4",
-    "d3-scale": "^3.0.0",
-    "d3-shape": "^2.0.0",
     "lodash": "^4.17.21",
     "react-rowing-blades": "workspace:^"
   },
