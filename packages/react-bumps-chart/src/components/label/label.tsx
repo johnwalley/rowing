@@ -1,4 +1,4 @@
-import classes from './label.module.css';
+import classes from "./label.module.css";
 
 namespace Label {
   export type Props = {

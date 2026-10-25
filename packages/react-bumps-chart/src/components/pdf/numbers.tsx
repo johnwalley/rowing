@@ -1,7 +1,7 @@
-import { G, Text } from '@react-pdf/renderer';
+import { G, Text } from "@react-pdf/renderer";
 
 export type NumbersProps = {
-  align: 'start' | 'end' | 'middle';
+  align: "start" | "end" | "middle";
   numbers: string[];
   scale: number;
   x: number;

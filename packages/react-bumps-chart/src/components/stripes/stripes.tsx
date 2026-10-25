@@ -1,4 +1,4 @@
-import classes from './stripes.module.css';
+import classes from "./stripes.module.css";
 
 namespace Stripes {
   export type Props = {

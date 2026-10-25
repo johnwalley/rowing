@@ -1,12 +1,12 @@
-import { Document, G, Page, StyleSheet, Svg } from '@react-pdf/renderer';
-import { layoutChart, scale } from '@/utils/layout-chart';
-import { Crews } from './crews';
-import { Division } from './division';
-import { Event } from '../../types';
-import { ExtraText } from './extra-text';
-import { Numbers } from './numbers';
-import { Stripes } from './stripes';
-import { measurePdfText } from './measure-text';
+import { Document, G, Page, StyleSheet, Svg } from "@react-pdf/renderer";
+import { layoutChart, scale } from "@/utils/layout-chart";
+import { Crews } from "./crews";
+import { Division } from "./division";
+import { Event } from "../../types";
+import { ExtraText } from "./extra-text";
+import { Numbers } from "./numbers";
+import { Stripes } from "./stripes";
+import { measurePdfText } from "./measure-text";
 
 const styles = StyleSheet.create({
   page: {},

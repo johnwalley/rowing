@@ -1,5 +1,5 @@
-import { Blade } from 'react-rowing-blades';
-import classes from './blades.module.css';
+import { Blade } from "react-rowing-blades";
+import classes from "./blades.module.css";
 
 namespace Blades {
   export type Props = {
@@ -21,7 +21,7 @@ export const Blades = ({ flip = false, crews, scale, x }: Blades.Props) => {
           >
             <Blade club={crew} size={1.8 * scale} />
           </g>
-        ) : null
+        ) : null,
       )}
     </g>
   );

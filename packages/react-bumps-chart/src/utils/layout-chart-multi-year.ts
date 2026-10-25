@@ -6,19 +6,19 @@ import {
   fontSize,
   getMaxWidth,
   scale,
-} from './layout-chart';
-import { calculateJoin, markJointYearHeadship } from './calculate-join';
-import { Event } from '../types';
-import { calculateDivisions } from './calculate-divisions';
-import { calculateNumbers } from './calculate-numbers';
-import { calculateStripes } from './calculate-stripes';
+} from "./layout-chart";
+import { calculateJoin, markJointYearHeadship } from "./calculate-join";
+import { Event } from "../types";
+import { calculateDivisions } from "./calculate-divisions";
+import { calculateNumbers } from "./calculate-numbers";
+import { calculateStripes } from "./calculate-stripes";
 
 export type YearLabel = {
   label: { label: string; pos: number[] };
   lines: number[][][];
 };
 
-export type JoinLayout = Omit<ReturnType<typeof calculateJoin>, 'height'> & {
+export type JoinLayout = Omit<ReturnType<typeof calculateJoin>, "height"> & {
   x: number;
 };
 
@@ -43,21 +43,21 @@ const gap = 5;
 /** Calculates the position of every part of a chart of consecutive events. */
 export function layoutChartMultiYear(
   data: Event[],
-  { measureText, blades = false }: Omit<LayoutOptions, 'bladeIcons'>
+  { measureText, blades = false }: Omit<LayoutOptions, "bladeIcons">,
 ): MultiYearChartLayout {
   let height = 0;
 
   const widthStartCrews =
     getMaxWidth(
       data[0].crews.map((crew) => crew.start),
-      measureText
+      measureText,
     ) +
     2 * gap;
 
   const widthEndCrews =
     getMaxWidth(
-      data[data.length - 1].crews.map((crew) => crew.end ?? ''),
-      measureText
+      data[data.length - 1].crews.map((crew) => crew.end ?? ""),
+      measureText,
     ) +
     2 * gap;
 
@@ -90,18 +90,18 @@ export function layoutChartMultiYear(
       event2 = data[eventNum + 1];
     }
 
-    const p = event.year.split(' ');
+    const p = event.year.split(" ");
     let p2 = [p[0]];
 
     if (p.length > 1) {
-      p2.push(p.slice(1).join(' '));
+      p2.push(p.slice(1).join(" "));
     }
 
     if (skipFirst) {
       p2 = p2.slice(1);
       skipFirst = false;
     } else if (eventNum < data.length - 1) {
-      const nYear = event2!.year.split(' ')[0];
+      const nYear = event2!.year.split(" ")[0];
 
       if (nYear === p[0]) {
         skipFirst = true;
@@ -165,8 +165,8 @@ export function layoutChartMultiYear(
             : eventNum === data.length - 1
               ? gap + widthEndCrews + widthEndNumbers
               : 0),
-        sep
-      )
+        sep,
+      ),
     );
 
     if (eventNum < data.length - 1) {
@@ -175,7 +175,7 @@ export function layoutChartMultiYear(
         event2!,
         top,
         scale,
-        sep
+        sep,
       );
 
       if (skipFirst) {
@@ -203,7 +203,7 @@ export function layoutChartMultiYear(
       scale,
       0,
       0,
-      blades
+      blades,
     );
 
     if (h > height) {

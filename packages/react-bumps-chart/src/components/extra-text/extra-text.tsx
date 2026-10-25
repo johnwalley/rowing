@@ -1,4 +1,4 @@
-import classes from './extra-text.module.css';
+import classes from "./extra-text.module.css";
 
 namespace ExtraText {
   export type Props = {

@@ -4,9 +4,9 @@ import {
   useLayoutEffect,
   useMemo,
   useState,
-} from 'react';
-import getStringWidth, { clearStringWidthCache } from './get-string-width';
-import { MeasureText, fontSize } from './layout-chart';
+} from "react";
+import getStringWidth, { clearStringWidthCache } from "./get-string-width";
+import { MeasureText, fontSize } from "./layout-chart";
 
 // Helvetica's advance widths in 1/1000 em, which Arial and Liberation Sans
 // share, for printable ASCII and typographic quotes. Grouped by width;
@@ -17,28 +17,28 @@ const ADVANCE = new Map<string, number>(
   (
     [
       [191, "'"],
-      [222, 'ijl‘’'],
-      [260, '|'],
-      [278, ' !,./:;I[\\]ft'],
-      [333, '()-`r“”'],
-      [334, '{}'],
+      [222, "ijl‘’"],
+      [260, "|"],
+      [278, " !,./:;I[\\]ft"],
+      [333, "()-`r“”"],
+      [334, "{}"],
       [355, '"'],
-      [389, '*'],
-      [469, '^'],
-      [500, 'Jcksvxyz'],
-      [584, '+<=>~'],
-      [611, 'FTZ'],
-      [667, '&ABEKPSVXY'],
-      [722, 'CDHNRUw'],
-      [778, 'GOQ'],
-      [833, 'Mm'],
-      [889, '%'],
-      [944, 'W'],
-      [1015, '@'],
+      [389, "*"],
+      [469, "^"],
+      [500, "Jcksvxyz"],
+      [584, "+<=>~"],
+      [611, "FTZ"],
+      [667, "&ABEKPSVXY"],
+      [722, "CDHNRUw"],
+      [778, "GOQ"],
+      [833, "Mm"],
+      [889, "%"],
+      [944, "W"],
+      [1015, "@"],
     ] as const
   ).flatMap(([width, characters]) =>
-    [...characters].map((character) => [character, width] as const)
-  )
+    [...characters].map((character) => [character, width] as const),
+  ),
 );
 
 /**
@@ -60,17 +60,17 @@ export const estimateTextWidth: MeasureText = (text) => {
 };
 
 const useIsomorphicLayoutEffect =
-  typeof window === 'undefined' ? useEffect : useLayoutEffect;
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 type ChartFont = Pick<
   CSSStyleDeclaration,
-  | 'fontFamily'
-  | 'fontKerning'
-  | 'fontStretch'
-  | 'fontStyle'
-  | 'fontVariationSettings'
-  | 'fontWeight'
-  | 'letterSpacing'
+  | "fontFamily"
+  | "fontKerning"
+  | "fontStretch"
+  | "fontStyle"
+  | "fontVariationSettings"
+  | "fontWeight"
+  | "letterSpacing"
 >;
 
 /**
@@ -81,7 +81,7 @@ type ChartFont = Pick<
  * when the stylesheet isn't loaded. Null if the chart has no text to read.
  */
 function chartFont(svg: SVGSVGElement | null): ChartFont | null {
-  const text = svg?.querySelector('text');
+  const text = svg?.querySelector("text");
 
   if (!text) return null;
 
@@ -107,7 +107,7 @@ function chartFont(svg: SVGSVGElement | null): ChartFont | null {
  */
 export function useMeasureText(
   svg: RefObject<SVGSVGElement | null>,
-  measureText?: MeasureText
+  measureText?: MeasureText,
 ): MeasureText {
   // Null until mounted. A new object each time a web font loads, so layouts
   // depending on the measurer recalculate
@@ -126,9 +126,9 @@ export function useMeasureText(
     };
 
     read();
-    fonts?.addEventListener('loadingdone', onLoadingDone);
+    fonts?.addEventListener("loadingdone", onLoadingDone);
 
-    return () => fonts?.removeEventListener('loadingdone', onLoadingDone);
+    return () => fonts?.removeEventListener("loadingdone", onLoadingDone);
   }, [svg, measureText]);
 
   return useMemo<MeasureText>(() => {

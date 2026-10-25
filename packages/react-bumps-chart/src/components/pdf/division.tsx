@@ -1,4 +1,4 @@
-import { Circle, G, Polyline, Rect } from '@react-pdf/renderer';
+import { Circle, G, Polyline, Rect } from "@react-pdf/renderer";
 
 export type DivisionProps = {
   lines: { blades: boolean; highlight: boolean; points: number[][] }[];
@@ -22,7 +22,7 @@ export const Division = ({
       {lines.map((line, index) => (
         <Polyline
           key={index}
-          points={line.points.map((point) => point.join(',')).join(' ')}
+          points={line.points.map((point) => point.join(",")).join(" ")}
           fill="none"
           stroke="grey"
           strokeWidth="1"
@@ -31,7 +31,7 @@ export const Division = ({
       {divisionLines.map((line, index) => (
         <Polyline
           key={index}
-          points={line.map((point) => point.join(',')).join(' ')}
+          points={line.map((point) => point.join(",")).join(" ")}
           fill="none"
           stroke="grey"
           strokeWidth="1"
@@ -40,7 +40,7 @@ export const Division = ({
       {skipped.map((line, index) => (
         <Polyline
           key={index}
-          points={line.map((point) => point.join(',')).join(' ')}
+          points={line.map((point) => point.join(",")).join(" ")}
           fill="none"
           stroke="lightgrey"
           strokeWidth="1"
