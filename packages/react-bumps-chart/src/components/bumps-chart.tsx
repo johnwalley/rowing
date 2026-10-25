@@ -5,6 +5,7 @@ import { Crews } from "./crews/crews";
 import { Division } from "./division/division";
 import { Event } from "../types";
 import { ExtraText } from "./extra-text/extra-text";
+import { Heads } from "./heads/heads";
 import { Numbers } from "./numbers/numbers";
 import { Stripes } from "./stripes/stripes";
 import classNames from "classnames";
@@ -29,6 +30,13 @@ namespace BumpsChart {
      * Defaults to measuring with the DOM, which can only estimate on the server.
      */
     measureText?: MeasureText;
+    /**
+     * How far through the racing to draw, in days, from 0 (the start order)
+     * to `data.days`: 1.5 is halfway through the second day. Short of the
+     * end, a dot marks where each crew has got to and the finishing order is
+     * hidden. Animate it for a replay; leave it out for the finished chart.
+     */
+    progress?: number;
   };
 }
 
@@ -38,6 +46,7 @@ export const BumpsChart = ({
   data,
   blades = false,
   measureText: measureTextProp,
+  progress,
 }: BumpsChart.Props) => {
   const ref = useRef<SVGSVGElement>(null);
   const measureText = useMeasureText(ref, measureTextProp);
@@ -48,6 +57,9 @@ export const BumpsChart = ({
   );
 
   const gender = data.gender === "Women" ? "women" : "men";
+
+  const replaying = progress !== undefined && progress < data.days;
+  const drawnTo = replaying ? Math.max(progress, 0) : undefined;
 
   return (
     <svg
@@ -66,12 +78,6 @@ export const BumpsChart = ({
           scale={scale}
           x={layout.startNumbers.x}
         />
-        <Numbers
-          align="end"
-          numbers={layout.endNumbers.numbers}
-          scale={scale}
-          x={layout.endNumbers.x}
-        />
         {layout.startBlades && (
           <Blades
             flip
@@ -81,26 +87,38 @@ export const BumpsChart = ({
             x={layout.startBlades.x}
           />
         )}
-        {layout.endBlades && (
-          <Blades
-            crews={layout.endBlades.clubs}
-            gender={gender}
-            scale={scale}
-            x={layout.endBlades.x}
-          />
-        )}
         <Crews
           align="end"
           crews={layout.startCrews.crews}
           scale={scale}
           x={layout.startCrews.x}
         />
-        <Crews
-          align="start"
-          crews={layout.endCrews.crews}
-          scale={scale}
-          x={layout.endCrews.x}
-        />
+        <g
+          className={classNames(classes.finish, {
+            [classes.pending]: replaying,
+          })}
+        >
+          <Numbers
+            align="end"
+            numbers={layout.endNumbers.numbers}
+            scale={scale}
+            x={layout.endNumbers.x}
+          />
+          {layout.endBlades && (
+            <Blades
+              crews={layout.endBlades.clubs}
+              gender={gender}
+              scale={scale}
+              x={layout.endBlades.x}
+            />
+          )}
+          <Crews
+            align="start"
+            crews={layout.endCrews.crews}
+            scale={scale}
+            x={layout.endCrews.x}
+          />
+        </g>
         <Division
           lines={layout.division.polylines}
           divisionLines={layout.division.divisionLines}
@@ -108,7 +126,16 @@ export const BumpsChart = ({
           skipped={layout.division.skipped}
           rect={layout.division.rect}
           x={layout.division.x}
+          drawnTo={drawnTo === undefined ? undefined : drawnTo * scale}
         />
+        {drawnTo !== undefined && (
+          <Heads
+            tracks={layout.tracks}
+            progress={drawnTo}
+            scale={scale}
+            x={layout.division.x}
+          />
+        )}
         <ExtraText text={layout.extraText.text} x={layout.extraText.x} />
       </g>
     </svg>

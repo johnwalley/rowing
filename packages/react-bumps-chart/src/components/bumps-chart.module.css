@@ -12,3 +12,18 @@ text {
   font-family: var(--react-bumps-chart-font-family, Arial);
   font-weight: 400;
 }
+
+/* The finishing order, hidden partway through a replay */
+.finish {
+  transition: opacity 0.4s ease-out;
+}
+
+.pending {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .finish {
+    transition: none;
+  }
+}

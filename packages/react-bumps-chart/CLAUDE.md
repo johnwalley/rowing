@@ -20,8 +20,8 @@ Tests snapshot the pure `src/utils` layout functions against the event fixtures 
 
 **BumpsChart** - Single event chart (SVG)
 
-- Props: `data: Event`, `blades?: boolean`, `spoons?: boolean`, `measureText?: MeasureText`
-- Renders crew trajectories as polylines showing position changes across racing days
+- Props: `data: Event`, `blades?: boolean`, `spoons?: boolean`, `measureText?: MeasureText`, `progress?: number`
+- Renders crew trajectories as polylines showing position changes across racing days. `progress` (in days) replays the racing: lines are clipped to it (`calculate-tracks.ts` gives each crew's path, for the dot at its head) and the finishing order is hidden until the end
 
 **BumpsChartMultiYear** - Multiple consecutive years (SVG)
 
