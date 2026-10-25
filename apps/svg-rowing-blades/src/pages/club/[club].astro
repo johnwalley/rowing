@@ -3,36 +3,47 @@ import type { GetStaticPaths } from "astro";
 import { Blade } from "react-rowing-blades";
 
 import Layout from "../../layouts/Layout.astro";
-import { allClubs, allNames, type Club } from "../../lib/clubs";
+import { allClubs, allNames, designsOf, type Club } from "../../lib/clubs";
 
 export const getStaticPaths = (() =>
   allClubs.map((club) => ({ params: { club } }))) satisfies GetStaticPaths;
 
 const club = Astro.params.club as Club;
 const name = allNames[club];
+const designs = designsOf(club);
 ---
 
 <Layout title={`SVG Rowing Blades | ${name}`}>
   <div class="flex flex-col items-center">
     <div class="sm:flex">
-      <div class="mb-4 shrink-0 sm:mr-4 sm:mb-0">
-        <Blade
-          club={club}
-          size={100}
-          className="h-32 w-32 border border-gray-300 bg-white text-gray-300"
-        />
+      <div class="mb-4 flex shrink-0 gap-2 sm:mr-4 sm:mb-0">
+        {designs.map(({ gender, label }) => (
+          <div class="flex flex-col items-center">
+            <Blade
+              club={club}
+              gender={gender}
+              size={100}
+              className="h-32 w-32 border border-gray-300 bg-white text-gray-300"
+            />
+            {label && <p class="mt-1 text-sm text-gray-500">{label}</p>}
+          </div>
+        ))}
       </div>
       <div>
         <h4 class="text-lg font-bold">{name}</h4>
         <p class="mt-1">{club}</p>
       </div>
     </div>
-    <a
-      href={`/images/${club}.svg`}
-      download={`${club}.svg`}
-      class="mt-2 rounded-sm bg-pink-500 px-4 py-2 font-bold text-white hover:bg-pink-700"
-    >
-      Download
-    </a>
+    <div class="flex gap-2">
+      {designs.map(({ file, label }) => (
+        <a
+          href={`/images/${file}.svg`}
+          download={`${file}.svg`}
+          class="mt-2 rounded-sm bg-pink-500 px-4 py-2 font-bold text-white hover:bg-pink-700"
+        >
+          {label ? `Download ${label.toLowerCase()}` : "Download"}
+        </a>
+      ))}
+    </div>
   </div>
 </Layout>

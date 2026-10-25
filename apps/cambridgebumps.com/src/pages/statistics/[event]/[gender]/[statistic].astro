@@ -81,7 +81,9 @@ const genderName = getGenderLabel(event, gender);
                     {/* The flex layout lives on an inner div: a flex <td> drops
                         out of table layout and loses its column. */}
                     <div class="flex flex-row items-center gap-2">
-                      {clubCode && <Blade club={clubCode} size={32} />}
+                      {clubCode && (
+                        <Blade club={clubCode} gender={gender} size={32} />
+                      )}
                       <ClubName event={event} name={row.club} />
                     </div>
                   </td>

@@ -47,6 +47,8 @@ export const BumpsChart = ({
     [data, measureText, blades],
   );
 
+  const gender = data.gender === "Women" ? "women" : "men";
+
   return (
     <svg
       ref={ref}
@@ -74,6 +76,7 @@ export const BumpsChart = ({
           <Blades
             flip
             crews={layout.startBlades.clubs}
+            gender={gender}
             scale={scale}
             x={layout.startBlades.x}
           />
@@ -81,6 +84,7 @@ export const BumpsChart = ({
         {layout.endBlades && (
           <Blades
             crews={layout.endBlades.clubs}
+            gender={gender}
             scale={scale}
             x={layout.endBlades.x}
           />
