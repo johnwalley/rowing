@@ -852,5 +852,8 @@ abbreviations.international = {
   USA: "United States of America",
 };
 
-export { clubs, names, shortNames, shortShortNames, abbreviations };
+// The clubs whose men's and women's blades differ: Blade draws each from its gender prop.
+const genderedClubs: readonly ClubCode[] = ["wro"];
+
+export { clubs, genderedClubs, names, shortNames, shortShortNames, abbreviations };
 export type { Category, ClubCode, UKClub, CambridgeClub, OxfordClub, InternationalClub };
