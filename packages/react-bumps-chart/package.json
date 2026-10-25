@@ -8,10 +8,12 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "rowing-source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
     "./pdf": {
+      "rowing-source": "./src/pdf.ts",
       "types": "./dist/pdf.d.ts",
       "import": "./dist/pdf.js"
     },

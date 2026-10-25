@@ -1801,15 +1801,6 @@ const pol = (
   />
 );
 
-const ptr = (
-  <g transform="rotate(-4) translate(400,20)">
-    <path
-      d="M 0,0 l 0,300 "
-      style={{ stroke: "#ffffff", strokeWidth: 30, fill: "none" }}
-    />
-  </g>
-);
-
 const qcc = (
   <g transform="rotate(-4) translate(400,20)">
     <path

@@ -5,7 +5,6 @@ import { measureChartText } from "@/lib/measure-text";
 import { yearOf } from "@/lib/utils";
 
 import classes from "./bumps-chart.module.css";
-import "react-bumps-chart/dist/index.css";
 
 // A stable identity, so the memo below doesn't hand the chart a fresh array on
 // every render while the results are still loading.

@@ -17,12 +17,9 @@ Run each dev server in the background and read its ready line for the URL: when 
 | The chart in Storybook | `pnpm --filter react-bumps-chart storybook` | http://localhost:6006 |
 | The blades in Storybook | `pnpm --filter react-rowing-blades storybook` | http://localhost:6006 |
 
-## The libraries come from `dist/`
+## Where the libraries come from
 
-The bumps site, the editor and the SVG blades site read blades and the chart from their `dist/`, so they show a library change only after it's rebuilt:
-
-- **Before the first run**, or after pulling library changes: `pnpm --filter react-bumps-chart... build`. It builds blades, then the chart.
-- **While changing the chart**: run `pnpm --filter react-bumps-chart exec vite build --watch` in the background beside the site or the editor, and reload the page after each rebuild.
+The bumps site and the editor compile blades' and the chart's source (the `rowing-source` condition), so they need no build first and reload on a library change. The SVG blades site reads blades from its `dist/`: build it first with `pnpm --filter react-rowing-blades build`, and again after changing blades.
 
 The tools need no build. The site and the editor compile their TypeScript source, and both reload on a TG file change.
 

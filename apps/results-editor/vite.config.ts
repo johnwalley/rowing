@@ -1,6 +1,6 @@
 import { writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { defineConfig, type Plugin } from "vite";
+import { defaultClientConditions, defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
@@ -61,4 +61,6 @@ function saveTgFiles(): Plugin {
 
 export default defineConfig({
   plugins: [tailwindcss(), react(), saveTgFiles()],
+  // Resolves the chart (and its blades) to their src/, so they need no build
+  resolve: { conditions: [...defaultClientConditions, "rowing-source"] },
 });

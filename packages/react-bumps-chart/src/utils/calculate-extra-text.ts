@@ -1,4 +1,4 @@
-import { range } from 'lodash';
+import range from 'lodash/range.js';
 import { Event } from '../types';
 
 export function calculateExtraText(event: Event, scale: number) {

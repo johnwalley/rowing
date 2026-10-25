@@ -40,7 +40,7 @@ CI=true pnpm test
 step "The chart's exports"
 pnpm --filter react-bumps-chart check-exports
 
-# The site's types for the libraries come from their dist/, so these run after
+# The SVG blades site's types for blades come from its dist/, so these run after
 # the build.
 step "The bumps site's lint"
 pnpm --filter cambridgebumps.com lint

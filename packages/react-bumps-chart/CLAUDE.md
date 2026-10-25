@@ -57,7 +57,7 @@ stories/                # Storybook stories with test data
 
 - **Namespace pattern for Props**: Components use TypeScript namespaces (e.g., `BumpsChart.Props`)
 - **CSS Modules**: Component-scoped styling with `.module.css` files
-- **Path aliases**: `@/components` and `@/utils` configured in Vite/TypeScript
+- **Imports in `src/`**: the bumps site and the results editor compile `src/` with their own Vite and TypeScript config, through the `rowing-source` export condition (see the root `CLAUDE.md`). So `src/` uses relative imports (the `@/` aliases are for `test/`), and imports a CommonJS package by its default export (`import range from 'lodash/range.js'`), which Node can load when the site renders on the server
 - **Shared layout**: SVG and PDF components only render. All positions come from `layoutChart` / `layoutChartMultiYear`, which take a `measureText` function: `useMeasureText()` for SVG (the `measureText` prop if given, on the server and in the browser, with chart text unkerned to match; otherwise estimates on the server, then the DOM after mount in the font the chart's text is drawn in, re-measured when fonts load) and `measurePdfText` (Helvetica metrics) for PDF. Change layout there, not in components
 - **Memoization**: `get-string-width.ts` caches DOM measurements (cleared when web fonts load), `useMemo` for layouts
 - **Coordinate system**: Canvas-based positioning with scale factor (default: 16)
@@ -70,7 +70,8 @@ The `Event` interface represents a racing event with properties like `set` (even
 
 - **Vite** with SWC compiler, outputting ES modules only
 - **TypeScript** strict mode enabled
-- **Two entries** (`index`, `pdf`) mapped in package.json `exports`; CSS is emitted at `dist/index.css`, which consumers import directly
+- **Two entries** (`index`, `pdf`) mapped in package.json `exports`; CSS is emitted at `dist/index.css`, which npm users import directly; the site and the editor compile `src/`, where each component imports its own CSS
+- **Blades** come from their `src/` through the `rowing-source` condition (in `vite.config.ts` and `tsconfig.json`), so the build, the tests and Storybook need no blades build, and the build bundles them
 - **External dependencies**: React/React-DOM and `@react-pdf/renderer` not bundled. `@react-pdf/renderer` is an optional peer dependency, so the main entry must never import it
 - Declarations generated via `vite-plugin-dts`
 

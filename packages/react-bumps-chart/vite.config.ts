@@ -1,4 +1,8 @@
-import { defineConfig } from "vite";
+import {
+  defaultClientConditions,
+  defaultServerConditions,
+  defineConfig,
+} from "vite";
 import dts from "vite-plugin-dts";
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "path";
@@ -6,10 +10,17 @@ import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
+    // Blades' src/, through its `rowing-source` export condition, so the
+    // tests, Storybook and the build need no blades build first
+    conditions: [...defaultClientConditions, "rowing-source"],
     alias: {
       "@/components": resolve(__dirname, "./src/components"),
       "@/utils": resolve(__dirname, "./src/utils"),
     },
+  },
+  // The tests run in the server environment
+  ssr: {
+    resolve: { conditions: [...defaultServerConditions, "rowing-source"] },
   },
   build: {
     lib: {

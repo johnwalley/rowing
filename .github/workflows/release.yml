@@ -73,8 +73,7 @@ jobs:
         with:
           node-version-file: .nvmrc
       - run: pnpm install --frozen-lockfile
-      # The chart's prepublishOnly rebuilds it, but blades has none, and the
-      # chart's build needs blades' dist/.
+      # The chart's prepublishOnly rebuilds it, but blades has none.
       - run: pnpm --filter react-rowing-blades --filter react-bumps-chart build
       # Runs `changeset publish`, which calls `pnpm publish`: pnpm swaps
       # `workspace:^` for the real range, which a plain `npm publish` wouldn't.

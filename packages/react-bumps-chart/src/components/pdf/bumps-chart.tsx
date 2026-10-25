@@ -1,5 +1,5 @@
 import { Document, G, Page, StyleSheet, Svg } from '@react-pdf/renderer';
-import { layoutChart, scale } from '@/utils/layout-chart';
+import { layoutChart, scale } from '../../utils/layout-chart';
 import { Crews } from './crews';
 import { Division } from './division';
 import { Event } from '../../types';

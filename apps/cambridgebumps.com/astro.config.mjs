@@ -27,6 +27,25 @@ const BASE_URL =
 const GOOGLE_ANALYTICS_TAG =
   pick("PUBLIC_GOOGLE_ANALYTICS_TAG", "NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG") ?? "";
 
+// Resolves blades and the chart to their `src/` through the `rowing-source`
+// export condition, so the site needs neither built. Added to every Vite
+// environment (client, ssr, and Astro's own `prerender` and `astro`), after
+// Astro has filled in each one's default conditions.
+const workspaceSource = () => ({
+  name: "workspace-source",
+  /**
+   * @param {string} _name
+   * @param {{ resolve?: { conditions?: string[] } }} config
+   */
+  configEnvironment(_name, config) {
+    config.resolve ??= {};
+    config.resolve.conditions = [
+      ...(config.resolve.conditions ?? []),
+      "rowing-source",
+    ];
+  },
+});
+
 // https://astro.build/config
 export default defineConfig({
   site: BASE_URL,
@@ -47,7 +66,7 @@ export default defineConfig({
   prefetch: { prefetchAll: true, defaultStrategy: "hover" },
   integrations: [react(), mdx()],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), workspaceSource()],
     // The workspace catalog already gives every package one React; this
     // keeps a second copy out of the bundle if that ever slips.
     resolve: { dedupe: ["react", "react-dom"] },
