@@ -1,4 +1,11 @@
-import { useEffect, useRef, type KeyboardEvent } from "react";
+import { navigate } from "astro:transitions/client";
+import {
+  Fragment,
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent,
+} from "react";
 
 export type YearPickerItem = {
   href: string;
@@ -200,23 +207,120 @@ export function YearPicker({
           onKeyDown={handleKeyDown}
           className="year-picker-list"
         >
-          {items.map((item, i) => (
-            <li key={item.href}>
-              <a
-                ref={i === tabStop ? selectedRef : null}
-                href={item.href}
-                className="year-tab"
-                tabIndex={i === tabStop ? 0 : -1}
-                aria-current={i === focusElement ? "page" : undefined}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {items.map((item, i) => {
+            const missing = i > 0 ? missingYears(items[i - 1], item) : null;
+
+            return (
+              <Fragment key={item.href}>
+                {missing && (
+                  <li className="year-picker-gap">
+                    <span aria-hidden="true" title={missing} />
+                    <span className="sr-only">{missing}</span>
+                  </li>
+                )}
+                <li>
+                  <a
+                    ref={i === tabStop ? selectedRef : null}
+                    href={item.href}
+                    className="year-tab"
+                    tabIndex={i === tabStop ? 0 : -1}
+                    aria-current={i === focusElement ? "page" : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              </Fragment>
+            );
+          })}
         </ul>
       </div>
       <ScrollButton direction="right" onClick={() => page(1)} />
+      <YearSelect items={items} selected={focusElement} />
     </nav>
+  );
+}
+
+// The years between two neighbours in the strip that have no results, as
+// "No results for 1915–1918", or null when they're consecutive. The results
+// say only that a year is missing, not why — a war, COVID, a river in flood or
+// a gap in the records — so the marker says no more than that.
+function missingYears(previous: YearPickerItem, next: YearPickerItem) {
+  const first = Number(previous.label) + 1;
+  const last = Number(next.label) - 1;
+
+  if (last < first) return null;
+
+  return `No results for ${first === last ? first : `${first}–${last}`}`;
+}
+
+// Reaching 1900 along the strip from today takes dozens of clicks, and a phone
+// has no scrollbar to drag, so a native <select> jumps straight to a year:
+// phones show it as their own picker wheel.
+//
+// A closed <select> changes its value on every arrow key or typed digit
+// (Chrome and Firefox on Windows and Linux), and navigating on each would drag
+// a keyboard user through every year on the way. A change made by a key is held
+// until Enter, and dropped if focus leaves first. A change made in the open
+// picker — a click, or Enter in macOS's menu — arrives after the keydown's
+// task, so it navigates at once.
+function YearSelect({
+  items,
+  selected,
+}: {
+  items: YearPickerItem[];
+  selected: number;
+}) {
+  const [pending, setPending] = useState<string | null>(null);
+  const byKey = useRef(false);
+
+  const go = (label: string) => {
+    setPending(null);
+
+    const item = items.find((candidate) => candidate.label === label);
+
+    if (item && item !== items[selected]) navigate(item.href);
+  };
+
+  return (
+    <span className="year-picker-select">
+      <select
+        aria-label="Go to year"
+        value={pending ?? items[selected]?.label ?? ""}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" && pending !== null) {
+            event.preventDefault();
+            go(pending);
+            return;
+          }
+
+          byKey.current = true;
+          setTimeout(() => {
+            byKey.current = false;
+          });
+        }}
+        onChange={(event) => {
+          if (byKey.current) setPending(event.target.value);
+          else go(event.target.value);
+        }}
+        onBlur={() => setPending(null)}
+      >
+        {/* A year with no results yet isn't in the list (see `tabStop`). */}
+        {selected < 0 && <option value="" disabled hidden />}
+        {items.map((item) => (
+          <option key={item.href}>{item.label}</option>
+        ))}
+      </select>
+      <svg
+        viewBox="0 0 15 15"
+        width="1em"
+        height="1em"
+        focusable="false"
+        aria-hidden="true"
+        className="fill-current"
+      >
+        <path d="M3.135 6.158a.5.5 0 0 1 .707-.023L7.5 9.565l3.658-3.43a.5.5 0 0 1 .684.73l-4 3.75a.5.5 0 0 1-.684 0l-4-3.75a.5.5 0 0 1-.023-.707Z" />
+      </svg>
+    </span>
   );
 }
 
