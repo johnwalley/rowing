@@ -100,14 +100,15 @@ export function nearestYear(
   return best;
 }
 
-// Find the result for a given year, tolerating compound year strings. When a
-// year holds more than one race (the early mays/men years), the first is used.
-export function findResultByYear<T extends { year: string | number }>(
-  results: T[],
+// A chart page's path. A year with two races (the early mays/men years) has a
+// page for each: the first at the year's path, the second under it
+// ("/charts/mays/men/1838/2").
+export const chartPath = (
+  event: Set,
+  gender: Gender,
   year: string | number,
-): T | undefined {
-  return results.find((result) => yearOf(result.year) === yearOf(year));
-}
+  race = 1,
+) => `/charts/${event}/${gender}/${year}${race > 1 ? `/${race}` : ""}`;
 
 export function getEventContext(event: Set | string): string {
   switch (event) {

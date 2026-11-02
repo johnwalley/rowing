@@ -2,9 +2,9 @@ import type { APIRoute } from "astro";
 
 import { homeCity, siteConfig } from "@/config/site";
 import { clubs } from "@/data/clubs";
-import { summary } from "@/data/results";
+import { racesIn, summary } from "@/data/results";
 import { statistics } from "@/data/statistic-mapping";
-import { events, genders } from "@/lib/utils";
+import { chartPath, events, genders } from "@/lib/utils";
 
 type Entry = {
   path: string;
@@ -28,14 +28,16 @@ const entries: Entry[] = [
       priority: 0.7,
     })),
 
-  // A chart page per event/gender/year.
+  // A chart page per event/gender/year, or per race in a year with two.
   ...events.flatMap((event) =>
     genders.flatMap((gender) =>
-      summary[event][gender].map((year) => ({
-        path: `/charts/${event}/${gender}/${year}`,
-        changefreq: "yearly" as const,
-        priority: 0.7,
-      })),
+      summary[event][gender].flatMap((year) =>
+        racesIn(event, gender, year).map((_, index) => ({
+          path: chartPath(event, gender, year, index + 1),
+          changefreq: "yearly" as const,
+          priority: 0.7,
+        })),
+      ),
     ),
   ),
 

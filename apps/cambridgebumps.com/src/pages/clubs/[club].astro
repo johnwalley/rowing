@@ -4,6 +4,7 @@ import { Blade, genderedClubs } from "react-rowing-blades";
 
 import ClubPositionChart from "@/components/ClubPositionChart.astro";
 import { homeCity, siteConfig } from "@/config/site";
+import { raceChartPath } from "@/data/results";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import {
   clubsIn,
@@ -67,12 +68,12 @@ const describe = (crew: ClubCrew) =>
   (notes(crew).length > 0 ? ` · ${notes(crew).join(", ")}` : "");
 
 const chartHref = (section: ClubSection, year: string, crew: ClubCrew) =>
-  `/charts/${section.event}/${section.gender}/${yearOf(year)}?club=${encodeURIComponent(crew.club)}`;
+  `${raceChartPath(section.event, section.gender, year)}?club=${encodeURIComponent(crew.club)}`;
 
 // The year-by-year grid: a row for each decade, newest first, and a cell for
 // each year from the club's first race to its last. A cell gives the 1st
-// boat's result; a year with two races (the early Mays) shows the later, as
-// the chart does. Decades the event never raced in are left out.
+// boat's result; a year with two races (the early Mays) shows the later, and
+// links to its chart. Decades the event never raced in are left out.
 type Tone = "up-1" | "up-2" | "up-3" | "down-1" | "down-2" | "down-3";
 type GridCell =
   | {
