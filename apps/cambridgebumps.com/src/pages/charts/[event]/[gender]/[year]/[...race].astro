@@ -5,12 +5,12 @@ import chartFontUrl from "@fontsource-variable/roboto-flex/files/roboto-flex-lat
 
 import { ChartsShell } from "@/components/charts-shell";
 import type { YearFor } from "@/components/events-nav";
-import { results, summary } from "@/data/results";
+import { racesIn, summary } from "@/data/results";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { slimRace } from "@/lib/slim-results";
 import {
+  chartPath,
   events,
-  findResultByYear,
   genders,
   getEventContext,
   getGenderLabel,
@@ -24,7 +24,8 @@ export const getStaticPaths = (() => {
   // Also pre-generate the current year for every event/gender so that upcoming
   // events whose results aren't posted yet render the friendly "We have no
   // results to show for this year" message rather than a 404. (A static build
-  // only serves paths returned here.)
+  // only serves paths returned here.) A year with two races (the early
+  // mays/men years) has a page for each: see `chartPath`.
   const currentYear = String(new Date().getFullYear());
 
   return events.flatMap((event) =>
@@ -34,7 +35,12 @@ export const getStaticPaths = (() => {
         ? years
         : [...years, currentYear];
 
-      return allYears.map((year) => ({ params: { event, gender, year } }));
+      return allYears.flatMap((year) => {
+        const later = racesIn(event, gender, year).slice(1);
+        return [undefined, ...later.map((_, index) => String(index + 2))].map(
+          (race) => ({ params: { event, gender, year, race } }),
+        );
+      });
     }),
   );
 }) satisfies GetStaticPaths;
@@ -42,15 +48,23 @@ export const getStaticPaths = (() => {
 const event = Astro.params.event as Set;
 const gender = Astro.params.gender as Gender;
 const year = Astro.params.year as string;
+const race = Number(Astro.params.race ?? 1);
 
 const years = summary[event][gender];
+const races = racesIn(event, gender, year);
+
+// "May" for "1838 May": what tells a year's two races apart. A year with one
+// race has none.
+const raceLabels =
+  races.length > 1 ? races.map((r) => r.year.slice(year.length + 1)) : [];
+const raceYear = races.length > 1 ? races[race - 1].year : year;
 
 // Years pre-generated without results yet (see `getStaticPaths`) render a
 // friendly message and stay out of the index rather than being thin content.
 // `slimRace` drops the per-crew flags the chart recomputes or reads only for
 // truthiness; the year's results are serialised into the island's props, and
 // Astro escapes every quote in them to `&quot;`, so each byte here costs six.
-const result = findResultByYear(results[event][gender], year);
+const result = races[race - 1];
 const data = result && result.crews.length > 0 ? slimRace(result) : null;
 
 // The "Highlight club" choices: every club racing that year.
@@ -81,9 +95,9 @@ const showCraNotice = event === "town" && year === years[years.length - 1];
 ---
 
 <BaseLayout
-  title={`${eventName} ${year} - ${genderName}`}
-  description={`${eventName} ${year} bumps chart (${genderName}). View race results, daily positions, and bumps for all ${getEventContext(event)} crews.`}
-  canonical={`/charts/${event}/${gender}/${year}`}
+  title={`${eventName} ${raceYear} - ${genderName}`}
+  description={`${eventName} ${raceYear} bumps chart (${genderName}). View race results, daily positions, and bumps for all ${getEventContext(event)} crews.`}
+  canonical={chartPath(event, gender, year, race)}
   noindex={data === null}
 >
   {/*
@@ -107,6 +121,8 @@ const showCraNotice = event === "town" && year === years[years.length - 1];
     event={event}
     gender={gender}
     year={year}
+    race={race}
+    raceLabels={raceLabels}
     years={years}
     yearFor={yearFor}
     clubs={clubs}

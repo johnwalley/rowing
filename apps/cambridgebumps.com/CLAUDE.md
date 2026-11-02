@@ -59,7 +59,7 @@ Variables set in the real environment (Vercel project settings, a shell export) 
 `src/pages` maps directly to URLs:
 
 - `/` — `src/pages/index.astro`
-- `/charts/[event]/[gender]/[year]` — single-year bumps charts
+- `/charts/[event]/[gender]/[year]` — single-year bumps charts. A year with two races (the Mays to 1886) has a page for each: the first at the year, the second at `/charts/mays/men/[year]/2`. Link to a race with `raceChartPath` (`src/data/results.ts`), or `chartPath` (`src/lib/utils.ts`) in an island
 - `/multi-year-charts/[event]/[gender]` — multi-year bumps charts
 - `/statistics/[event]/[gender]` — statistics overview
 - `/statistics/[event]/[gender]/[statistic]` — individual statistics pages

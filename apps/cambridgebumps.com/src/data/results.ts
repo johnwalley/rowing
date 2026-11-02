@@ -2,6 +2,7 @@ import { events as processed } from "bumps-results-tools/results";
 import type { ProcessedEvent } from "bumps-results-tools/types";
 
 import {
+  chartPath,
   events,
   genders,
   type Gender,
@@ -33,6 +34,20 @@ export const results = Object.fromEntries(
 // the canonical key used by URLs and pickers, so collapse to that. See `yearOf`
 // in @/lib/utils.
 const leadYear = (year: string): string => year.split(" ")[0];
+
+/** A year's races, in order: one, or two in the early mays/men years. */
+export const racesIn = (event: Set, gender: Gender, year: string) =>
+  results[event][gender].filter((race) => leadYear(race.year) === year);
+
+/**
+ * The chart page of the race whose year is `year` as the results give it:
+ * "1838 May" is the second race of 1838, at "/charts/mays/men/1838/2".
+ */
+export function raceChartPath(event: Set, gender: Gender, year: string) {
+  const lead = leadYear(year);
+  const race = racesIn(event, gender, lead).findIndex((r) => r.year === year);
+  return chartPath(event, gender, lead, race + 1);
+}
 
 // The per-event/gender summary of available years, derived at build time from
 // the source results above so it can never drift from the actual data. For each

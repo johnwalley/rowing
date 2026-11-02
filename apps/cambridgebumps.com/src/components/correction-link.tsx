@@ -1,10 +1,19 @@
 import { siteConfig } from "@/config/site";
-import { getGenderLabel, set, type Gender, type Set } from "@/lib/utils";
+import {
+  chartPath,
+  getGenderLabel,
+  set,
+  type Gender,
+  type Set,
+} from "@/lib/utils";
 
 type CorrectionLinkProps = {
   event: Set;
   gender: Gender;
   year: string;
+  race: number;
+  /** As the heading gives it: "1838 May" for the second race of 1838. */
+  raceYear: string;
   /** The highlighted club, if any — likely the crew the reader means. */
   club: string | null;
 };
@@ -17,12 +26,14 @@ export function CorrectionLink({
   event,
   gender,
   year,
+  race,
+  raceYear,
   club,
 }: CorrectionLinkProps) {
-  const chart = `${set[event]} ${year} (${getGenderLabel(event, gender)})`;
+  const chart = `${set[event]} ${raceYear} (${getGenderLabel(event, gender)})`;
 
   const body = [
-    `Chart: ${siteConfig.url}/charts/${event}/${gender}/${year}`,
+    `Chart: ${siteConfig.url}${chartPath(event, gender, year, race)}`,
     ...(club ? [`Crew: ${club}`] : []),
     "Day and division:",
     "What actually happened:",

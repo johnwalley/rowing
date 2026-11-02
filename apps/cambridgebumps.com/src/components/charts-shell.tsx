@@ -10,12 +10,25 @@ import { HighlightControls } from "@/components/highlight-controls";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { YearPicker } from "@/components/year-picker";
 import { useChartParams, withParams } from "@/hooks/use-chart-params";
-import { getGenderLabel, set, type Gender, type Set } from "@/lib/utils";
+import {
+  chartPath,
+  getGenderLabel,
+  set,
+  type Gender,
+  type Set,
+} from "@/lib/utils";
 
 type ChartsShellProps = {
   event: Set;
   gender: Gender;
   year: string;
+  /** Which of the year's races this is, from 1. */
+  race: number;
+  /**
+   * What tells the year's races apart ("March", "May"), when it had more than
+   * one (the early mays/men years); otherwise empty.
+   */
+  raceLabels: string[];
   /** Every year this event/gender has results for, oldest first. */
   years: string[];
   /** Where each event/category link lands — see `YearFor`. */
@@ -36,6 +49,8 @@ export function ChartsShell({
   event,
   gender,
   year,
+  race,
+  raceLabels,
   years,
   yearFor,
   clubs,
@@ -47,6 +62,10 @@ export function ChartsShell({
   const club = params.get("club");
   const blades = params.get("blades") === "true";
   const spoons = params.get("spoons") === "true";
+
+  // "1838 May" for the second race of 1838.
+  const raceYear =
+    raceLabels.length > 0 ? `${year} ${raceLabels[race - 1]}` : year;
 
   const focusElement = years.findIndex((candidate) => candidate === year);
 
@@ -161,8 +180,31 @@ export function ChartsShell({
       </div>
       <div className="pb-4">
         <h1 className="scroll-m-20 pt-2 pb-4 text-center text-xl font-semibold tracking-tight lg:text-3xl">
-          {`${set[event]} - ${getGenderLabel(event, gender)} - ${year}`}
+          {`${set[event]} - ${getGenderLabel(event, gender)} - ${raceYear}`}
         </h1>
+        {raceLabels.length > 0 && (
+          <Tabs value={String(race)} className="mb-4 flex justify-center">
+            <TabsList className="h-7 rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)]">
+              {raceLabels.map((label, index) => (
+                <TabsTrigger
+                  key={label}
+                  value={String(index + 1)}
+                  className="h-[1.45rem] rounded-sm px-2 text-sm"
+                  asChild
+                >
+                  <a
+                    href={withParams(
+                      chartPath(event, gender, year, index + 1),
+                      params,
+                    )}
+                  >
+                    {label}
+                  </a>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
+        )}
         {showCraNotice && (
           <p className="pb-2 text-center text-sm">
             Not affiliated with the CRA. For official live results please visit
@@ -191,6 +233,8 @@ export function ChartsShell({
                 event={event}
                 gender={gender}
                 year={year}
+                race={race}
+                raceYear={raceYear}
                 club={club}
               />
             </div>
