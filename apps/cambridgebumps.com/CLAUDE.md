@@ -162,7 +162,9 @@ Charts support URL search parameters:
 - `?spoons=true` - Shows spoons (awarded for being bumped down every day of the event)
 - `?from=<year>&to=<year>` - Multi-year charts only: limits the chart to that span of years (`yearRange` in `src/components/year-range-controls.tsx`)
 
-`src/hooks/use-chart-params.ts` owns them: the shell reads the query string after mount and updates it with `history.pushState`, so toggling a highlight re-renders the chart without a page load. Links that change event/gender/year carry the current query string along (`withParams`).
+`src/hooks/use-chart-params.ts` owns them: the shell reads the query string after mount and updates it with `history.replaceState`, so toggling a highlight re-renders the chart without a page load or a new history entry. Links that change event/gender/year carry the current query string along (`withParams`).
+
+**Safari skips pushed history entries.** Safari's back button and swipe skip an entry added by `history.pushState` more than ten seconds after the last tap, and the page before it too, so one such entry sends Back off the site. On iOS a native `<select>` changes its value from the system picker with no user gesture, so a change handler must not push an entry: view options use `replaceState`, and the year select loads the page fully (`location.assign`) instead of calling the router's `navigate()`. Page loads and `replaceState` are never skipped.
 
 ### SEO
 

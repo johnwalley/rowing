@@ -1,4 +1,3 @@
-import { navigate } from "astro:transitions/client";
 import {
   Fragment,
   useEffect,
@@ -278,7 +277,12 @@ function YearSelect({
 
     const item = items.find((candidate) => candidate.label === label);
 
-    if (item && item !== items[selected]) navigate(item.href);
+    // A full page load rather than the router's swap. iOS changes a select's
+    // value from its own picker, with no user gesture, and Safari's back
+    // button skips an entry the router pushes more than ten seconds after the
+    // last tap, along with the page before it: a slow pick sent Back straight
+    // off the site. Safari never skips an entry made by a page load.
+    if (item && item !== items[selected]) window.location.assign(item.href);
   };
 
   return (
