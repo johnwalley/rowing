@@ -1,20 +1,12 @@
 import { expect, test } from "vitest";
 
-import {
-  clubs,
-  eventsOf,
-  namesOf,
-  unlisted,
-  type City,
-  type EventKey,
-} from "./clubs";
+import { clubs, eventsOf, namesOf, unlisted, type EventKey } from "./clubs";
 import { events as races } from "./results";
+import { eventKeys } from "./sets";
 
 // A name in the results qualifies for a club page once it has raced in this
 // many years, or in an event's latest year.
 const MIN_YEARS = 5;
-
-const EVENTS: EventKey[] = ["eights", "lents", "mays", "torpids", "town"];
 
 const yearOf = (year: string) => parseInt(year, 10);
 
@@ -57,7 +49,7 @@ function namesRacingNow(event: EventKey): Set<string> {
 test("every name that qualifies for a club page has a club", () => {
   const problems: string[] = [];
 
-  for (const event of EVENTS) {
+  for (const event of eventKeys) {
     const now = namesRacingNow(event);
     const owned = new Set(
       clubs
@@ -80,7 +72,7 @@ test("every name that qualifies for a club page has a club", () => {
 
 test("every name in the club list raced", () => {
   const problems: string[] = [];
-  const raced = new Map(EVENTS.map((event) => [event, namesRaced(event)]));
+  const raced = new Map(eventKeys.map((event) => [event, namesRaced(event)]));
 
   for (const club of clubs) {
     for (const name of namesOf(club)) {
@@ -90,7 +82,7 @@ test("every name in the club list raced", () => {
     }
   }
 
-  for (const event of EVENTS) {
+  for (const event of eventKeys) {
     for (const name of unlisted[event] ?? []) {
       if (!raced.get(event)!.has(name)) {
         problems.push(`unlisted in ${event}: "${name}"`);
@@ -104,7 +96,7 @@ test("every name in the club list raced", () => {
 test("a name is only one club's own in an event", () => {
   const problems: string[] = [];
 
-  for (const event of EVENTS) {
+  for (const event of eventKeys) {
     const owners = new Map<string, string[]>();
 
     for (const club of clubs.filter((club) => eventsOf(club).includes(event))) {
@@ -125,7 +117,7 @@ test("a name is only one club's own in an event", () => {
 });
 
 test("no two clubs in a city share a slug", () => {
-  for (const city of ["Cambridge", "Oxford"] as City[]) {
+  for (const city of ["Cambridge", "Oxford"] as const) {
     const slugs = clubs
       .filter((club) => club.city === city)
       .map((club) => club.slug);

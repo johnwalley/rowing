@@ -1,7 +1,8 @@
 import { expect, test } from "vitest";
 
-import { clubOf, type EventKey } from "./clubs";
+import { clubOf } from "./clubs";
 import { events } from "./results";
+import { eventKeys } from "./sets";
 import { getRankings, headOf } from "./stats";
 
 const race = (short: string, gender: string, year: string) =>
@@ -21,7 +22,7 @@ test("a crew that withdrew is never head", () => {
   expect(torpids.crews[headOf(torpids)!].num_name.trim()).toBe("Wadham I");
 });
 
-test.each(["eights", "lents", "mays", "torpids", "town"] as EventKey[])(
+test.each(eventKeys)(
   "%s statistics credit former names to their clubs",
   (event) => {
     for (const gender of ["Men", "Women"]) {

@@ -1,3 +1,5 @@
+import { isEventKey, sets } from "./sets";
+
 // Every TG file in results/tg_format/, each loaded lazily as its own chunk, so
 // the results editor lists every file without bundling them all. Like
 // results.ts, this needs Vite.
@@ -5,14 +7,6 @@ const loaders = import.meta.glob<string>("../results/tg_format/*.txt", {
   query: "?raw",
   import: "default",
 });
-
-const SETS: Record<string, string> = {
-  eights: "Eights",
-  lents: "Lents",
-  mays: "Mays",
-  torpids: "Torpids",
-  town: "Town",
-};
 
 export type ResultFile = {
   id: string;
@@ -26,14 +20,14 @@ export const resultFiles: ResultFile[] = Object.entries(loaders)
   .flatMap(([path, load]) => {
     const m = path.match(/\/([a-z]+)([0-9]{4}(?:\.[0-9]+)?)_(men|women)\.txt$/);
 
-    if (m === null || !(m[1] in SETS)) {
+    if (m === null || !isEventKey(m[1])) {
       return [];
     }
 
     return [
       {
         id: `${m[1]}${m[2]}_${m[3]}`,
-        set: SETS[m[1]],
+        set: sets[m[1]].short,
         gender: m[3] === "men" ? ("Men" as const) : ("Women" as const),
         year: m[2],
         load,
