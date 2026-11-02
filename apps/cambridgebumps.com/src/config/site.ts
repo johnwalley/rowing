@@ -1,4 +1,4 @@
-import { cityEvents, type City } from "@/lib/utils";
+import { eventsIn, type City } from "@/lib/utils";
 
 // `PUBLIC_TITLE` / `PUBLIC_BASE_URL` are injected at build time by
 // `astro.config.mjs` from `.env.<site>` (or the deployment environment), which
@@ -36,12 +36,12 @@ export const cityUrls: Record<City, string> = {
 };
 
 /** The site's own events, in the order they're raced through the year. */
-export const homeEvents = cityEvents[homeCity];
+export const homeEvents = eventsIn(homeCity);
 
 /** Each city's events, the site's own city first. */
 export const eventGroups = [homeCity, awayCity].map((city) => ({
   city,
-  events: cityEvents[city],
+  events: eventsIn(city),
 }));
 
 /** Every event, in the order the site lists them. */

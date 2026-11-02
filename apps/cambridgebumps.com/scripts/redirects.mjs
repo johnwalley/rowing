@@ -8,6 +8,9 @@ import { readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+// A TypeScript module: Astro loads its config, and so this file, through Vite.
+import { eventKeys } from "bumps-results-tools/sets";
+
 // The TG files the site's results are built from. This runs in plain Node, as
 // `astro.config.mjs` loads, so it reads their names rather than the results.
 const tgFormat = join(
@@ -29,14 +32,17 @@ export function getLatestYear(event, gender) {
   return Math.max(...years);
 }
 
-const EVENTS = ["eights", "lents", "mays", "torpids", "town"];
+const EVENTS = eventKeys;
 const GENDERS = ["men", "women"];
 
 // The event the bare `/charts`, `/statistics` and `/multi-year-charts` routes
 // open on: one of the site's own. Cambridge keeps Town, its default all along.
+/** @type {Record<import("bumps-results-tools/sets").City, import("bumps-results-tools/sets").EventKey>} */
+const defaultEvents = { Cambridge: "town", Oxford: "eights" };
+
 /** @param {string} title */
 function defaultEvent(title) {
-  return title === "Oxford" ? "eights" : "town";
+  return defaultEvents[title === "Oxford" ? "Oxford" : "Cambridge"];
 }
 
 /** @param {{ title: string }} site */

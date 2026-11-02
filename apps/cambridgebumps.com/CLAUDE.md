@@ -143,12 +143,15 @@ A single year's results are small, so a chart page passes them straight to its i
 
 ### Utilities
 
+What the site knows about each event (its names, its city, whether colleges or town clubs race in it, and whether its men's category is called "Open") comes from the tools' list of Sets, `bumps-results-tools/sets` (safe for islands). Change an event there, not here: the helpers below, `src/config/site.ts`'s event order and `scripts/redirects.mjs` are all worked out from it.
+
 `src/lib/utils.ts` contains:
 
 - `cn()` - Tailwind class name merger using clsx and tailwind-merge
-- `set` - Mapping of event keys to display names (e.g., `mays` → "May Bumps")
+- `set` / `eventShortNames` - Mapping of event keys to display names (e.g., `mays` → "May Bumps", "Mays")
 - `genderMap` / `getGenderLabel()` - category labels ("Open" for the Cambridge men's events)
-- `events` and `genders` - Typed arrays and types for route parameters
+- `events` and `genders` - Typed arrays and types for route parameters; `eventsIn(city)` is a city's events in raced order
+- `getEventContext()` - who races in an event, for page descriptions ("Cambridge college")
 - `getCode()` - Function to get club codes for blade displays
 
 `src/lib/theme.ts` holds the light/dark logic that `next-themes` used to provide. The class is applied before first paint by an inline script in `BaseLayout.astro`; the storage key (`theme`) and values (`light`/`dark`/`system`) are unchanged, so returning visitors keep their choice.

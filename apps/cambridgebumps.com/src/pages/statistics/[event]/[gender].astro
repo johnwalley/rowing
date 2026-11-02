@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { Blade } from "react-rowing-blades";
+import { sets } from "bumps-results-tools/sets";
 
 import ClubName from "@/components/ClubName.astro";
 import { statisticMapping, statistics } from "@/data/statistic-mapping";
@@ -23,14 +24,14 @@ export const getStaticPaths = (() =>
   )) satisfies GetStaticPaths;
 
 // The colour behind each statistic's leader. Roughly the club's own colours.
-function getColor(club: string, event: string) {
+function getColor(club: string, event: Set) {
   switch (club) {
     case "Oriel":
       return { h: 220, s: 100, l: 19 };
     case "Emmanuel":
       return { h: 0, s: 100, l: 73 };
     case "Jesus":
-      if (event === "eights" || event === "torpids") {
+      if (sets[event].city === "Oxford") {
         return { h: 142, s: 100, l: 30.6 };
       } else {
         return { h: 0, s: 100, l: 27 };
