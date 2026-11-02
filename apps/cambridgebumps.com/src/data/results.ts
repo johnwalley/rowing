@@ -1,4 +1,5 @@
 import { events as processed } from "bumps-results-tools/results";
+import { genderOf, keyOf } from "bumps-results-tools/sets";
 import type { ProcessedEvent } from "bumps-results-tools/types";
 
 import {
@@ -20,9 +21,7 @@ export const results = Object.fromEntries(
       genders.map((gender) => [
         gender,
         processed.filter(
-          (race) =>
-            race.short.toLowerCase() === event &&
-            race.gender.toLowerCase() === gender,
+          (race) => keyOf(race) === event && genderOf(race) === gender,
         ),
       ]),
     ),

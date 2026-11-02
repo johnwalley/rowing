@@ -1,4 +1,4 @@
-import { isEventKey, sets } from "./sets";
+import { parseTgFileName, sets } from "./sets";
 
 // Every TG file in results/tg_format/, each loaded lazily as its own chunk, so
 // the results editor lists every file without bundling them all. Like
@@ -18,18 +18,20 @@ export type ResultFile = {
 
 export const resultFiles: ResultFile[] = Object.entries(loaders)
   .flatMap(([path, load]) => {
-    const m = path.match(/\/([a-z]+)([0-9]{4}(?:\.[0-9]+)?)_(men|women)\.txt$/);
+    const name = parseTgFileName(path);
 
-    if (m === null || !isEventKey(m[1])) {
+    if (name === null) {
       return [];
     }
 
+    const { key, gender, year } = name;
+
     return [
       {
-        id: `${m[1]}${m[2]}_${m[3]}`,
-        set: sets[m[1]].short,
-        gender: m[3] === "men" ? ("Men" as const) : ("Women" as const),
-        year: m[2],
+        id: `${key}${year}_${gender}`,
+        set: sets[key].short,
+        gender: gender === "men" ? ("Men" as const) : ("Women" as const),
+        year,
         load,
       },
     ];

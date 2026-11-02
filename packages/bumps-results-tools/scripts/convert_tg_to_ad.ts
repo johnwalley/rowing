@@ -1,9 +1,11 @@
 import fs from "fs";
 import { processResults, readFile } from "../src/bumps";
 import { roman } from "../src/abbreviations";
+import { parseTgFileName, type EventKey, type Gender } from "../src/sets";
 import { type Event } from "../src/types";
 
-const setMap: Record<string, string> = {
+// What an AD file name calls each Set and category.
+const setMap: Record<EventKey, string> = {
   eights: "e",
   torpids: "t",
   mays: "m",
@@ -11,7 +13,7 @@ const setMap: Record<string, string> = {
   town: "town",
 };
 
-const genderMap: Record<string, string> = {
+const genderMap: Record<Gender, string> = {
   men: "m",
   women: "w",
 };
@@ -72,23 +74,17 @@ let numSkipped = 0;
 
 for (const file of files) {
   // e.g. mays1848.1_men.txt: years with more than one race have a suffix
-  const match = /^([a-z]+)([0-9]+)(\.[0-9]+)?_([a-z]+)\.txt$/.exec(file);
+  const name = parseTgFileName(file);
 
-  if (!match) {
+  if (!name) {
     console.warn(`Skipping ${file}: unrecognised filename`);
     numSkipped++;
     continue;
   }
 
-  const set = setMap[match[1]];
-  const gender = genderMap[match[4]];
-  const year = match[2] + (match[3] ?? "");
-
-  if (!set || !gender) {
-    console.warn(`Skipping ${file}: unknown set/gender`);
-    numSkipped++;
-    continue;
-  }
+  const set = setMap[name.key];
+  const gender = genderMap[name.gender];
+  const year = name.year;
 
   const { event, errors: parseErrors } = await readFile(tgDir + file);
 

@@ -82,3 +82,50 @@ export const setsIn = (city: City, kind?: SetKind): EventKey[] =>
       sets[key].city === city &&
       (kind === undefined || sets[key].kind === kind),
   );
+
+/** A category as the bumps site's URLs and the TG file names name it. */
+export type Gender = "men" | "women";
+
+export const genders: Gender[] = ["men", "women"];
+
+export const isGender = (x: string): x is Gender =>
+  (genders as string[]).includes(x);
+
+const keyByShort = Object.fromEntries(
+  eventKeys.map((key) => [sets[key].short, key]),
+) as Record<SetShort, EventKey>;
+
+/** The key of an Event's Set: "mays" for an Event whose `Short` is "Mays". */
+export const keyOf = (event: { short: SetShort }): EventKey =>
+  keyByShort[event.short];
+
+/** An Event's category: "men" for an Event whose `Gender` is "Men". */
+export const genderOf = (event: { gender: "Men" | "Women" }): Gender =>
+  event.gender === "Men" ? "men" : "women";
+
+/** What a TG file's name says about its Event. */
+export type TgFileName = {
+  key: EventKey;
+  gender: Gender;
+  /**
+   * As the name gives it: "1848", or "1848.1" for the first of a year's
+   * races, in a year with more than one.
+   */
+  year: string;
+};
+
+/**
+ * Reads a TG file's name (`mays2025_men.txt`, or `mays1848.1_men.txt` in a
+ * year with more than one race); null for a name that isn't a TG file's. A
+ * path is fine: only its last part is read.
+ */
+export function parseTgFileName(path: string): TgFileName | null {
+  const name = path.slice(path.lastIndexOf("/") + 1);
+  const match = /^([a-z]+)(\d{4}(?:\.\d+)?)_([a-z]+)\.txt$/.exec(name);
+
+  if (!match) return null;
+
+  const [, key, year, gender] = match;
+
+  return isEventKey(key) && isGender(gender) ? { key, gender, year } : null;
+}

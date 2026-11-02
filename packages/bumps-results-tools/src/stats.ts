@@ -1,12 +1,13 @@
-import { clubOf, type EventKey } from "./clubs";
+import { clubOf } from "./clubs";
 import { crewResults } from "./crews";
+import { keyOf } from "./sets";
 import type { ProcessedEvent } from "./types";
 
 export { headOf } from "./crews";
 
 /** The name a crew's results count under: its club's, if it has one. */
 const creditedTo = (event: ProcessedEvent, name: string) =>
-  clubOf(event.short.toLowerCase() as EventKey, name)?.short ?? name;
+  clubOf(keyOf(event), name)?.short ?? name;
 
 type HeadDays = {
   days: number;

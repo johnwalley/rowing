@@ -3,14 +3,17 @@ import { twMerge } from "tailwind-merge";
 import { abbreviations, clubs, shortShortNames } from "react-rowing-blades";
 import {
   eventKeys,
+  genders,
   isEventKey,
+  isGender,
   sets,
   setsIn,
   type City,
   type EventKey,
+  type Gender,
 } from "bumps-results-tools/sets";
 
-export type { City, EventKey };
+export { genders, isGender, type City, type EventKey, type Gender };
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -48,13 +51,7 @@ export const events = eventKeys;
 /** The events a city races, in the order they're raced through the year. */
 export const eventsIn = (city: City) => setsIn(city);
 
-export const genders = ["men", "women"] as const;
-export type Gender = (typeof genders)[number];
-
 export const isEvent = isEventKey;
-
-export const isGender = (x: string): x is Gender =>
-  (genders as readonly string[]).includes(x);
 
 // Shape of the per-event results summary JSON (lists of years by category).
 // Each event has `all`, `split`, `men` and `women` keys, all arrays of year strings.

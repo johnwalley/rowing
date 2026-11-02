@@ -2,7 +2,7 @@ import { expect, test } from "vitest";
 
 import { clubOf } from "./clubs";
 import { events } from "./results";
-import { eventKeys } from "./sets";
+import { eventKeys, genderOf, genders, keyOf } from "./sets";
 import { getRankings, headOf } from "./stats";
 
 const race = (short: string, gender: string, year: string) =>
@@ -28,8 +28,7 @@ test.each(eventKeys)(
     for (const gender of ["Men", "Women"]) {
       const rankings = getRankings(
         events.filter(
-          (race) =>
-            race.short.toLowerCase() === event && race.gender === gender,
+          (race) => keyOf(race) === event && race.gender === gender,
         ),
       );
 
@@ -63,16 +62,10 @@ function summarise(rankings: ReturnType<typeof getRankings>): string {
 }
 
 test.each(
-  ["eights", "lents", "mays", "torpids", "town"].flatMap((event) =>
-    ["men", "women"].map((gender) => [event, gender]),
-  ),
+  eventKeys.flatMap((event) => genders.map((gender) => [event, gender])),
 )("%s %s statistics tables", async (event, gender) => {
   const rankings = getRankings(
-    events.filter(
-      (race) =>
-        race.short.toLowerCase() === event &&
-        race.gender.toLowerCase() === gender,
-    ),
+    events.filter((race) => keyOf(race) === event && genderOf(race) === gender),
   );
 
   await expect(summarise(rankings)).toMatchFileSnapshot(
