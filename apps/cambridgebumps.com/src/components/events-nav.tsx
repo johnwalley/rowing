@@ -1,15 +1,21 @@
 import { eventOrder } from "@/config/site";
-import { cn, eventShortNames, set, type Gender, type Set } from "@/lib/utils";
+import {
+  cn,
+  eventShortNames,
+  set,
+  type Gender,
+  type EventKey,
+} from "@/lib/utils";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { withParams } from "@/hooks/use-chart-params";
 
 // The year each event/category's chart link should land on, chosen by the page
 // so a link never points at a year that event/category didn't race.
-export type YearFor = Record<Set, Record<Gender, string>>;
+export type YearFor = Record<EventKey, Record<Gender, string>>;
 
 type EventsNavProps = {
-  event: Set;
+  event: EventKey;
   gender: Gender;
   yearFor: YearFor;
   params: URLSearchParams;

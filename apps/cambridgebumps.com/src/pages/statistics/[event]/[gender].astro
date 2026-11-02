@@ -15,7 +15,7 @@ import {
   getGenderLabel,
   set,
   type Gender,
-  type Set,
+  type EventKey,
 } from "@/lib/utils";
 
 export const getStaticPaths = (() =>
@@ -24,7 +24,7 @@ export const getStaticPaths = (() =>
   )) satisfies GetStaticPaths;
 
 // The colour behind each statistic's leader. Roughly the club's own colours.
-function getColor(club: string, event: Set) {
+function getColor(club: string, event: EventKey) {
   switch (club) {
     case "Oriel":
       return { h: 220, s: 100, l: 19 };
@@ -85,7 +85,7 @@ function textClassFor(color: { h: number; s: number; l: number }) {
   return white >= 4.5 || white >= dark ? "text-white" : "text-neutral-950";
 }
 
-const event = Astro.params.event as Set;
+const event = Astro.params.event as EventKey;
 const gender = Astro.params.gender as Gender;
 
 const eventName = set[event];

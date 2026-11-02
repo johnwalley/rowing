@@ -1,7 +1,7 @@
 import { clubOf } from "bumps-results-tools/clubs";
 
 import { cityUrls, homeCity } from "@/config/site";
-import type { Set } from "@/lib/utils";
+import type { EventKey } from "@/lib/utils";
 
 export {
   clubs,
@@ -16,7 +16,7 @@ export {
  * path on this site, or a full URL on the other city's. Undefined for a name
  * with no page, or a joint crew, which belongs to more than one.
  */
-export function clubPageUrl(event: Set, name: string): string | undefined {
+export function clubPageUrl(event: EventKey, name: string): string | undefined {
   const club = clubOf(event, name);
   if (!club) return undefined;
 

@@ -10,7 +10,7 @@ import {
   type EventKey,
 } from "bumps-results-tools/sets";
 
-export type { City };
+export type { City, EventKey };
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -19,12 +19,12 @@ export function cn(...inputs: ClassValue[]) {
 // Each event's name, from the tools' list of Sets.
 export const set = Object.fromEntries(
   eventKeys.map((event) => [event, sets[event].name]),
-) as Record<Set, string>;
+) as Record<EventKey, string>;
 
 // Short labels for the event tabs and menus.
 export const eventShortNames = Object.fromEntries(
   eventKeys.map((event) => [event, sets[event].short]),
-) as Record<Set, string>;
+) as Record<EventKey, string>;
 
 export const genderMap: Record<Gender, string> = {
   men: "Men",
@@ -36,7 +36,7 @@ export const genderMap: Record<Gender, string> = {
 // `menLabel`); everything else (Oxford men's, all women's) keeps its genderMap
 // label. Note this is a display-only concern — the URL slug stays "men".
 export function getGenderLabel(
-  event: Set | string,
+  event: EventKey | string,
   gender: Gender | string,
 ): string {
   if (gender === "men" && isEventKey(event)) return sets[event].menLabel;
@@ -44,7 +44,6 @@ export function getGenderLabel(
 }
 
 export const events = eventKeys;
-export type Set = EventKey;
 
 /** The events a city races, in the order they're raced through the year. */
 export const eventsIn = (city: City) => setsIn(city);
@@ -60,7 +59,7 @@ export const isGender = (x: string): x is Gender =>
 // Shape of the per-event results summary JSON (lists of years by category).
 // Each event has `all`, `split`, `men` and `women` keys, all arrays of year strings.
 export type ResultsSummary = Record<
-  Set,
+  EventKey,
   Record<Gender | "all" | "split", string[]>
 >;
 
@@ -98,14 +97,14 @@ export function nearestYear(
 // page for each: the first at the year's path, the second under it
 // ("/charts/mays/men/1838/2").
 export const chartPath = (
-  event: Set,
+  event: EventKey,
   gender: Gender,
   year: string | number,
   race = 1,
 ) => `/charts/${event}/${gender}/${year}${race > 1 ? `/${race}` : ""}`;
 
 // Who races in an event, for page descriptions: "Cambridge college" crews.
-export function getEventContext(event: Set): string {
+export function getEventContext(event: EventKey): string {
   const { city, kind } = sets[event];
   return kind === "town" ? "town rowing club" : `${city} college`;
 }
@@ -124,7 +123,7 @@ const collegeBlades: Record<
 // Union of all valid club codes accepted by react-rowing-blades' <Blade>.
 export type ClubCode = (typeof clubs)[keyof typeof clubs][number];
 
-export function getCode(club: string, set: Set): ClubCode | undefined {
+export function getCode(club: string, set: EventKey): ClubCode | undefined {
   // A college event's blades are its city's colleges'; a town event's are
   // the UK clubs', whose abbreviations are their own names.
   const { city, kind } = sets[set];

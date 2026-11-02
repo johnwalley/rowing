@@ -7,7 +7,7 @@ import {
   genders,
   type Gender,
   type ResultsSummary,
-  type Set,
+  type EventKey,
 } from "@/lib/utils";
 
 // Every race, processed from the tools' TG files when the site builds, by
@@ -27,7 +27,7 @@ export const results = Object.fromEntries(
       ]),
     ),
   ]),
-) as Record<Set, Record<Gender, ProcessedEvent[]>>;
+) as Record<EventKey, Record<Gender, ProcessedEvent[]>>;
 
 // Some historical entries store compound year strings such as
 // "1827 February March" (two races in one season). The leading 4-digit year is
@@ -36,14 +36,14 @@ export const results = Object.fromEntries(
 const leadYear = (year: string): string => year.split(" ")[0];
 
 /** A year's races, in order: one, or two in the early mays/men years. */
-export const racesIn = (event: Set, gender: Gender, year: string) =>
+export const racesIn = (event: EventKey, gender: Gender, year: string) =>
   results[event][gender].filter((race) => leadYear(race.year) === year);
 
 /**
  * The chart page of the race whose year is `year` as the results give it:
  * "1838 May" is the second race of 1838, at "/charts/mays/men/1838/2".
  */
-export function raceChartPath(event: Set, gender: Gender, year: string) {
+export function raceChartPath(event: EventKey, gender: Gender, year: string) {
   const lead = leadYear(year);
   const race = racesIn(event, gender, lead).findIndex((r) => r.year === year);
   return chartPath(event, gender, lead, race + 1);
@@ -79,4 +79,3 @@ export const summary: ResultsSummary = Object.fromEntries(
     ];
   }),
 ) as ResultsSummary;
-

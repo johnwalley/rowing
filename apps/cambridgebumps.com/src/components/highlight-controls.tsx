@@ -7,10 +7,10 @@ import { HighlightToggle } from "@/components/highlight-toggle";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { clubPageUrl } from "@/data/clubs";
-import { cn, type Set } from "@/lib/utils";
+import { cn, type EventKey } from "@/lib/utils";
 
 type HighlightControlsProps = {
-  event: Set;
+  event: EventKey;
   /** Club names for the "Highlight club" dropdown. */
   clubs: string[];
   club: string | null;

@@ -4,11 +4,11 @@ import {
   getGenderLabel,
   set,
   type Gender,
-  type Set,
+  type EventKey,
 } from "@/lib/utils";
 
 type CorrectionLinkProps = {
-  event: Set;
+  event: EventKey;
   gender: Gender;
   year: string;
   race: number;

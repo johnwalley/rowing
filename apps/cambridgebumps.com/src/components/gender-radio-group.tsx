@@ -2,7 +2,7 @@ import { useId } from "react";
 
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { cn, getGenderLabel, type Gender, type Set } from "@/lib/utils";
+import { cn, getGenderLabel, type Gender, type EventKey } from "@/lib/utils";
 
 // The category picker shared by the chart and statistics pages. The men's
 // category of the Cambridge events is labelled "Open" (see `getGenderLabel`).
@@ -12,7 +12,7 @@ export function GenderRadioGroup({
   onValueChange,
   orientation = "vertical",
 }: {
-  event: Set;
+  event: EventKey;
   value: Gender;
   onValueChange: (value: Gender) => void;
   orientation?: "vertical" | "horizontal";

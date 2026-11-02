@@ -11,10 +11,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { statisticMapping, statistics } from "@/data/statistic-mapping";
-import type { Gender, Set } from "@/lib/utils";
+import type { Gender, EventKey } from "@/lib/utils";
 
 type StatisticsNavProps = {
-  event: Set;
+  event: EventKey;
   gender: Gender;
   /** Only set on an individual statistic's page. */
   statistic?: string;
@@ -26,7 +26,11 @@ export function StatisticsNav({
   gender,
   statistic,
 }: StatisticsNavProps) {
-  const go = (nextEvent: Set, nextGender: Gender, nextStatistic?: string) => {
+  const go = (
+    nextEvent: EventKey,
+    nextGender: Gender,
+    nextStatistic?: string,
+  ) => {
     navigate(
       nextStatistic
         ? `/statistics/${nextEvent}/${nextGender}/${nextStatistic}`
