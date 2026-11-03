@@ -15,10 +15,10 @@
     "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/react": "^7.1.1",
-    "@astrojs/vercel": "^11.0.16",
+    "@astrojs/react": "^7.1.2",
+    "@astrojs/vercel": "^11.0.17",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.4.2",
+    "astro": "^7.4.4",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-rowing-blades": "workspace:^",

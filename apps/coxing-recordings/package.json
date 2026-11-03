@@ -15,12 +15,12 @@
     "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/react": "^7.1.1",
+    "@astrojs/react": "^7.1.2",
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "astro": "^7.4.2",
+    "astro": "^7.4.4",
     "react": "catalog:",
     "react-dom": "catalog:",
     "tailwindcss": "^4.3.3"
