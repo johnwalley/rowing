@@ -87,6 +87,11 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
       the swap usually has nothing left to fetch.
     */}
     <ClientRouter />
+    <script>
+      import { installHistoryOnTap } from "@/lib/history-on-tap";
+
+      installHistoryOnTap();
+    </script>
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_GB" />
