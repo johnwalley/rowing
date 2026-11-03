@@ -9,10 +9,11 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 // A TypeScript module: Astro loads its config, and so this file, through Vite.
-import { eventKeys } from "bumps-results-tools/sets";
+import { eventKeys, genders, parseTgFileName } from "bumps-results-tools/sets";
 
-// The TG files the site's results are built from. This runs in plain Node, as
-// `astro.config.mjs` loads, so it reads their names rather than the results.
+// The TG files the site's results are built from. This runs as
+// `astro.config.mjs` loads, before Vite can process the results, so it reads
+// their names rather than the results.
 const tgFormat = join(
   dirname(fileURLToPath(import.meta.url)),
   "../../../packages/bumps-results-tools/results/tg_format",
@@ -23,9 +24,9 @@ const tgFormat = join(
 // than one race.
 export function getLatestYear(event, gender) {
   const years = readdirSync(tgFormat).flatMap((file) => {
-    const match = file.match(/^([a-z]+)(\d{4})(?:\.\d+)?_(men|women)\.txt$/);
-    return match && match[1] === event && match[3] === gender
-      ? [Number(match[2])]
+    const name = parseTgFileName(file);
+    return name && name.key === event && name.gender === gender
+      ? [parseInt(name.year, 10)]
       : [];
   });
 
@@ -33,7 +34,7 @@ export function getLatestYear(event, gender) {
 }
 
 const EVENTS = eventKeys;
-const GENDERS = ["men", "women"];
+const GENDERS = genders;
 
 // The event the bare `/charts`, `/statistics` and `/multi-year-charts` routes
 // open on: one of the site's own. Cambridge keeps Town, its default all along.

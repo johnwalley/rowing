@@ -185,7 +185,7 @@ Charts support URL search parameters:
 
 Redirects are defined once in `scripts/redirects.mjs`. `astro.config.mjs` passes them to Astro's `redirects` (via `buildAstroRedirects`, which expands the `:event`/`:gender` patterns into concrete paths). In production, `@astrojs/vercel` turns them into real HTTP redirects in `.vercel/output/config.json` at build time. `astro dev` serves them too. `astro preview` does not: the adapter turns off Astro's HTML redirect pages, so `dist/` has none.
 
-The default chart year (e.g. the target of `/charts`, `/charts/:event`, `/charts/:event/:gender`) is derived at build time from the latest year among each event/gender's TG file names (`mays2025_men.txt`), since `astro.config.mjs` runs before Vite can process the results — never hand-edited, and nothing to regenerate.
+The default chart year (e.g. the target of `/charts`, `/charts/:event`, `/charts/:event/:gender`) is derived at build time from the latest year among each event/gender's TG file names (`mays2025_men.txt`, read with the tools' `parseTgFileName`), since `astro.config.mjs` runs before Vite can process the results — never hand-edited, and nothing to regenerate.
 
 > [!IMPORTANT]
 > **After adding a new year's results**: the results go into `packages/bumps-results-tools/results/tg_format/`, and the site picks them up in the same PR, `astro dev` included. Follow the `add-results` skill: it covers the tools' tests, snapshots, `clubs.ts` and AD files.

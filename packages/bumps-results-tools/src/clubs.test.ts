@@ -2,7 +2,7 @@ import { expect, test } from "vitest";
 
 import { clubs, eventsOf, namesOf, unlisted, type EventKey } from "./clubs";
 import { events as races } from "./results";
-import { eventKeys } from "./sets";
+import { eventKeys, keyOf } from "./sets";
 
 // A name in the results qualifies for a club page once it has raced in this
 // many years, or in an event's latest year.
@@ -11,7 +11,7 @@ const MIN_YEARS = 5;
 const yearOf = (year: string) => parseInt(year, 10);
 
 const racesIn = (event: EventKey) =>
-  races.filter((race) => race.short.toLowerCase() === event);
+  races.filter((race) => keyOf(race) === event);
 
 /** Every name that raced in `event`, with the years it raced. */
 function namesRaced(event: EventKey): Map<string, Set<number>> {

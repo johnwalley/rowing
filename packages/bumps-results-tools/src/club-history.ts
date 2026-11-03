@@ -1,10 +1,9 @@
-import { eventsOf, namesOf, type Club, type EventKey } from "./clubs";
+import { eventsOf, namesOf, type Club } from "./clubs";
 import { crewResults, type CrewResult } from "./crews";
+import { genderOf, genders, keyOf, type EventKey, type Gender } from "./sets";
 import type { ProcessedEvent } from "./types";
 
-export type Gender = "men" | "women";
-
-const genders: Gender[] = ["men", "women"];
+export type { Gender } from "./sets";
 
 /** A club's crew in one race. */
 export type ClubCrew = CrewResult & {
@@ -65,11 +64,7 @@ export type SectionRecords = {
 export const yearOf = (year: string) => parseInt(year, 10);
 
 const racesIn = (races: ProcessedEvent[], event: EventKey, gender: Gender) =>
-  races.filter(
-    (race) =>
-      race.short.toLowerCase() === event &&
-      race.gender.toLowerCase() === gender,
-  );
+  races.filter((race) => keyOf(race) === event && genderOf(race) === gender);
 
 // A former name is a rename, carrying the club's lines on, when no race has it
 // alongside another of the club's own names.
@@ -127,9 +122,7 @@ export function getClubHistory(
   races: ProcessedEvent[],
 ): ClubHistory {
   const events = eventsOf(club);
-  const ownRaces = races.filter((race) =>
-    events.includes(race.short.toLowerCase() as EventKey),
-  );
+  const ownRaces = races.filter((race) => events.includes(keyOf(race)));
   const renames = renamesOf(club, ownRaces);
 
   return {
