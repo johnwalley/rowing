@@ -246,8 +246,12 @@ html body[data-scroll-locked] {
 
   /* A break between two years that aren't consecutive. The hover target is
      the whole gap, though the line drawn is only a pixel wide. */
+  /* `relative` holds the screen-reader text (`sr-only`, which is absolutely
+     positioned) inside the strip. Without a positioned ancestor its containing
+     block is the page, so the strip's overflow doesn't clip it and every gap
+     scrolled out of view widens the page instead. */
   .year-picker-gap {
-    @apply flex h-8 items-center px-1;
+    @apply relative flex h-8 items-center px-1;
   }
 
   .year-picker-gap > [title] {
