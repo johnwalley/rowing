@@ -101,7 +101,7 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
     {/* Applies the stored theme before first paint, so there's no flash. */}
     <script is:inline>
       (() => {
-        const applyTheme = () => {
+        const applyTheme = (root = document.documentElement) => {
           try {
             const stored = localStorage.getItem("theme");
             const theme =
@@ -111,8 +111,8 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
                   ? "dark"
                   : "light";
 
-            document.documentElement.classList.toggle("dark", theme === "dark");
-            document.documentElement.style.colorScheme = theme;
+            root.classList.toggle("dark", theme === "dark");
+            root.style.colorScheme = theme;
           } catch {
             // Ignore (private mode / storage disabled).
           }
@@ -121,11 +121,17 @@ const canonicalUrl = canonical ? new URL(canonical, Astro.site) : null;
         applyTheme();
 
         // A view transition replaces <html>'s attributes with the incoming
-        // page's, which drops the class just set. `astro:after-swap` runs
-        // before the new page paints, so re-applying there keeps the theme
-        // steady across navigation. This script isn't re-run on a swap, so the
-        // listener is only ever registered once.
-        document.addEventListener("astro:after-swap", applyTheme);
+        // page's, and the incoming page's HTML has no theme. So the theme goes
+        // on the incoming <html> before the swap copies its attributes across.
+        // Putting it back after the swap was too late: styles were already
+        // worked out once without `dark`, so every `transition-colors` element
+        // (the header's links and buttons, the year strip) faded back from the
+        // light theme and the theme toggle's icons spun, on every navigation.
+        // This script isn't re-run on a swap, so the listener is only ever
+        // registered once.
+        document.addEventListener("astro:before-swap", (event) =>
+          applyTheme(event.newDocument.documentElement),
+        );
       })();
     </script>
   </head>
