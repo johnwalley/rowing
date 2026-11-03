@@ -6,9 +6,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { homeEvents, siteConfig } from "@/config/site";
 import { summary } from "@/data/results";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { cn, set, yearOf, type Set } from "@/lib/utils";
+import { cn, set, yearOf, type EventKey } from "@/lib/utils";
 
-const latestYear = (event: Set) =>
+const latestYear = (event: EventKey) =>
   Math.max(...[...summary[event].men, ...summary[event].women].map(yearOf));
 
 // The announcement points at the most recent racing, derived from the

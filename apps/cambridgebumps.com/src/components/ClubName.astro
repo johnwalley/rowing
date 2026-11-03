@@ -1,11 +1,11 @@
 ---
 import { clubPageUrl } from "@/data/clubs";
-import type { Set } from "@/lib/utils";
+import type { EventKey } from "@/lib/utils";
 
 // A club's name as the results give it, linked to its club page when it has
 // one.
 interface Props {
-  event: Set;
+  event: EventKey;
   name: string;
 }
 

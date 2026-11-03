@@ -37,9 +37,11 @@ pnpm vitest run src/bumps.test.ts
 
 - **types.ts** - Zod schemas and TypeScript types for `Event`, `Crew`, and `Statistics`
 
-- **abbreviations.ts** - Club abbreviation mappings per event set: Cambridge colleges (`ccol`), Oxford colleges (`ocol`), Town clubs (`cra`), plus `sets` (short → long name) and a `roman` numeral table
+- **sets.ts** - The one list of Sets: each Set's key (`lents`, as the site's URLs and the TG file names give it), its name and short name (a TG file's `Set` and `Short` lines), its city, its kind (`college` or `town`) and its men's category's label (`Open` for the Cambridge Sets), plus `eventKeys`, `isEventKey` and `setsIn(city, kind?)`. The TG schema's enums, the clubs tables, a college's events, the results editor's file list and the bumps site's event labels, routes and redirects are all worked out from it, so a new or renamed Set is one entry here. Safe for the browser: it imports nothing. The site imports it as `bumps-results-tools/sets`
 
-- **clubs.ts** - The one list of clubs: each club's slug, full name, the name the results use, its city, and any `formerly` (renames, mergers, other spellings) and `joint` (combined crews) names, plus `unlisted` (names that deliberately have no club). `clubOf(event, name)` is the club a results name belongs to. The statistics credit a former name's crews to its club, and the bumps site builds a page for each club, so 1st and 3rd counts 1st, 2nd and 3rd Trinity's headships in both. Safe for the browser: it imports nothing. The site imports it as `bumps-results-tools/clubs`
+- **abbreviations.ts** - Club abbreviation mappings per Set: Cambridge colleges (`ccol`), Oxford colleges (`ocol`), Town clubs (`cra`), plus `sets` (each Set's name → its clubs table, from `sets.ts`) and a `roman` numeral table
+
+- **clubs.ts** - The one list of clubs: each club's slug, full name, the name the results use, its city, and any `formerly` (renames, mergers, other spellings) and `joint` (combined crews) names, plus `unlisted` (names that deliberately have no club). `clubOf(event, name)` is the club a results name belongs to. The statistics credit a former name's crews to its club, and the bumps site builds a page for each club, so 1st and 3rd counts 1st, 2nd and 3rd Trinity's headships in both. Safe for the browser: it imports only `sets.ts`. The site imports it as `bumps-results-tools/clubs`
 
 - **clubs.test.ts** - Checks `clubs.ts` against the results: a name that raced in five or more years (or in an event's latest year) needs a club or an `unlisted` entry, every listed name must have raced, a name is only one club's own in an event, and slugs are unique per city. So after adding a new year, a new or renamed club needs an entry in `clubs.ts`
 
@@ -78,7 +80,7 @@ pnpm vitest run src/bumps.test.ts
 
 ### How the site uses this package
 
-`package.json` `exports` point at the TypeScript source (`./bumps`, `./club-history`, `./clubs`, `./results`, `./stats`, `./tg-files` and `./types`, each `src/<name>.ts`), so the site's and the results editor's Vite builds compile them and this package never needs building for them. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site and the editor import free of Node builtins at the top level (see `readFile`).
+`package.json` `exports` point at the TypeScript source (`./bumps`, `./club-history`, `./clubs`, `./results`, `./sets`, `./stats`, `./tg-files` and `./types`, each `src/<name>.ts`), so the site's and the results editor's Vite builds compile them and this package never needs building for them. The site processes every TG file when it builds, so a change to a TG file or to the processing reaches the site in the same PR, and a TG file with errors fails the site's build. Keep the modules the site and the editor import free of Node builtins at the top level (see `readFile`).
 
 ### Downstream sync
 

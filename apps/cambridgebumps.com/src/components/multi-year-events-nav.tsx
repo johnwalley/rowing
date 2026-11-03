@@ -1,11 +1,17 @@
 import { eventOrder } from "@/config/site";
-import { cn, eventShortNames, set, type Gender, type Set } from "@/lib/utils";
+import {
+  cn,
+  eventShortNames,
+  set,
+  type Gender,
+  type EventKey,
+} from "@/lib/utils";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { withParams } from "@/hooks/use-chart-params";
 
 type MultiYearEventsNavProps = {
-  event: Set;
+  event: EventKey;
   gender: Gender;
   params: URLSearchParams;
   className?: string;

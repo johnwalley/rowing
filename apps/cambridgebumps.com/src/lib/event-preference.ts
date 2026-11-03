@@ -1,10 +1,10 @@
-import { isEvent, isGender, type Gender, type Set } from "@/lib/utils";
+import { isEvent, isGender, type Gender, type EventKey } from "@/lib/utils";
 
 // Where the user's last-chosen event/gender is stored. The app is a static
 // export (no server), so this preference lives entirely in the browser.
 export const EVENT_PREFERENCE_KEY = "bumps:event-preference";
 
-export type EventPreference = { event: Set; gender: Gender };
+export type EventPreference = { event: EventKey; gender: Gender };
 
 // Parse a raw stored value, validating both fields against the canonical
 // event/gender lists. Anything missing, malformed, or no-longer-valid (e.g. an

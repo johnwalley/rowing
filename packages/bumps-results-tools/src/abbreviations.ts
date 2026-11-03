@@ -1,3 +1,5 @@
+import { sets as setInfo, type City, type SetName } from "./sets";
+
 export const ccol = {
   Ca: { name: "Caius", colours: ["black", "lightgreen"] },
   T: { name: "1st and 3rd", colours: ["darkblue"] },
@@ -102,13 +104,21 @@ export const cra = {
   OC: { name: "Old Cantabs" },
 };
 
-export const sets = {
-  "Summer Eights": ocol,
-  "Lent Bumps": ccol,
-  "May Bumps": ccol,
-  Torpids: ocol,
-  "Town Bumps": cra,
+// Each Set's clubs table: its city's colleges, or the town clubs (`cra`, the
+// Cambridge town clubs: Town Bumps is the only town Set).
+type ClubsTable = Record<string, { name: string }>;
+
+const collegeTables: Record<City, ClubsTable> = {
+  Cambridge: ccol,
+  Oxford: ocol,
 };
+
+export const sets = Object.fromEntries(
+  Object.values(setInfo).map((set) => [
+    set.name,
+    set.kind === "town" ? cra : collegeTables[set.city],
+  ]),
+) as Record<SetName, ClubsTable>;
 
 export const roman = [
   "I",

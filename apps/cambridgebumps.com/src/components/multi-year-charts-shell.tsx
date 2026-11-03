@@ -8,10 +8,10 @@ import { MultiYearEventsNav } from "@/components/multi-year-events-nav";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { YearRangeControls, yearRange } from "@/components/year-range-controls";
 import { useChartParams, withParams } from "@/hooks/use-chart-params";
-import { getGenderLabel, set, type Gender, type Set } from "@/lib/utils";
+import { getGenderLabel, set, type Gender, type EventKey } from "@/lib/utils";
 
 type MultiYearChartsShellProps = {
-  event: Set;
+  event: EventKey;
   gender: Gender;
   /** Club names across every year, for the "Highlight club" dropdown. */
   clubs: string[];

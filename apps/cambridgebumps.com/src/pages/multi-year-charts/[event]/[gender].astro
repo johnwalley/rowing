@@ -11,7 +11,7 @@ import {
   getGenderLabel,
   set,
   type Gender,
-  type Set,
+  type EventKey,
 } from "@/lib/utils";
 
 export const getStaticPaths = (() =>
@@ -19,7 +19,7 @@ export const getStaticPaths = (() =>
     genders.map((gender) => ({ params: { event, gender } })),
   )) satisfies GetStaticPaths;
 
-const event = Astro.params.event as Set;
+const event = Astro.params.event as EventKey;
 const gender = Astro.params.gender as Gender;
 
 // Distinct years, oldest first — the early mays/men seasons have two races a

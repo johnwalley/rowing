@@ -1,5 +1,16 @@
 import { z } from "zod";
 
+import { sets, type SetName, type SetShort } from "./sets";
+
+const setNames = Object.values(sets).map((set) => set.name) as [
+  SetName,
+  ...SetName[],
+];
+const setShorts = Object.values(sets).map((set) => set.short) as [
+  SetShort,
+  ...SetShort[],
+];
+
 const StatisticsSchema = z.object({
   headships: z.array(
     z.object({
@@ -50,14 +61,8 @@ export const EventSchema = z.object({
   move: z.array(z.array(z.number().nullable())).optional(),
   pace: z.array(z.unknown()),
   results: z.array(z.string()),
-  set: z.enum([
-    "Summer Eights",
-    "Lent Bumps",
-    "May Bumps",
-    "Torpids",
-    "Town Bumps",
-  ]),
-  short: z.enum(["Eights", "Lents", "Mays", "Torpids", "Town"]),
+  set: z.enum(setNames),
+  short: z.enum(setShorts),
   skip: z.array(z.array(z.boolean())).optional(),
   year: z.string(),
 });

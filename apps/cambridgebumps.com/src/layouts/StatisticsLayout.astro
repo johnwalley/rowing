@@ -1,10 +1,10 @@
 ---
 import { StatisticsNav } from "@/components/statistics-nav";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import type { Gender, Set } from "@/lib/utils";
+import type { Gender, EventKey } from "@/lib/utils";
 
 interface Props {
-  event: Set;
+  event: EventKey;
   gender: Gender;
   /** Only set on an individual statistic's page. */
   statistic?: string;

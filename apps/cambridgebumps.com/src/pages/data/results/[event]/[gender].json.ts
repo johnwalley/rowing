@@ -2,7 +2,13 @@ import type { APIRoute, GetStaticPaths } from "astro";
 
 import { results } from "@/data/results";
 import { slimRace } from "@/lib/slim-results";
-import { events, genders, yearOf, type Gender, type Set } from "@/lib/utils";
+import {
+  events,
+  genders,
+  yearOf,
+  type Gender,
+  type EventKey,
+} from "@/lib/utils";
 
 // The multi-year charts need a whole event's results, which run to several
 // megabytes. Rather than inline that into the page, it's emitted as a static
@@ -13,7 +19,7 @@ export const getStaticPaths = (() =>
   )) satisfies GetStaticPaths;
 
 export const GET: APIRoute = ({ params }) => {
-  const event = params.event as Set;
+  const event = params.event as EventKey;
   const gender = params.gender as Gender;
 
   // `yearOf` rather than `+year`: the early mays/men seasons store compound

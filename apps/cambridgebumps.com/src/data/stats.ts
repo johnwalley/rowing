@@ -6,7 +6,7 @@ import {
 
 import { results } from "@/data/results";
 import { statisticMapping } from "@/data/statistic-mapping";
-import { events, genders, type Gender, type Set } from "@/lib/utils";
+import { events, genders, type Gender, type EventKey } from "@/lib/utils";
 
 // The statistics tables for each event and category, from the same results
 // as the charts.
@@ -17,7 +17,7 @@ const stats = Object.fromEntries(
       genders.map((gender) => [gender, getRankings(results[event][gender])]),
     ),
   ]),
-) as Record<Set, Record<Gender, Rankings>>;
+) as Record<EventKey, Record<Gender, Rankings>>;
 
 /** A statistics table's row as the pages show it. */
 export type StatisticRow = {
@@ -28,7 +28,7 @@ export type StatisticRow = {
 
 /** A statistics table, with each row's figures picked out by its mapping. */
 export function statisticRows(
-  event: Set,
+  event: EventKey,
   gender: Gender,
   statistic: Statistic,
 ): StatisticRow[] {

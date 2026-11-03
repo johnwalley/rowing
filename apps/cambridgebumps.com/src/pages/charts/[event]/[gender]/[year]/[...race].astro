@@ -17,7 +17,7 @@ import {
   nearestYear,
   set,
   type Gender,
-  type Set,
+  type EventKey,
 } from "@/lib/utils";
 
 export const getStaticPaths = (() => {
@@ -45,7 +45,7 @@ export const getStaticPaths = (() => {
   );
 }) satisfies GetStaticPaths;
 
-const event = Astro.params.event as Set;
+const event = Astro.params.event as EventKey;
 const gender = Astro.params.gender as Gender;
 const year = Astro.params.year as string;
 const race = Number(Astro.params.race ?? 1);

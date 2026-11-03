@@ -15,11 +15,11 @@ import {
   getGenderLabel,
   set,
   type Gender,
-  type Set,
+  type EventKey,
 } from "@/lib/utils";
 
 type ChartsShellProps = {
-  event: Set;
+  event: EventKey;
   gender: Gender;
   year: string;
   /** Which of the year's races this is, from 1. */

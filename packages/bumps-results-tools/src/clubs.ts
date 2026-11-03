@@ -1,14 +1,6 @@
-export type City = "Cambridge" | "Oxford";
+import { setsIn, type City, type EventKey } from "./sets";
 
-/** An event as the bumps site's URLs name it. */
-export type EventKey = "eights" | "lents" | "mays" | "torpids" | "town";
-
-// The events a college's page covers, in the order they're raced through the
-// year. A college's crews in the Town Bumps are left off its page.
-const collegeEvents: Record<City, EventKey[]> = {
-  Cambridge: ["lents", "mays"],
-  Oxford: ["torpids", "eights"],
-};
+export type { City, EventKey } from "./sets";
 
 /**
  * A club with its own page under /clubs on the bumps site. Pages are built
@@ -868,7 +860,10 @@ export const unlisted: Partial<Record<EventKey, string[]>> = {
   ],
 };
 
-export const eventsOf = (club: Club) => club.events ?? collegeEvents[club.city];
+// A college's page covers its city's college Sets, in the order they're raced
+// through the year. Its crews in the Town Bumps are left off it.
+export const eventsOf = (club: Club) =>
+  club.events ?? setsIn(club.city, "college");
 
 /** The results names a club's crews raced under, joint crews included. */
 export const namesOf = (club: Club) => [

@@ -6,6 +6,7 @@
     "./club-history": "./src/club-history.ts",
     "./clubs": "./src/clubs.ts",
     "./results": "./src/results.ts",
+    "./sets": "./src/sets.ts",
     "./stats": "./src/stats.ts",
     "./tg-files": "./src/tg-files.ts",
     "./types": "./src/types.ts"

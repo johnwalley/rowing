@@ -1,64 +1,57 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { abbreviations, clubs, shortShortNames } from "react-rowing-blades";
+import {
+  eventKeys,
+  isEventKey,
+  sets,
+  setsIn,
+  type City,
+  type EventKey,
+} from "bumps-results-tools/sets";
+
+export type { City, EventKey };
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const set: Record<Set, string> = {
-  eights: "Summer Eights",
-  torpids: "Torpids",
-  lents: "Lent Bumps",
-  mays: "May Bumps",
-  town: "Town Bumps",
-};
+// Each event's name, from the tools' list of Sets.
+export const set = Object.fromEntries(
+  eventKeys.map((event) => [event, sets[event].name]),
+) as Record<EventKey, string>;
 
 // Short labels for the event tabs and menus.
-export const eventShortNames: Record<Set, string> = {
-  eights: "Eights",
-  lents: "Lents",
-  mays: "Mays",
-  torpids: "Torpids",
-  town: "Town",
-};
+export const eventShortNames = Object.fromEntries(
+  eventKeys.map((event) => [event, sets[event].short]),
+) as Record<EventKey, string>;
 
 export const genderMap: Record<Gender, string> = {
   men: "Men",
   women: "Women",
 };
 
-// Events whose men's category is now branded "Open" (the Cambridge events).
-const openEvents = new Set<Set>(["lents", "mays", "town"]);
-
 // Display label for a category, event-aware. The men's category of the
-// Cambridge events (Lents, Mays, Town) is now branded "Open"; everything else
-// (Oxford men's, all women's) keeps its genderMap label. Note this is a
-// display-only concern — the URL slug stays "men".
+// Cambridge events (Lents, Mays, Town) is now branded "Open" (each Set's
+// `menLabel`); everything else (Oxford men's, all women's) keeps its genderMap
+// label. Note this is a display-only concern — the URL slug stays "men".
 export function getGenderLabel(
-  event: Set | string,
+  event: EventKey | string,
   gender: Gender | string,
 ): string {
-  if (gender === "men" && openEvents.has(event as Set)) return "Open";
+  if (gender === "men" && isEventKey(event)) return sets[event].menLabel;
   return genderMap[gender as Gender];
 }
 
-export const events = ["eights", "lents", "mays", "torpids", "town"] as const;
-export type Set = (typeof events)[number];
+export const events = eventKeys;
 
-export type City = "Cambridge" | "Oxford";
-
-// The events each city races, in the order they're raced through the year.
-export const cityEvents: Record<City, Set[]> = {
-  Cambridge: ["lents", "mays", "town"],
-  Oxford: ["torpids", "eights"],
-};
+/** The events a city races, in the order they're raced through the year. */
+export const eventsIn = (city: City) => setsIn(city);
 
 export const genders = ["men", "women"] as const;
 export type Gender = (typeof genders)[number];
 
-export const isEvent = (x: string): x is Set =>
-  (events as readonly string[]).includes(x);
+export const isEvent = isEventKey;
 
 export const isGender = (x: string): x is Gender =>
   (genders as readonly string[]).includes(x);
@@ -66,7 +59,7 @@ export const isGender = (x: string): x is Gender =>
 // Shape of the per-event results summary JSON (lists of years by category).
 // Each event has `all`, `split`, `men` and `women` keys, all arrays of year strings.
 export type ResultsSummary = Record<
-  Set,
+  EventKey,
   Record<Gender | "all" | "split", string[]>
 >;
 
@@ -104,55 +97,44 @@ export function nearestYear(
 // page for each: the first at the year's path, the second under it
 // ("/charts/mays/men/1838/2").
 export const chartPath = (
-  event: Set,
+  event: EventKey,
   gender: Gender,
   year: string | number,
   race = 1,
 ) => `/charts/${event}/${gender}/${year}${race > 1 ? `/${race}` : ""}`;
 
-export function getEventContext(event: Set | string): string {
-  switch (event) {
-    case "lents":
-    case "mays":
-      return "Cambridge college";
-    case "eights":
-    case "torpids":
-      return "Oxford college";
-    case "town":
-      return "town rowing club";
-    default:
-      return "college";
-  }
+// Who races in an event, for page descriptions: "Cambridge college" crews.
+export function getEventContext(event: EventKey): string {
+  const { city, kind } = sets[event];
+  return kind === "town" ? "town rowing club" : `${city} college`;
 }
+
+const collegeBlades: Record<
+  City,
+  { names: Record<string, string>; abbr: Record<string, string> }
+> = {
+  Cambridge: {
+    names: shortShortNames.cambridge,
+    abbr: abbreviations.cambridge,
+  },
+  Oxford: { names: shortShortNames.oxford, abbr: abbreviations.oxford },
+};
 
 // Union of all valid club codes accepted by react-rowing-blades' <Blade>.
 export type ClubCode = (typeof clubs)[keyof typeof clubs][number];
 
-export function getCode(club: string, set: Set): ClubCode | undefined {
-  let names: Record<string, string>;
-  let abbr: Record<string, string>;
-
-  switch (set) {
-    case "mays":
-    case "lents":
-      names = shortShortNames.cambridge;
-      abbr = abbreviations.cambridge;
-      break;
-    case "eights":
-    case "torpids":
-      names = shortShortNames.oxford;
-      abbr = abbreviations.oxford;
-      break;
-    case "town":
-      names = shortShortNames.uk;
-      abbr = Object.assign(
-        {},
-        ...Object.values(abbreviations.uk).map((x) => ({ [x]: x })),
-      );
-      break;
-    default:
-      throw new Error(`${set} not recognised as a set`);
-  }
+export function getCode(club: string, set: EventKey): ClubCode | undefined {
+  // A college event's blades are its city's colleges'; a town event's are
+  // the UK clubs', whose abbreviations are their own names.
+  const { city, kind } = sets[set];
+  const names: Record<string, string> =
+    kind === "town" ? shortShortNames.uk : collegeBlades[city].names;
+  const abbr: Record<string, string> =
+    kind === "town"
+      ? Object.fromEntries(
+          Object.values(abbreviations.uk).map((x: string) => [x, x]),
+        )
+      : collegeBlades[city].abbr;
 
   const name = club;
 

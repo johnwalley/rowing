@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { eventGroups } from "@/config/site";
-import { set, type Set } from "@/lib/utils";
+import { set, type EventKey } from "@/lib/utils";
 
 // The event picker shared by the chart and statistics pages. The site's own
 // city's events come first.
@@ -17,8 +17,8 @@ export function EventSelect({
   value,
   onValueChange,
 }: {
-  value: Set;
-  onValueChange: (value: Set) => void;
+  value: EventKey;
+  onValueChange: (value: EventKey) => void;
 }) {
   return (
     <div>
@@ -27,7 +27,7 @@ export function EventSelect({
       </Label>
       <Select
         value={value}
-        onValueChange={(next) => onValueChange(next as Set)}
+        onValueChange={(next) => onValueChange(next as EventKey)}
       >
         <SelectTrigger id="event" className="w-[280px]">
           <SelectValue placeholder="Select an event" />
