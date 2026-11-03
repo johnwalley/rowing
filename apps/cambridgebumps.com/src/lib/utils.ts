@@ -100,6 +100,15 @@ export const chartPath = (
   race = 1,
 ) => `/charts/${event}/${gender}/${year}${race > 1 ? `/${race}` : ""}`;
 
+// A race's name, as its chart page's heading, tab title and correction email
+// give it: "May Bumps 2025", or "May Bumps 1838 (March race)" for one of a
+// year's two races, where `raceLabel` ("March") tells them apart.
+export const raceTitle = (event: EventKey, year: string, raceLabel?: string) =>
+  `${set[event]} ${year}${raceLabel ? ` (${raceLabel} race)` : ""}`;
+
+/** A race a chart page links to: its path and its name. */
+export type RaceLink = { path: string; title: string };
+
 // Who races in an event, for page descriptions: "Cambridge college" crews.
 export function getEventContext(event: EventKey): string {
   const { city, kind } = sets[event];

@@ -2,7 +2,6 @@ import { siteConfig } from "@/config/site";
 import {
   chartPath,
   getGenderLabel,
-  set,
   type Gender,
   type EventKey,
 } from "@/lib/utils";
@@ -12,8 +11,8 @@ type CorrectionLinkProps = {
   gender: Gender;
   year: string;
   race: number;
-  /** As the heading gives it: "1838 May" for the second race of 1838. */
-  raceYear: string;
+  /** The race's name: "May Bumps 1838 (May race)" (see `raceTitle`). */
+  title: string;
   /** The highlighted club, if any — likely the crew the reader means. */
   club: string | null;
 };
@@ -27,10 +26,10 @@ export function CorrectionLink({
   gender,
   year,
   race,
-  raceYear,
+  title,
   club,
 }: CorrectionLinkProps) {
-  const chart = `${set[event]} ${raceYear} (${getGenderLabel(event, gender)})`;
+  const chart = `${title} (${getGenderLabel(event, gender)})`;
 
   const body = [
     `Chart: ${siteConfig.url}${chartPath(event, gender, year, race)}`,
