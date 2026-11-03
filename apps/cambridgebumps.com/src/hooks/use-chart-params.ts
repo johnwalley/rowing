@@ -46,13 +46,16 @@ export function useChartParams() {
 
     const query = next.toString();
 
-    // Carry the router's own history state onto the new entry. `<ClientRouter />`
-    // stores a scroll position and an index on every entry it creates and reads
-    // them back on `popstate`; an entry pushed with a bare `{}` would leave it
-    // restoring an undefined scroll position. Copying the current state keeps
-    // the bookkeeping intact, at the cost of stepping back over a view option
-    // being a page swap rather than an update in place.
-    window.history.pushState(
+    // Replace the entry rather than push one. Safari's back button and swipe
+    // skip an entry pushed without a recent tap, and the page before it too, so
+    // a pushed entry could send Back straight off the site. On a phone these
+    // options are native selects, whose picker changes the value with no user
+    // gesture, so a slow pick did exactly that. Replacing also means Back
+    // leaves the chart instead of undoing a highlight.
+    //
+    // Keep the router's own history state. `<ClientRouter />` stores a scroll
+    // position and an index on every entry and reads them back on `popstate`.
+    window.history.replaceState(
       window.history.state,
       "",
       query ? `${window.location.pathname}?${query}` : window.location.pathname,
