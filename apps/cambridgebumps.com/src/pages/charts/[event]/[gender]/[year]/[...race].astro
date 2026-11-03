@@ -5,7 +5,7 @@ import chartFontUrl from "@fontsource-variable/roboto-flex/files/roboto-flex-lat
 
 import { ChartsShell } from "@/components/charts-shell";
 import type { YearFor } from "@/components/events-nav";
-import { racesIn, summary } from "@/data/results";
+import { raceLabelsIn, raceNeighbours, racesIn, summary } from "@/data/results";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { slimRace } from "@/lib/slim-results";
 import {
@@ -15,7 +15,7 @@ import {
   getEventContext,
   getGenderLabel,
   nearestYear,
-  set,
+  raceTitle,
   type Gender,
   type EventKey,
 } from "@/lib/utils";
@@ -55,9 +55,13 @@ const races = racesIn(event, gender, year);
 
 // "May" for "1838 May": what tells a year's two races apart. A year with one
 // race has none.
-const raceLabels =
-  races.length > 1 ? races.map((r) => r.year.slice(year.length + 1)) : [];
-const raceYear = races.length > 1 ? races[race - 1].year : year;
+const raceLabels = raceLabelsIn(event, gender, year);
+
+// "May Bumps 1838 (March race)": the tab title's name for this race.
+const title = raceTitle(event, year, raceLabels[race - 1]);
+
+// The races either side of this one, for the heading's previous and next links.
+const { previous, next } = raceNeighbours(event, gender, year, race);
 
 // Years pre-generated without results yet (see `getStaticPaths`) render a
 // friendly message and stay out of the index rather than being thin content.
@@ -86,7 +90,6 @@ const yearFor = Object.fromEntries(
   ]),
 ) as YearFor;
 
-const eventName = set[event];
 const genderName = getGenderLabel(event, gender);
 
 // The Town Bumps results for the current year are unofficial until the CRA
@@ -95,8 +98,8 @@ const showCraNotice = event === "town" && year === years[years.length - 1];
 ---
 
 <BaseLayout
-  title={`${eventName} ${raceYear} - ${genderName}`}
-  description={`${eventName} ${raceYear} bumps chart (${genderName}). View race results, daily positions, and bumps for all ${getEventContext(event)} crews.`}
+  title={`${title} - ${genderName}`}
+  description={`${title} bumps chart (${genderName}). View race results, daily positions, and bumps for all ${getEventContext(event)} crews.`}
   canonical={chartPath(event, gender, year, race)}
   noindex={data === null}
 >
@@ -123,6 +126,8 @@ const showCraNotice = event === "town" && year === years[years.length - 1];
     year={year}
     race={race}
     raceLabels={raceLabels}
+    previous={previous}
+    next={next}
     years={years}
     yearFor={yearFor}
     clubs={clubs}

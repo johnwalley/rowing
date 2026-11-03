@@ -6,7 +6,9 @@ import {
   chartPath,
   events,
   genders,
+  raceTitle,
   type Gender,
+  type RaceLink,
   type ResultsSummary,
   type EventKey,
 } from "@/lib/utils";
@@ -37,6 +39,54 @@ const leadYear = (year: string): string => year.split(" ")[0];
 /** A year's races, in order: one, or two in the early mays/men years. */
 export const racesIn = (event: EventKey, gender: Gender, year: string) =>
   results[event][gender].filter((race) => leadYear(race.year) === year);
+
+/**
+ * What tells a year's races apart: "May" for "1838 May". A year with one race
+ * has none, so each label is empty.
+ */
+export const raceLabelsIn = (event: EventKey, gender: Gender, year: string) => {
+  const races = racesIn(event, gender, year);
+  return races.length > 1
+    ? races.map((race) => race.year.slice(year.length + 1))
+    : [];
+};
+
+/**
+ * The races either side of a chart page's, for its previous and next links. A
+ * year with two races is two steps. A year with no results yet (the current
+ * year, before they're posted) comes after the last race.
+ */
+export function raceNeighbours(
+  event: EventKey,
+  gender: Gender,
+  year: string,
+  race: number,
+): { previous: RaceLink | null; next: RaceLink | null } {
+  const steps: { year: string; race: number }[] = [];
+
+  for (const { year: raw } of results[event][gender]) {
+    const lead = leadYear(raw);
+    const last = steps.at(-1);
+    steps.push({ year: lead, race: last?.year === lead ? last.race + 1 : 1 });
+  }
+
+  const link = (step: (typeof steps)[number] | undefined): RaceLink | null => {
+    if (!step) return null;
+    const label = raceLabelsIn(event, gender, step.year)[step.race - 1];
+    return {
+      path: chartPath(event, gender, step.year, step.race),
+      title: raceTitle(event, step.year, label),
+    };
+  };
+
+  const index = steps.findIndex(
+    (step) => step.year === year && step.race === race,
+  );
+
+  return index === -1
+    ? { previous: link(steps.at(-1)), next: null }
+    : { previous: link(steps[index - 1]), next: link(steps[index + 1]) };
+}
 
 /**
  * The chart page of the race whose year is `year` as the results give it:

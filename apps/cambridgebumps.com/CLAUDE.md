@@ -152,6 +152,7 @@ What the site knows about each event (its names, its city, whether colleges or t
 - `genderMap` / `getGenderLabel()` - category labels ("Open" for the Cambridge men's events)
 - `events` and `genders` - Typed arrays and types for route parameters; `eventsIn(city)` is a city's events in raced order
 - `getEventContext()` - who races in an event, for page descriptions ("Cambridge college")
+- `raceTitle()` - a race's name as its chart page's heading, tab title and correction email give it ("May Bumps 1838 (March race)"); `raceNeighbours()` in `src/data/results.ts` gives the races either side of a chart page, for its previous/next arrows
 - `getCode()` - Function to get club codes for blade displays
 
 `src/lib/theme.ts` holds the light/dark logic that `next-themes` used to provide. The class is applied before first paint by an inline script in `BaseLayout.astro`; the storage key (`theme`) and values (`light`/`dark`/`system`) are unchanged, so returning visitors keep their choice.
@@ -168,6 +169,8 @@ Charts support URL search parameters:
 `src/hooks/use-chart-params.ts` owns them: the shell reads the query string after mount and updates it with `history.replaceState`, so toggling a highlight re-renders the chart without a page load or a new history entry. Links that change event/gender/year carry the current query string along (`withParams`).
 
 **Safari skips pushed history entries.** Safari's back button and swipe skip an entry added by `history.pushState` more than ten seconds after the last tap, and the page before it too, so one such entry sends Back off the site. On iOS a native `<select>` changes its value from the system picker with no user gesture, so a change handler must not push an entry: view options use `replaceState`, and the year select loads the page fully (`location.assign`) instead of calling the router's `navigate()`. Page loads and `replaceState` are never skipped.
+
+On a single-year chart page the ← and → keys step to the previous and next race, as the arrows beside the heading do, unless focus is in a field or a control that uses the arrows itself (the year strip, the category tabs and radios, the club picker).
 
 ### SEO
 
