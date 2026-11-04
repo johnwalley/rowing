@@ -211,6 +211,9 @@ export default function MultiYearBumpsChart({
             data={rangedData}
             event={event}
             gender={gender}
+            club={club}
+            blades={blades}
+            spoons={spoons}
           />
           <PinnedCrews
             layout={layout}
