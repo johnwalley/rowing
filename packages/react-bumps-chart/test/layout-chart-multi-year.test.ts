@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { estimateTextWidth } from "@/utils/measure-text";
 import { layoutChartMultiYear } from "@/utils/layout-chart-multi-year";
-import { sequences } from "./fixtures";
+import { maysFull, sequences } from "./fixtures";
 
 describe("layoutChartMultiYear", () => {
   test.each(Object.entries(sequences))("%s", (_name, sequence) => {
@@ -39,6 +39,37 @@ describe("layoutChartMultiYear", () => {
     // The last race ends where the end crews' column begins, less a gap.
     const last = layout.races[layout.races.length - 1];
     expect(last.x + last.width).toBeLessThan(layout.endCrews.x);
+  });
+
+  test("marks the years with no racing", () => {
+    const layout = layoutChartMultiYear(maysFull, {
+      measureText: estimateTextWidth,
+    });
+
+    expect(layout.gaps.map((gap) => gap.label)).toMatchSnapshot();
+    expect(layout.gaps.map((gap) => gap.label)).toContain("2020–21");
+
+    // Each gap is centred over the join between its races, whose lines dash
+    for (const gap of layout.gaps) {
+      const join = layout.joins.find(
+        (join) => join.x < gap.pos[0] && gap.pos[0] < join.x + 32,
+      );
+
+      expect(join?.gap).toBe(true);
+    }
+
+    expect(layout.joins.filter((join) => join.gap)).toHaveLength(
+      layout.gaps.length,
+    );
+  });
+
+  test("marks no gaps in consecutive years", () => {
+    const layout = layoutChartMultiYear(sequences.mays2022_2024, {
+      measureText: estimateTextWidth,
+    });
+
+    expect(layout.gaps).toEqual([]);
+    expect(layout.joins.some((join) => join.gap)).toBe(false);
   });
 
   test("gives the joint-year headship blades without changing the data", () => {

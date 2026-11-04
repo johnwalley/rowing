@@ -69,6 +69,19 @@ export const BumpsChartMultiYear = ({
           <Label key={index} label={label} x={layout.labels.x} />
         ))}
       </g>
+      {layout.gaps.map((gap) => (
+        <text
+          key={gap.first}
+          x={gap.pos[0]}
+          y={gap.pos[1]}
+          textAnchor="middle"
+          fontSize="9"
+          className={classes.gap}
+        >
+          <title>{`No racing in ${gap.label}`}</title>
+          {gap.label}
+        </text>
+      ))}
       <g transform={`translate(0 ${layout.y})`}>
         {layout.stripes.stripes.map((stripe, index) => (
           <Stripes key={index} stripes={stripe} x={layout.stripes.x} />
@@ -103,6 +116,7 @@ export const BumpsChartMultiYear = ({
             lines={join.lines}
             joins={join.polylines}
             text={join.text}
+            gap={join.gap}
             x={join.x}
           />
         ))}
