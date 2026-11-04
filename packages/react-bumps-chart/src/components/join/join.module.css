@@ -2,6 +2,15 @@
   stroke: hsl(var(--react-bumps-chart-muted-foreground));
 }
 
+.highlight {
+  stroke: hsl(var(--react-bumps-chart-highlight));
+  stroke-width: var(--react-bumps-chart-highlight-stroke-width, 2);
+}
+
+:global([data-highlighting]) .line:not(.highlight) {
+  stroke-opacity: var(--react-bumps-chart-unselected-opacity, 1);
+}
+
 .text {
   fill: hsl(var(--react-bumps-chart-foreground));
 }

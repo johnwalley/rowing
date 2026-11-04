@@ -48,9 +48,16 @@ export const BumpsChartMultiYear = ({
     [data, measureText, blades],
   );
 
+  // Fades the other lines while a crew is highlighted (see
+  // `division.module.css`)
+  const highlighting = data.some((event) =>
+    event.crews.some((crew) => crew.highlight),
+  );
+
   return (
     <svg
       ref={ref}
+      data-highlighting={highlighting || undefined}
       className={classNames(classes.root, {
         [classes.unkerned]: measureTextProp,
       })}

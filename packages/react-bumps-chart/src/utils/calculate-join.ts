@@ -41,10 +41,15 @@ export function calculateJoin(
     }
 
     if (found) {
-      lines.push([
-        [0, yOff + scale * crewNum],
-        [sep, yOff + scale * crewNum2],
-      ]);
+      lines.push({
+        points: [
+          [0, yOff + scale * crewNum],
+          [sep, yOff + scale * crewNum2],
+        ],
+        // `crewNum` is where the crew finished, not the crew that started
+        // there, so the flag comes from its entry in the next year.
+        highlight: event2.crews[crewNum2].highlight,
+      });
     } else {
       let height = yOff + scale * crewNum2;
       let adjacent = false;

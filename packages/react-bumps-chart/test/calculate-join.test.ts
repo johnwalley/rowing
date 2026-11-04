@@ -16,11 +16,45 @@ describe("calculateJoin", () => {
 
     expect({
       ...join,
-      lines: join.lines.map(formatPoints),
+      lines: join.lines.map(({ points }) => formatPoints(points)),
       polylines: join.polylines.map(formatPoints),
       text: join.text.map(({ label, pos }) => `${label} @ ${pos.join(",")}`),
     }).toMatchSnapshot();
   });
+
+  test.each(pairs)(
+    "$name: highlights the line from where a crew finished to where it starts next",
+    ({ event, event2 }) => {
+      // A crew that moved, so the line from its start position would differ
+      const crew = event.crews.find(
+        (crew) =>
+          crew.gain && event2.crews.some((next) => next.start === crew.start),
+      );
+
+      if (!crew) return;
+
+      const finished = event.crews.indexOf(crew) - crew.gain!;
+      const starts = event2.crews.findIndex(
+        (next) => next.start === crew.start,
+      );
+      const highlighted = {
+        ...event2,
+        crews: event2.crews.map((next, i) => ({
+          ...next,
+          highlight: i === starts,
+        })),
+      };
+
+      const join = calculateJoin(event, highlighted, 0, 16, 32);
+      const lines = join.lines.filter((line) => line.highlight);
+
+      expect(lines).toHaveLength(1);
+      expect(lines[0].points).toEqual([
+        [0, 16 * finished + 8],
+        [32, 16 * starts + 8],
+      ]);
+    },
+  );
 });
 
 describe("markJointYearHeadship", () => {

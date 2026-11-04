@@ -16,10 +16,16 @@
 
 .highlight {
   stroke: hsl(var(--react-bumps-chart-highlight));
-  stroke-width: 2;
+  stroke-width: var(--react-bumps-chart-highlight-stroke-width, 2);
 }
 
 .blades {
   stroke: hsl(var(--react-bumps-chart-blades));
-  stroke-width: 2;
+  stroke-width: var(--react-bumps-chart-highlight-stroke-width, 2);
+}
+
+/* While a crew is highlighted, the chart's other lines fade, so its line
+   stands out. Blades stay as they are. */
+:global([data-highlighting]) .line:not(.highlight):not(.blades) {
+  stroke-opacity: var(--react-bumps-chart-unselected-opacity, 1);
 }

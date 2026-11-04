@@ -1,7 +1,7 @@
 import { G, Text, Polyline, Line } from "@react-pdf/renderer";
 
 export type JoinProps = {
-  lines: number[][][];
+  lines: { points: number[][]; highlight: boolean }[];
   joins: number[][][];
   text: { label: string; pos: number[] }[];
   x: number;
@@ -10,13 +10,13 @@ export type JoinProps = {
 export const Join = ({ lines, joins, text, x }: JoinProps) => {
   return (
     <G transform={`translate(${x} 0)`} style={{ fontSize: 9 }}>
-      {lines.map((line, index) => (
+      {lines.map(({ points }, index) => (
         <Line
           key={index}
-          x1={line[0][0]}
-          y1={line[0][1]}
-          x2={line[1][0]}
-          y2={line[1][1]}
+          x1={points[0][0]}
+          y1={points[0][1]}
+          x2={points[1][0]}
+          y2={points[1][1]}
           stroke="lightgrey"
           fill="none"
           strokeWidth="1"
