@@ -150,7 +150,7 @@ Charts support URL search parameters:
 - `?club=<clubname>` - Highlights a specific club in the chart
 - `?blades=true` - Shows blades (awarded for bumping up every day of the event, or finishing head of the river)
 - `?spoons=true` - Shows spoons (awarded for being bumped down every day of the event)
-- `?from=<year>&to=<year>` - Multi-year charts only: limits the chart to that span of years (`yearRange` in `src/components/year-range-controls.tsx`)
+- `?from=<year>&to=<year>` - Multi-year charts only: limits the chart to that span of years (`yearRange` in `src/components/year-range-controls.tsx`). With neither, the chart shows the last 20 years; with only one, the other end is the event's first or last year, so every year is `?from=<first year>`
 
 `src/hooks/use-chart-params.ts` owns them: the shell reads the query string after mount and updates it with `history.replaceState`, so toggling a highlight re-renders the chart without a page load or a new history entry. Links that change event/gender/year carry the current query string along (`withParams`).
 
