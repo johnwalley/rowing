@@ -49,9 +49,14 @@ export const BumpsChart = ({
 
   const gender = data.gender === "Women" ? "women" : "men";
 
+  // Fades the other lines while a crew is highlighted (see
+  // `division.module.css`)
+  const highlighting = data.crews.some((crew) => crew.highlight);
+
   return (
     <svg
       ref={ref}
+      data-highlighting={highlighting || undefined}
       className={classNames(classes.root, {
         [classes.unkerned]: measureTextProp,
       })}

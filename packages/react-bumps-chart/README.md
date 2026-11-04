@@ -26,6 +26,19 @@ const History = ({ data }: { data: Event[] }) => (
 );
 ```
 
+### Highlighting a crew
+
+Set `highlight: true` on a crew to draw its line in the highlight colour. Two CSS variables, set on the chart or any element around it, make it stand out more:
+
+```css
+.chart {
+  /* Width of highlighted and blades lines (default 2) */
+  --react-bumps-chart-highlight-stroke-width: 3;
+  /* Opacity of every other line while a crew is highlighted (default 1) */
+  --react-bumps-chart-unselected-opacity: 0.35;
+}
+```
+
 ### Lining things up with a multi-year chart
 
 `layoutChartMultiYear(data, { measureText })` returns where every part of a `BumpsChartMultiYear` goes, in the units of the chart's `viewBox`: the year labels, each race's position (`races`) and the height of a position (`rowHeight`). Pass it the same `data`, `measureText` and `blades` as the chart. Use it to draw your own elements over the chart, such as year labels that stay in view while a wide chart scrolls.
