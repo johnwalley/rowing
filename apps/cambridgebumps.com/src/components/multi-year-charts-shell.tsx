@@ -133,6 +133,8 @@ export function MultiYearChartsShell({
             <div className="mb-4 w-full">
               <MultiYearBumpsChart
                 src={dataUrl}
+                event={event}
+                gender={gender}
                 from={from}
                 to={to}
                 club={club}

@@ -27,10 +27,11 @@ Tests snapshot the pure `src/utils` layout functions against the event fixtures 
 
 - Props: `data: Event[]`, `blades?: boolean`, `measureText?: MeasureText`
 - Handles year labels, coordinate alignment, and visual connections between years
+- Its layout function, `layoutChartMultiYear`, is public too, so a page can line its own elements up with the chart (the bumps site pins year labels and crew names over it). Its `MultiYearChartLayout` type is public API: changing a field's meaning is a breaking change
 
 **PDF Components** (`src/components/pdf/`) - Parallel components using `@react-pdf/renderer` for PDF export
 
-**Entry points** - `src/index.ts` (`react-bumps-chart`) exports the SVG components; `src/pdf.ts` (`react-bumps-chart/pdf`) exports the PDF ones. Both export the `Event`/`Crew` types and `*Props` types. Anything public must be exported from these files
+**Entry points** - `src/index.ts` (`react-bumps-chart`) exports the SVG components and `layoutChartMultiYear`; `src/pdf.ts` (`react-bumps-chart/pdf`) exports the PDF ones. Both export the `Event`/`Crew` types and `*Props` types. Anything public must be exported from these files
 
 ### Directory Structure
 

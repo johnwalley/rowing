@@ -132,6 +132,7 @@ Most components are named for what they do. The ones whose names don't say enoug
 
 - `src/layouts/BaseLayout.astro` - `<head>` metadata, theme script, header, Google Analytics, and the `history-on-tap` install
 - `src/components/bumps-chart.tsx` - wraps the `react-bumps-chart` library; `multi-year-bumps-chart.tsx` fetches its own data
+- `src/components/multi-year-chart-guides.tsx` - the year strip (each year linking to its chart) and crew names pinned over a multi-year chart as it scrolls, placed from the library's `layoutChartMultiYear`. They're drawn one pixel per chart unit, like the chart, so they need the chart drawn at that size
 - `src/components/ClubPositionChart.astro` - a club page's finishing-positions chart (static SVG, no JS)
 - `src/components/ui/` - shadcn/ui components (Radix UI primitives)
 

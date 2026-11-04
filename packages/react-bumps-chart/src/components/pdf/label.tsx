@@ -10,7 +10,7 @@ namespace Label {
 export const Label = ({ label, x }: Label.Props) => {
   return (
     <G
-      transform={`translate(${x} 10)`}
+      transform={`translate(${x} 0)`}
       fill="black"
       textAnchor="middle"
       style={{ fontSize: 12.8 }}

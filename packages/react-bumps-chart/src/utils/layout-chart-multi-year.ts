@@ -22,12 +22,29 @@ export type JoinLayout = Omit<ReturnType<typeof calculateJoin>, "height"> & {
   x: number;
 };
 
+/**
+ * Where every part of a multi-year chart goes, in chart units. The chart's SVG
+ * has a `viewBox` of `0 0 width height`, so drawn one pixel per unit these are
+ * pixels from its top left corner.
+ */
 export type MultiYearChartLayout = {
   width: number;
   height: number;
+  /**
+   * The year labels along the top. Each label's text is centred on
+   * `(x + pos[0], y + pos[1])`, on the text's baseline, and its lines are
+   * offset by `(x, y)` too.
+   */
   labels: { x: number; y: number; labels: YearLabel[] };
   /** Vertical offset of the chart body, below the year labels. */
   y: number;
+  /** The height of one position in the chart body. */
+  rowHeight: number;
+  /**
+   * The left edge and width of each race's body, in the order of `data`. A
+   * crew in position `i` (from 0) is centred on `y + (i + 0.5) * rowHeight`.
+   */
+  races: { x: number; width: number }[];
   stripes: { x: number; stripes: number[][][][] };
   startNumbers: NumbersColumn;
   endNumbers: NumbersColumn;
@@ -220,8 +237,13 @@ export function layoutChartMultiYear(
   return {
     width: x + widthEvents + gap + widthEndCrews + widthEndNumbers,
     height: height + 3 * fontSize,
-    labels: { x, y: 20, labels },
+    labels: { x, y: 30, labels },
     y: 30,
+    rowHeight: scale,
+    races: data.map((event, index) => ({
+      x: x + xDivisionOffsets[index],
+      width: event.days * scale,
+    })),
     stripes: { x, stripes },
     startNumbers: { x: gap, numbers: startNumbers },
     endNumbers: {
