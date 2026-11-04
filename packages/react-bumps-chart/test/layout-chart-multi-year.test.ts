@@ -24,6 +24,23 @@ describe("layoutChartMultiYear", () => {
     }).toMatchSnapshot();
   });
 
+  test("places each race where its divisions are drawn", () => {
+    const sequence = Object.values(sequences)[0];
+    const layout = layoutChartMultiYear(sequence, {
+      measureText: estimateTextWidth,
+    });
+
+    expect(layout.races.map((race) => race.x)).toEqual(
+      layout.divisions.map((division) => division.x),
+    );
+    expect(layout.races.map((race) => race.width)).toEqual(
+      sequence.map((event) => event.days * layout.rowHeight),
+    );
+    // The last race ends where the end crews' column begins, less a gap.
+    const last = layout.races[layout.races.length - 1];
+    expect(last.x + last.width).toBeLessThan(layout.endCrews.x);
+  });
+
   test("gives the joint-year headship blades without changing the data", () => {
     const [february, aprilMay] = sequences.mays1845_1846;
     const head = aprilMay.crews[0].end;

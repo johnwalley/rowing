@@ -12,6 +12,7 @@ describe("entry points", () => {
     expect(Object.keys(main).sort()).toEqual([
       "BumpsChart",
       "BumpsChartMultiYear",
+      "layoutChartMultiYear",
     ]);
 
     vi.doUnmock("@react-pdf/renderer");

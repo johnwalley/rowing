@@ -1,8 +1,13 @@
-import { BumpsChartMultiYear as Chart, type Event } from "react-bumps-chart";
+import {
+  BumpsChartMultiYear as Chart,
+  layoutChartMultiYear,
+  type Event,
+} from "react-bumps-chart";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
+import { PinnedCrews, YearStrip } from "@/components/multi-year-chart-guides";
 import { measureChartText } from "@/lib/measure-text";
-import { yearOf } from "@/lib/utils";
+import { yearOf, type EventKey, type Gender } from "@/lib/utils";
 
 import classes from "./bumps-chart.module.css";
 import "react-bumps-chart/dist/index.css";
@@ -26,6 +31,8 @@ type MultiYearBumpsChartProps = {
   // `src/pages/data/results/[event]/[gender].json.ts`) rather than inlined into
   // the page.
   src: string;
+  event: EventKey;
+  gender: Gender;
   /** The first and last years to chart, inclusive. */
   from: string;
   to: string;
@@ -36,6 +43,8 @@ type MultiYearBumpsChartProps = {
 
 export default function MultiYearBumpsChart({
   src,
+  event,
+  gender,
   from,
   to,
   club,
@@ -46,6 +55,13 @@ export default function MultiYearBumpsChart({
   const [failed, setFailed] = useState(false);
 
   const ref = useRef<HTMLDivElement>(null);
+
+  // The pinned year strip and crew names need the scroll box and the chart's
+  // SVG, both known only once the chart is in the DOM.
+  const [elements, setElements] = useState<{
+    scroller: HTMLElement | null;
+    chart: SVGSVGElement | null;
+  }>({ scroller: null, chart: null });
 
   // `yearOf`, not `+year`: the early mays/men seasons have two races a year,
   // with compound years such as "1827 February March", and both belong in the
@@ -76,6 +92,20 @@ export default function MultiYearBumpsChart({
 
     scroller?.scrollTo({ left: scroller.scrollWidth, behavior: "instant" });
   }, [rangedData]);
+
+  // Where the chart puts its year labels, races and names, for the pinned
+  // strip and columns. Highlighting a club moves nothing, so this follows the
+  // range and blades only.
+  const layout = useMemo(
+    () =>
+      rangedData && rangedData.length > 0
+        ? layoutChartMultiYear(rangedData, {
+            measureText: measureChartText,
+            blades,
+          })
+        : null,
+    [rangedData, blades],
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -134,6 +164,14 @@ export default function MultiYearBumpsChart({
     if (ref.current && svg) {
       ref.current.style.width = `${svg.viewBox.baseVal.width}px`;
     }
+
+    const scroller = ref.current && horizontalScroller(ref.current);
+
+    setElements((current) =>
+      current.scroller === scroller && current.chart === (svg ?? null)
+        ? current
+        : { scroller, chart: svg ?? null },
+    );
   }, [highlightedData, blades]);
 
   if (failed) {
@@ -152,9 +190,13 @@ export default function MultiYearBumpsChart({
   // messages are centred, and centred in a 20,000px box they'd be off screen.
   // A chart narrower than the pane is centred under the heading; a wider one
   // overflows to the right, where `mx-auto` resolves to nothing.
+  //
+  // A one-cell grid, so the pinned year strip and crew names stack over the
+  // chart; each is `sticky` within the scroll box (see
+  // `multi-year-chart-guides.tsx`).
   return (
-    <div className={`${classes.chart} mx-auto w-max px-10`}>
-      <div ref={ref}>
+    <div className={`${classes.chart} mx-auto grid w-max px-10`}>
+      <div ref={ref} className="[grid-area:1/1]">
         <Chart
           data={highlightedData}
           blades={blades}
@@ -162,6 +204,23 @@ export default function MultiYearBumpsChart({
           measureText={measureChartText}
         />
       </div>
+      {layout && (
+        <>
+          <YearStrip
+            layout={layout}
+            data={rangedData}
+            event={event}
+            gender={gender}
+          />
+          <PinnedCrews
+            layout={layout}
+            data={rangedData}
+            club={club}
+            scroller={elements.scroller}
+            chart={elements.chart}
+          />
+        </>
+      )}
     </div>
   );
 }

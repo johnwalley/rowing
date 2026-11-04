@@ -26,6 +26,10 @@ const History = ({ data }: { data: Event[] }) => (
 );
 ```
 
+### Lining things up with a multi-year chart
+
+`layoutChartMultiYear(data, { measureText })` returns where every part of a `BumpsChartMultiYear` goes, in the units of the chart's `viewBox`: the year labels, each race's position (`races`) and the height of a position (`rowHeight`). Pass it the same `data`, `measureText` and `blades` as the chart. Use it to draw your own elements over the chart, such as year labels that stay in view while a wide chart scrolls.
+
 ### PDF export
 
 PDF versions of both charts are available from `react-bumps-chart/pdf`. They need [`@react-pdf/renderer`](https://react-pdf.org), which you install yourself:
