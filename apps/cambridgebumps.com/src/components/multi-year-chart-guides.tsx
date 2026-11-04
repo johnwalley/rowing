@@ -229,10 +229,16 @@ export function PinnedCrews({
     [data],
   );
 
-  const [keys, setKeys] = useState<{
+  // Worked out for one layout: a race index means nothing in another. When
+  // the range changes, the next render has the new layout before the effect
+  // below has caught up, and an index past the new range's end would crash.
+  const [state, setState] = useState<{
+    layout: MultiYearChartLayout | null;
     left: string | null;
     right: string | null;
-  }>({ left: null, right: null });
+  }>({ layout: null, left: null, right: null });
+
+  const keys = state.layout === layout ? state : { left: null, right: null };
 
   useEffect(() => {
     if (!scroller || !chart) return;
@@ -256,10 +262,12 @@ export function PinnedCrews({
             : columnKey(layout, widths, left, right, "right"),
       };
 
-      setKeys((current) =>
-        current.left === next.left && current.right === next.right
+      setState((current) =>
+        current.layout === layout &&
+        current.left === next.left &&
+        current.right === next.right
           ? current
-          : next,
+          : { layout, ...next },
       );
     };
 
