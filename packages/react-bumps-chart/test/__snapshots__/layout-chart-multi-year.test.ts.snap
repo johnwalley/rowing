@@ -1,5 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`layoutChartMultiYear > marks the years with no racing 1`] = `
+[
+  "1915–18",
+  "1940",
+  "2020–21",
+]
+`;
+
 exports[`layoutChartMultiYear > mays1845_1846 1`] = `
 {
   "divisions": [

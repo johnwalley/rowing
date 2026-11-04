@@ -1,4 +1,4 @@
-import { Document, G, Page, StyleSheet, Svg } from "@react-pdf/renderer";
+import { Document, G, Page, StyleSheet, Svg, Text } from "@react-pdf/renderer";
 
 import { Crews } from "./crews";
 import { Division } from "./division";
@@ -53,6 +53,18 @@ export const BumpsChartMultiYear = ({
               <Label key={index} label={label} x={layout.labels.x} />
             ))}
           </G>
+          {layout.gaps.map((gap) => (
+            <Text
+              key={gap.first}
+              x={gap.pos[0]}
+              y={gap.pos[1]}
+              textAnchor="middle"
+              fill="grey"
+              style={{ fontSize: 9 }}
+            >
+              {gap.label}
+            </Text>
+          ))}
           <G transform={`translate(0 ${layout.y})`}>
             {layout.stripes.stripes.map((stripe, index) => (
               <Stripes key={index} stripes={stripe} x={layout.stripes.x} />
@@ -87,6 +99,7 @@ export const BumpsChartMultiYear = ({
                 lines={join.lines}
                 joins={join.polylines}
                 text={join.text}
+                gap={join.gap}
                 x={join.x}
               />
             ))}

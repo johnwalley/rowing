@@ -5,6 +5,7 @@ export {
 } from "./components/bumps-chart-multi-year";
 export {
   layoutChartMultiYear,
+  type GapLayout,
   type MultiYearChartLayout,
   type YearLabel,
 } from "./utils/layout-chart-multi-year";

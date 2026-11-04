@@ -7,11 +7,13 @@ namespace Join {
     lines: { points: number[][]; highlight: boolean }[];
     joins: number[][][];
     text: { label: string; pos: number[] }[];
+    /** Years with no racing fall between the races: dash the lines. */
+    gap?: boolean;
     x: number;
   };
 }
 
-export const Join = ({ lines, joins, text, x }: Join.Props) => {
+export const Join = ({ lines, joins, text, gap = false, x }: Join.Props) => {
   return (
     <g transform={`translate(${x} 0)`} fontSize="9px">
       {lines.map(({ points, highlight }, index) => (
@@ -24,6 +26,7 @@ export const Join = ({ lines, joins, text, x }: Join.Props) => {
           stroke="lightgrey"
           fill="none"
           strokeWidth="1"
+          strokeDasharray={gap ? "3 2" : undefined}
           className={classNames(classes.line, {
             [classes.highlight]: highlight,
           })}

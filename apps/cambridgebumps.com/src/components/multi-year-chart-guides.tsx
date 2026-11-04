@@ -118,6 +118,23 @@ export function YearStrip({ layout, data, event, gender }: YearStripProps) {
           </g>
         ))}
       </g>
+      {/* Years with no racing, between the races either side */}
+      {layout.gaps.map((gap) => (
+        <text
+          key={gap.first}
+          x={gap.pos[0]}
+          y={gap.pos[1]}
+          textAnchor="middle"
+          fontSize={9}
+          style={{
+            ...textStyle,
+            fill: "hsl(var(--react-bumps-chart-muted-foreground))",
+          }}
+        >
+          <title>{`No racing in ${gap.label}`}</title>
+          {gap.label}
+        </text>
+      ))}
     </svg>
   );
 }

@@ -20,6 +20,22 @@ export type YearLabel = {
 
 export type JoinLayout = Omit<ReturnType<typeof calculateJoin>, "height"> & {
   x: number;
+  /** Whether a year or more with no racing falls between the two races. */
+  gap: boolean;
+};
+
+/** A stretch of years with no racing, between two races. */
+export type GapLayout = {
+  /** The first and last years with no racing. */
+  first: number;
+  last: number;
+  /** "2021", or "2020–21" for more than a year. */
+  label: string;
+  /**
+   * Where the label's text is centred, on its baseline, from the chart's top
+   * left: unlike a year label's, not offset by `labels.x`.
+   */
+  pos: number[];
 };
 
 /**
@@ -51,11 +67,28 @@ export type MultiYearChartLayout = {
   startCrews: CrewsColumn;
   endCrews: CrewsColumn;
   joins: JoinLayout[];
+  /** Each stretch of years with no racing, marked between the races. */
+  gaps: GapLayout[];
   divisions: DivisionLayout[];
 };
 
 const sep = 32;
 const gap = 5;
+
+/** The year labels' row. */
+const labelsY = 30;
+
+/** The leading year of an event's `year`, which may be "1827 February March". */
+const yearOf = (year: string) => parseInt(year, 10);
+
+/** "2021", "2020–21", or "1999–2001" across a century. */
+function gapLabel(first: number, last: number) {
+  if (first === last) return `${first}`;
+
+  return Math.floor(first / 100) === Math.floor(last / 100)
+    ? `${first}–${String(last % 100).padStart(2, "0")}`
+    : `${first}–${last}`;
+}
 
 /** Calculates the position of every part of a chart of consecutive events. */
 export function layoutChartMultiYear(
@@ -234,10 +267,29 @@ export function layoutChartMultiYear(
   const x = widthStartNumbers + widthStartCrews + gap;
   const widthEvents = xDivisionOffsets[data.length] - sep;
 
+  // Years with no racing between two races: the war years, 2020–21. Labelled
+  // in the year labels' row, centred over the join between the races.
+  const gaps: (GapLayout & { index: number })[] = [];
+
+  for (let index = 0; index < data.length - 1; index++) {
+    const first = yearOf(data[index].year) + 1;
+    const last = yearOf(data[index + 1].year) - 1;
+
+    if (last >= first) {
+      gaps.push({
+        index,
+        first,
+        last,
+        label: gapLabel(first, last),
+        pos: [x + xDivisionOffsets[index + 1] - sep / 2, labelsY + top - 5],
+      });
+    }
+  }
+
   return {
     width: x + widthEvents + gap + widthEndCrews + widthEndNumbers,
     height: height + 3 * fontSize,
-    labels: { x, y: 30, labels },
+    labels: { x, y: labelsY, labels },
     y: 30,
     rowHeight: scale,
     races: data.map((event, index) => ({
@@ -270,8 +322,10 @@ export function layoutChartMultiYear(
     },
     joins: joins.map((join, index) => ({
       x: x + xDivisionOffsets[index + 1] - sep,
+      gap: gaps.some((gap) => gap.index === index),
       ...join,
     })),
+    gaps: gaps.map(({ index: _index, ...gap }) => gap),
     divisions: divisions.map((division, index) => ({
       x: x + xDivisionOffsets[index],
       ...division,

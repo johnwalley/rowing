@@ -4,10 +4,12 @@ export type JoinProps = {
   lines: { points: number[][]; highlight: boolean }[];
   joins: number[][][];
   text: { label: string; pos: number[] }[];
+  /** Years with no racing fall between the races: dash the lines. */
+  gap?: boolean;
   x: number;
 };
 
-export const Join = ({ lines, joins, text, x }: JoinProps) => {
+export const Join = ({ lines, joins, text, gap = false, x }: JoinProps) => {
   return (
     <G transform={`translate(${x} 0)`} style={{ fontSize: 9 }}>
       {lines.map(({ points }, index) => (
@@ -20,6 +22,7 @@ export const Join = ({ lines, joins, text, x }: JoinProps) => {
           stroke="lightgrey"
           fill="none"
           strokeWidth="1"
+          strokeDasharray={gap ? "3 2" : undefined}
         />
       ))}
       {joins.map((line, index) => (
