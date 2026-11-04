@@ -93,6 +93,55 @@ export default function MultiYearBumpsChart({
     scroller?.scrollTo({ left: scroller.scrollWidth, behavior: "instant" });
   }, [rangedData]);
 
+  // And keep it there as the pane changes width. A browser holds a box's left
+  // scroll edge still, so narrowing the window would slide the newest years
+  // out of view on the right, and widening it would show only older ones.
+  // Instead hold the distance from the right-hand end: the newest years stay
+  // put, and so do older ones the visitor has scrolled back to.
+  useEffect(() => {
+    const scroller = elements.scroller;
+
+    if (!scroller) return;
+
+    const fromEnd = () =>
+      scroller.scrollWidth - scroller.clientWidth - scroller.scrollLeft;
+
+    let width = scroller.clientWidth;
+    let distance = fromEnd();
+    // Where the observer below last put `scrollLeft`
+    let placed: number | null = null;
+
+    const onScroll = () => {
+      // Widening the pane can pull `scrollLeft` back, and its scroll event
+      // arrives before the observer below; and the observer's own change
+      // fires one too. Neither is the visitor scrolling, and a pane too wide
+      // to keep the distance mustn't lose it.
+      if (scroller.clientWidth !== width || scroller.scrollLeft === placed) {
+        return;
+      }
+
+      placed = null;
+      distance = fromEnd();
+    };
+
+    const observer = new ResizeObserver(() => {
+      if (scroller.clientWidth === width) return;
+
+      width = scroller.clientWidth;
+      scroller.scrollLeft =
+        scroller.scrollWidth - scroller.clientWidth - distance;
+      placed = scroller.scrollLeft;
+    });
+
+    scroller.addEventListener("scroll", onScroll, { passive: true });
+    observer.observe(scroller);
+
+    return () => {
+      scroller.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
+  }, [elements.scroller]);
+
   // Where the chart puts its year labels, races and names, for the pinned
   // strip and columns. Highlighting a club moves nothing, so this follows the
   // range and blades only.
