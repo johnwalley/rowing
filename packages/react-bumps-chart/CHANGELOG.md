@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.15.0
+
+### Minor Changes
+
+- d4260a3: Export `layoutChartMultiYear`, which gives where every part of a `BumpsChartMultiYear` goes, so a page can line its own elements up with the chart, such as year labels that stay in view while the chart scrolls. Its layout now includes each race's position (`races`) and the height of a position (`rowHeight`).
+- ea74580: `BumpsChartMultiYear` marks years with no racing between two races, such as 2020–21: the years are labelled between the races' year labels, and the lines joining the races are dashed.
+- 38c5739: Make a highlighted crew easier to follow. On `BumpsChartMultiYear`, its line from one year to the next is now highlighted too. While a crew is highlighted, the chart's other lines can fade: set `--react-bumps-chart-unselected-opacity` (default `1`, no fade). `--react-bumps-chart-highlight-stroke-width` sets the width of highlighted and blades lines (default `2`).
+- 7c3da4c: `Blade` takes an optional `gender` prop (`"men"` or `"women"`) for clubs whose men's and women's blades differ. Worcester College, Oxford (`wro`) is the first: its men's blade is black with a pink cross, and its women's blade, the default, stays pink with a black cross. The new `genderedClubs` export lists the clubs with both designs. `BumpsChart` passes its event's gender, so men's charts show the men's blade.
+
+### Patch Changes
+
+- a95bf12: Remove the unused `d3-array`, `d3-delaunay`, `d3-scale` and `d3-shape` dependencies, so installing the chart no longer pulls them in.
+- Updated dependencies [b853343]
+- Updated dependencies [7c3da4c]
+  - react-rowing-blades@2.6.0
+
 ## 1.14.1
 
 ### Patch Changes
