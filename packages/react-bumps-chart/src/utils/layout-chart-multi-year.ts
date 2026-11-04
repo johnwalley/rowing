@@ -31,7 +31,10 @@ export type GapLayout = {
   last: number;
   /** "2021", or "2020–21" for more than a year. */
   label: string;
-  /** Where the label's text is centred, on its baseline. */
+  /**
+   * Where the label's text is centred, on its baseline, from the chart's top
+   * left: unlike a year label's, not offset by `labels.x`.
+   */
   pos: number[];
 };
 
