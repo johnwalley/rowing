@@ -1,6 +1,7 @@
 import type { Event, MultiYearChartLayout } from "react-bumps-chart";
 import { useEffect, useMemo, useState } from "react";
 
+import { withParams } from "@/hooks/use-chart-params";
 import { measureChartText } from "@/lib/measure-text";
 import {
   chartPath,
@@ -44,11 +45,30 @@ type YearStripProps = {
   data: Event[];
   event: EventKey;
   gender: Gender;
+  /** The view options a year's chart shares, carried along by its link. */
+  club?: string | null;
+  blades?: boolean;
+  spoons?: boolean;
 };
 
 // The chart's year labels, on an opaque strip that hides the chart's own as it
 // scrolls under. Each race's stretch of the strip links to its chart page.
-export function YearStrip({ layout, data, event, gender }: YearStripProps) {
+export function YearStrip({
+  layout,
+  data,
+  event,
+  gender,
+  club,
+  blades,
+  spoons,
+}: YearStripProps) {
+  // Like every link that changes the year, keep the highlighted club and the
+  // blades/spoons toggles. Not `from`/`to`, which only a multi-year chart has.
+  const params = new URLSearchParams();
+  if (club) params.set("club", club);
+  if (blades) params.set("blades", "true");
+  if (spoons) params.set("spoons", "true");
+
   // The early mays/men years held two races, whose pages are `/1838` and
   // `/1838/2`. A range always takes in both races of a year.
   const links = data.map((race, index) => {
@@ -58,7 +78,7 @@ export function YearStrip({ layout, data, event, gender }: YearStripProps) {
       .filter((other) => yearOf(other.year) === year).length;
 
     return {
-      href: chartPath(event, gender, year, number + 1),
+      href: withParams(chartPath(event, gender, year, number + 1), params),
       label: `${set[event]} ${race.year}`,
       ...layout.races[index],
     };
