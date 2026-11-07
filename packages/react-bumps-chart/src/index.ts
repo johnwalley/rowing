@@ -10,4 +10,5 @@ export {
   type YearLabel,
 } from "./utils/layout-chart-multi-year";
 export type { MeasureText } from "./utils/layout-chart";
+export type { OnClubClick } from "./utils/club-click";
 export type { Crew, Event } from "./types";

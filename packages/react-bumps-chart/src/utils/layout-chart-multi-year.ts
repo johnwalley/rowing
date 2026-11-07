@@ -306,6 +306,7 @@ export function layoutChartMultiYear(
       x: widthStartNumbers + widthStartCrews,
       crews: events[0].crews.map((crew, index) => ({
         crew: crew.start,
+        club: crew.club,
         blades: blades && crew.blades,
         highlight: crew.highlight,
         y: index,
@@ -315,6 +316,7 @@ export function layoutChartMultiYear(
       x: x + widthEvents + gap,
       crews: data[data.length - 1].crews.map((crew, index) => ({
         crew: crew.gain !== null ? crew.start : null,
+        club: crew.club,
         blades: blades && crew.blades,
         highlight: crew.highlight,
         y: index - (crew.gain ?? 0),

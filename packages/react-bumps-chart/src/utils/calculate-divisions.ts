@@ -13,6 +13,7 @@ export function calculateDivisions(
   const polylines: {
     blades: boolean;
     highlight: boolean;
+    club: string;
     points: number[][];
   }[] = [];
   const divisionLines: number[][][] = [];
@@ -101,6 +102,7 @@ export function calculateDivisions(
         points: line,
         blades: blades && event.crews[crewNum].blades,
         highlight: event.crews[crewNum].highlight,
+        club: event.crews[crewNum].club,
       });
     }
 

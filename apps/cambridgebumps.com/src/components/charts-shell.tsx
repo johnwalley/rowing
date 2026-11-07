@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import { navigate } from "astro:transitions/client";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import type { Event } from "react-bumps-chart";
 
 import BumpsChart from "@/components/bumps-chart";
@@ -74,6 +74,13 @@ export function ChartsShell({
   const spoons = params.get("spoons") === "true";
 
   useStepKeys(previous, next, params);
+
+  // Clicking a crew highlights its club; clicking the highlighted club again
+  // clears it.
+  const toggleClub = useCallback(
+    (clicked: string) => setParam("club", clicked === club ? null : clicked),
+    [club, setParam],
+  );
 
   // The line under the heading: the category, the race's size, and the club
   // being highlighted, so a shared link or screenshot explains itself.
@@ -251,6 +258,7 @@ export function ChartsShell({
                 club={club}
                 blades={blades}
                 spoons={spoons}
+                onClubClick={toggleClub}
               />
             </div>
             <div className="mt-4">

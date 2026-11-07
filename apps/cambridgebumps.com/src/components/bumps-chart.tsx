@@ -1,4 +1,8 @@
-import { BumpsChart as Chart, type Event } from "react-bumps-chart";
+import {
+  BumpsChart as Chart,
+  type Event,
+  type OnClubClick,
+} from "react-bumps-chart";
 import { useMemo } from "react";
 
 import { measureChartText } from "@/lib/measure-text";
@@ -11,6 +15,8 @@ type BumpsChartProps = {
   club?: string | null;
   blades?: boolean;
   spoons?: boolean;
+  /** Called with a crew's club when its name or line is clicked. */
+  onClubClick?: OnClubClick;
 };
 
 export default function BumpsChart({
@@ -18,6 +24,7 @@ export default function BumpsChart({
   club,
   blades = false,
   spoons = false,
+  onClubClick,
 }: BumpsChartProps) {
   // The results carry no highlight of their own, so with no club selected the
   // year's data goes to the chart untouched rather than being cloned crew by
@@ -41,6 +48,7 @@ export default function BumpsChart({
         blades={blades}
         spoons={spoons}
         measureText={measureChartText}
+        onClubClick={onClubClick}
       />
     </div>
   );

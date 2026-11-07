@@ -20,12 +20,12 @@ Tests snapshot the pure `src/utils` layout functions against the event fixtures 
 
 **BumpsChart** - Single event chart (SVG)
 
-- Props: `data: Event`, `blades?: boolean`, `spoons?: boolean`, `measureText?: MeasureText`
+- Props: `data: Event`, `blades?: boolean`, `spoons?: boolean`, `measureText?: MeasureText`, `onClubClick?: OnClubClick`
 - Renders crew trajectories as polylines showing position changes across racing days
 
 **BumpsChartMultiYear** - Multiple consecutive years (SVG)
 
-- Props: `data: Event[]`, `blades?: boolean`, `measureText?: MeasureText`
+- Props: `data: Event[]`, `blades?: boolean`, `measureText?: MeasureText`, `onClubClick?: OnClubClick`
 - Handles year labels, coordinate alignment, and visual connections between years
 - Its layout function, `layoutChartMultiYear`, is public too, so a page can line its own elements up with the chart (the bumps site pins year labels and crew names over it). Its `MultiYearChartLayout` type is public API: changing a field's meaning is a breaking change
 
@@ -63,6 +63,7 @@ stories/                # Storybook stories with test data
 - **Path aliases**: `@/components` and `@/utils` configured in Vite/TypeScript
 - **Shared layout**: SVG and PDF components only render. All positions come from `layoutChart` / `layoutChartMultiYear`, which take a `measureText` function: `useMeasureText()` for SVG (the `measureText` prop if given, on the server and in the browser, with chart text unkerned to match; otherwise estimates on the server, then the DOM after mount in the font the chart's text is drawn in, re-measured when fonts load) and `measurePdfText` (Helvetica metrics) for PDF. Change layout there, not in components
 - **Memoization**: `get-string-width.ts` caches DOM measurements (cleared when web fonts load), `useMemo` for layouts
+- **Clicks**: with `onClubClick`, crew names and lines carry `data-club` and one delegated handler on the `<svg>` reports the club (`src/utils/club-click.ts`), rather than a handler on each of tens of thousands of elements. The starting names become toggle buttons in the tab order (the finishing ones are clickable only, so the keyboard doesn't visit each crew twice); the single-year chart adds an invisible wider twin of each line to make it easier to hit, which the multi-year chart skips for its element count. Without the prop the markup is unchanged
 - **Coordinate system**: Canvas-based positioning with scale factor (default: 16)
 
 ### Core Data Types

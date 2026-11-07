@@ -1,5 +1,5 @@
 import { navigate } from "astro:transitions/client";
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import { MixerHorizontalIcon } from "@radix-ui/react-icons";
 
 import { EventSelect } from "@/components/event-select";
@@ -51,6 +51,13 @@ export function MultiYearChartsShell({
   const club = params.get("club");
   const blades = params.get("blades") === "true";
   const spoons = params.get("spoons") === "true";
+
+  // Clicking a crew highlights its club; clicking the highlighted club again
+  // clears it.
+  const toggleClub = useCallback(
+    (clicked: string) => setParam("club", clicked === club ? null : clicked),
+    [club, setParam],
+  );
   const hasResults = years.length > 0;
   const { from, to } = hasResults
     ? yearRange(years, params)
@@ -220,6 +227,7 @@ export function MultiYearChartsShell({
                 club={club}
                 blades={blades}
                 spoons={spoons}
+                onClubClick={toggleClub}
               />
             </div>
           ) : (
