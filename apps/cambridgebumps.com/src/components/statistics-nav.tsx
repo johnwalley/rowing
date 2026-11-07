@@ -52,7 +52,7 @@ export function StatisticsNav({
       />
       {statistic && (
         <div>
-          <Label htmlFor="statistic" className="mb-4 block">
+          <Label htmlFor="statistic" className="mb-2 block">
             Statistic
           </Label>
           <Select

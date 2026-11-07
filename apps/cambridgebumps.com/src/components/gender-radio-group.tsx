@@ -25,7 +25,7 @@ export function GenderRadioGroup({
     <div>
       <span
         id={`${id}-label`}
-        className="mb-4 block text-sm leading-none font-medium"
+        className="mb-2 block text-sm leading-none font-medium"
       >
         Category
       </span>

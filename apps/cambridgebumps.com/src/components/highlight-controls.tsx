@@ -53,7 +53,7 @@ export function HighlightControls({
   );
 
   const clubPicker = (
-    <div className={cn("flex", compact && "min-w-0 flex-1")}>
+    <div className={cn("flex", compact ? "min-w-0 flex-1" : "w-[280px]")}>
       {compact ? (
         <ClubNativeSelect
           id={clubId}
@@ -71,13 +71,14 @@ export function HighlightControls({
           value={club}
           onChange={(value) => setParam("club", value)}
           placeholder="Select a club"
-          className="w-[280px]"
+          aria-label="Highlight club"
+          className="min-w-0 flex-1"
         />
       )}
       <Button
         variant="link"
         size="icon"
-        className={cn(compact && "h-8 w-8 shrink-0")}
+        className={cn("shrink-0", compact && "h-8 w-8")}
         disabled={club === null}
         onClick={() => setParam("club", null)}
         aria-label="Clear highlighted club"
@@ -91,16 +92,16 @@ export function HighlightControls({
     <div
       className={cn(
         "flex space-x-2",
-        compact ? "shrink-0 items-center" : "items-top",
+        compact ? "shrink-0 items-center" : "items-top w-[280px]",
       )}
     >
       <HighlightToggle
         id={bladesId}
-        label={compact ? "Blades" : "Highlight blades"}
+        label="Blades"
         description={
           compact
             ? undefined
-            : "Crews who bumped every day, or finished head of the river, are highlighted."
+            : "Crews who bumped every day, or finished head of the river."
         }
         checked={blades}
         onCheckedChange={(checked) =>
@@ -122,16 +123,16 @@ export function HighlightControls({
     );
   }
 
+  // The club and blades highlights are one group under one heading, so the
+  // sidebar reads Event, Category, Year(s), Highlight.
   return (
-    <>
-      {bladesToggle}
-      <div>
-        <Label htmlFor={clubId} className="mb-4 block">
-          Highlight club
-        </Label>
-        {clubPicker}
-        {clubLink && <div className="mt-2">{clubLink}</div>}
-      </div>
-    </>
+    <div>
+      <Label htmlFor={clubId} className="mb-2 block">
+        Highlight
+      </Label>
+      {clubPicker}
+      {clubLink && <div className="mt-2">{clubLink}</div>}
+      <div className="mt-4">{bladesToggle}</div>
+    </div>
   );
 }

@@ -22,7 +22,7 @@ export function EventSelect({
 }) {
   return (
     <div>
-      <Label htmlFor="event" className="mb-4 block">
+      <Label htmlFor="event" className="mb-2 block">
         Event
       </Label>
       <Select

@@ -188,7 +188,7 @@ export function YearRangeControls({
 
   return (
     <div>
-      <Label htmlFor={`${id}-from`} className="mb-4 block">
+      <Label htmlFor={`${id}-from`} className="mb-2 block">
         Years
       </Label>
       <div className="flex flex-col gap-2">
