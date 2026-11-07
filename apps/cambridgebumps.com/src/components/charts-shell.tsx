@@ -150,7 +150,7 @@ export function ChartsShell({
         )}
       </div>
       <div className="order-2 hidden border-l py-4 lg:block">
-        <div className="flex flex-col space-y-3 px-4">
+        <div className="flex flex-col gap-6 px-4">
           <EventSelect
             value={event}
             onValueChange={(value) => {
@@ -175,7 +175,7 @@ export function ChartsShell({
             }}
           />
           <div>
-            <span className="mb-4 block text-sm leading-none font-medium">
+            <span className="mb-2 block text-sm leading-none font-medium">
               Year
             </span>
             <YearPicker

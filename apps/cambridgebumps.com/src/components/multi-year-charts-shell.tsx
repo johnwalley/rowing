@@ -156,7 +156,7 @@ export function MultiYearChartsShell({
         </div>
       </div>
       <div className="order-2 hidden border-l py-4 lg:block">
-        <div className="flex flex-col space-y-3 px-4">
+        <div className="flex flex-col gap-6 px-4">
           <EventSelect
             value={event}
             onValueChange={(value) => {
