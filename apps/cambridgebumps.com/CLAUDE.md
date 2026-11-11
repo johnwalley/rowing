@@ -163,7 +163,7 @@ On a single-year chart page the ← and → keys step to the previous and next r
 
 ### SEO
 
-- `src/pages/robots.txt.ts` → `/robots.txt`
+- `src/pages/robots.txt.ts` → `/robots.txt`. It turns AI crawlers away from the whole site and keeps every other crawler off URLs with a query string: the club pages link to about 11,000 `?club=` chart URLs, the same pages as their canonical URLs, and crawling them multiplied the CDN requests. Add a new AI crawler to its `AI_CRAWLERS`
 - `src/pages/sitemap.xml.ts` → `/sitemap.xml`, enumerating every chart, multi-year and statistics page
 - `BaseLayout.astro` renders title/description/canonical/Open Graph/Twitter tags; pages pass what they need. Chart pages pre-generated for a year with no results yet set `noindex`.
 - Google Analytics via `src/components/GoogleAnalytics.astro` in the base layout
