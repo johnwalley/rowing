@@ -12,6 +12,7 @@ import classes from "./bumps-chart.module.css";
 import { layoutChartMultiYear } from "@/utils/layout-chart-multi-year";
 import { MeasureText, scale } from "@/utils/layout-chart";
 import { useMeasureText } from "@/utils/measure-text";
+import { clubClickHandlers, type OnClubClick } from "@/utils/club-click";
 import { useMemo, useRef } from "react";
 
 namespace BumpsChartMultiYear {
@@ -30,6 +31,12 @@ namespace BumpsChartMultiYear {
      * Defaults to measuring with the DOM, which can only estimate on the server.
      */
     measureText?: MeasureText;
+    /**
+     * Called with a crew's club when its name or line is clicked, or its
+     * name pressed with Enter or Space (the starting names are in the tab
+     * order). Without it, the chart doesn't respond to clicks.
+     */
+    onClubClick?: OnClubClick;
   };
 }
 
@@ -39,6 +46,7 @@ export const BumpsChartMultiYear = ({
   data,
   blades = false,
   measureText: measureTextProp,
+  onClubClick,
 }: BumpsChartMultiYear.Props) => {
   const ref = useRef<SVGSVGElement>(null);
   const measureText = useMeasureText(ref, measureTextProp);
@@ -60,7 +68,9 @@ export const BumpsChartMultiYear = ({
       data-highlighting={highlighting || undefined}
       className={classNames(classes.root, {
         [classes.unkerned]: measureTextProp,
+        [classes.interactive]: onClubClick,
       })}
+      {...clubClickHandlers(onClubClick)}
       viewBox={`0 0 ${layout.width} ${layout.height}`}
       preserveAspectRatio="none"
     >
@@ -103,12 +113,14 @@ export const BumpsChartMultiYear = ({
           crews={layout.startCrews.crews}
           scale={scale}
           x={layout.startCrews.x}
+          interactive={onClubClick && "focusable"}
         />
         <Crews
           align="start"
           crews={layout.endCrews.crews}
           scale={scale}
           x={layout.endCrews.x}
+          interactive={onClubClick && "clickable"}
         />
         {layout.joins.map((join, index) => (
           <Join
@@ -118,6 +130,7 @@ export const BumpsChartMultiYear = ({
             text={join.text}
             gap={join.gap}
             x={join.x}
+            interactive={!!onClubClick}
           />
         ))}
         {layout.divisions.map((division, index) => (
@@ -129,6 +142,7 @@ export const BumpsChartMultiYear = ({
             rect={division.rect}
             skipped={division.skipped}
             x={division.x}
+            interactive={onClubClick && "thin"}
           />
         ))}
       </g>

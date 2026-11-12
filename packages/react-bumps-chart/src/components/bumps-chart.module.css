@@ -17,3 +17,21 @@ text {
   font-family: var(--react-bumps-chart-font-family, Arial);
   font-weight: 400;
 }
+
+/* With onClubClick, a crew's name and line highlight its club */
+.interactive [data-club] {
+  cursor: pointer;
+}
+
+.interactive text[data-club]:hover {
+  text-decoration: underline;
+}
+
+.interactive text[data-club]:focus {
+  outline: none;
+}
+
+.interactive text[data-club]:focus-visible {
+  outline: 1px solid hsl(var(--react-bumps-chart-highlight));
+  outline-offset: 1px;
+}

@@ -11,6 +11,7 @@ import classNames from "classnames";
 import classes from "./bumps-chart.module.css";
 import { MeasureText, layoutChart, scale } from "@/utils/layout-chart";
 import { useMeasureText } from "@/utils/measure-text";
+import { clubClickHandlers, type OnClubClick } from "@/utils/club-click";
 import { useMemo, useRef } from "react";
 
 namespace BumpsChart {
@@ -29,6 +30,12 @@ namespace BumpsChart {
      * Defaults to measuring with the DOM, which can only estimate on the server.
      */
     measureText?: MeasureText;
+    /**
+     * Called with a crew's club when its name or line is clicked, or its
+     * name pressed with Enter or Space (the starting names are in the tab
+     * order). Without it, the chart doesn't respond to clicks.
+     */
+    onClubClick?: OnClubClick;
   };
 }
 
@@ -38,6 +45,7 @@ export const BumpsChart = ({
   data,
   blades = false,
   measureText: measureTextProp,
+  onClubClick,
 }: BumpsChart.Props) => {
   const ref = useRef<SVGSVGElement>(null);
   const measureText = useMeasureText(ref, measureTextProp);
@@ -59,7 +67,9 @@ export const BumpsChart = ({
       data-highlighting={highlighting || undefined}
       className={classNames(classes.root, {
         [classes.unkerned]: measureTextProp,
+        [classes.interactive]: onClubClick,
       })}
+      {...clubClickHandlers(onClubClick)}
       viewBox={`0 0 ${layout.width} ${layout.height}`}
       preserveAspectRatio="none"
     >
@@ -99,12 +109,14 @@ export const BumpsChart = ({
           crews={layout.startCrews.crews}
           scale={scale}
           x={layout.startCrews.x}
+          interactive={onClubClick && "focusable"}
         />
         <Crews
           align="start"
           crews={layout.endCrews.crews}
           scale={scale}
           x={layout.endCrews.x}
+          interactive={onClubClick && "clickable"}
         />
         <Division
           lines={layout.division.polylines}
@@ -113,6 +125,7 @@ export const BumpsChart = ({
           skipped={layout.division.skipped}
           rect={layout.division.rect}
           x={layout.division.x}
+          interactive={onClubClick && "wide"}
         />
         <ExtraText text={layout.extraText.text} x={layout.extraText.x} />
       </g>

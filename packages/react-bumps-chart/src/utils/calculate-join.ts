@@ -49,6 +49,7 @@ export function calculateJoin(
         // `crewNum` is where the crew finished, not the crew that started
         // there, so the flag comes from its entry in the next year.
         highlight: event2.crews[crewNum2].highlight,
+        club: event2.crews[crewNum2].club,
       });
     } else {
       let height = yOff + scale * crewNum2;

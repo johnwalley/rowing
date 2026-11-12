@@ -2,6 +2,7 @@ import {
   BumpsChartMultiYear as Chart,
   layoutChartMultiYear,
   type Event,
+  type OnClubClick,
 } from "react-bumps-chart";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
@@ -39,6 +40,8 @@ type MultiYearBumpsChartProps = {
   club?: string | null;
   blades?: boolean;
   spoons?: boolean;
+  /** Called with a crew's club when its name or line is clicked. */
+  onClubClick?: OnClubClick;
 };
 
 export default function MultiYearBumpsChart({
@@ -50,6 +53,7 @@ export default function MultiYearBumpsChart({
   club,
   blades = false,
   spoons = false,
+  onClubClick,
 }: MultiYearBumpsChartProps) {
   const [data, setData] = useState<Event[] | null>(null);
   const [failed, setFailed] = useState(false);
@@ -251,6 +255,7 @@ export default function MultiYearBumpsChart({
           blades={blades}
           spoons={spoons}
           measureText={measureChartText}
+          onClubClick={onClubClick}
         />
       </div>
       {layout && (

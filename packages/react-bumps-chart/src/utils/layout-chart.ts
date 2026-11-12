@@ -17,6 +17,8 @@ export type LayoutOptions = {
 
 export type CrewLabel = {
   crew: string | null;
+  /** The crew's club, which `onClubClick` reports. */
+  club: string;
   blades: boolean;
   highlight: boolean;
   y: number;
@@ -122,6 +124,7 @@ export function layoutChart(
       x: left + widthBeforeDivisions - gap,
       crews: event.crews.map((crew, index) => ({
         crew: crew.start,
+        club: crew.club,
         blades: blades && crew.blades,
         highlight: crew.highlight,
         y: index,
@@ -131,6 +134,7 @@ export function layoutChart(
       x: left + widthBeforeDivisions + widthDivisions + gap,
       crews: event.crews.map((crew, index) => ({
         crew: crew.gain !== null ? crew.start : null,
+        club: crew.club,
         blades: blades && crew.blades,
         highlight: crew.highlight,
         y: index - (crew.gain ?? 0),
