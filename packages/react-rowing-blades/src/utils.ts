@@ -1,8 +1,10 @@
-type Category = "cambridge" | "international" | "oxford" | "uk";
+type Category = "cambridge" | "international" | "oxford" | "overseas" | "uk";
 
 type UKClub =
+  | "abd"
   | "abn"
   | "abs"
+  | "abv"
   | "age"
   | "akn"
   | "avn"
@@ -10,46 +12,141 @@ type UKClub =
   | "bbl"
   | "bed"
   | "ber"
+  | "bgs"
+  | "bir"
   | "bms"
   | "bou"
   | "brd"
   | "bra"
+  | "bru"
+  | "bwy"
   | "cab"
   | "cam"
   | "cbs"
+  | "cfd"
   | "cfu"
   | "cha"
   | "cls"
+  | "cly"
   | "cnn"
+  | "col"
   | "crc"
   | "cox"
   | "cub"
+  | "dub"
+  | "dul"
   | "dur"
   | "dus"
+  | "edu"
+  | "eex"
+  | "ema"
   | "etn"
+  | "eve"
+  | "fal"
+  | "frb"
+  | "glo"
+  | "gls"
   | "glw"
+  | "gms"
+  | "gol"
+  | "grv"
+  | "gry"
+  | "gsc"
+  | "gub"
+  | "gui"
+  | "gwc"
+  | "hat"
+  | "hen"
+  | "hex"
+  | "hib"
+  | "hsb"
+  | "hul"
+  | "icm"
   | "iel"
   | "imp"
+  | "jbc"
+  | "jsn"
+  | "kcs"
+  | "kgs"
+  | "kgu"
+  | "kgv"
+  | "kin"
+  | "lan"
   | "ldr"
   | "ldu"
+  | "lee"
+  | "leh"
+  | "lei"
   | "ley"
+  | "liv"
+  | "lnc"
+  | "lon"
+  | "lse"
   | "mau"
+  | "mcs"
+  | "ncl"
+  | "nmb"
+  | "nws"
   | "oub"
   | "oxb"
+  | "pai"
   | "pet"
+  | "pgb"
+  | "put"
+  | "qmu"
   | "rdu"
   | "rho"
   | "rob"
+  | "sai"
+  | "sch"
+  | "scu"
+  | "sgh"
+  | "shr"
+  | "shs"
+  | "sjd"
+  | "sls"
+  | "smd"
   | "sne"
   | "son"
+  | "sou"
+  | "sps"
   | "srg"
+  | "sta"
+  | "stp"
+  | "sud"
+  | "swa"
+  | "swp"
+  | "tal"
+  | "tee"
+  | "tfd"
+  | "tif"
   | "trc"
+  | "tre"
   | "tss"
+  | "tvc"
   | "twk"
+  | "tym"
+  | "tyn"
+  | "ucd"
   | "ucl"
+  | "ulb"
+  | "ust"
+  | "uwe"
   | "uyo"
+  | "ves"
   | "vet"
+  | "vmd"
+  | "war"
+  | "wbk"
+  | "wes"
+  | "wey"
+  | "wgs"
+  | "whs"
+  | "win"
+  | "wlt"
   | "wrc"
+  | "wrr"
+  | "wtn"
   | "xpr"
   | "yrk";
 type CambridgeClub =
@@ -150,17 +247,127 @@ type InternationalClub =
   | "rus"
   | "sui"
   | "usa";
+type OverseasClub =
+  | "adl"
+  | "adr"
+  | "aen"
+  | "ali"
+  | "amp"
+  | "arp"
+  | "azs"
+  | "ban"
+  | "bcl"
+  | "bmc"
+  | "brn"
+  | "buc"
+  | "cal"
+  | "cbr"
+  | "clg"
+  | "clm"
+  | "clu"
+  | "cns"
+  | "cre"
+  | "crn"
+  | "cua"
+  | "cza"
+  | "det"
+  | "dmt"
+  | "dol"
+  | "dph"
+  | "eur"
+  | "fam"
+  | "geo"
+  | "gfb"
+  | "gkp"
+  | "grm"
+  | "gua"
+  | "gzb"
+  | "hel"
+  | "hks"
+  | "hon"
+  | "hrv"
+  | "isa"
+  | "ist"
+  | "juv"
+  | "jwu"
+  | "kal"
+  | "keo"
+  | "kkw"
+  | "kon"
+  | "krs"
+  | "kuj"
+  | "kwl"
+  | "lcl"
+  | "lgt"
+  | "ltw"
+  | "mar"
+  | "mcg"
+  | "mdl"
+  | "mio"
+  | "mit"
+  | "mtw"
+  | "nhr"
+  | "npk"
+  | "oli"
+  | "ori"
+  | "pac"
+  | "pcb"
+  | "pkw"
+  | "plu"
+  | "prd"
+  | "pri"
+  | "rcl"
+  | "rcm"
+  | "rej"
+  | "rnt"
+  | "ser"
+  | "skr"
+  | "smm"
+  | "stc"
+  | "syd"
+  | "syr"
+  | "syu"
+  | "tcd"
+  | "tle"
+  | "tor"
+  | "ttw"
+  | "tui"
+  | "ubc"
+  | "ucs"
+  | "ukz"
+  | "umi"
+  | "una"
+  | "upn"
+  | "usc"
+  | "uva"
+  | "wac"
+  | "wag"
+  | "wan"
+  | "wcc"
+  | "wil"
+  | "wkw"
+  | "wlu"
+  | "wmr"
+  | "wpg"
+  | "wrm"
+  | "wsg"
+  | "wsw"
+  | "yal"
+  | "zar";
 
-type ClubCode = UKClub | CambridgeClub | OxfordClub | InternationalClub;
+type ClubCode =
+  UKClub | CambridgeClub | OxfordClub | InternationalClub | OverseasClub;
 
 const clubs: {
   uk: readonly UKClub[];
   cambridge: readonly CambridgeClub[];
   oxford: readonly OxfordClub[];
   international: readonly InternationalClub[];
+  overseas: readonly OverseasClub[];
 } = {
   cambridge: [],
   international: [],
+  overseas: [],
   oxford: [],
   uk: [],
 };
@@ -170,9 +377,11 @@ const shortNames: {
   cambridge: Record<CambridgeClub, string>;
   oxford: Record<OxfordClub, string>;
   international: Record<InternationalClub, string>;
+  overseas: Record<OverseasClub, string>;
 } = {
   cambridge: {} as Record<CambridgeClub, string>,
   international: {} as Record<InternationalClub, string>,
+  overseas: {} as Record<OverseasClub, string>,
   oxford: {} as Record<OxfordClub, string>,
   uk: {} as Record<UKClub, string>,
 };
@@ -182,9 +391,11 @@ const shortShortNames: {
   cambridge: Record<CambridgeClub, string>;
   oxford: Record<OxfordClub, string>;
   international: Record<InternationalClub, string>;
+  overseas: Record<OverseasClub, string>;
 } = {
   cambridge: {} as Record<CambridgeClub, string>,
   international: {} as Record<InternationalClub, string>,
+  overseas: {} as Record<OverseasClub, string>,
   oxford: {} as Record<OxfordClub, string>,
   uk: {} as Record<UKClub, string>,
 };
@@ -194,9 +405,11 @@ const names: {
   cambridge: Record<CambridgeClub, string>;
   oxford: Record<OxfordClub, string>;
   international: Record<InternationalClub, string>;
+  overseas: Record<OverseasClub, string>;
 } = {
   cambridge: {} as Record<CambridgeClub, string>,
   international: {} as Record<InternationalClub, string>,
+  overseas: {} as Record<OverseasClub, string>,
   oxford: {} as Record<OxfordClub, string>,
   uk: {} as Record<UKClub, string>,
 };
@@ -206,9 +419,11 @@ const abbreviations: {
   cambridge: Record<string, string>;
   oxford: Record<string, string>;
   international: Record<string, string>;
+  overseas: Record<string, string>;
 } = {
   cambridge: {},
   international: {},
+  overseas: {},
   oxford: {},
   uk: {},
 };
@@ -218,8 +433,10 @@ const abbreviations: {
 */
 
 clubs.uk = [
+  "abd",
   "abn",
   "abs",
+  "abv",
   "age",
   "akn",
   "avn",
@@ -227,45 +444,140 @@ clubs.uk = [
   "bbl",
   "bed",
   "ber",
+  "bgs",
+  "bir",
   "bms",
   "bou",
   "brd",
   "bra",
+  "bru",
+  "bwy",
   "cab",
   "cam",
   "cbs",
+  "cfd",
   "cfu",
   "cha",
   "cls",
+  "cly",
   "cnn",
+  "col",
   "crc",
   "cox",
   "cub",
+  "dub",
+  "dul",
   "dur",
   "dus",
+  "edu",
+  "eex",
+  "ema",
   "etn",
+  "eve",
+  "fal",
+  "frb",
+  "glo",
+  "gls",
   "glw",
+  "gms",
+  "gol",
+  "grv",
+  "gry",
+  "gsc",
+  "gub",
+  "gui",
+  "gwc",
+  "hat",
+  "hen",
+  "hex",
+  "hib",
+  "hsb",
+  "hul",
+  "icm",
   "iel",
   "imp",
+  "jbc",
+  "jsn",
+  "kcs",
+  "kgs",
+  "kgu",
+  "kgv",
+  "kin",
+  "lan",
   "ldr",
   "ldu",
+  "lee",
+  "leh",
+  "lei",
+  "liv",
+  "lnc",
+  "lon",
+  "lse",
   "mau",
+  "mcs",
+  "ncl",
+  "nmb",
+  "nws",
   "oub",
   "oxb",
+  "pai",
   "pet",
+  "pgb",
+  "put",
+  "qmu",
   "rdu",
   "rho",
   "rob",
+  "sai",
+  "sch",
+  "scu",
+  "sgh",
+  "shr",
+  "shs",
+  "sjd",
+  "sls",
+  "smd",
   "sne",
   "son",
+  "sou",
+  "sps",
   "srg",
+  "sta",
+  "stp",
+  "sud",
+  "swa",
+  "swp",
+  "tal",
+  "tee",
+  "tfd",
+  "tif",
   "trc",
+  "tre",
   "tss",
+  "tvc",
   "twk",
+  "tym",
+  "tyn",
+  "ucd",
   "ucl",
+  "ulb",
+  "ust",
+  "uwe",
   "uyo",
+  "ves",
   "vet",
+  "vmd",
+  "war",
+  "wbk",
+  "wes",
+  "wey",
+  "wgs",
+  "whs",
+  "win",
+  "wlt",
   "wrc",
+  "wrr",
+  "wtn",
   "xpr",
   "yrk",
 ];
@@ -334,8 +646,10 @@ abbreviations.uk = {
 };
 
 shortShortNames.uk = {
+  abd: "Aberdeen",
   abn: "Abingdon",
   abs: "Abingdon School",
+  abv: "AB Severn",
   age: "Agecroft",
   akn: "Auriol Kensington",
   avn: "Avon County",
@@ -343,53 +657,150 @@ shortShortNames.uk = {
   bbl: "Barnes Bridge Ladies",
   bed: "Bedford",
   ber: "Berwick",
+  bgs: "Bradford Grammar School",
+  bir: "Birmingham University",
   bms: "Bedford Modern School",
   bou: "Bournemouth University",
   brd: "Bradford",
   bra: "Bristol Ariel",
+  bru: "Bristol University",
+  bwy: "Burway",
   cab: "Cantabs",
   cam: "City",
   cbs: "Cambois",
+  cfd: "Canford School",
   cfu: "Cardiff University",
   cha: "Champs",
   cls: "Chester-Le-Street",
+  cly: "Clydesdale",
   cnn: "99",
+  col: "Collingwood College",
   cox: "City of Oxford",
   crc: "Chesterton",
   cub: "CUBC",
+  dub: "Durham University",
+  dul: "Dulwich College",
   dur: "Durham",
   dus: "Durham School",
+  edu: "Edinburgh University",
+  eex: "Eton Excelsior",
+  ema: "Emanuel School",
   etn: "Eton College",
+  eve: "Evesham",
+  fal: "Falcon",
+  frb: "Fulham Reach",
+  glo: "Globe",
+  gls: "Gloucester",
   glw: "Glasgow",
+  gms: "Great Marlow School",
+  gol: "Godolphin and Latymer",
+  grv: "Grosvenor",
+  gry: "Grey College",
+  gsc: "George Stephenson College",
+  gub: "Glasgow University",
+  gui: "Guildford",
+  gwc: "George Watson's College",
+  hat: "Hatfield College",
+  hen: "Henley",
+  hex: "Hexham",
+  hib: "Hild Bede",
+  hsb: "HSBC",
+  hul: "Hull University",
+  icm: "Imperial Medicine",
   iel: "Isle of Ely",
   imp: "Imperial College",
+  jbc: "Josephine Butler College",
+  jsn: "John Snow College",
+  kcs: "King's College School",
+  kgs: "Kingston Grammar School",
+  kgu: "Kingston University",
+  kgv: "Kingston Grammar School Veterans",
+  kin: "Kingston",
+  lan: "Lancaster University",
   ldr: "Leander",
   ldu: "Leeds University",
+  lee: "Leeds",
+  leh: "Lady Eleanor Holles",
+  lei: "Leicester University",
   ley: "Leys School",
+  liv: "Liverpool University",
+  lnc: "Lincoln Rowing Centre",
+  lon: "London",
+  lse: "LSE",
   mau: "Manchester University",
+  mcs: "Monkton Combe School",
+  ncl: "Newcastle University",
+  nmb: "Northumbria University",
+  nws: "Norwich School",
   oub: "OUBC",
   oxb: "Oxford Brookes",
+  pai: "Paignton",
   pet: "Peterborough",
+  pgb: "Pangbourne College",
+  put: "Putney Town",
+  qmu: "Queen Mary",
   rdu: "Reading University",
   rho: "Royal Holloway",
   rob: "Rob Roy",
+  sai: "St Aidan's College",
+  sch: "St Chad's College",
+  scu: "St Cuthbert's Society",
+  sgh: "St George's Hospital",
+  shr: "Shrewsbury School",
+  shs: "Surbiton High School",
+  sjd: "St John's College, Durham",
+  sls: "St Leonard's School",
+  smd: "St Mary's College",
   sne: "St Neots",
   son: "Sons of the Thames",
+  sou: "Southampton University",
+  sps: "St Peter's School",
   srg: "St Radegund",
+  sta: "Staines",
+  stp: "Stourport",
+  sud: "Sudbury",
+  swa: "Swansea University",
+  swp: "Sir William Perkins's School",
+  tal: "Talkin Tarn",
+  tee: "Tees",
+  tfd: "Trafford",
+  tif: "Tiffin School",
   trc: "Thames",
+  tre: "Trent",
   tss: "Tideway Scullers",
+  tvc: "Trevelyan College",
   twk: "Twickenham",
+  tym: "Tynemouth",
+  tyn: "Tyne",
+  ucd: "University College, Durham",
   ucl: "University College London",
+  ulb: "University of London",
+  ust: "Ustinov College",
+  uwe: "UWE",
   uyo: "York University",
+  ves: "Vesta",
   vet: "Camb Veterans",
+  vmd: "Van Mildert College",
+  war: "Warwick University",
+  wbk: "Walbrook",
+  wes: "Westminster School",
+  wey: "Weybridge",
+  wgs: "Whitgift School",
+  whs: "Wimbledon High School",
+  win: "Winchester College",
+  wlt: "Walton",
   wrc: "Wallingford",
+  wrr: "Worcester Rowing Club",
+  wtn: "Warrington",
   xpr: "X-Press",
   yrk: "York City",
 };
 
 shortNames.uk = {
+  abd: "Aberdeen",
   abn: "Abingdon",
   abs: "Abingdon School",
+  abv: "AB Severn",
   age: "Agecroft",
   akn: "Auriol Kensington",
   avn: "Avon County",
@@ -397,53 +808,150 @@ shortNames.uk = {
   bbl: "Barnes Bridge Ladies",
   bed: "Bedford",
   ber: "Berwick",
+  bgs: "Bradford Grammar School",
+  bir: "Birmingham University",
   bms: "Bedford Modern School",
   bou: "Bournemouth University",
   brd: "Bradford",
   bra: "Bristol Ariel",
+  bru: "Bristol University",
+  bwy: "Burway",
   cab: "Cantabrigian",
   cam: "City of Cambridge",
   cbs: "Cambois",
+  cfd: "Canford School",
   cfu: "Cardiff University",
   cha: "Champion Of The Thames",
   cls: "Chester-Le-Street",
+  cly: "Clydesdale",
   cnn: "Cambridge 99",
+  col: "Collingwood College",
   cox: "City of Oxford",
   crc: "Chesterton",
   cub: "Cambridge University",
+  dub: "Durham University",
+  dul: "Dulwich College",
   dur: "Durham",
   dus: "Durham School",
+  edu: "Edinburgh University",
+  eex: "Eton Excelsior",
+  ema: "Emanuel School",
   etn: "Eton College",
+  eve: "Evesham",
+  fal: "Falcon",
+  frb: "Fulham Reach",
+  glo: "Globe",
+  gls: "Gloucester",
   glw: "Glasgow",
+  gms: "Great Marlow School",
+  gol: "Godolphin and Latymer",
+  grv: "Grosvenor",
+  gry: "Grey College",
+  gsc: "George Stephenson College",
+  gub: "Glasgow University",
+  gui: "Guildford",
+  gwc: "George Watson's College",
+  hat: "Hatfield College",
+  hen: "Henley",
+  hex: "Hexham",
+  hib: "Hild Bede",
+  hsb: "HSBC",
+  hul: "Hull University",
+  icm: "Imperial Medicine",
   iel: "Isle of Ely",
   imp: "Imperial College",
+  jbc: "Josephine Butler College",
+  jsn: "John Snow College",
+  kcs: "King's College School",
+  kgs: "Kingston Grammar School",
+  kgu: "Kingston University",
+  kgv: "Kingston Grammar School Veterans",
+  kin: "Kingston",
+  lan: "Lancaster University",
   ldr: "Leander",
   ldu: "Leeds University",
+  lee: "Leeds",
+  leh: "Lady Eleanor Holles",
+  lei: "Leicester University",
   ley: "Leys School",
+  liv: "Liverpool University",
+  lnc: "Lincoln Rowing Centre",
+  lon: "London",
+  lse: "LSE",
   mau: "Manchester University",
+  mcs: "Monkton Combe School",
+  ncl: "Newcastle University",
+  nmb: "Northumbria University",
+  nws: "Norwich School",
   oub: "Oxford University",
   oxb: "Oxford Brookes University",
+  pai: "Paignton",
   pet: "Peterborough City",
+  pgb: "Pangbourne College",
+  put: "Putney Town",
+  qmu: "Queen Mary",
   rdu: "Reading University",
   rho: "Royal Holloway",
   rob: "Rob Roy",
+  sai: "St Aidan's College",
+  sch: "St Chad's College",
+  scu: "St Cuthbert's Society",
+  sgh: "St George's Hospital",
+  shr: "Shrewsbury School",
+  shs: "Surbiton High School",
+  sjd: "St John's College, Durham",
+  sls: "St Leonard's School",
+  smd: "St Mary's College",
   sne: "St Neots",
   son: "Sons of the Thames",
+  sou: "Southampton University",
+  sps: "St Peter's School",
   srg: "St Radegund",
+  sta: "Staines",
+  stp: "Stourport",
+  sud: "Sudbury",
+  swa: "Swansea University",
+  swp: "Sir William Perkins's School",
+  tal: "Talkin Tarn",
+  tee: "Tees",
+  tfd: "Trafford",
+  tif: "Tiffin School",
   trc: "Thames",
+  tre: "Trent",
   tss: "Tideway Scullers School",
+  tvc: "Trevelyan College",
   twk: "Twickenham",
+  tym: "Tynemouth",
+  tyn: "Tyne",
+  ucd: "University College, Durham",
   ucl: "University College London",
+  ulb: "University of London",
+  ust: "Ustinov College",
+  uwe: "UWE",
   uyo: "York University",
+  ves: "Vesta",
   vet: "Cambridge Veterans",
+  vmd: "Van Mildert College",
+  war: "Warwick University",
+  wbk: "Walbrook",
+  wes: "Westminster School",
+  wey: "Weybridge",
+  wgs: "Whitgift School",
+  whs: "Wimbledon High School",
+  win: "Winchester College",
+  wlt: "Walton",
   wrc: "Wallingford",
+  wrr: "Worcester Rowing Club",
+  wtn: "Warrington",
   xpr: "X-Press",
   yrk: "York City",
 };
 
 names.uk = {
+  abd: "Aberdeen Boat Club",
   abn: "Abingdon Rowing Club",
   abs: "Abingdon School Rowing Club",
+  abv: "AB Severn Rowing Club",
   age: "Agecroft Rowing Club",
   akn: "Auriol Kensington Rowing Club",
   avn: "Avon County Rowing Club",
@@ -451,46 +959,141 @@ names.uk = {
   bbl: "Barnes Bridge Ladies Rowing Club",
   bed: "Bedford Amateur Rowing Club",
   ber: "Berwick Rowing Club",
+  bgs: "Bradford Grammar School Boat Club",
+  bir: "University of Birmingham Boat Club",
   bms: "Bedford Modern School Boat Club",
   bou: "Bournemouth University Boat Club",
   brd: "Bradford Amateur Rowing Club",
   bra: "Bristol Ariel Rowing Club",
+  bru: "University of Bristol Boat Club",
+  bwy: "Burway Rowing Club",
   cab: "Cantabrigian Rowing Club",
   cam: "City of Cambridge Rowing Club",
   cbs: "Cambois Rowing Club",
+  cfd: "Canford School Boat Club",
   cfu: "Cardiff University Rowing Club",
   cha: "Champion Of The Thames Rowing Club",
   cls: "Chester-Le-Street Amateur Rowing Club",
+  cly: "Clydesdale Amateur Rowing Club",
   cnn: "Cambridge 99 Rowing Club",
+  col: "Collingwood College Boat Club",
   cox: "City of Oxford Rowing Club",
   crc: "Chesterton Rowing Club",
   cub: "Cambridge University Boat Club",
+  dub: "Durham University Boat Club",
+  dul: "Dulwich College Boat Club",
   dur: "Durham Amateur Rowing Club",
   dus: "Durham School Boat Club",
+  edu: "Edinburgh University Boat Club",
+  eex: "Eton Excelsior Rowing Club",
+  ema: "Emanuel School Boat Club",
   etn: "Eton College Boat Club",
+  eve: "Evesham Rowing Club",
+  fal: "Falcon Boat Club",
+  frb: "Fulham Reach Boat Club",
+  glo: "Globe Rowing Club",
+  gls: "Gloucester Rowing Club",
   glw: "Glasgow Rowing Club",
+  gms: "Great Marlow School Boat Club",
+  gol: "Godolphin and Latymer School Boat Club",
+  grv: "Grosvenor Rowing Club",
+  gry: "Grey College Boat Club",
+  gsc: "George Stephenson College Boat Club",
+  gub: "Glasgow University Boat Club",
+  gui: "Guildford Rowing Club",
+  gwc: "George Watson's College Boat Club",
+  hat: "Hatfield College Boat Club",
+  hen: "Henley Rowing Club",
+  hex: "Hexham Rowing Club",
+  hib: "Hild Bede Boat Club",
+  hsb: "HSBC Rowing Club",
+  hul: "Hull University Boat Club",
+  icm: "Imperial College School of Medicine Boat Club",
   iel: "Isle of Ely Rowing Club",
   imp: "Imperial College Boat Club",
+  jbc: "Josephine Butler College Boat Club",
+  jsn: "John Snow College Boat Club",
+  kcs: "King's College School Boat Club",
+  kgs: "Kingston Grammar School Boat Club",
+  kgu: "Kingston University Boat Club",
+  kgv: "Kingston Grammar School Veterans Rowing Club",
+  kin: "Kingston Rowing Club",
+  lan: "Lancaster University Boat Club",
   ldr: "Leander Club",
   ldu: "University of Leeds Boat Club",
+  lee: "Leeds Rowing Club",
+  leh: "Lady Eleanor Holles School Boat Club",
+  lei: "Leicester University Boat Club",
   ley: "Leys School Boat Club",
+  liv: "Liverpool University Boat Club",
+  lnc: "Lincoln Rowing Centre",
+  lon: "London Rowing Club",
+  lse: "London School of Economics Rowing Club",
   mau: "Manchester University Boat Club",
+  mcs: "Monkton Combe School Boat Club",
+  ncl: "Newcastle University Boat Club",
+  nmb: "Northumbria University Boat Club",
+  nws: "Norwich School Boat Club",
   oub: "Oxford University Boat Club",
   oxb: "Oxford Brookes University Boat Club",
+  pai: "Paignton Amateur Rowing Club",
   pet: "Peterborough City Rowing Club",
+  pgb: "Pangbourne College Boat Club",
+  put: "Putney Town Rowing Club",
+  qmu: "Queen Mary University of London Boat Club",
   rdu: "Reading University Boat Club",
   rho: "Royal Holloway Boat Club",
   rob: "Rob Roy Boat Club",
+  sai: "St Aidan's College Boat Club",
+  sch: "St Chad's College Boat Club",
+  scu: "St Cuthbert's Society Boat Club",
+  sgh: "St George's Hospital Boat Club",
+  shr: "Royal Shrewsbury School Boat Club",
+  shs: "Surbiton High School Boat Club",
+  sjd: "St John's College Boat Club (Durham)",
+  sls: "St Leonard's School Boat Club",
+  smd: "St Mary's College Boat Club",
   sne: "St Neots Rowing Club",
   son: "Sons of the Thames Rowing Club",
+  sou: "Southampton University Boat Club",
+  sps: "St Peter's School Boat Club",
   srg: "St Radegund Boat Club",
+  sta: "Staines Boat Club",
+  stp: "Stourport Boat Club",
+  sud: "Sudbury Rowing Club",
+  swa: "Swansea University Rowing Club",
+  swp: "Sir William Perkins's School Boat Club",
+  tal: "Talkin Tarn Amateur Rowing Club",
+  tee: "Tees Rowing Club",
+  tfd: "Trafford Rowing Club",
+  tif: "Tiffin School Boat Club",
   trc: "Thames Rowing Club",
+  tre: "Trent Rowing Club",
   tss: "Tideway Scullers School",
+  tvc: "Trevelyan College Boat Club",
   twk: "Twickenham Rowing Club",
+  tym: "Tynemouth Rowing Club",
+  tyn: "Tyne Rowing Club",
+  ucd: "University College Boat Club (Durham)",
   ucl: "University College London Boat Club",
+  ulb: "University of London Boat Club",
+  ust: "Ustinov College Boat Club",
+  uwe: "University of the West of England Boat Club",
   uyo: "University of York Boat Club",
+  ves: "Vesta Rowing Club",
   vet: "Camb Veterans Rowing Club",
+  vmd: "Van Mildert Boat Club",
+  war: "University of Warwick Boat Club",
+  wbk: "Walbrook Rowing Club",
+  wes: "Westminster School Boat Club",
+  wey: "Weybridge Rowing Club",
+  wgs: "Whitgift School Boat Club",
+  whs: "Wimbledon High School Boat Club",
+  win: "Winchester College Boat Club",
+  wlt: "Walton Rowing Club",
   wrc: "Wallingford Rowing Club",
+  wrr: "Worcester Rowing Club",
+  wtn: "Warrington Rowing Club",
   xpr: "X-Press Boat Club",
   yrk: "York City Rowing Club",
 };
@@ -1026,6 +1629,442 @@ abbreviations.international = {
   USA: "United States of America",
 };
 
+clubs.overseas = [
+  "adl",
+  "adr",
+  "aen",
+  "ali",
+  "amp",
+  "arp",
+  "azs",
+  "ban",
+  "bcl",
+  "bmc",
+  "brn",
+  "buc",
+  "cal",
+  "cbr",
+  "clg",
+  "clm",
+  "clu",
+  "cns",
+  "cre",
+  "crn",
+  "cua",
+  "cza",
+  "det",
+  "dmt",
+  "dol",
+  "dph",
+  "eur",
+  "fam",
+  "geo",
+  "gfb",
+  "gkp",
+  "grm",
+  "gua",
+  "gzb",
+  "hel",
+  "hks",
+  "hon",
+  "hrv",
+  "isa",
+  "ist",
+  "juv",
+  "jwu",
+  "kal",
+  "keo",
+  "kkw",
+  "kon",
+  "krs",
+  "kuj",
+  "kwl",
+  "lcl",
+  "lgt",
+  "ltw",
+  "mar",
+  "mcg",
+  "mdl",
+  "mio",
+  "mit",
+  "mtw",
+  "nhr",
+  "npk",
+  "oli",
+  "ori",
+  "pac",
+  "pcb",
+  "pkw",
+  "plu",
+  "prd",
+  "pri",
+  "rcl",
+  "rcm",
+  "rej",
+  "rnt",
+  "ser",
+  "skr",
+  "smm",
+  "stc",
+  "syd",
+  "syr",
+  "syu",
+  "tcd",
+  "tle",
+  "tor",
+  "ttw",
+  "tui",
+  "ubc",
+  "ucs",
+  "ukz",
+  "umi",
+  "una",
+  "upn",
+  "usc",
+  "uva",
+  "wac",
+  "wag",
+  "wan",
+  "wcc",
+  "wil",
+  "wkw",
+  "wlu",
+  "wmr",
+  "wpg",
+  "wrm",
+  "wsg",
+  "wsw",
+  "yal",
+  "zar",
+];
+
+names.overseas = {
+  adl: "Adelaide Rowing Club",
+  adr: "Adrian College Rowing",
+  aen: "Roeivereniging Ængwirden",
+  ali: "Real Club de Regatas de Alicante",
+  amp: "Club Nàutic Amposta",
+  arp: "Veslački klub Arupinum",
+  azs: "AZS Bydgoszcz",
+  ban: "Club Natació Banyoles",
+  bcl: "Boston College Rowing",
+  bmc: "Bryn Mawr College Rowing",
+  brn: "Brown University Boat Club",
+  buc: "Bucknell University Rowing",
+  cal: "California Rowing Club (UC Berkeley)",
+  cbr: "Cabrini University Rowing",
+  clg: "Colgate University Rowing Club",
+  clm: "Clemson University Rowing",
+  clu: "Columbia University Rowing",
+  cns: "Club Náutico Sevilla",
+  cre: "SKS Cresovia Białystok",
+  crn: "Cornell University Boat Club",
+  cua: "Catholic University of America Rowing",
+  cza: "SKS Czarni Szczecin",
+  det: "Detroit Boat Club",
+  dmt: "Dartmouth College Boat Club",
+  dol: "KS Dolmel Wrocław",
+  dph: "Dolphin Club",
+  eur: "Euros Enschede",
+  fam: "Franklin & Marshall College Rowing",
+  geo: "Georgetown University Boat Club",
+  gfb: "Klub Wioślarski Gryf Bydgoszcz",
+  gkp: "KS Gryf Kamień Pomorski",
+  grm: "MZKS Grom Więcbork",
+  gua: "Club de Remo Guadalquivir 86",
+  gzb: "KS Gryf-Zachem Bydgoszcz",
+  hel: "Centro Natación Helios",
+  hks: "Harvard Kennedy School Rowing",
+  hon: "Hondarribia Arraun Elkartea",
+  hrv: "Harvard University Rowing",
+  isa: "Itsasoko Ama Arraun Elkartea",
+  ist: "Veslački klub Istra",
+  juv: "MKS Juvenia Wrocław",
+  jwu: "Johnson & Wales University Rowing",
+  kal: "Klub Wioślarski z roku 1930 Kalisz",
+  keo: "Keio University Rowing Club",
+  kkw: "Krakowski Klub Wioślarski 1929",
+  kon: "MOS Konin",
+  krs: "Koninklijke Roeivereniging Sport Gent",
+  kuj: "Kujawski Klub Wioślarski",
+  kwl: "Koninklijke Watersport Vereeniging Loosdrecht",
+  lcl: "Lewis & Clark College Rowing",
+  lgt: "Los Gatos Rowing Club",
+  ltw: "Łomżyńskie Towarzystwo Wioślarskie",
+  mar: "Marietta College Rowing",
+  mcg: "McGill University Rowing Club",
+  mdl: "Veslački klub Medulin",
+  mio: "Club Remo do Miño",
+  mit: "MIT Rowing",
+  mtw: "Międzychodzkie Towarzystwo Wioślarzy",
+  nhr: "New Haven Rowing Club",
+  npk: "North Park University Rowing",
+  oli: "GKS Olimpia Grudziądz",
+  ori: "Orio Arraunketa Elkartea",
+  pac: "Prince Alfred College Boat Club",
+  pcb: "College Boat Club (University of Pennsylvania)",
+  pkw: "Poznański Klub Wioślarek",
+  plu: "Pacific Lutheran University Rowing",
+  prd: "RKS Prąd Warszawa",
+  pri: "Princeton University Rowing",
+  rcl: "Real Círculo de Labradores",
+  rcm: "Reial Club Marítim de Barcelona",
+  rej: "KW Rejów Skarżysko-Kamienna",
+  rnt: "Reial Club Nàutic de Tarragona",
+  ser: "South End Rowing Club",
+  skr: "BKS Skra Warszawa",
+  smm: "St. Mary's College of Maryland Rowing",
+  stc: "RKS Stoczniowiec Gdańsk",
+  syd: "Sydney Rowing Club",
+  syr: "Klub Wioślarski Syrena Warszawa",
+  syu: "Syracuse University Rowing",
+  tcd: "Dublin University Boat Club",
+  tle: "Club Tiempo Libre El Ejido",
+  tor: "Club de Rem Tortosa",
+  ttw: "Tomaszowskie Towarzystwo Wioślarskie",
+  tui: "Club de Remo Tui",
+  ubc: "University Barge Club",
+  ucs: "UC Santa Barbara Rowing",
+  ukz: "University of KwaZulu-Natal Boat Club",
+  umi: "University of Michigan Rowing",
+  una: "United States Naval Academy Rowing",
+  upn: "University of Pennsylvania Rowing",
+  usc: "University of Southern California Rowing",
+  uva: "University of Virginia Rowing",
+  wac: "Washington College Rowing",
+  wag: "MKS Wągrowiec",
+  wan: "BKS Wanda Kraków",
+  wcc: "Williams College Crew",
+  wil: "Koninklijke Amsterdamsche Roei- en Zeilvereeniging Willem III",
+  wkw: "Warszawski Klub Wioślarek",
+  wlu: "Willamette University Rowing",
+  wmr: "Willamette Rowing Club",
+  wpg: "Winnipeg Rowing Club",
+  wrm: "KKS Warmia Olsztyn",
+  wsg: "KKW Wisła Grudziądz",
+  wsw: "Klub Wioślarski Wisła Warszawa",
+  yal: "Yale University Rowing",
+  zar: "LKS Żar Międzybrodzie Bialskie",
+};
+
+shortNames.overseas = {
+  adl: "Adelaide",
+  adr: "Adrian College",
+  aen: "Ængwirden",
+  ali: "Alicante",
+  amp: "Amposta",
+  arp: "Arupinum",
+  azs: "AZS Bydgoszcz",
+  ban: "Banyoles",
+  bcl: "Boston College",
+  bmc: "Bryn Mawr College",
+  brn: "Brown University",
+  buc: "Bucknell University",
+  cal: "Cal",
+  cbr: "Cabrini University",
+  clg: "Colgate University",
+  clm: "Clemson University",
+  clu: "Columbia University",
+  cns: "Náutico Sevilla",
+  cre: "Cresovia Białystok",
+  crn: "Cornell University",
+  cua: "Catholic University",
+  cza: "Czarni Szczecin",
+  det: "Detroit",
+  dmt: "Dartmouth College",
+  dol: "Dolmel Wrocław",
+  dph: "Dolphin Club",
+  eur: "Euros",
+  fam: "Franklin & Marshall",
+  geo: "Georgetown University",
+  gfb: "Gryf Bydgoszcz",
+  gkp: "Gryf Kamień Pomorski",
+  grm: "Grom Więcbork",
+  gua: "Guadalquivir 86",
+  gzb: "Gryf-Zachem Bydgoszcz",
+  hel: "CN Helios",
+  hks: "Harvard Kennedy School",
+  hon: "Hondarribia",
+  hrv: "Harvard University",
+  isa: "Itsasoko Ama",
+  ist: "Istra",
+  juv: "Juvenia Wrocław",
+  jwu: "Johnson & Wales",
+  kal: "KW 1930 Kalisz",
+  keo: "Keio University",
+  kkw: "KKW 1929 Kraków",
+  kon: "MOS Konin",
+  krs: "KRSG",
+  kuj: "Kujawski KW",
+  kwl: "KWVL",
+  lcl: "Lewis & Clark",
+  lgt: "Los Gatos",
+  ltw: "Łomża",
+  mar: "Marietta College",
+  mcg: "McGill University",
+  mdl: "Medulin",
+  mio: "Remo do Miño",
+  mit: "MIT",
+  mtw: "Międzychód",
+  nhr: "New Haven",
+  npk: "North Park University",
+  oli: "Olimpia Grudziądz",
+  ori: "Orio",
+  pac: "Prince Alfred College",
+  pcb: "Penn College Boat Club",
+  pkw: "Poznański KW",
+  plu: "Pacific Lutheran",
+  prd: "Prąd Warszawa",
+  pri: "Princeton University",
+  rcl: "Círculo de Labradores",
+  rcm: "Marítim de Barcelona",
+  rej: "Rejów Skarżysko-Kamienna",
+  rnt: "Nàutic de Tarragona",
+  ser: "South End",
+  skr: "Skra Warszawa",
+  smm: "St. Mary's College of Maryland",
+  stc: "Stoczniowiec Gdańsk",
+  syd: "Sydney",
+  syr: "Syrena Warszawa",
+  syu: "Syracuse University",
+  tcd: "Trinity College Dublin",
+  tle: "El Ejido",
+  tor: "Tortosa",
+  ttw: "Tomaszów",
+  tui: "Tui",
+  ubc: "University Barge Club",
+  ucs: "UC Santa Barbara",
+  ukz: "KwaZulu-Natal University",
+  umi: "Michigan",
+  una: "Navy",
+  upn: "Penn",
+  usc: "USC",
+  uva: "Virginia",
+  wac: "Washington College",
+  wag: "MKS Wągrowiec",
+  wan: "Wanda Kraków",
+  wcc: "Williams College",
+  wil: "Willem III",
+  wkw: "Warszawski KW",
+  wlu: "Willamette University",
+  wmr: "Willamette Rowing Club",
+  wpg: "Winnipeg",
+  wrm: "Warmia Olsztyn",
+  wsg: "Wisła Grudziądz",
+  wsw: "Wisła Warszawa",
+  yal: "Yale University",
+  zar: "Żar Międzybrodzie",
+};
+
+shortShortNames.overseas = {
+  adl: "Adelaide",
+  adr: "Adrian College",
+  aen: "Ængwirden",
+  ali: "Alicante",
+  amp: "Amposta",
+  arp: "Arupinum",
+  azs: "AZS Bydgoszcz",
+  ban: "Banyoles",
+  bcl: "Boston College",
+  bmc: "Bryn Mawr College",
+  brn: "Brown University",
+  buc: "Bucknell University",
+  cal: "Cal",
+  cbr: "Cabrini University",
+  clg: "Colgate University",
+  clm: "Clemson University",
+  clu: "Columbia University",
+  cns: "Náutico Sevilla",
+  cre: "Cresovia Białystok",
+  crn: "Cornell University",
+  cua: "Catholic University",
+  cza: "Czarni Szczecin",
+  det: "Detroit",
+  dmt: "Dartmouth College",
+  dol: "Dolmel Wrocław",
+  dph: "Dolphin Club",
+  eur: "Euros",
+  fam: "Franklin & Marshall",
+  geo: "Georgetown University",
+  gfb: "Gryf Bydgoszcz",
+  gkp: "Gryf Kamień Pomorski",
+  grm: "Grom Więcbork",
+  gua: "Guadalquivir 86",
+  gzb: "Gryf-Zachem Bydgoszcz",
+  hel: "CN Helios",
+  hks: "Harvard Kennedy School",
+  hon: "Hondarribia",
+  hrv: "Harvard University",
+  isa: "Itsasoko Ama",
+  ist: "Istra",
+  juv: "Juvenia Wrocław",
+  jwu: "Johnson & Wales",
+  kal: "KW 1930 Kalisz",
+  keo: "Keio University",
+  kkw: "KKW 1929 Kraków",
+  kon: "MOS Konin",
+  krs: "KRSG",
+  kuj: "Kujawski KW",
+  kwl: "KWVL",
+  lcl: "Lewis & Clark",
+  lgt: "Los Gatos",
+  ltw: "Łomża",
+  mar: "Marietta College",
+  mcg: "McGill University",
+  mdl: "Medulin",
+  mio: "Remo do Miño",
+  mit: "MIT",
+  mtw: "Międzychód",
+  nhr: "New Haven",
+  npk: "North Park University",
+  oli: "Olimpia Grudziądz",
+  ori: "Orio",
+  pac: "Prince Alfred College",
+  pcb: "Penn College Boat Club",
+  pkw: "Poznański KW",
+  plu: "Pacific Lutheran",
+  prd: "Prąd Warszawa",
+  pri: "Princeton University",
+  rcl: "Círculo de Labradores",
+  rcm: "Marítim de Barcelona",
+  rej: "Rejów Skarżysko-Kamienna",
+  rnt: "Nàutic de Tarragona",
+  ser: "South End",
+  skr: "Skra Warszawa",
+  smm: "St. Mary's College of Maryland",
+  stc: "Stoczniowiec Gdańsk",
+  syd: "Sydney",
+  syr: "Syrena Warszawa",
+  syu: "Syracuse University",
+  tcd: "Trinity College Dublin",
+  tle: "El Ejido",
+  tor: "Tortosa",
+  ttw: "Tomaszów",
+  tui: "Tui",
+  ubc: "University Barge Club",
+  ucs: "UC Santa Barbara",
+  ukz: "KwaZulu-Natal University",
+  umi: "Michigan",
+  una: "Navy",
+  upn: "Penn",
+  usc: "USC",
+  uva: "Virginia",
+  wac: "Washington College",
+  wag: "MKS Wągrowiec",
+  wan: "Wanda Kraków",
+  wcc: "Williams College",
+  wil: "Willem III",
+  wkw: "Warszawski KW",
+  wlu: "Willamette University",
+  wmr: "Willamette Rowing Club",
+  wpg: "Winnipeg",
+  wrm: "Warmia Olsztyn",
+  wsg: "Wisła Grudziądz",
+  wsw: "Wisła Warszawa",
+  yal: "Yale University",
+  zar: "Żar Międzybrodzie",
+};
+
 // The clubs whose men's and women's blades differ: Blade draws each from its gender prop.
 const genderedClubs: readonly ClubCode[] = ["wro"];
 
@@ -1044,4 +2083,5 @@ export type {
   CambridgeClub,
   OxfordClub,
   InternationalClub,
+  OverseasClub,
 };
