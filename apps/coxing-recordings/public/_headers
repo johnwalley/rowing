@@ -1,0 +1,4 @@
+# Cloudflare response headers. Astro fingerprints everything in `_astro/`, so
+# it never changes under the same name.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
