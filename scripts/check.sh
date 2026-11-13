@@ -16,7 +16,7 @@ step() {
   fi
 }
 
-# Vercel builds from each app's folder, and Corepack there may read that
+# Workers Builds builds from each app's folder, and Corepack there may read that
 # package.json's packageManager instead of the root's.
 step "The apps pin the same pnpm as the root"
 for app in apps/*/package.json; do
@@ -36,6 +36,11 @@ pnpm -r build
 # without its snapshot fails here as it does in CI.
 step "Tests"
 CI=true pnpm test
+
+# Cloudflare serves the bumps site's redirects from the `_redirects` file the
+# build writes; without it, `/charts` and the rest would be 404s.
+step "The bumps site's redirects file"
+grep -Eq '^/charts /charts/town/men/[0-9]{4} 307$' apps/cambridgebumps.com/dist/_redirects || { echo "dist/_redirects is missing the /charts redirect"; exit 1; }
 
 step "The chart's exports"
 pnpm --filter react-bumps-chart check-exports

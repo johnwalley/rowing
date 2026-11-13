@@ -1,6 +1,7 @@
 // Single source of truth for redirects. `astro.config.mjs` passes them to
-// Astro via `buildAstroRedirects`; in production `@astrojs/vercel` turns them
-// into HTTP redirects at build time, and `astro dev` serves them directly.
+// Astro via `buildAstroRedirects`, so `astro dev` serves them, and writes them
+// to `dist/_redirects` via `buildCloudflareRedirects`, which Cloudflare serves
+// as HTTP redirects in production.
 //
 // The default chart year is derived from the results data, never hand-edited.
 
@@ -158,9 +159,23 @@ export function buildAstroRedirects(site) {
     buildRedirects(site).flatMap(({ source, destination, permanent }) =>
       expand(source, destination).map(([s, d]) => [
         s,
-        // 308/307 are what `vercel.json`'s `permanent` flag used to produce.
+        // 308/307: what `vercel.json`'s `permanent` flag used to produce, so
+        // the redirects' status codes haven't changed since.
         { status: permanent ? 308 : 307, destination: d },
       ]),
     ),
   );
+}
+
+// Cloudflare's `_redirects` file: one `source destination status` line per
+// concrete path. Cloudflare applies these before it looks for a matching
+// file, and allows 2,000 static rules.
+/** @param {{ title: string }} site */
+export function buildCloudflareRedirects(site) {
+  return Object.entries(buildAstroRedirects(site))
+    .map(([source, { status, destination }]) =>
+      [source, destination, status].join(" "),
+    )
+    .join("\n")
+    .concat("\n");
 }

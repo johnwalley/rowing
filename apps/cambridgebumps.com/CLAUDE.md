@@ -50,7 +50,7 @@ pnpm gen:chart-font-metrics
 
 `astro.config.mjs` reads them (via `scripts/site-env.mjs`) and injects them into both server and client bundles with `vite.define`, so `import.meta.env.PUBLIC_*` works everywhere — see `src/config/site.ts`.
 
-Variables set in the real environment (Vercel project settings, a shell export) always beat the checked-in files. The Next.js-era names (`NEXT_PUBLIC_TITLE`, `BASE_URL`, `NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG`) are still read as fallbacks so an existing deployment keeps working.
+Variables set in the real environment (Workers Builds variables, a shell export) always beat the checked-in files. The Next.js-era names (`NEXT_PUBLIC_TITLE`, `BASE_URL`, `NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG`) are still read as fallbacks so an existing deployment keeps working.
 
 ## Architecture
 
@@ -79,7 +79,7 @@ Variables set in the real environment (Vercel project settings, a shell export) 
 
 ### Static output
 
-The site is a **fully static build** (`output: "static"`): `pnpm build` emits HTML/JS to `dist/` with no server at runtime. The `@astrojs/vercel` adapter copies it to `.vercel/output/static` and writes `.vercel/output/config.json` (Vercel's Build Output API) with the redirects and routes. The adapter forces `build.format: "directory"` (`charts/mays/men/2025/index.html`), which Vercel serves at the extensionless URLs the site has always used.
+The site is a **fully static build** (`output: "static"`): `pnpm build` emits HTML/JS to `dist/` with no server at runtime. Cloudflare serves `dist/` as an assets-only Worker (`wrangler.jsonc`, no Worker script). `astro.config.mjs` sets `build.format: "directory"` (`charts/mays/men/2025/index.html`), and the Worker's `html_handling: "drop-trailing-slash"` serves that at the extensionless `/charts/mays/men/2025` the site has always used, redirecting `/charts/mays/men/2025/` there. `not_found_handling: "404-page"` serves `404.html` for any other path.
 
 - Every dynamic route lists its pages in `getStaticPaths()`
 - Results data is processed from the tools' TG files at build time (see Data Organization)
@@ -98,8 +98,9 @@ Everything else (statistics tables, blades, photos, prose) is rendered at build 
 
 ### Configuration Files
 
-- `astro.config.mjs` — integrations, Vercel adapter, redirects, site URL, env injection
-- `vercel.json` — framework preset, the build command (`pnpm --filter cambridgebumps.com... --filter '!bumps-results-tools' run build`, which builds blades and the chart first; the tools need no build, since the site imports their source), and response headers the adapter doesn't emit (the `/data/results` cache policy). Vercel merges these into the adapter's routes; don't add `redirects` here
+- `astro.config.mjs` — integrations, redirects (and the inline integration that writes `dist/_redirects`), site URL, env injection
+- `wrangler.jsonc` — the Cloudflare Worker: Cambridge is `cambridgebumps`, Oxford is the `oxford` env (`oxfordbumps`). Workers Builds builds both from this folder with `pnpm --filter cambridgebumps.com... --filter '!bumps-results-tools' run build` (which builds blades and the chart first; the tools need no build, since the site imports their source), Oxford with `SITE=oxford`, then runs `wrangler deploy` (Oxford: `--env oxford`)
+- `public/_headers` — response headers: `/_astro/*` immutable, and the `/data/results` cache policy. Don't put redirects here or in `public/_redirects`: the build writes `dist/_redirects`
 - `src/config/site.ts` - Site metadata (name, description, social links) read from `import.meta.env`
 - `src/config/docs.ts` - Navigation structure defining main nav and sidebar items
 
@@ -175,7 +176,7 @@ On a single-year chart page the ← and → keys step to the previous and next r
 
 ## Redirects and the "latest year" default
 
-Redirects are defined once in `scripts/redirects.mjs`. `astro.config.mjs` passes them to Astro's `redirects` (via `buildAstroRedirects`, which expands the `:event`/`:gender` patterns into concrete paths). In production, `@astrojs/vercel` turns them into real HTTP redirects in `.vercel/output/config.json` at build time. `astro dev` serves them too. `astro preview` does not: the adapter turns off Astro's HTML redirect pages, so `dist/` has none.
+Redirects are defined once in `scripts/redirects.mjs`. `astro.config.mjs` passes them to Astro's `redirects` (via `buildAstroRedirects`, which expands the `:event`/`:gender` patterns into concrete paths). `astro dev` serves them. The build writes the same rules to `dist/_redirects` (`buildCloudflareRedirects`), which Cloudflare serves as real HTTP redirects; `build.redirects: false` stops Astro writing meta-refresh pages for them. `pnpm preview` (`wrangler dev`) serves a build exactly as Cloudflare will, redirects included.
 
 The default chart year (e.g. the target of `/charts`, `/charts/:event`, `/charts/:event/:gender`) is derived at build time from the latest year among each event/gender's TG file names (`mays2025_men.txt`, read with the tools' `parseTgFileName`), since `astro.config.mjs` runs before Vite can process the results — never hand-edited, and nothing to regenerate.
 

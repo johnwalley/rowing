@@ -36,4 +36,4 @@ The tools need no build. The site and the editor compile their TypeScript source
 
 ## The production build
 
-`astro dev` serves the redirects, but `astro preview` doesn't: the Vercel adapter turns off Astro's redirect pages. To check a production build, run `pnpm --filter cambridgebumps.com build` (or `build:oxford`) and then `preview`, and test redirects in the PR's Vercel preview.
+To check a production build, run `pnpm --filter cambridgebumps.com build` (or `build:oxford`) and then `preview`. `preview` runs `wrangler dev` at http://localhost:8787, which serves `dist/` as Cloudflare will: the redirects in `dist/_redirects`, the headers in `_headers`, and the extensionless URLs. For Oxford, run `pnpm --filter cambridgebumps.com exec wrangler dev --env oxford`.
