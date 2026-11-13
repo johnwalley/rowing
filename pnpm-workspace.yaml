@@ -11,6 +11,7 @@ catalog:
 allowBuilds:
   "@swc/core": false
   esbuild: true
+  workerd: true
   sharp: false
 
 minimumReleaseAgeExclude:
