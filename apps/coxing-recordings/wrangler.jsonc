@@ -1,0 +1,16 @@
+// An assets-only Cloudflare Worker: no Worker script, so Cloudflare serves
+// `dist/` as static files. Workers Builds builds and deploys it from `main`,
+// and uploads a preview version for every other branch.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "coxing-recordings",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "drop-trailing-slash",
+    // The site has no 404 page; an unknown path gets an empty 404.
+    "not_found_handling": "none",
+  },
+  "workers_dev": false,
+  "preview_urls": true,
+}

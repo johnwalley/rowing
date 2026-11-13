@@ -11,7 +11,7 @@ Run these from this folder, or from the repo root with `pnpm --filter coxing-rec
 ```bash
 pnpm dev          # Start dev server at localhost:4321
 pnpm build        # Build production site to ./dist/
-pnpm preview      # Preview production build locally
+pnpm preview      # Serve ./dist/ as Cloudflare will (wrangler dev, localhost:8787); build first
 pnpm typecheck    # Type-check (astro check: .astro, .ts and .tsx)
 ```
 
@@ -22,6 +22,10 @@ pnpm typecheck    # Type-check (astro check: .astro, .ts and .tsx)
 **Page Flow**: `src/pages/index.astro` fetches all recordings via `getCollection('recordings')` and passes them to the `Recordings.tsx` React component with `client:load` hydration.
 
 **Recordings Component**: The main interactive component at `src/components/Recordings.tsx` implements search filtering. It renders all recordings but uses CSS to hide non-matching ones (rather than removing from DOM), so a playing video doesn't reload when the search changes. Each card shows the video's thumbnail from `i.ytimg.com` and swaps in the YouTube player (`youtube-nocookie.com`, autoplaying) only when the thumbnail is clicked, so the page loads no YouTube player until a video is played.
+
+## Deploying
+
+The site is an assets-only Cloudflare Worker (`wrangler.jsonc`): Cloudflare serves `dist/` with no Worker script. Workers Builds deploys `main` and uploads a preview version for every other branch, building with `pnpm --filter coxing-recordings run build` from this folder. `public/_headers` caches `/_astro/*` for a year as immutable; `public/robots.txt` and the sitemap are plain static files.
 
 ## Adding New Recordings
 
