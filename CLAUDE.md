@@ -7,7 +7,7 @@ A pnpm workspace for rowing: two published React libraries for bumps charts, the
 | `packages/react-rowing-blades` | SVG blades for each club                                                                           | published to npm |
 | `packages/react-bumps-chart`   | The bumps chart (SVG and PDF); uses blades                                                         | published to npm |
 | `packages/bumps-results-tools` | TG-format results, and the code that processes them and works out the statistics                   | private          |
-| `apps/cambridgebumps.com`      | The bumps site (Astro); one codebase, two Vercel projects (Cambridge and Oxford)                   | private          |
+| `apps/cambridgebumps.com`      | The bumps site (Astro); one codebase, two Cloudflare Workers (Cambridge and Oxford)                | private          |
 | `apps/results-editor`          | A local Vite app for editing TG files beside a live chart. Not deployed                            | private          |
 | `apps/coxing-recordings`       | The coxing site (Astro): a searchable list of coxswain recordings. Uses none of the other packages | private          |
 | `apps/svg-rowing-blades`       | The SVG blades site (Astro): every blade, to search and download as an SVG                         | private          |
@@ -24,7 +24,7 @@ Read the `CLAUDE.md` in the package you're changing: every package has one. Resu
 
 ## Workspace rules
 
-- **pnpm 11**, pinned by `packageManager` in the root `package.json` and again in each app's. Vercel builds from the app's folder and reads the pin there. CI checks they all match, so change them together.
+- **pnpm 11**, pinned by `packageManager` in the root `package.json` and again in each app's. Workers Builds builds from the app's folder and reads the pin there. CI checks they all match, so change them together.
 - **React comes from the catalog** in `pnpm-workspace.yaml`, so every package gets one copy. In the libraries `catalog:` belongs in `devDependencies`; their `peerDependencies` stay ranges (`^18.0.0 || ^19.0.0`), because `pnpm publish` would write the catalog's exact version into the published package.
 - **Every change goes through a PR.** A ruleset on `main` requires CI's `check` job, which runs `pnpm check` (`scripts/check.sh`): formatting, the build, the tests, the chart's `check-exports`, the bumps site's lint, the three sites' typecheck, and the tools' AD-format check. Run `pnpm check` before opening a PR; when it passes, CI's check does too. Add a step to the script, not to `ci.yml`.
 
@@ -36,4 +36,10 @@ On `main`, `.github/workflows/release.yml` keeps a "Version Packages" PR open. M
 
 ## Deploying the sites
 
-The two bumps Vercel projects build `apps/cambridgebumps.com` with the build command in its `vercel.json`, which builds blades and the chart first (not the tools, whose source the site imports directly). The coxing site and the SVG blades site are Cloudflare Workers instead (see each one's `CLAUDE.md`): Workers Builds builds `apps/coxing-recordings` with `pnpm --filter coxing-recordings run build`, and `apps/svg-rowing-blades` with `pnpm --filter svg-rowing-blades... run build`, which builds blades first. A merge to `main` deploys all four; a PR gets a preview of each (Cloudflare's appears as a Workers Builds comment).
+Each site is an assets-only Cloudflare Worker (a `wrangler.jsonc` in its folder, no Worker script), built and deployed by Workers Builds from the app's folder:
+
+- The two bumps Workers build `apps/cambridgebumps.com` with `pnpm --filter cambridgebumps.com... --filter '!bumps-results-tools' run build`, which builds blades and the chart first (not the tools, whose source the site imports directly). Oxford sets `SITE=oxford` and deploys with `--env oxford`.
+- The coxing Worker builds `apps/coxing-recordings` with `pnpm --filter coxing-recordings run build`.
+- The SVG blades Worker builds `apps/svg-rowing-blades` with `pnpm --filter svg-rowing-blades... run build`, which builds blades first.
+
+A merge to `main` deploys all four; a PR gets a preview of each, linked in a Workers Builds comment. Each app's `pnpm preview` runs `wrangler dev`, which serves a build as Cloudflare will.

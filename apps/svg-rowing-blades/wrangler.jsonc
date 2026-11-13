@@ -8,7 +8,7 @@
   "assets": {
     "directory": "./dist",
     // Astro writes `club/usa/index.html`; serve it at `/club/usa` and
-    // redirect `/club/usa/` there, as Vercel did.
+    // redirect `/club/usa/` there: the URLs the site has always used.
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page",
   },

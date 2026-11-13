@@ -2,17 +2,23 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
-import vercel from "@astrojs/vercel";
 import tailwindcss from "@tailwindcss/vite";
 
-import { buildAstroRedirects } from "./scripts/redirects.mjs";
+import { writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+import {
+  buildAstroRedirects,
+  buildCloudflareRedirects,
+} from "./scripts/redirects.mjs";
 import { loadSiteEnv } from "./scripts/site-env.mjs";
 
 // Which site are we building? `cambridge` (default) or `oxford`. The choice
 // selects the matching `.env.<site>` file.
 const fileEnv = loadSiteEnv(process.cwd());
 
-// A value set in the real environment (e.g. a Vercel project variable) always
+// A value set in the real environment (e.g. a Workers Builds variable) always
 // beats the checked-in file. Within each source the Astro-style `PUBLIC_` name
 // wins, but the Next.js-era names are still read so an existing deployment
 // keeps working untouched.
@@ -31,21 +37,40 @@ const GOOGLE_ANALYTICS_TAG =
 export default defineConfig({
   site: BASE_URL,
   output: "static",
-  // The adapter writes `.vercel/output/config.json`, turning `redirects` below
-  // into real HTTP redirects computed at build time, so the latest-year
-  // defaults can never go stale. It also forces `build.format: "directory"`
-  // (`charts/mays/men/2025/index.html`), which Vercel serves at the same
-  // extensionless URLs. Response headers it doesn't cover live in
-  // `vercel.json`, which Vercel merges into the adapter's routes.
-  adapter: vercel(),
-  // Defined once in `scripts/redirects.mjs`; also served by `astro dev`.
+  build: {
+    // `charts/mays/men/2025/index.html`, which Cloudflare serves at the
+    // extensionless `/charts/mays/men/2025` (`html_handling` in
+    // `wrangler.jsonc`).
+    format: "directory",
+    // No meta-refresh pages for the redirects: `dist/_redirects` (written
+    // below) makes them real HTTP redirects.
+    redirects: false,
+  },
+  // Defined once in `scripts/redirects.mjs`. `astro dev` serves these; the
+  // build writes the same rules to `dist/_redirects` for Cloudflare, computed
+  // at build time, so the latest-year defaults can never go stale. Response
+  // headers live in `public/_headers`.
   redirects: buildAstroRedirects({ title: TITLE }),
   // `BaseLayout.astro` swaps pages in place with `<ClientRouter />`; prefetching
   // on hover means the swap usually has the next page already in cache. The
   // hover strategy is debounced and deduplicated, so sweeping the pointer along
   // the year strip only fetches the year the visitor settles on.
   prefetch: { prefetchAll: true, defaultStrategy: "hover" },
-  integrations: [react(), mdx()],
+  integrations: [
+    react(),
+    mdx(),
+    {
+      name: "cloudflare-redirects",
+      hooks: {
+        "astro:build:done": ({ dir }) => {
+          writeFileSync(
+            join(fileURLToPath(dir), "_redirects"),
+            buildCloudflareRedirects({ title: TITLE }),
+          );
+        },
+      },
+    },
+  ],
   vite: {
     plugins: [tailwindcss()],
     // The workspace catalog already gives every package one React; this

@@ -61,4 +61,4 @@ If you change `react-rowing-blades` or `react-bumps-chart` in a way their users 
 
 ## Deployment
 
-The four sites deploy to Vercel. A merge to `main` deploys them, and every PR gets a preview of each.
+The four sites deploy to Cloudflare, as assets-only Workers built by Workers Builds. A merge to `main` deploys them, and every PR gets a preview of each.

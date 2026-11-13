@@ -1,0 +1,9 @@
+# Cloudflare response headers. Astro fingerprints everything in `_astro/`, so
+# it never changes under the same name.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The multi-year charts' results feed: fresh for 10 minutes, then served stale
+# while it revalidates.
+/data/results/*
+  Cache-Control: public, max-age=600, stale-while-revalidate=604800
